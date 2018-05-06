@@ -1,0 +1,2765 @@
+HESMON.ASM......PAGE 0001
+
+LINE# LOC   CODE        LINE
+
+
+00001  0000              *=$A000
+00002  A000              ;********************************
+00003  A000              ; EXTERNAL ADDRESS EQUATES
+00004  A000              ;********************************
+00005  A000              OPEN=$FFC0
+00006  A000              CLOSE=$FFC3
+00007  A000              CHKOUT=$FFC9
+00008  A000              CLRCHN=$FFCC
+00009  A000              CHRIN=$FFCF
+00010  A000              CHROUT=$FFD2
+00011  A000              GETIN=$FFE4
+00012  A000              ;********************************
+00013  A000              ;********************************
+00014  A000                                     ;.WORD $ADF0
+00015  A000  F0 AD              .WORD XXADF0
+00016  A002                                     ;.WORD $AE87
+00017  A002  87 AE              .WORD XXAE87
+00018  A004              ;********************************
+00019  A004              ;********************************
+00020  A004  41                 .BYTE $41
+00021  A005  30                 .BYTE $30
+00022  A006  C3                 .BYTE $C3
+00023  A007  C2                 .BYTE $C2
+00024  A008  CD                 .BYTE $CD
+00025  A009              ;********************************
+00026  A009              ;
+00027  A009              ;********************************
+00028  A009  20 F2 A2           JSR XXA2F2
+00029  A00C  B0 03              BCS XXA011
+00030  A00E  4C B6 A5           JMP XXA5B6
+00031  A011              ;********************************
+00032  A011  A2 00       XXA011 LDX #$00
+00033  A013  8E 11 02           STX $0211
+00034  A016  20 9F A5    XXA016 JSR XXA59F
+00035  A019  C9 20              CMP #$20        ;' '
+00036  A01B  F0 F4              BEQ XXA011
+00037  A01D  20 45 A1           JSR XXA145
+00038  A020  90 08              BCC XXA02A
+00039  A022  C9 3A              CMP #$3A        ;':'
+00040  A024  90 EB              BCC XXA011
+00041  A026  C9 46              CMP #$46        ;'F'
+00042  A028  F0 E7              BEQ XXA011
+00043  A02A  9D 2F 01    XXA02A STA $012F,X
+00044  A02D  E8                 INX 
+00045  A02E  E0 03              CPX #$03
+00046  A030  D0 E4              BNE XXA016
+00047  A032  CA          XXA032 DEX 
+00048  A033  30 14              BMI XXA049
+00049  A035  BD 2F 01           LDA $012F,X
+00050  A038  38                 SEC 
+00051  A039  E9 3F              SBC #$3F        ;'?'
+00052  A03B  A0 05              LDY #$05
+00053  A03D  4A          XXA03D LSR A
+00054  A03E  6E 11 02           ROR $0211
+00055  A041  6E 10 02           ROR $0210
+
+
+
+
+
+
+HESMON.ASM......PAGE 0002
+
+LINE# LOC   CODE        LINE
+
+
+00056  A044  88                 DEY 
+00057  A045  D0 F6              BNE XXA03D
+00058  A047  F0 E9              BEQ XXA032
+00059  A049  A2 02       XXA049 LDX #$02
+00060  A04B  20 CF FF    XXA04B JSR CHRIN
+00061  A04E  C9 3A              CMP #$3A        ;':'
+00062  A050  F0 22              BEQ XXA074
+00063  A052  C9 0D              CMP #$0D
+00064  A054  F0 1E              BEQ XXA074
+00065  A056  C9 20              CMP #$20        ;' '
+00066  A058  F0 F1              BEQ XXA04B
+00067  A05A  20 45 A1           JSR XXA145
+00068  A05D  90 0F              BCC XXA06E
+00069  A05F  20 77 A5           JSR XXA577
+00070  A062  A4 C1              LDY $C1
+00071  A064  84 C2              STY $C2
+00072  A066  85 C1              STA $C1
+00073  A068  A9 30              LDA #$30        ;'0'
+00074  A06A  9D 10 02           STA $0210,X
+00075  A06D  E8                 INX 
+00076  A06E  9D 10 02    XXA06E STA $0210,X
+00077  A071  E8                 INX 
+00078  A072  D0 D7              BNE XXA04B
+00079  A074  8E 29 01    XXA074 STX $0129
+00080  A077  20 D7 CA           JSR $CAD7
+00081  A07A  A2 00              LDX #$00
+00082  A07C  86 3B              STX $3B
+00083  A07E  A2 00       XXA07E LDX #$00
+00084  A080  86 3A              STX $3A
+00085  A082  A5 3B              LDA $3B
+00086  A084  20 44 A6           JSR XXA644
+00087  A087  A6 3D              LDX $3D
+00088  A089  8E 2A 01           STX $012A
+00089  A08C  AA                 TAX 
+00090  A08D  BD C9 A7           LDA XXA7C9,X
+00091  A090  20 16 A1           JSR XXA116
+00092  A093  BD 89 A7           LDA XXA789,X
+00093  A096  20 16 A1           JSR XXA116
+00094  A099  A2 06              LDX #$06
+00095  A09B  E0 03       XXA09B CPX #$03
+00096  A09D  D0 12              BNE XXA0B1
+00097  A09F  A4 3E              LDY $3E
+00098  A0A1  F0 0E              BEQ XXA0B1
+00099  A0A3  A5 3D       XXA0A3 LDA $3D
+00100  A0A5  C9 E8              CMP #$E8
+00101  A0A7  A9 30              LDA #$30        ;'0'
+00102  A0A9  B0 1D              BCS XXA0C8
+00103  A0AB  20 13 A1           JSR XXA113
+00104  A0AE  88                 DEY 
+00105  A0AF  D0 F2              BNE XXA0A3
+00106  A0B1  06 3D       XXA0B1 ASL $3D
+00107  A0B3  90 0E              BCC XXA0C3
+00108  A0B5  BD 7C A7           LDA XXA77C,X
+00109  A0B8  20 27 A1           JSR XXA127
+00110  A0BB  BD 82 A7           LDA XXA782,X
+
+
+
+
+
+
+HESMON.ASM......PAGE 0003
+
+LINE# LOC   CODE        LINE
+
+
+00111  A0BE  F0 03              BEQ XXA0C3
+00112  A0C0  20 27 A1           JSR XXA127
+00113  A0C3  CA          XXA0C3 DEX 
+00114  A0C4  D0 D5              BNE XXA09B
+00115  A0C6  F0 06              BEQ XXA0CE
+00116  A0C8  20 13 A1    XXA0C8 JSR XXA113
+00117  A0CB  20 13 A1           JSR XXA113
+00118  A0CE  AD 29 01    XXA0CE LDA $0129
+00119  A0D1  C5 3A              CMP $3A
+00120  A0D3  F0 03              BEQ XXA0D8
+00121  A0D5  4C 1D A1           JMP XXA11D
+00122  A0D8              ;********************************
+00123  A0D8  20 58 A1    XXA0D8 JSR XXA158
+00124  A0DB  A4 3E              LDY $3E
+00125  A0DD  F0 2D              BEQ XXA10C
+00126  A0DF  AD 2A 01           LDA $012A
+00127  A0E2  C9 9D              CMP #$9D
+00128  A0E4  D0 1E              BNE XXA104
+00129  A0E6  20 B7 A2           JSR XXA2B7
+00130  A0E9  90 0A              BCC XXA0F5
+00131  A0EB  98                 TYA 
+00132  A0EC  D0 36              BNE XXA124
+00133  A0EE  AE 2D 01           LDX $012D
+00134  A0F1  30 31              BMI XXA124
+00135  A0F3  10 08              BPL XXA0FD
+00136  A0F5  C8          XXA0F5 INY 
+00137  A0F6  D0 2C              BNE XXA124
+00138  A0F8  AE 2D 01           LDX $012D
+00139  A0FB  10 27              BPL XXA124
+00140  A0FD  CA          XXA0FD DEX 
+00141  A0FE  CA                 DEX 
+00142  A0FF  8A                 TXA 
+00143  A100  A4 3E              LDY $3E
+00144  A102  D0 03              BNE XXA107
+00145  A104  B9 C2 00    XXA104 LDA $00C2,Y
+00146  A107  91 C1       XXA107 STA ($C1),Y
+00147  A109  88                 DEY 
+00148  A10A  D0 F8              BNE XXA104
+00149  A10C  A5 3B       XXA10C LDA $3B
+00150  A10E  91 C1              STA ($C1),Y
+00151  A110  4C 3B A4           JMP XXA43B
+00152  A113              ;********************************
+00153  A113  20 16 A1    XXA113 JSR XXA116
+00154  A116  20 3D A1    XXA116 JSR XXA13D
+00155  A119  F0 1D              BEQ XXA138
+00156  A11B  68                 PLA 
+00157  A11C  68                 PLA 
+00158  A11D  E6 3B       XXA11D INC $3B
+00159  A11F  F0 03              BEQ XXA124
+00160  A121  4C 7E A0           JMP XXA07E
+00161  A124              ;********************************
+00162  A124  4C B6 A5    XXA124 JMP XXA5B6
+00163  A127              ;********************************
+00164  A127  C9 2C       XXA127 CMP #$2C        ;','
+00165  A129  F0 08              BEQ XXA133
+
+
+
+
+
+
+HESMON.ASM......PAGE 0004
+
+LINE# LOC   CODE        LINE
+
+
+00166  A12B  C9 29              CMP #$29        ;')'
+00167  A12D  F0 04              BEQ XXA133
+00168  A12F  C9 24              CMP #$24        ;'$'
+00169  A131  D0 E3              BNE XXA116
+00170  A133  20 3D A1    XXA133 JSR XXA13D
+00171  A136  D0 02              BNE XXA13A
+00172  A138  E6 3A       XXA138 INC $3A
+00173  A13A  A6 3C       XXA13A LDX $3C
+00174  A13C  60                 RTS 
+00175  A13D              ;********************************
+00176  A13D  86 3C       XXA13D STX $3C
+00177  A13F  A6 3A              LDX $3A
+00178  A141  DD 10 02           CMP $0210,X
+00179  A144  60                 RTS 
+00180  A145              ;********************************
+00181  A145  C9 30       XXA145 CMP #$30        ;'0'
+00182  A147  90 0E              BCC XXA157
+00183  A149  C9 3A              CMP #$3A        ;':'
+00184  A14B  90 09              BCC XXA156
+00185  A14D  C9 47              CMP #$47        ;'G'
+00186  A14F  B0 03              BCS XXA154
+00187  A151  C9 41              CMP #$41        ;'A'
+00188  A153  60                 RTS 
+00189  A154              ;********************************
+00190  A154  18          XXA154 CLC 
+00191  A155  60                 RTS 
+00192  A156              ;********************************
+00193  A156  38          XXA156 SEC 
+00194  A157  60          XXA157 RTS 
+00195  A158              ;********************************
+00196  A158  A2 02       XXA158 LDX #$02
+00197  A15A  B5 C0       XXA15A LDA $C0,X
+00198  A15C  48                 PHA 
+00199  A15D  B5 C2              LDA $C2,X
+00200  A15F  95 C0              STA $C0,X
+00201  A161  68                 PLA 
+00202  A162  95 C2              STA $C2,X
+00203  A164  CA                 DEX 
+00204  A165  D0 F3              BNE XXA15A
+00205  A167  60                 RTS 
+00206  A168              ;********************************
+00207  A168  A9 16       XXA168 LDA #$16
+00208  A16A  8D 2A 01           STA $012A
+00209  A16D  A2 00              LDX #$00
+00210  A16F  24 39              BIT $39
+00211  A171  30 01              BMI XXA174
+00212  A173  AA                 TAX 
+00213  A174  86 F2       XXA174 STX $F2
+00214  A176  E4 D6              CPX $D6
+00215  A178  F0 01              BEQ XXA17B
+00216  A17A  60                 RTS 
+00217  A17B              ;********************************
+00218  A17B  24 39       XXA17B BIT $39
+00219  A17D  10 03              BPL XXA182
+00220  A17F  20 CA A5           JSR XXA5CA
+
+
+
+
+
+
+HESMON.ASM......PAGE 0005
+
+LINE# LOC   CODE        LINE
+
+
+00221  A182  20 BB AD    XXA182 JSR XXADBB
+00222  A185  C9 2C              CMP #$2C        ;','
+00223  A187  F0 20              BEQ XXA1A9
+00224  A189  C9 3A              CMP #$3A        ;':'
+00225  A18B  F0 1C              BEQ XXA1A9
+00226  A18D  C9 27              CMP #$27        ;'''
+00227  A18F  F0 18              BEQ XXA1A9
+00228  A191  A5 39       XXA191 LDA $39
+00229  A193  49 80              EOR #$80
+00230  A195  20 D2 FF           JSR CHROUT
+00231  A198  CE 2A 01           DEC $012A
+00232  A19B  D0 E5              BNE XXA182
+00233  A19D  A9 00              LDA #$00
+00234  A19F  85 39              STA $39
+00235  A1A1  A6 F2       XXA1A1 LDX $F2
+00236  A1A3  CA                 DEX 
+00237  A1A4  86 D6              STX $D6
+00238  A1A6  4C C7 A5           JMP XXA5C7
+00239  A1A9              ;********************************
+00240  A1A9  A8          XXA1A9 TAY 
+00241  A1AA  20 FC A2           JSR XXA2FC
+00242  A1AD  90 E2              BCC XXA191
+00243  A1AF  85 C3              STA $C3
+00244  A1B1  86 C4              STX $C4
+00245  A1B3  20 A1 A1           JSR XXA1A1
+00246  A1B6  24 39              BIT $39
+00247  A1B8  30 24              BMI XXA1DE
+00248  A1BA  20 CD A5           JSR XXA5CD
+00249  A1BD  C0 2C              CPY #$2C        ;','
+00250  A1BF  F0 0C              BEQ XXA1CD
+00251  A1C1  C0 27              CPY #$27        ;'''
+00252  A1C3  F0 11              BEQ XXA1D6
+00253  A1C5  A9 07              LDA #$07
+00254  A1C7  20 27 A6           JSR XXA627
+00255  A1CA  4C C1 A3           JMP XXA3C1
+00256  A1CD              ;********************************
+00257  A1CD  20 40 A6    XXA1CD JSR XXA640
+00258  A1D0  20 21 A6           JSR XXA621
+00259  A1D3  4C C2 A5           JMP XXA5C2
+00260  A1D6              ;********************************
+00261  A1D6  A9 0F       XXA1D6 LDA #$0F
+00262  A1D8  20 27 A6           JSR XXA627
+00263  A1DB  4C CC A3           JMP XXA3CC
+00264  A1DE              ;********************************
+00265  A1DE  84 39       XXA1DE STY $39
+00266  A1E0  A9 80              LDA #$80
+00267  A1E2  85 D8              STA $D8
+00268  A1E4  20 08 EA           JSR $EA08
+00269  A1E7  A5 D9              LDA $D9
+00270  A1E9  09 80              ORA #$80
+00271  A1EB  85 D9              STA $D9
+00272  A1ED  A9 00              LDA #$00
+00273  A1EF  85 D8              STA $D8
+00274  A1F1  20 CA A5           JSR XXA5CA
+00275  A1F4  A4 39              LDY $39
+
+
+
+
+
+
+HESMON.ASM......PAGE 0006
+
+LINE# LOC   CODE        LINE
+
+
+00276  A1F6  A9 F7              LDA #$F7
+00277  A1F8  C0 3A              CPY #$3A        ;':'
+00278  A1FA  F0 2D              BEQ XXA229
+00279  A1FC  A9 EF              LDA #$EF
+00280  A1FE  C0 27              CPY #$27        ;'''
+00281  A200  F0 27              BEQ XXA229
+00282  A202  85 3A              STA $3A
+00283  A204  20 27 A6    XXA204 JSR XXA627
+00284  A207  20 40 A6    XXA207 JSR XXA640
+00285  A20A  20 21 A6           JSR XXA621
+00286  A20D  C5 C3              CMP $C3
+00287  A20F  F0 12              BEQ XXA223
+00288  A211  30 F4              BMI XXA207
+00289  A213  A5 C3              LDA $C3
+00290  A215  85 C1              STA $C1
+00291  A217  A5 C4              LDA $C4
+00292  A219  85 C2              STA $C2
+00293  A21B  E6 3A              INC $3A
+00294  A21D  A5 3A              LDA $3A
+00295  A21F  D0 E3              BNE XXA204
+00296  A221  85 3E              STA $3E
+00297  A223  E6 3E       XXA223 INC $3E
+00298  A225  A5 3E              LDA $3E
+00299  A227  49 FF              EOR #$FF
+00300  A229  20 27 A6    XXA229 JSR XXA627
+00301  A22C  20 25 A3           JSR XXA325
+00302  A22F  20 CA A5           JSR XXA5CA
+00303  A232  D0 03              BNE XXA237
+00304  A234  20 C7 A5    XXA234 JSR XXA5C7
+00305  A237  A2 FA       XXA237 LDX #$FA
+00306  A239  9A                 TXS 
+00307  A23A  86 9D              STX $9D
+00308  A23C  86 CC              STX $CC
+00309  A23E  A2 00              LDX #$00
+00310  A240  86 3B              STX $3B
+00311  A242  86 99              STX $99
+00312  A244  A9 03              LDA #$03
+00313  A246  8D 87 02           STA $0287
+00314  A249  20 88 AD           JSR XXAD88
+00315  A24C  20 E4 FF    XXA24C JSR GETIN
+00316  A24F  F0 FB              BEQ XXA24C
+00317  A251  85 39              STA $39
+00318  A253  29 7F              AND #$7F
+00319  A255  C9 11              CMP #$11
+00320  A257  D0 0F              BNE XXA268
+00321  A259  A9 03              LDA #$03
+00322  A25B  C5 9A              CMP $9A
+00323  A25D  D0 09              BNE XXA268
+00324  A25F  20 88 AD           JSR XXAD88
+00325  A262  20 68 A1           JSR XXA168
+00326  A265  20 88 AD           JSR XXAD88
+00327  A268  A5 39       XXA268 LDA $39
+00328  A26A  C9 0D              CMP #$0D
+00329  A26C  F0 06              BEQ XXA274
+00330  A26E  20 82 AD           JSR XXAD82
+
+
+
+
+
+
+HESMON.ASM......PAGE 0007
+
+LINE# LOC   CODE        LINE
+
+
+00331  A271  4C 4C A2           JMP XXA24C
+00332  A274              ;********************************
+00333  A274  20 88 AD    XXA274 JSR XXAD88
+00334  A277  20 BB AD           JSR XXADBB
+00335  A27A  D0 03              BNE XXA27F
+00336  A27C  20 9F A5    XXA27C JSR XXA59F
+00337  A27F  C9 20       XXA27F CMP #$20        ;' '
+00338  A281  F0 F9              BEQ XXA27C
+00339  A283  A2 1C              LDX #$1C
+00340  A285  DD 23 A8    XXA285 CMP XXA823,X
+00341  A288  D0 13              BNE XXA29D
+00342  A28A  85 39              STA $39
+00343  A28C  8A                 TXA 
+00344  A28D  0A                 ASL A
+00345  A28E  AA                 TAX 
+00346  A28F  BD 40 A8           LDA XXA840,X
+00347  A292  85 C1              STA $C1
+00348  A294  E8                 INX 
+00349  A295  BD 40 A8           LDA XXA840,X
+00350  A298  85 C2              STA $C2
+00351  A29A  6C C1 00           JMP ($00C1)
+00352  A29D              ;********************************
+00353  A29D  CA          XXA29D DEX 
+00354  A29E  10 E5              BPL XXA285
+00355  A2A0  4C B6 A5           JMP XXA5B6
+00356  A2A3              ;********************************
+00357  A2A3  A5 C1       XXA2A3 LDA $C1
+00358  A2A5  8D 20 01           STA $0120
+00359  A2A8  A5 C2              LDA $C2
+00360  A2AA  8D 21 01           STA $0121
+00361  A2AD  60                 RTS 
+00362  A2AE              ;********************************
+00363  A2AE  AD 29 01    XXA2AE LDA $0129
+00364  A2B1  AC 2A 01           LDY $012A
+00365  A2B4  4C BB A2           JMP XXA2BB
+00366  A2B7              ;********************************
+00367  A2B7  A5 C3       XXA2B7 LDA $C3
+00368  A2B9  A4 C4              LDY $C4
+00369  A2BB  38          XXA2BB SEC 
+00370  A2BC  E5 C1              SBC $C1
+00371  A2BE  8D 2D 01           STA $012D
+00372  A2C1  98                 TYA 
+00373  A2C2  10 02              BPL XXA2C6
+00374  A2C4  45 C2              EOR $C2
+00375  A2C6  48          XXA2C6 PHA 
+00376  A2C7  98                 TYA 
+00377  A2C8  E5 C2              SBC $C2
+00378  A2CA  A8                 TAY 
+00379  A2CB  68                 PLA 
+00380  A2CC  10 01              BPL XXA2CF
+00381  A2CE  38                 SEC 
+00382  A2CF  98          XXA2CF TYA 
+00383  A2D0  0D 2D 01           ORA $012D
+00384  A2D3  60                 RTS 
+00385  A2D4              ;********************************
+
+
+
+
+
+
+HESMON.ASM......PAGE 0008
+
+LINE# LOC   CODE        LINE
+
+
+00386  A2D4  85 3A       XXA2D4 STA $3A
+00387  A2D6  A0 00              LDY #$00
+00388  A2D8  20 4C A3           JSR XXA34C
+00389  A2DB  20 50 A3    XXA2DB JSR XXA350
+00390  A2DE  B1 C1              LDA ($C1),Y
+00391  A2E0  20 0F A5           JSR XXA50F
+00392  A2E3  C8                 INY 
+00393  A2E4  C4 3A              CPY $3A
+00394  A2E6  D0 F3              BNE XXA2DB
+00395  A2E8  4C 4C A3           JMP XXA34C
+00396  A2EB              ;********************************
+00397  A2EB  20 04 A3    XXA2EB JSR XXA304
+00398  A2EE  85 C3              STA $C3
+00399  A2F0  86 C4              STX $C4
+00400  A2F2  20 35 A5    XXA2F2 JSR XXA535
+00401  A2F5  90 04              BCC XXA2FB
+00402  A2F7  85 C3              STA $C3
+00403  A2F9  86 C4              STX $C4
+00404  A2FB  60          XXA2FB RTS 
+00405  A2FC              ;********************************
+00406  A2FC  20 35 A5    XXA2FC JSR XXA535
+00407  A2FF  85 C1       XXA2FF STA $C1
+00408  A301  86 C2              STX $C2
+00409  A303  60                 RTS 
+00410  A304              ;********************************
+00411  A304  20 35 A5    XXA304 JSR XXA535
+00412  A307  B0 F6              BCS XXA2FF
+00413  A309  4C B6 A5    XXA309 JMP XXA5B6
+00414  A30C              ;********************************
+00415  A30C  85 3A       XXA30C STA $3A
+00416  A30E  20 5E A5    XXA30E JSR XXA55E
+00417  A311  A2 00              LDX #$00
+00418  A313  90 0D              BCC XXA322
+00419  A315  81 C1              STA ($C1,X)
+00420  A317  E1 C1              SBC ($C1,X)
+00421  A319  D0 EE              BNE XXA309
+00422  A31B  20 27 A6           JSR XXA627
+00423  A31E  C6 3A              DEC $3A
+00424  A320  D0 EC              BNE XXA30E
+00425  A322  4C D7 CA    XXA322 JMP $CAD7
+00426  A325              ;********************************
+00427  A325  A5 39       XXA325 LDA $39
+00428  A327  20 D2 FF           JSR CHROUT
+00429  A32A  C9 3B              CMP #$3B        ;';'
+00430  A32C  F0 46              BEQ XXA374
+00431  A32E  20 F7 A4           JSR XXA4F7
+00432  A331  A5 39              LDA $39
+00433  A333  C9 3A              CMP #$3A        ;':'
+00434  A335  F0 65              BEQ XXA39C
+00435  A337  C9 27              CMP #$27        ;'''
+00436  A339  F0 03              BEQ XXA33E
+00437  A33B  4C D7 A5           JMP XXA5D7
+00438  A33E              ;********************************
+00439  A33E  4C D6 A3    XXA33E JMP XXA3D6
+00440  A341              ;********************************
+
+
+
+
+
+
+HESMON.ASM......PAGE 0009
+
+LINE# LOC   CODE        LINE
+
+
+00441  A341  A9 22       XXA341 LDA #$22        ;'"'
+00442  A343  85 C1              STA $C1
+00443  A345  A9 01              LDA #$01
+00444  A347  85 C2              STA $C2
+00445  A349  A9 05              LDA #$05
+00446  A34B  60                 RTS 
+00447  A34C              ;********************************
+00448  A34C  A9 12       XXA34C LDA #$12
+00449  A34E  85 3C              STA $3C
+00450  A350  A5 9A       XXA350 LDA $9A
+00451  A352  C9 03              CMP #$03
+00452  A354  F0 03              BEQ XXA359
+00453  A356  4C 3F CB           JMP $CB3F
+00454  A359              ;********************************
+00455  A359  A9 80       XXA359 LDA #$80
+00456  A35B  45 3C              EOR $3C
+00457  A35D  85 3C              STA $3C
+00458  A35F  4C D2 FF           JMP CHROUT
+00459  A362              ;********************************
+00460  A362  A2 00              LDX #$00
+00461  A364  BD 09 A8    XXA364 LDA XXA809,X
+00462  A367  20 D2 FF           JSR CHROUT
+00463  A36A  E8                 INX 
+00464  A36B  E0 1A              CPX #$1A
+00465  A36D  D0 F5              BNE XXA364
+00466  A36F  A9 3B              LDA #$3B        ;';'
+00467  A371  20 2F A5           JSR XXA52F
+00468  A374  AD 21 01    XXA374 LDA $0121
+00469  A377  20 0F A5           JSR XXA50F
+00470  A37A  AD 20 01           LDA $0120
+00471  A37D  20 0F A5           JSR XXA50F
+00472  A380  20 3F CB           JSR $CB3F
+00473  A383  AD 15 03           LDA $0315
+00474  A386  20 0F A5           JSR XXA50F
+00475  A389  AD 14 03           LDA $0314
+00476  A38C  20 0F A5           JSR XXA50F
+00477  A38F  20 41 A3           JSR XXA341
+00478  A392  20 D4 A2           JSR XXA2D4
+00479  A395  D0 21              BNE XXA3B8
+00480  A397  A9 3A       XXA397 LDA #$3A        ;':'
+00481  A399  20 F0 A4           JSR XXA4F0
+00482  A39C  A9 08       XXA39C LDA #$08
+00483  A39E  20 D4 A2           JSR XXA2D4
+00484  A3A1  A9 07              LDA #$07
+00485  A3A3  4C 27 A6           JMP XXA627
+00486  A3A6              ;********************************
+00487  A3A6  20 70 F7    XXA3A6 JSR $F770
+00488  A3A9  F0 0A              BEQ XXA3B5
+00489  A3AB  A5 3B              LDA $3B
+00490  A3AD  D0 06              BNE XXA3B5
+00491  A3AF  20 B7 A2           JSR XXA2B7
+00492  A3B2  90 01              BCC XXA3B5
+00493  A3B4  60                 RTS 
+00494  A3B5              ;********************************
+00495  A3B5  20 CD A5    XXA3B5 JSR XXA5CD
+
+
+
+
+
+
+HESMON.ASM......PAGE 0010
+
+LINE# LOC   CODE        LINE
+
+
+00496  A3B8  4C 34 A2    XXA3B8 JMP XXA234
+00497  A3BB              ;********************************
+00498  A3BB  20 EB A2           JSR XXA2EB
+00499  A3BE  20 A6 A3    XXA3BE JSR XXA3A6
+00500  A3C1  20 97 A3    XXA3C1 JSR XXA397
+00501  A3C4  D0 F8              BNE XXA3BE
+00502  A3C6  20 EB A2           JSR XXA2EB
+00503  A3C9  20 A6 A3    XXA3C9 JSR XXA3A6
+00504  A3CC  20 D1 A3    XXA3CC JSR XXA3D1
+00505  A3CF  D0 F8              BNE XXA3C9
+00506  A3D1  A9 27       XXA3D1 LDA #$27        ;'''
+00507  A3D3  20 F0 A4           JSR XXA4F0
+00508  A3D6  A0 FF       XXA3D6 LDY #$FF
+00509  A3D8  C8          XXA3D8 INY 
+00510  A3D9  B1 C1              LDA ($C1),Y
+00511  A3DB  20 E6 A3           JSR XXA3E6
+00512  A3DE  C0 0F              CPY #$0F
+00513  A3E0  D0 F6              BNE XXA3D8
+00514  A3E2  98                 TYA 
+00515  A3E3  4C 27 A6           JMP XXA627
+00516  A3E6              ;********************************
+00517  A3E6  48          XXA3E6 PHA 
+00518  A3E7  29 7F              AND #$7F
+00519  A3E9  C9 20              CMP #$20        ;' '
+00520  A3EB  B0 0C              BCS XXA3F9
+00521  A3ED  A2 12              LDX #$12
+00522  A3EF  68                 PLA 
+00523  A3F0  69 40              ADC #$40        ;'@'
+00524  A3F2  20 26 A5           JSR XXA526
+00525  A3F5  A9 92              LDA #$92
+00526  A3F7  D0 07              BNE XXA400
+00527  A3F9  C9 60       XXA3F9 CMP #$60
+00528  A3FB  68                 PLA 
+00529  A3FC  90 02              BCC XXA400
+00530  A3FE  A9 2E              LDA #$2E        ;'.'
+00531  A400  20 D2 FF    XXA400 JSR CHROUT
+00532  A403  A2 00              LDX #$00
+00533  A405  86 D4              STX $D4
+00534  A407  60                 RTS 
+00535  A408              ;********************************
+00536  A408  20 FC A2           JSR XXA2FC
+00537  A40B  90 03              BCC XXA410
+00538  A40D  20 A3 A2           JSR XXA2A3
+00539  A410  20 55 A5    XXA410 JSR XXA555
+00540  A413  90 08              BCC XXA41D
+00541  A415  78                 SEI 
+00542  A416  8D 14 03           STA $0314
+00543  A419  8E 15 03           STX $0315
+00544  A41C  58                 CLI 
+00545  A41D  20 41 A3    XXA41D JSR XXA341
+00546  A420  D0 0E              BNE XXA430
+00547  A422  A9 08              LDA #$08
+00548  A424              ;********************************
+00549  A424                                     ;BIT $03A9
+00550  A424  2C                 .BYTE $2C
+
+
+
+
+
+
+HESMON.ASM......PAGE 0011
+
+LINE# LOC   CODE        LINE
+
+
+00551  A425  A9 03              LDA #$03
+00552  A427              ;********************************
+00553  A427  48                 PHA 
+00554  A428  20 04 A3           JSR XXA304
+00555  A42B  85 C3              STA $C3
+00556  A42D  86 C4              STX $C4
+00557  A42F  68                 PLA 
+00558  A430  20 0C A3    XXA430 JSR XXA30C
+00559  A433  A5 C3              LDA $C3
+00560  A435  85 C1              STA $C1
+00561  A437  A5 C4              LDA $C4
+00562  A439  85 C2              STA $C2
+00563  A43B  20 CD A5    XXA43B JSR XXA5CD
+00564  A43E  20 25 A3           JSR XXA325
+00565  A441  20 F2 A4           JSR XXA4F2
+00566  A444  A5 39              LDA $39
+00567  A446  C9 41              CMP #$41        ;'A'
+00568  A448  D0 03              BNE XXA44D
+00569  A44A  20 3F CB           JSR $CB3F
+00570  A44D  4C 37 A2    XXA44D JMP XXA237
+00571  A450              ;********************************
+00572  A450  A0 00       XXA450 LDY #$00
+00573  A452  84 B7              STY $B7
+00574  A454  84 93              STY $93
+00575  A456  84 90              STY $90
+00576  A458  A9 02              LDA #$02
+00577  A45A  85 BC              STA $BC
+00578  A45C  A9 00              LDA #$00
+00579  A45E  85 BB              STA $BB
+00580  A460  20 CF FF    XXA460 JSR CHRIN
+00581  A463  C9 20              CMP #$20        ;' '
+00582  A465  F0 F9              BEQ XXA460
+00583  A467  C9 0D              CMP #$0D
+00584  A469  F0 1B              BEQ XXA486
+00585  A46B  C9 22              CMP #$22        ;'"'
+00586  A46D  D0 14              BNE XXA483
+00587  A46F  20 CF FF    XXA46F JSR CHRIN
+00588  A472  C9 22              CMP #$22        ;'"'
+00589  A474  F0 10              BEQ XXA486
+00590  A476  C9 0D              CMP #$0D
+00591  A478  F0 0C              BEQ XXA486
+00592  A47A  91 BB              STA ($BB),Y
+00593  A47C  E6 B7              INC $B7
+00594  A47E  C8                 INY 
+00595  A47F  C0 14              CPY #$14
+00596  A481  D0 EC              BNE XXA46F
+00597  A483  4C B6 A5    XXA483 JMP XXA5B6
+00598  A486              ;********************************
+00599  A486  60          XXA486 RTS 
+00600  A487              ;********************************
+00601  A487  A0 01              LDY #$01
+00602  A489  84 B9              STY $B9
+00603  A48B  84 BA              STY $BA
+00604  A48D  20 50 A4           JSR XXA450
+00605  A490  C9 0D              CMP #$0D
+
+
+
+
+
+
+HESMON.ASM......PAGE 0012
+
+LINE# LOC   CODE        LINE
+
+
+00606  A492  D0 15              BNE XXA4A9
+00607  A494  A5 39       XXA494 LDA $39
+00608  A496  C9 4C              CMP #$4C        ;'L'
+00609  A498  D0 E9              BNE XXA483
+00610  A49A  20 C7 A5           JSR XXA5C7
+00611  A49D  20 4F F5           JSR $F54F
+00612  A4A0  A5 90              LDA $90
+00613  A4A2  29 10              AND #$10
+00614  A4A4  D0 DD       XXA4A4 BNE XXA483
+00615  A4A6  4C 34 A2           JMP XXA234
+00616  A4A9              ;********************************
+00617  A4A9  20 CF FF    XXA4A9 JSR CHRIN
+00618  A4AC  C9 0D              CMP #$0D
+00619  A4AE  F0 E4              BEQ XXA494
+00620  A4B0  C9 20              CMP #$20        ;' '
+00621  A4B2  D0 F0       XXA4B2 BNE XXA4A4
+00622  A4B4  20 5E A5           JSR XXA55E
+00623  A4B7  29 0F              AND #$0F
+00624  A4B9  F0 C8       XXA4B9 BEQ XXA483
+00625  A4BB  C9 03              CMP #$03
+00626  A4BD  F0 FA              BEQ XXA4B9
+00627  A4BF  85 BA              STA $BA
+00628  A4C1  20 CF FF           JSR CHRIN
+00629  A4C4  C9 0D              CMP #$0D
+00630  A4C6  F0 CC              BEQ XXA494
+00631  A4C8  C9 20              CMP #$20        ;' '
+00632  A4CA  D0 E6       XXA4CA BNE XXA4B2
+00633  A4CC  20 EB A2           JSR XXA2EB
+00634  A4CF  90 C3              BCC XXA494
+00635  A4D1  85 AE              STA $AE
+00636  A4D3  86 AF              STX $AF
+00637  A4D5  EC 41 A8           CPX XXA841
+00638  A4D8  90 07              BCC XXA4E1
+00639  A4DA  AE 43 A8           LDX XXA843
+00640  A4DD  E4 C2              CPX $C2
+00641  A4DF  B0 24              BCS XXA505
+00642  A4E1  A5 39       XXA4E1 LDA $39
+00643  A4E3  C9 53              CMP #$53        ;'S'
+00644  A4E5  D0 E3              BNE XXA4CA
+00645  A4E7  20 C7 A5           JSR XXA5C7
+00646  A4EA  20 85 F6           JSR $F685
+00647  A4ED  4C 34 A2           JMP XXA234
+00648  A4F0              ;********************************
+00649  A4F0  85 39       XXA4F0 STA $39
+00650  A4F2  A5 39       XXA4F2 LDA $39
+00651  A4F4  20 2F A5           JSR XXA52F
+00652  A4F7  A5 C2       XXA4F7 LDA $C2
+00653  A4F9  CD 41 A8           CMP XXA841
+00654  A4FC  90 0A              BCC XXA508
+00655  A4FE  CD 43 A8           CMP XXA843
+00656  A501  F0 02              BEQ XXA505
+00657  A503  B0 03              BCS XXA508
+00658  A505  4C F6 A9    XXA505 JMP XXA9F6
+00659  A508              ;********************************
+00660  A508  A5 C2       XXA508 LDA $C2
+
+
+
+
+
+
+HESMON.ASM......PAGE 0013
+
+LINE# LOC   CODE        LINE
+
+
+00661  A50A  20 0F A5           JSR XXA50F
+00662  A50D  A5 C1              LDA $C1
+00663  A50F  48          XXA50F PHA 
+00664  A510  4A                 LSR A
+00665  A511  4A                 LSR A
+00666  A512  4A                 LSR A
+00667  A513  4A                 LSR A
+00668  A514  20 1A A5           JSR XXA51A
+00669  A517  68                 PLA 
+00670  A518  29 0F              AND #$0F
+00671  A51A  18          XXA51A CLC 
+00672  A51B  69 F6              ADC #$F6
+00673  A51D  90 02              BCC XXA521
+00674  A51F  69 06              ADC #$06
+00675  A521  69 3A       XXA521 ADC #$3A        ;':'
+00676  A523  4C D2 FF           JMP CHROUT
+00677  A526              ;********************************
+00678  A526  48          XXA526 PHA 
+00679  A527  8A                 TXA 
+00680  A528  20 D2 FF           JSR CHROUT
+00681  A52B  68          XXA52B PLA 
+00682  A52C  4C D2 FF           JMP CHROUT
+00683  A52F              ;********************************
+00684  A52F  48          XXA52F PHA 
+00685  A530  20 D7 CA           JSR $CAD7
+00686  A533  D0 F6              BNE XXA52B
+00687  A535  A9 00       XXA535 LDA #$00
+00688  A537  8D 00 01           STA $0100
+00689  A53A  20 CF FF    XXA53A JSR CHRIN
+00690  A53D  C9 20              CMP #$20        ;' '
+00691  A53F  F0 F9              BEQ XXA53A
+00692  A541  C9 24              CMP #$24        ;'$'
+00693  A543  F0 13              BEQ XXA558
+00694  A545  C9 0D              CMP #$0D
+00695  A547  D0 02              BNE XXA54B
+00696  A549  18                 CLC 
+00697  A54A  60          XXA54A RTS 
+00698  A54B              ;********************************
+00699  A54B  20 45 A1    XXA54B JSR XXA145
+00700  A54E  90 FA              BCC XXA54A
+00701  A550  20 77 A5           JSR XXA577
+00702  A553  B0 08              BCS XXA55D
+00703  A555  20 9F A5    XXA555 JSR XXA59F
+00704  A558  20 5E A5    XXA558 JSR XXA55E
+00705  A55B  90 19              BCC XXA576
+00706  A55D  AA          XXA55D TAX 
+00707  A55E  A9 00       XXA55E LDA #$00
+00708  A560  8D 00 01           STA $0100
+00709  A563  20 9F A5           JSR XXA59F
+00710  A566  C9 24       XXA566 CMP #$24        ;'$'
+00711  A568  F0 F4              BEQ XXA55E
+00712  A56A  C9 20              CMP #$20        ;' '
+00713  A56C  D0 09              BNE XXA577
+00714  A56E  20 9F A5           JSR XXA59F
+00715  A571  C9 20              CMP #$20        ;' '
+
+
+
+
+
+
+HESMON.ASM......PAGE 0014
+
+LINE# LOC   CODE        LINE
+
+
+00716  A573  D0 0F              BNE XXA584
+00717  A575  18                 CLC 
+00718  A576  60          XXA576 RTS 
+00719  A577              ;********************************
+00720  A577  20 8C A5    XXA577 JSR XXA58C
+00721  A57A  0A                 ASL A
+00722  A57B  0A                 ASL A
+00723  A57C  0A                 ASL A
+00724  A57D  0A                 ASL A
+00725  A57E  8D 00 01           STA $0100
+00726  A581  20 9F A5           JSR XXA59F
+00727  A584  20 8C A5    XXA584 JSR XXA58C
+00728  A587  0D 00 01           ORA $0100
+00729  A58A  38                 SEC 
+00730  A58B  60                 RTS 
+00731  A58C              ;********************************
+00732  A58C  C9 30       XXA58C CMP #$30        ;'0'
+00733  A58E  90 26              BCC XXA5B6
+00734  A590  C9 3A              CMP #$3A        ;':'
+00735  A592  08                 PHP 
+00736  A593  29 0F              AND #$0F
+00737  A595  28                 PLP 
+00738  A596  90 02              BCC XXA59A
+00739  A598  69 08              ADC #$08
+00740  A59A  C9 10       XXA59A CMP #$10
+00741  A59C  B0 18              BCS XXA5B6
+00742  A59E  60                 RTS 
+00743  A59F              ;********************************
+00744  A59F  A9 02       XXA59F LDA #$02
+00745  A5A1  8D 34 A2           STA XXA234
+00746  A5A4  CD 34 A2           CMP XXA234
+00747  A5A7  D0 05              BNE XXA5AE
+00748  A5A9  20 7D A8           JSR XXA87D
+00749  A5AC  10 08              BPL XXA5B6
+00750  A5AE  20 CF FF    XXA5AE JSR CHRIN
+00751  A5B1  C9 0D              CMP #$0D
+00752  A5B3  F0 04              BEQ XXA5B9
+00753  A5B5  60                 RTS 
+00754  A5B6              ;********************************
+00755  A5B6  20 45 CB    XXA5B6 JSR $CB45
+00756  A5B9  4C 34 A2    XXA5B9 JMP XXA234
+00757  A5BC              ;********************************
+00758  A5BC  20 EB A2           JSR XXA2EB
+00759  A5BF  20 A6 A3    XXA5BF JSR XXA3A6
+00760  A5C2  20 D2 A5    XXA5C2 JSR XXA5D2
+00761  A5C5  D0 F8              BNE XXA5BF
+00762  A5C7  A9 0D       XXA5C7 LDA #$0D
+00763  A5C9              ;********************************
+00764  A5C9  2C                 .BYTE $2C
+00765  A5CA              ;********************************
+00766  A5CA  A9 13       XXA5CA LDA #$13
+00767  A5CC              ;********************************
+00768  A5CC  2C                 .BYTE $2C
+00769  A5CD              ;********************************
+00770  A5CD  A9 91       XXA5CD LDA #$91
+
+
+
+
+
+
+HESMON.ASM......PAGE 0015
+
+LINE# LOC   CODE        LINE
+
+
+00771  A5CF  4C 42 E7           JMP $E742
+00772  A5D2              ;********************************
+00773  A5D2  A9 2C       XXA5D2 LDA #$2C        ;','
+00774  A5D4  20 F0 A4    XXA5D4 JSR XXA4F0
+00775  A5D7  20 40 A6    XXA5D7 JSR XXA640
+00776  A5DA  48                 PHA 
+00777  A5DB  20 8A A6           JSR XXA68A
+00778  A5DE  68                 PLA 
+00779  A5DF  20 AB A6           JSR XXA6AB
+00780  A5E2  A2 06              LDX #$06
+00781  A5E4  E0 03       XXA5E4 CPX #$03
+00782  A5E6  D0 12              BNE XXA5FA
+00783  A5E8  A4 3E              LDY $3E
+00784  A5EA  F0 0E              BEQ XXA5FA
+00785  A5EC  A5 3D       XXA5EC LDA $3D
+00786  A5EE  C9 E8              CMP #$E8
+00787  A5F0  B1 C1              LDA ($C1),Y
+00788  A5F2  B0 1D              BCS XXA611
+00789  A5F4  20 0F A5           JSR XXA50F
+00790  A5F7  88                 DEY 
+00791  A5F8  D0 F2              BNE XXA5EC
+00792  A5FA  06 3D       XXA5FA ASL $3D
+00793  A5FC  90 0E              BCC XXA60C
+00794  A5FE  BD 7C A7           LDA XXA77C,X
+00795  A601  20 D2 FF           JSR CHROUT
+00796  A604  BD 82 A7           LDA XXA782,X
+00797  A607  F0 03              BEQ XXA60C
+00798  A609  20 D2 FF           JSR CHROUT
+00799  A60C  CA          XXA60C DEX 
+00800  A60D  D0 D5              BNE XXA5E4
+00801  A60F  F0 10              BEQ XXA621
+00802  A611  20 30 A6    XXA611 JSR XXA630
+00803  A614  AA                 TAX 
+00804  A615  E8                 INX 
+00805  A616  D0 01              BNE XXA619
+00806  A618  C8                 INY 
+00807  A619  98          XXA619 TYA 
+00808  A61A  20 0F A5           JSR XXA50F
+00809  A61D              ;********************************
+00810  A61D              ;.END;*=$A61D
+00811  A61D              ;********************************
+00812  A61D  8A                 TXA 
+00813  A61E  20 0F A5           JSR XXA50F
+00814  A621  A5 3E       XXA621 LDA $3E
+00815  A623  D0 02              BNE XXA627
+00816  A625  A9 00       XXA625 LDA #$00
+00817  A627  20 2F A6    XXA627 JSR XXA62F
+00818  A62A  85 C1              STA $C1
+00819  A62C  84 C2              STY $C2
+00820  A62E  60                 RTS 
+00821  A62F              ;********************************
+00822  A62F  38          XXA62F SEC 
+00823  A630  A4 C2       XXA630 LDY $C2
+00824  A632  AA                 TAX 
+00825  A633  10 01              BPL XXA636
+
+
+
+
+
+
+HESMON.ASM......PAGE 0016
+
+LINE# LOC   CODE        LINE
+
+
+00826  A635  88                 DEY 
+00827  A636  65 C1       XXA636 ADC $C1
+00828  A638  90 05              BCC XXA63F
+00829  A63A  C8                 INY 
+00830  A63B  D0 02              BNE XXA63F
+00831  A63D  E6 3B              INC $3B
+00832  A63F  60          XXA63F RTS 
+00833  A640              ;********************************
+00834  A640  A2 00       XXA640 LDX #$00
+00835  A642  A1 C1              LDA ($C1,X)
+00836  A644  A8          XXA644 TAY 
+00837  A645  4A                 LSR A
+00838  A646  90 0B              BCC XXA653
+00839  A648  4A                 LSR A
+00840  A649  B0 17              BCS XXA662
+00841  A64B  C9 22              CMP #$22        ;'"'
+00842  A64D  F0 13              BEQ XXA662
+00843  A64F  29 07              AND #$07
+00844  A651  09 80              ORA #$80
+00845  A653  4A          XXA653 LSR A
+00846  A654  AA                 TAX 
+00847  A655  BD 2B A7           LDA XXA72B,X
+00848  A658  B0 04              BCS XXA65E
+00849  A65A  4A                 LSR A
+00850  A65B  4A                 LSR A
+00851  A65C  4A                 LSR A
+00852  A65D  4A                 LSR A
+00853  A65E  29 0F       XXA65E AND #$0F
+00854  A660  D0 04              BNE XXA666
+00855  A662  A0 80       XXA662 LDY #$80
+00856  A664  A9 00              LDA #$00
+00857  A666  AA          XXA666 TAX 
+00858  A667  BD 6F A7           LDA XXA76F,X
+00859  A66A  85 3D              STA $3D
+00860  A66C  29 03              AND #$03
+00861  A66E  85 3E              STA $3E
+00862  A670  98                 TYA 
+00863  A671  29 8F              AND #$8F
+00864  A673  AA                 TAX 
+00865  A674  98                 TYA 
+00866  A675  A0 03              LDY #$03
+00867  A677  E0 8A              CPX #$8A
+00868  A679  F0 0B              BEQ XXA686
+00869  A67B  4A          XXA67B LSR A
+00870  A67C  90 08              BCC XXA686
+00871  A67E  4A                 LSR A
+00872  A67F  4A          XXA67F LSR A
+00873  A680  09 20              ORA #$20        ;' '
+00874  A682  88                 DEY 
+00875  A683  D0 FA              BNE XXA67F
+00876  A685  C8                 INY 
+00877  A686  88          XXA686 DEY 
+00878  A687  D0 F2              BNE XXA67B
+00879  A689  60                 RTS 
+00880  A68A              ;********************************
+
+
+
+
+
+
+HESMON.ASM......PAGE 0017
+
+LINE# LOC   CODE        LINE
+
+
+00881  A68A  A4 3E       XXA68A LDY $3E
+00882  A68C  C8                 INY 
+00883  A68D  98                 TYA 
+00884  A68E  20 D4 A2           JSR XXA2D4
+00885  A691  38                 SEC 
+00886  A692  A9 02              LDA #$02
+00887  A694  E5 3E              SBC $3E
+00888  A696  F0 12              BEQ XXA6AA
+00889  A698  0A                 ASL A
+00890  A699  A6 9A              LDX $9A
+00891  A69B  E0 03              CPX #$03
+00892  A69D  F0 04              BEQ XXA6A3
+00893  A69F  09 02              ORA #$02
+00894  A6A1  05 3E              ORA $3E
+00895  A6A3  AA          XXA6A3 TAX 
+00896  A6A4  20 3F CB    XXA6A4 JSR $CB3F
+00897  A6A7  CA                 DEX 
+00898  A6A8  D0 FA              BNE XXA6A4
+00899  A6AA  60          XXA6AA RTS 
+00900  A6AB              ;********************************
+00901  A6AB  A8          XXA6AB TAY 
+00902  A6AC  A2 03              LDX #$03
+00903  A6AE  B9 89 A7           LDA XXA789,Y
+00904  A6B1  8D 29 01           STA $0129
+00905  A6B4  B9 C9 A7           LDA XXA7C9,Y
+00906  A6B7  8D 2A 01           STA $012A
+00907  A6BA  A9 00       XXA6BA LDA #$00
+00908  A6BC  A0 05              LDY #$05
+00909  A6BE  0E 2A 01    XXA6BE ASL $012A
+00910  A6C1  2E 29 01           ROL $0129
+00911  A6C4  2A                 ROL A
+00912  A6C5  88                 DEY 
+00913  A6C6  D0 F6              BNE XXA6BE
+00914  A6C8  69 3F              ADC #$3F        ;'?'
+00915  A6CA  20 D2 FF           JSR CHROUT
+00916  A6CD  CA                 DEX 
+00917  A6CE  D0 EA              BNE XXA6BA
+00918  A6D0  60                 RTS 
+00919  A6D1              ;********************************
+00920  A6D1              ;********************************
+00921  A6D1  20 20       XXA6D1 .BYTE '     HESMON 1.1'
+00922  A6E0  0D                 .BYTE $0D
+00923  A6E1  0D                 .BYTE $0D
+00924  A6E2  20 20              .BYTE '  BY T.M. PETERSON'
+00925  A6F4  0D                 .BYTE $0D
+00926  A6F5  0D                 .BYTE $0D
+00927  A6F6  12                 .BYTE $12
+00928  A6F7  20 20              .BYTE '    (C)1982 HUMAN      ENGINEERED S
+OFTWA'
+00929  A71F  52 45              .BYTE 'RE  '
+00930  A723  8D                 .BYTE $8D
+00931  A724              ;********************************
+00932  A724              ;********************************
+00933  A724  20                 .BYTE $20
+00934  A725  4F                 .BYTE $4F
+00935  A726  CB                 .BYTE $CB
+
+
+
+
+
+
+HESMON.ASM......PAGE 0018
+
+LINE# LOC   CODE        LINE
+
+
+00936  A727  42                 .BYTE $42
+00937  A728  59                 .BYTE $59
+00938  A729  45                 .BYTE $45
+00939  A72A  AE                 .BYTE $AE
+00940  A72B  40          XXA72B .BYTE $40
+00941  A72C  02                 .BYTE $02
+00942  A72D  45                 .BYTE $45
+00943  A72E  03                 .BYTE $03
+00944  A72F  D0                 .BYTE $D0
+00945  A730  08                 .BYTE $08
+00946  A731  40                 .BYTE $40
+00947  A732  09                 .BYTE $09
+00948  A733  30                 .BYTE $30
+00949  A734  22                 .BYTE $22
+00950  A735  45                 .BYTE $45
+00951  A736  33                 .BYTE $33
+00952  A737  D0                 .BYTE $D0
+00953  A738  08                 .BYTE $08
+00954  A739  40                 .BYTE $40
+00955  A73A  09                 .BYTE $09
+00956  A73B  40                 .BYTE $40
+00957  A73C  02                 .BYTE $02
+00958  A73D  45                 .BYTE $45
+00959  A73E  33                 .BYTE $33
+00960  A73F  D0                 .BYTE $D0
+00961  A740  08                 .BYTE $08
+00962  A741  40                 .BYTE $40
+00963  A742  09                 .BYTE $09
+00964  A743  40                 .BYTE $40
+00965  A744  02                 .BYTE $02
+00966  A745  45                 .BYTE $45
+00967  A746  B3                 .BYTE $B3
+00968  A747  D0                 .BYTE $D0
+00969  A748  08                 .BYTE $08
+00970  A749  40                 .BYTE $40
+00971  A74A  09                 .BYTE $09
+00972  A74B  00                 .BYTE $00
+00973  A74C  22                 .BYTE $22
+00974  A74D  44                 .BYTE $44
+00975  A74E  33                 .BYTE $33
+00976  A74F  D0                 .BYTE $D0
+00977  A750  8C                 .BYTE $8C
+00978  A751  44                 .BYTE $44
+00979  A752  00                 .BYTE $00
+00980  A753  11                 .BYTE $11
+00981  A754  22                 .BYTE $22
+00982  A755  44                 .BYTE $44
+00983  A756  33                 .BYTE $33
+00984  A757  D0                 .BYTE $D0
+00985  A758  8C                 .BYTE $8C
+00986  A759  44                 .BYTE $44
+00987  A75A  9A                 .BYTE $9A
+00988  A75B  10                 .BYTE $10
+00989  A75C  22                 .BYTE $22
+00990  A75D  44                 .BYTE $44
+
+
+
+
+
+
+HESMON.ASM......PAGE 0019
+
+LINE# LOC   CODE        LINE
+
+
+00991  A75E  33                 .BYTE $33
+00992  A75F  D0                 .BYTE $D0
+00993  A760  08                 .BYTE $08
+00994  A761  40                 .BYTE $40
+00995  A762  09                 .BYTE $09
+00996  A763  10                 .BYTE $10
+00997  A764  22                 .BYTE $22
+00998  A765  44                 .BYTE $44
+00999  A766  33                 .BYTE $33
+01000  A767  D0                 .BYTE $D0
+01001  A768  08                 .BYTE $08
+01002  A769  40                 .BYTE $40
+01003  A76A  09                 .BYTE $09
+01004  A76B  62                 .BYTE $62
+01005  A76C  13                 .BYTE $13
+01006  A76D  78                 .BYTE $78
+01007  A76E  A9                 .BYTE $A9
+01008  A76F  00          XXA76F .BYTE $00
+01009  A770  21                 .BYTE $21
+01010  A771  81                 .BYTE $81
+01011  A772  82                 .BYTE $82
+01012  A773  00                 .BYTE $00
+01013  A774  00                 .BYTE $00
+01014  A775  59                 .BYTE $59
+01015  A776  4D                 .BYTE $4D
+01016  A777  91                 .BYTE $91
+01017  A778  92                 .BYTE $92
+01018  A779  86                 .BYTE $86
+01019  A77A  4A                 .BYTE $4A
+01020  A77B  85                 .BYTE $85
+01021  A77C  9D          XXA77C .BYTE $9D
+01022  A77D  2C                 .BYTE $2C
+01023  A77E  29                 .BYTE $29
+01024  A77F  2C                 .BYTE $2C
+01025  A780  23                 .BYTE $23
+01026  A781  28                 .BYTE $28
+01027  A782  24          XXA782 .BYTE $24
+01028  A783  59                 .BYTE $59
+01029  A784  00                 .BYTE $00
+01030  A785  58                 .BYTE $58
+01031  A786  24                 .BYTE $24
+01032  A787  24                 .BYTE $24
+01033  A788  00                 .BYTE $00
+01034  A789  1C          XXA789 .BYTE $1C
+01035  A78A  8A                 .BYTE $8A
+01036  A78B  1C                 .BYTE $1C
+01037  A78C  23                 .BYTE $23
+01038  A78D  5D                 .BYTE $5D
+01039  A78E  8B                 .BYTE $8B
+01040  A78F  1B                 .BYTE $1B
+01041  A790  A1                 .BYTE $A1
+01042  A791  9D                 .BYTE $9D
+01043  A792  8A                 .BYTE $8A
+01044  A793  1D                 .BYTE $1D
+01045  A794  23                 .BYTE $23
+
+
+
+
+
+
+HESMON.ASM......PAGE 0020
+
+LINE# LOC   CODE        LINE
+
+
+01046  A795  9D                 .BYTE $9D
+01047  A796  8B                 .BYTE $8B
+01048  A797  1D                 .BYTE $1D
+01049  A798  A1                 .BYTE $A1
+01050  A799  00                 .BYTE $00
+01051  A79A  29                 .BYTE $29
+01052  A79B  19                 .BYTE $19
+01053  A79C  AE                 .BYTE $AE
+01054  A79D  69                 .BYTE $69
+01055  A79E  A8                 .BYTE $A8
+01056  A79F  19                 .BYTE $19
+01057  A7A0  23                 .BYTE $23
+01058  A7A1  24                 .BYTE $24
+01059  A7A2  53                 .BYTE $53
+01060  A7A3  1B                 .BYTE $1B
+01061  A7A4  23                 .BYTE $23
+01062  A7A5  24                 .BYTE $24
+01063  A7A6  53                 .BYTE $53
+01064  A7A7  19                 .BYTE $19
+01065  A7A8  A1                 .BYTE $A1
+01066  A7A9  00                 .BYTE $00
+01067  A7AA  1A                 .BYTE $1A
+01068  A7AB  5B                 .BYTE $5B
+01069  A7AC  5B                 .BYTE $5B
+01070  A7AD  A5                 .BYTE $A5
+01071  A7AE  69                 .BYTE $69
+01072  A7AF  24                 .BYTE $24
+01073  A7B0  24                 .BYTE $24
+01074  A7B1  AE                 .BYTE $AE
+01075  A7B2  AE                 .BYTE $AE
+01076  A7B3  A8                 .BYTE $A8
+01077  A7B4  AD                 .BYTE $AD
+01078  A7B5  29                 .BYTE $29
+01079  A7B6  00                 .BYTE $00
+01080  A7B7  7C                 .BYTE $7C
+01081  A7B8  00                 .BYTE $00
+01082  A7B9  15                 .BYTE $15
+01083  A7BA  9C                 .BYTE $9C
+01084  A7BB  6D                 .BYTE $6D
+01085  A7BC  9C                 .BYTE $9C
+01086  A7BD  A5                 .BYTE $A5
+01087  A7BE  69                 .BYTE $69
+01088  A7BF  29                 .BYTE $29
+01089  A7C0  53                 .BYTE $53
+01090  A7C1  84                 .BYTE $84
+01091  A7C2  13                 .BYTE $13
+01092  A7C3  34                 .BYTE $34
+01093  A7C4  11                 .BYTE $11
+01094  A7C5  A5                 .BYTE $A5
+01095  A7C6  69                 .BYTE $69
+01096  A7C7  23                 .BYTE $23
+01097  A7C8  A0                 .BYTE $A0
+01098  A7C9  D8          XXA7C9 .BYTE $D8
+01099  A7CA  62                 .BYTE $62
+01100  A7CB  5A                 .BYTE $5A
+
+
+
+
+
+
+HESMON.ASM......PAGE 0021
+
+LINE# LOC   CODE        LINE
+
+
+01101  A7CC  48                 .BYTE $48
+01102  A7CD  26                 .BYTE $26
+01103  A7CE  62                 .BYTE $62
+01104  A7CF  94                 .BYTE $94
+01105  A7D0  88                 .BYTE $88
+01106  A7D1  54                 .BYTE $54
+01107  A7D2  44                 .BYTE $44
+01108  A7D3  C8                 .BYTE $C8
+01109  A7D4  54                 .BYTE $54
+01110  A7D5  68                 .BYTE $68
+01111  A7D6  44                 .BYTE $44
+01112  A7D7  E8                 .BYTE $E8
+01113  A7D8  94                 .BYTE $94
+01114  A7D9  00                 .BYTE $00
+01115  A7DA  B4                 .BYTE $B4
+01116  A7DB  08                 .BYTE $08
+01117  A7DC  84                 .BYTE $84
+01118  A7DD  74                 .BYTE $74
+01119  A7DE  B4                 .BYTE $B4
+01120  A7DF  28                 .BYTE $28
+01121  A7E0  6E                 .BYTE $6E
+01122  A7E1  74                 .BYTE $74
+01123  A7E2  F4                 .BYTE $F4
+01124  A7E3  CC                 .BYTE $CC
+01125  A7E4  4A                 .BYTE $4A
+01126  A7E5  72                 .BYTE $72
+01127  A7E6  F2                 .BYTE $F2
+01128  A7E7  A4                 .BYTE $A4
+01129  A7E8  8A                 .BYTE $8A
+01130  A7E9  00                 .BYTE $00
+01131  A7EA  AA                 .BYTE $AA
+01132  A7EB  A2                 .BYTE $A2
+01133  A7EC  A2                 .BYTE $A2
+01134  A7ED  74                 .BYTE $74
+01135  A7EE  74                 .BYTE $74
+01136  A7EF  74                 .BYTE $74
+01137  A7F0  72                 .BYTE $72
+01138  A7F1  44                 .BYTE $44
+01139  A7F2  68                 .BYTE $68
+01140  A7F3  B2                 .BYTE $B2
+01141  A7F4  32                 .BYTE $32
+01142  A7F5  B2                 .BYTE $B2
+01143  A7F6  00                 .BYTE $00
+01144  A7F7  22                 .BYTE $22
+01145  A7F8  00                 .BYTE $00
+01146  A7F9  1A                 .BYTE $1A
+01147  A7FA  1A                 .BYTE $1A
+01148  A7FB  26                 .BYTE $26
+01149  A7FC  26                 .BYTE $26
+01150  A7FD  72                 .BYTE $72
+01151  A7FE  72                 .BYTE $72
+01152  A7FF  88                 .BYTE $88
+01153  A800  C8                 .BYTE $C8
+01154  A801  C4                 .BYTE $C4
+01155  A802  CA                 .BYTE $CA
+
+
+
+
+
+
+HESMON.ASM......PAGE 0022
+
+LINE# LOC   CODE        LINE
+
+
+01156  A803  26                 .BYTE $26
+01157  A804  48                 .BYTE $48
+01158  A805  44                 .BYTE $44
+01159  A806  44                 .BYTE $44
+01160  A807  A2                 .BYTE $A2
+01161  A808  C8                 .BYTE $C8
+01162  A809              ;********************************
+01163  A809              ;********************************
+01164  A809  0D          XXA809 .BYTE $0D
+01165  A80A  20 20              .BYTE '  PC  IRQ '
+01166  A814  12                 .BYTE $12
+01167  A815  53 52              .BYTE 'SR'
+01168  A817  92                 .BYTE $92
+01169  A818  41 43              .BYTE 'AC'
+01170  A81A  12                 .BYTE $12
+01171  A81B  58 52              .BYTE 'XR'
+01172  A81D  92                 .BYTE $92
+01173  A81E  59 52              .BYTE 'YR'
+01174  A820  12                 .BYTE $12
+01175  A821  53 50              .BYTE 'SP'
+01176  A823  41 42       XXA823 .BYTE 'ABCDEFGHILMNOPQRSTUVWX:;,+-$#'
+01177  A840              ;********************************
+01178  A840              ;********************************
+01179  A840  09          XXA840 .BYTE $09
+01180  A841  A0          XXA841 .BYTE $A0
+01181  A842  BB                 .BYTE $BB
+01182  A843  AF          XXA843 .BYTE $AF
+01183  A844  FC                 .BYTE $FC
+01184  A845  A9                 .BYTE $A9
+01185  A846  BC                 .BYTE $BC
+01186  A847  A5                 .BYTE $A5
+01187  A848  8D                 .BYTE $8D
+01188  A849  A8                 .BYTE $A8
+01189  A84A  6E                 .BYTE $6E
+01190  A84B  AA                 .BYTE $AA
+01191  A84C  6E                 .BYTE $6E
+01192  A84D  AF                 .BYTE $AF
+01193  A84E  99                 .BYTE $99
+01194  A84F  AA                 .BYTE $AA
+01195  A850  C6                 .BYTE $C6
+01196  A851  A3                 .BYTE $A3
+01197  A852  87                 .BYTE $87
+01198  A853  A4                 .BYTE $A4
+01199  A854  BB                 .BYTE $BB
+01200  A855  A3                 .BYTE $A3
+01201  A856  90                 .BYTE $90
+01202  A857  A8                 .BYTE $A8
+01203  A858  8F                 .BYTE $8F
+01204  A859  AB                 .BYTE $AB
+01205  A85A  F7                 .BYTE $F7
+01206  A85B  AB                 .BYTE $AB
+01207  A85C  5F                 .BYTE $5F
+01208  A85D  AF                 .BYTE $AF
+01209  A85E  62                 .BYTE $62
+01210  A85F  A3                 .BYTE $A3
+
+
+
+
+
+
+HESMON.ASM......PAGE 0023
+
+LINE# LOC   CODE        LINE
+
+
+01211  A860  87                 .BYTE $87
+01212  A861  A4                 .BYTE $A4
+01213  A862  FF                 .BYTE $FF
+01214  A863  A9                 .BYTE $A9
+01215  A864  09                 .BYTE $09
+01216  A865  AD                 .BYTE $AD
+01217  A866  4A                 .BYTE $4A
+01218  A867  AC                 .BYTE $AC
+01219  A868  71                 .BYTE $71
+01220  A869  AF                 .BYTE $AF
+01221  A86A  41                 .BYTE $41
+01222  A86B  AF                 .BYTE $AF
+01223  A86C  22                 .BYTE $22
+01224  A86D  A4                 .BYTE $A4
+01225  A86E  08                 .BYTE $08
+01226  A86F  A4                 .BYTE $A4
+01227  A870  25                 .BYTE $25
+01228  A871  A4                 .BYTE $A4
+01229  A872  F6                 .BYTE $F6
+01230  A873  AA                 .BYTE $AA
+01231  A874  18                 .BYTE $18
+01232  A875  AB                 .BYTE $AB
+01233  A876  2B                 .BYTE $2B
+01234  A877  AB                 .BYTE $AB
+01235  A878  40                 .BYTE $40
+01236  A879  AB                 .BYTE $AB
+01237  A87A              ;********************************
+01238  A87A  A2 53       XXA87A LDX #$53        ;'S'
+01239  A87C              ;********************************
+01240  A87C  2C                 .BYTE $2C
+01241  A87D              ;********************************
+01242  A87D  A2 00       XXA87D LDX #$00
+01243  A87F  BD D1 A6    XXA87F LDA XXA6D1,X
+01244  A882  08                 PHP 
+01245  A883  29 7F              AND #$7F
+01246  A885  20 D2 FF           JSR CHROUT
+01247  A888  E8                 INX 
+01248  A889  28                 PLP 
+01249  A88A  10 F3              BPL XXA87F
+01250  A88C  60                 RTS 
+01251  A88D              ;********************************
+01252  A88D  A9 FF              LDA #$FF
+01253  A88F              ;********************************
+01254  A88F                                     ;BIT $00A9
+01255  A88F  2C                 .BYTE $2C
+01256  A890              ;********************************
+01257  A890  A9 00              LDA #$00
+01258  A892  85 3F              STA $3F
+01259  A894  A9 00              LDA #$00
+01260  A896  8D 28 01           STA $0128
+01261  A899  20 D7 A9           JSR XXA9D7
+01262  A89C  8D 31 01           STA $0131
+01263  A89F  8E 32 01           STX $0132
+01264  A8A2  20 35 A5           JSR XXA535
+01265  A8A5  8D 2F 01           STA $012F
+
+
+
+
+
+
+HESMON.ASM......PAGE 0024
+
+LINE# LOC   CODE        LINE
+
+
+01266  A8A8  8E 30 01           STX $0130
+01267  A8AB  20 35 A5           JSR XXA535
+01268  A8AE  85 AE              STA $AE
+01269  A8B0  86 AF              STX $AF
+01270  A8B2  20 CF FF           JSR CHRIN
+01271  A8B5  C9 0D              CMP #$0D
+01272  A8B7  F0 0A              BEQ XXA8C3
+01273  A8B9  20 CF FF           JSR CHRIN
+01274  A8BC  C9 57              CMP #$57        ;'W'
+01275  A8BE  D0 03              BNE XXA8C3
+01276  A8C0  EE 28 01           INC $0128
+01277  A8C3  20 58 A1    XXA8C3 JSR XXA158
+01278  A8C6  A6 3B       XXA8C6 LDX $3B
+01279  A8C8  D0 16              BNE XXA8E0
+01280  A8CA  20 AE A2           JSR XXA2AE
+01281  A8CD  90 11              BCC XXA8E0
+01282  A8CF  AC 28 01           LDY $0128
+01283  A8D2  D0 15              BNE XXA8E9
+01284  A8D4  20 40 A6           JSR XXA640
+01285  A8D7  AA                 TAX 
+01286  A8D8  BD 89 A7           LDA XXA789,X
+01287  A8DB  D0 06              BNE XXA8E3
+01288  A8DD  20 D2 A5           JSR XXA5D2
+01289  A8E0  4C 34 A2    XXA8E0 JMP XXA234
+01290  A8E3              ;********************************
+01291  A8E3  A4 3E       XXA8E3 LDY $3E
+01292  A8E5  C0 02              CPY #$02
+01293  A8E7  D0 32              BNE XXA91B
+01294  A8E9  84 3E       XXA8E9 STY $3E
+01295  A8EB  88                 DEY 
+01296  A8EC  38                 SEC 
+01297  A8ED  B1 C1              LDA ($C1),Y
+01298  A8EF  AA                 TAX 
+01299  A8F0  ED 2F 01           SBC $012F
+01300  A8F3  C8                 INY 
+01301  A8F4  B1 C1              LDA ($C1),Y
+01302  A8F6  ED 30 01           SBC $0130
+01303  A8F9  90 20              BCC XXA91B
+01304  A8FB  88                 DEY 
+01305  A8FC  A5 AE              LDA $AE
+01306  A8FE  F1 C1              SBC ($C1),Y
+01307  A900  C8                 INY 
+01308  A901  A5 AF              LDA $AF
+01309  A903  F1 C1              SBC ($C1),Y
+01310  A905  90 14              BCC XXA91B
+01311  A907  88                 DEY 
+01312  A908  24 3F              BIT $3F
+01313  A90A  30 14              BMI XXA920
+01314  A90C  18                 CLC 
+01315  A90D  8A                 TXA 
+01316  A90E  6D 31 01           ADC $0131
+01317  A911  91 C1              STA ($C1),Y
+01318  A913  C8                 INY 
+01319  A914  B1 C1              LDA ($C1),Y
+01320  A916  6D 32 01           ADC $0132
+
+
+
+
+
+
+HESMON.ASM......PAGE 0025
+
+LINE# LOC   CODE        LINE
+
+
+01321  A919  91 C1              STA ($C1),Y
+01322  A91B  20 21 A6    XXA91B JSR XXA621
+01323  A91E  D0 A6              BNE XXA8C6
+01324  A920  AD 31 01    XXA920 LDA $0131
+01325  A923  85 BB              STA $BB
+01326  A925  AD 32 01           LDA $0132
+01327  A928  85 BC              STA $BC
+01328  A92A  88                 DEY 
+01329  A92B  10 09              BPL XXA936
+01330  A92D  8A                 TXA 
+01331  A92E  20 5F AD           JSR XXAD5F
+01332  A931  E6 3E              INC $3E
+01333  A933  AA                 TAX 
+01334  A934  A0 00              LDY #$00
+01335  A936  8A          XXA936 TXA 
+01336  A937  D1 BB       XXA937 CMP ($BB),Y
+01337  A939  D0 18              BNE XXA953
+01338  A93B  C8                 INY 
+01339  A93C  B1 BB              LDA ($BB),Y
+01340  A93E  C8                 INY 
+01341  A93F  D1 C1              CMP ($C1),Y
+01342  A941  D0 10              BNE XXA953
+01343  A943  B1 BB              LDA ($BB),Y
+01344  A945  AA                 TAX 
+01345  A946  C8                 INY 
+01346  A947  B1 BB              LDA ($BB),Y
+01347  A949  88                 DEY 
+01348  A94A  91 C1              STA ($C1),Y
+01349  A94C  88                 DEY 
+01350  A94D  8A                 TXA 
+01351  A94E  91 C1              STA ($C1),Y
+01352  A950  C8                 INY 
+01353  A951  D0 C8              BNE XXA91B
+01354  A953  A0 01       XXA953 LDY #$01
+01355  A955  B1 BB              LDA ($BB),Y
+01356  A957  88                 DEY 
+01357  A958  11 BB              ORA ($BB),Y
+01358  A95A  F0 0D              BEQ XXA969
+01359  A95C  18                 CLC 
+01360  A95D  A9 04              LDA #$04
+01361  A95F  65 BB              ADC $BB
+01362  A961  85 BB              STA $BB
+01363  A963  90 D1              BCC XXA936
+01364  A965  E6 BC              INC $BC
+01365  A967  B0 CD              BCS XXA936
+01366  A969  A0 04       XXA969 LDY #$04
+01367  A96B  91 BB              STA ($BB),Y
+01368  A96D  C8                 INY 
+01369  A96E  91 BB              STA ($BB),Y
+01370  A970  AD 28 01           LDA $0128
+01371  A973  F0 0F              BEQ XXA984
+01372  A975  A9 3F              LDA #$3F        ;'?'
+01373  A977  20 2F A5           JSR XXA52F
+01374  A97A  20 CA A9           JSR XXA9CA
+01375  A97D  20 CA A9           JSR XXA9CA
+
+
+
+
+
+
+HESMON.ASM......PAGE 0026
+
+LINE# LOC   CODE        LINE
+
+
+01376  A980  A2 07              LDX #$07
+01377  A982  D0 1F              BNE XXA9A3
+01378  A984  AD 29 01    XXA984 LDA $0129
+01379  A987  48                 PHA 
+01380  A988  AD 2A 01           LDA $012A
+01381  A98B  48                 PHA 
+01382  A98C  A9 3F              LDA #$3F        ;'?'
+01383  A98E  20 D4 A5           JSR XXA5D4
+01384  A991  68                 PLA 
+01385  A992  8D 2A 01           STA $012A
+01386  A995  68                 PLA 
+01387  A996  8D 29 01           STA $0129
+01388  A999  A9 FF              LDA #$FF
+01389  A99B  18                 CLC 
+01390  A99C  E5 3E              SBC $3E
+01391  A99E  20 27 A6           JSR XXA627
+01392  A9A1  A2 10              LDX #$10
+01393  A9A3  20 D7 CA    XXA9A3 JSR $CAD7
+01394  A9A6  A9 91              LDA #$91
+01395  A9A8  20 D2 FF    XXA9A8 JSR CHROUT
+01396  A9AB  A9 1D              LDA #$1D
+01397  A9AD  CA                 DEX 
+01398  A9AE  D0 F8              BNE XXA9A8
+01399  A9B0  A0 03              LDY #$03
+01400  A9B2  20 5E A5    XXA9B2 JSR XXA55E
+01401  A9B5  90 FB              BCC XXA9B2
+01402  A9B7  91 BB              STA ($BB),Y
+01403  A9B9  88                 DEY 
+01404  A9BA  C0 02              CPY #$02
+01405  A9BC  F0 F4              BEQ XXA9B2
+01406  A9BE  C8                 INY 
+01407  A9BF  B1 C1       XXA9BF LDA ($C1),Y
+01408  A9C1  AA                 TAX 
+01409  A9C2  88                 DEY 
+01410  A9C3  91 BB              STA ($BB),Y
+01411  A9C5  D0 F8              BNE XXA9BF
+01412  A9C7  4C 37 A9           JMP XXA937
+01413  A9CA              ;********************************
+01414  A9CA  A0 02       XXA9CA LDY #$02
+01415  A9CC  B1 C1       XXA9CC LDA ($C1),Y
+01416  A9CE  20 0F A5           JSR XXA50F
+01417  A9D1  88                 DEY 
+01418  A9D2  D0 F8              BNE XXA9CC
+01419  A9D4  4C 3F CB           JMP $CB3F
+01420  A9D7              ;********************************
+01421  A9D7  20 F2 A2    XXA9D7 JSR XXA2F2
+01422  A9DA  90 1D              BCC XXA9F9
+01423  A9DC  20 35 A5           JSR XXA535
+01424  A9DF  90 18              BCC XXA9F9
+01425  A9E1  8D 29 01           STA $0129
+01426  A9E4  8E 2A 01           STX $012A
+01427  A9E7  EC 41 A8           CPX XXA841
+01428  A9EA  90 07              BCC XXA9F3
+01429  A9EC  AE 43 A8           LDX XXA843
+01430  A9EF  E4 C4              CPX $C4
+
+
+
+
+
+
+HESMON.ASM......PAGE 0027
+
+LINE# LOC   CODE        LINE
+
+
+01431  A9F1  B0 03              BCS XXA9F6
+01432  A9F3  4C FC A2    XXA9F3 JMP XXA2FC
+01433  A9F6              ;********************************
+01434  A9F6  20 C7 A5    XXA9F6 JSR XXA5C7
+01435  A9F9  4C B6 A5    XXA9F9 JMP XXA5B6
+01436  A9FC              ;********************************
+01437  A9FC  A9 00              LDA #$00
+01438  A9FE              ;********************************
+01439  A9FE                                     ;BIT $01A9
+01440  A9FE  2C                 .BYTE $2C
+01441  A9FF  A9 01              LDA #$01
+01442  AA01              ;********************************
+01443  AA01  8D 28 01           STA $0128
+01444  AA04  20 D7 A9           JSR XXA9D7
+01445  AA07  20 D7 CA           JSR $CAD7
+01446  AA0A  20 B7 A2           JSR XXA2B7
+01447  AA0D  20 58 A1           JSR XXA158
+01448  AA10  90 17              BCC XXAA29
+01449  AA12  20 AE A2    XXAA12 JSR XXA2AE
+01450  AA15  90 54              BCC XXAA6B
+01451  AA17  20 50 AA           JSR XXAA50
+01452  AA1A  E6 C3              INC $C3
+01453  AA1C  D0 02              BNE XXAA20
+01454  AA1E  E6 C4              INC $C4
+01455  AA20  A5 3B       XXAA20 LDA $3B
+01456  AA22  D0 47              BNE XXAA6B
+01457  AA24  20 27 A6           JSR XXA627
+01458  AA27  D0 E9              BNE XXAA12
+01459  AA29  20 AE A2    XXAA29 JSR XXA2AE
+01460  AA2C  18                 CLC 
+01461  AA2D  AD 2D 01           LDA $012D
+01462  AA30  65 C3              ADC $C3
+01463  AA32  85 C3              STA $C3
+01464  AA34  98                 TYA 
+01465  AA35  65 C4              ADC $C4
+01466  AA37  85 C4              STA $C4
+01467  AA39  20 70 AD           JSR XXAD70
+01468  AA3C  20 50 AA    XXAA3C JSR XXAA50
+01469  AA3F  20 AE A2           JSR XXA2AE
+01470  AA42  B0 27              BCS XXAA6B
+01471  AA44  20 5C AD           JSR XXAD5C
+01472  AA47  20 5F AD           JSR XXAD5F
+01473  AA4A  A4 3B              LDY $3B
+01474  AA4C  D0 1D              BNE XXAA6B
+01475  AA4E  F0 EC              BEQ XXAA3C
+01476  AA50  A2 00       XXAA50 LDX #$00
+01477  AA52  A1 C1              LDA ($C1,X)
+01478  AA54  AC 28 01           LDY $0128
+01479  AA57  F0 02              BEQ XXAA5B
+01480  AA59  81 C3              STA ($C3,X)
+01481  AA5B  C1 C3       XXAA5B CMP ($C3,X)
+01482  AA5D  F0 0B              BEQ XXAA6A
+01483  AA5F  20 F7 A4    XXAA5F JSR XXA4F7
+01484  AA62  20 3F CB           JSR $CB3F
+01485  AA65  20 70 F7           JSR $F770
+
+
+
+
+
+
+HESMON.ASM......PAGE 0028
+
+LINE# LOC   CODE        LINE
+
+
+01486  AA68  F0 01              BEQ XXAA6B
+01487  AA6A  60          XXAA6A RTS 
+01488  AA6B              ;********************************
+01489  AA6B  4C 34 A2    XXAA6B JMP XXA234
+01490  AA6E              ;********************************
+01491  AA6E  20 EB A2           JSR XXA2EB
+01492  AA71  20 9F A5           JSR XXA59F
+01493  AA74  20 5E A5           JSR XXA55E
+01494  AA77  90 1D              BCC XXAA96
+01495  AA79  8D 28 01           STA $0128
+01496  AA7C  A6 3B       XXAA7C LDX $3B
+01497  AA7E  D0 EB              BNE XXAA6B
+01498  AA80  20 B7 A2           JSR XXA2B7
+01499  AA83  90 E6              BCC XXAA6B
+01500  AA85  AD 28 01           LDA $0128
+01501  AA88  81 C1              STA ($C1,X)
+01502  AA8A  C1 C1              CMP ($C1,X)
+01503  AA8C  F0 03              BEQ XXAA91
+01504  AA8E  20 5F AA           JSR XXAA5F
+01505  AA91  20 25 A6    XXAA91 JSR XXA625
+01506  AA94  D0 E6              BNE XXAA7C
+01507  AA96  4C B6 A5    XXAA96 JMP XXA5B6
+01508  AA99              ;********************************
+01509  AA99  20 EB A2           JSR XXA2EB
+01510  AA9C  A2 00              LDX #$00
+01511  AA9E  20 9F A5    XXAA9E JSR XXA59F
+01512  AAA1  C9 20              CMP #$20        ;' '
+01513  AAA3  F0 F9              BEQ XXAA9E
+01514  AAA5  A8                 TAY 
+01515  AAA6  C9 22              CMP #$22        ;'"'
+01516  AAA8  F0 10              BEQ XXAABA
+01517  AAAA  8E 00 01           STX $0100
+01518  AAAD  20 77 A5           JSR XXA577
+01519  AAB0  90 E4              BCC XXAA96
+01520  AAB2  9D 00 02    XXAAB2 STA $0200,X
+01521  AAB5  E8                 INX 
+01522  AAB6  E0 20              CPX #$20        ;' '
+01523  AAB8  B0 14              BCS XXAACE
+01524  AABA  20 CF FF    XXAABA JSR CHRIN
+01525  AABD  C9 0D              CMP #$0D
+01526  AABF  F0 0D              BEQ XXAACE
+01527  AAC1  C9 22              CMP #$22        ;'"'
+01528  AAC3  F0 09              BEQ XXAACE
+01529  AAC5  C0 22              CPY #$22        ;'"'
+01530  AAC7  F0 E9              BEQ XXAAB2
+01531  AAC9  20 5E A5           JSR XXA55E
+01532  AACC  B0 E4              BCS XXAAB2
+01533  AACE  86 3C       XXAACE STX $3C
+01534  AAD0  20 D7 CA           JSR $CAD7
+01535  AAD3  A2 00       XXAAD3 LDX #$00
+01536  AAD5  A0 00              LDY #$00
+01537  AAD7  B1 C1       XXAAD7 LDA ($C1),Y
+01538  AAD9  DD 00 02           CMP $0200,X
+01539  AADC  D0 09              BNE XXAAE7
+01540  AADE  C8                 INY 
+
+
+
+
+
+
+HESMON.ASM......PAGE 0029
+
+LINE# LOC   CODE        LINE
+
+
+01541  AADF  E8                 INX 
+01542  AAE0  E4 3C              CPX $3C
+01543  AAE2  D0 F3              BNE XXAAD7
+01544  AAE4  20 5F AA           JSR XXAA5F
+01545  AAE7  20 25 A6    XXAAE7 JSR XXA625
+01546  AAEA  A4 3B              LDY $3B
+01547  AAEC  D0 05              BNE XXAAF3
+01548  AAEE  20 B7 A2           JSR XXA2B7
+01549  AAF1  B0 E0              BCS XXAAD3
+01550  AAF3  4C 34 A2    XXAAF3 JMP XXA234
+01551  AAF6              ;********************************
+01552  AAF6  20 EB A2           JSR XXA2EB
+01553  AAF9  18                 CLC 
+01554  AAFA  A5 C3              LDA $C3
+01555  AAFC  65 C1              ADC $C1
+01556  AAFE  85 C1              STA $C1
+01557  AB00  A5 C4              LDA $C4
+01558  AB02  65 C2              ADC $C2
+01559  AB04  85 C2              STA $C2
+01560  AB06  20 3F CB    XXAB06 JSR $CB3F
+01561  AB09  A2 3D              LDX #$3D        ;'='
+01562  AB0B  A9 24              LDA #$24        ;'$'
+01563  AB0D  20 26 A5           JSR XXA526
+01564  AB10  20 08 A5           JSR XXA508
+01565  AB13  A6 C2              LDX $C2
+01566  AB15  4C 2E AB           JMP XXAB2E
+01567  AB18              ;********************************
+01568  AB18  20 EB A2           JSR XXA2EB
+01569  AB1B  20 58 A1           JSR XXA158
+01570  AB1E  20 B7 A2    XXAB1E JSR XXA2B7
+01571  AB21  84 C2              STY $C2
+01572  AB23  AD 2D 01           LDA $012D
+01573  AB26  85 C1              STA $C1
+01574  AB28  4C 06 AB           JMP XXAB06
+01575  AB2B              ;********************************
+01576  AB2B  20 04 A3           JSR XXA304
+01577  AB2E  20 3F CB    XXAB2E JSR $CB3F
+01578  AB31  8A                 TXA 
+01579  AB32  A6 C1              LDX $C1
+01580  AB34  20 CD DD           JSR $DDCD
+01581  AB37  4C 34 A2           JMP XXA234
+01582  AB3A              ;********************************
+01583  AB3A  A5 3A       XXAB3A LDA $3A
+01584  AB3C  F0 C8              BEQ XXAB06
+01585  AB3E  D0 DE              BNE XXAB1E
+01586  AB40  A9 00              LDA #$00
+01587  AB42  85 C1              STA $C1
+01588  AB44  85 C2              STA $C2
+01589  AB46  85 C3              STA $C3
+01590  AB48  85 C4              STA $C4
+01591  AB4A  85 3A              STA $3A
+01592  AB4C  20 CF FF    XXAB4C JSR CHRIN
+01593  AB4F  C9 0D              CMP #$0D
+01594  AB51  F0 E7              BEQ XXAB3A
+01595  AB53  C9 2D              CMP #$2D        ;'-'
+
+
+
+
+
+
+HESMON.ASM......PAGE 0030
+
+LINE# LOC   CODE        LINE
+
+
+01596  AB55  D0 06              BNE XXAB5D
+01597  AB57  48                 PHA 
+01598  AB58  45 3A              EOR $3A
+01599  AB5A  85 3A              STA $3A
+01600  AB5C  68                 PLA 
+01601  AB5D  C9 30       XXAB5D CMP #$30        ;'0'
+01602  AB5F  90 EB              BCC XXAB4C
+01603  AB61  C9 3A              CMP #$3A        ;':'
+01604  AB63  B0 D5              BCS XXAB3A
+01605  AB65  E9 2F              SBC #$2F        ;'/'
+01606  AB67  85 3B              STA $3B
+01607  AB69  A5 C2              LDA $C2
+01608  AB6B  85 C3              STA $C3
+01609  AB6D  A5 C1              LDA $C1
+01610  AB6F  0A                 ASL A
+01611  AB70  26 C3              ROL $C3
+01612  AB72  0A                 ASL A
+01613  AB73  26 C3              ROL $C3
+01614  AB75  65 C1              ADC $C1
+01615  AB77  85 C1              STA $C1
+01616  AB79  A5 C3              LDA $C3
+01617  AB7B  65 C2              ADC $C2
+01618  AB7D  85 C2              STA $C2
+01619  AB7F              ;********************************
+01620  AB7F              ;.END
+01621  AB7F              ;*=$AB7F
+01622  AB7F              ;********************************
+01623  AB7F  06 C1              ASL $C1
+01624  AB81  26 C2              ROL $C2
+01625  AB83  A5 C1              LDA $C1
+01626  AB85  65 3B              ADC $3B
+01627  AB87  85 C1              STA $C1
+01628  AB89  90 C1              BCC XXAB4C
+01629  AB8B  E6 C2              INC $C2
+01630  AB8D  B0 BD              BCS XXAB4C
+01631  AB8F  20 95 AB           JSR XXAB95
+01632  AB92  4C 34 A2           JMP XXA234
+01633  AB95              ;********************************
+01634  AB95  A9 00       XXAB95 LDA #$00
+01635  AB97  8D 00 01           STA $0100
+01636  AB9A  20 CF FF           JSR CHRIN
+01637  AB9D  C9 0D              CMP #$0D
+01638  AB9F  D0 0D              BNE XXABAE
+01639  ABA1  A6 13              LDX $13
+01640  ABA3  D0 1C              BNE XXABC1
+01641  ABA5  8D 77 02           STA $0277
+01642  ABA8  E6 C6              INC $C6
+01643  ABAA  A9 04              LDA #$04
+01644  ABAC  D0 0A              BNE XXABB8
+01645  ABAE  20 66 A5    XXABAE JSR XXA566
+01646  ABB1  C9 04              CMP #$04
+01647  ABB3  B0 03              BCS XXABB8
+01648  ABB5  4C B6 A5    XXABB5 JMP XXA5B6
+01649  ABB8              ;********************************
+01650  ABB8  AA          XXABB8 TAX 
+
+
+
+
+
+
+HESMON.ASM......PAGE 0031
+
+LINE# LOC   CODE        LINE
+
+
+01651  ABB9  29 7F              AND #$7F
+01652  ABBB  C9 3F              CMP #$3F        ;'?'
+01653  ABBD  90 0F              BCC XXABCE
+01654  ABBF  D0 F4              BNE XXABB5
+01655  ABC1  A5 B8       XXABC1 LDA $B8
+01656  ABC3  20 C3 FF           JSR CLOSE
+01657  ABC6  20 CC FF           JSR CLRCHN
+01658  ABC9  85 13              STA $13
+01659  ABCB  4C 34 A2           JMP XXA234
+01660  ABCE              ;********************************
+01661  ABCE  85 BA       XXABCE STA $BA
+01662  ABD0  86 B8              STX $B8
+01663  ABD2  86 13              STX $13
+01664  ABD4  A2 FF              LDX #$FF
+01665  ABD6  86 B9              STX $B9
+01666  ABD8  E8                 INX 
+01667  ABD9  86 B7              STX $B7
+01668  ABDB  20 CF FF           JSR CHRIN
+01669  ABDE  C9 0D              CMP #$0D
+01670  ABE0  F0 08              BEQ XXABEA
+01671  ABE2  20 5E A5           JSR XXA55E
+01672  ABE5  85 B9              STA $B9
+01673  ABE7  20 50 A4           JSR XXA450
+01674  ABEA  A5 B8       XXABEA LDA $B8
+01675  ABEC  20 C3 FF           JSR CLOSE
+01676  ABEF  20 C0 FF           JSR OPEN
+01677  ABF2  A6 B8              LDX $B8
+01678  ABF4  4C C9 FF           JMP CHKOUT
+01679  ABF7              ;********************************
+01680  ABF7  20 95 AB           JSR XXAB95
+01681  ABFA  AD 88 02           LDA $0288
+01682  ABFD  85 C2              STA $C2
+01683  ABFF  A2 16              LDX #$16
+01684  AC01  A9 00              LDA #$00
+01685  AC03  85 C1              STA $C1
+01686  AC05  A0 00       XXAC05 LDY #$00
+01687  AC07  B1 C1       XXAC07 LDA ($C1),Y
+01688  AC09  20 23 AC           JSR XXAC23
+01689  AC0C  C8                 INY 
+01690  AC0D  C0 16              CPY #$16
+01691  AC0F  90 F6              BCC XXAC07
+01692  AC11  20 D7 CA           JSR $CAD7
+01693  AC14  CA                 DEX 
+01694  AC15  30 AA              BMI XXABC1
+01695  AC17  98                 TYA 
+01696  AC18  18                 CLC 
+01697  AC19  65 C1              ADC $C1
+01698  AC1B  85 C1              STA $C1
+01699  AC1D  90 E6              BCC XXAC05
+01700  AC1F  E6 C2              INC $C2
+01701  AC21  D0 E2              BNE XXAC05
+01702  AC23  08          XXAC23 PHP 
+01703  AC24  29 7F              AND #$7F
+01704  AC26  C9 40              CMP #$40        ;'@'
+01705  AC28  90 02              BCC XXAC2C
+
+
+
+
+
+
+HESMON.ASM......PAGE 0032
+
+LINE# LOC   CODE        LINE
+
+
+01706  AC2A  09 80              ORA #$80
+01707  AC2C  C9 20       XXAC2C CMP #$20        ;' '
+01708  AC2E  B0 02              BCS XXAC32
+01709  AC30  69 40              ADC #$40        ;'@'
+01710  AC32  C9 22       XXAC32 CMP #$22        ;'"'
+01711  AC34  D0 02              BNE XXAC38
+01712  AC36  A9 27              LDA #$27        ;'''
+01713  AC38  28          XXAC38 PLP 
+01714  AC39  10 0C              BPL XXAC47
+01715  AC3B  48                 PHA 
+01716  AC3C  A9 12              LDA #$12
+01717  AC3E  20 D2 FF           JSR CHROUT
+01718  AC41  68                 PLA 
+01719  AC42  20 D2 FF           JSR CHROUT
+01720  AC45  A9 92              LDA #$92
+01721  AC47  4C D2 FF    XXAC47 JMP CHROUT
+01722  AC4A              ;********************************
+01723  AC4A  20 EB A2           JSR XXA2EB
+01724  AC4D  A5 C1              LDA $C1
+01725  AC4F  8D 29 01           STA $0129
+01726  AC52  A5 C2              LDA $C2
+01727  AC54  8D 2A 01           STA $012A
+01728  AC57  20 70 F7    XXAC57 JSR $F770
+01729  AC5A  D0 03              BNE XXAC5F
+01730  AC5C  4C 34 A2           JMP XXA234
+01731  AC5F              ;********************************
+01732  AC5F  A9 E6       XXAC5F LDA #$E6
+01733  AC61  A2 30              LDX #$30        ;'0'
+01734  AC63  20 43 AD           JSR XXAD43
+01735  AC66  A9 2E              LDA #$2E        ;'.'
+01736  AC68  20 42 E7           JSR $E742
+01737  AC6B  A9 00              LDA #$00
+01738  AC6D  A8                 TAY 
+01739  AC6E  85 39       XXAC6E STA $39
+01740  AC70  A2 02              LDX #$02
+01741  AC72  86 3A              STX $3A
+01742  AC74  20 EE AC    XXAC74 JSR XXACEE
+01743  AC77  A5 39              LDA $39
+01744  AC79  49 FF              EOR #$FF
+01745  AC7B  85 3C              STA $3C
+01746  AC7D  91 C1       XXAC7D STA ($C1),Y
+01747  AC7F  20 FB AC           JSR XXACFB
+01748  AC82  B0 F9              BCS XXAC7D
+01749  AC84  20 EE AC           JSR XXACEE
+01750  AC87  A5 39       XXAC87 LDA $39
+01751  AC89  CA                 DEX 
+01752  AC8A  10 04              BPL XXAC90
+01753  AC8C  91 C1              STA ($C1),Y
+01754  AC8E  A2 02              LDX #$02
+01755  AC90  20 FB AC    XXAC90 JSR XXACFB
+01756  AC93  B0 F2              BCS XXAC87
+01757  AC95  20 EE AC           JSR XXACEE
+01758  AC98  A5 3C       XXAC98 LDA $3C
+01759  AC9A  CA                 DEX 
+01760  AC9B  10 04              BPL XXACA1
+
+
+
+
+
+
+HESMON.ASM......PAGE 0033
+
+LINE# LOC   CODE        LINE
+
+
+01761  AC9D  A2 02              LDX #$02
+01762  AC9F  A5 39              LDA $39
+01763  ACA1  D1 C1       XXACA1 CMP ($C1),Y
+01764  ACA3  F0 06              BEQ XXACAB
+01765  ACA5  20 BC AC           JSR XXACBC
+01766  ACA8  20 C6 AC           JSR XXACC6
+01767  ACAB  20 FB AC    XXACAB JSR XXACFB
+01768  ACAE  B0 E8              BCS XXAC98
+01769  ACB0  C6 3A              DEC $3A
+01770  ACB2  10 C0              BPL XXAC74
+01771  ACB4  A5 39              LDA $39
+01772  ACB6  49 FF              EOR #$FF
+01773  ACB8  30 B4              BMI XXAC6E
+01774  ACBA  10 9B              BPL XXAC57
+01775  ACBC  48          XXACBC PHA 
+01776  ACBD  8A                 TXA 
+01777  ACBE  48                 PHA 
+01778  ACBF  20 5F AA           JSR XXAA5F
+01779  ACC2  68                 PLA 
+01780  ACC3  AA                 TAX 
+01781  ACC4  68                 PLA 
+01782  ACC5  60                 RTS 
+01783  ACC6              ;********************************
+01784  ACC6  48          XXACC6 PHA 
+01785  ACC7  51 C1              EOR ($C1),Y
+01786  ACC9  85 3D              STA $3D
+01787  ACCB  A0 08              LDY #$08
+01788  ACCD  06 3D       XXACCD ASL $3D
+01789  ACCF  90 05              BCC XXACD6
+01790  ACD1  A9 12              LDA #$12
+01791  ACD3  20 D2 FF           JSR CHROUT
+01792  ACD6  68          XXACD6 PLA 
+01793  ACD7  0A                 ASL A
+01794  ACD8  48                 PHA 
+01795  ACD9  A9 30              LDA #$30        ;'0'
+01796  ACDB  90 02              BCC XXACDF
+01797  ACDD  A9 31              LDA #$31        ;'1'
+01798  ACDF  20 D2 FF    XXACDF JSR CHROUT
+01799  ACE2  A9 92              LDA #$92
+01800  ACE4  20 D2 FF           JSR CHROUT
+01801  ACE7  88                 DEY 
+01802  ACE8  D0 E3              BNE XXACCD
+01803  ACEA  68                 PLA 
+01804  ACEB  4C D7 CA           JMP $CAD7
+01805  ACEE              ;********************************
+01806  ACEE  AD 29 01    XXACEE LDA $0129
+01807  ACF1  85 C1              STA $C1
+01808  ACF3  AD 2A 01           LDA $012A
+01809  ACF6  85 C2              STA $C2
+01810  ACF8  A6 3A              LDX $3A
+01811  ACFA  60                 RTS 
+01812  ACFB              ;********************************
+01813  ACFB  E6 C1       XXACFB INC $C1
+01814  ACFD  D0 02              BNE XXAD01
+01815  ACFF  E6 C2              INC $C2
+
+
+
+
+
+
+HESMON.ASM......PAGE 0034
+
+LINE# LOC   CODE        LINE
+
+
+01816  AD01  48          XXAD01 PHA 
+01817  AD02  20 B7 A2           JSR XXA2B7
+01818  AD05  68                 PLA 
+01819  AD06  A0 00              LDY #$00
+01820  AD08  60                 RTS 
+01821  AD09              ;********************************
+01822  AD09  A2 0F              LDX #$0F
+01823  AD0B  20 31 AD    XXAD0B JSR XXAD31
+01824  AD0E  8A          XXAD0E TXA 
+01825  AD0F  91 C1              STA ($C1),Y
+01826  AD11  20 FB AC           JSR XXACFB
+01827  AD14  B0 F8              BCS XXAD0E
+01828  AD16  20 31 AD           JSR XXAD31
+01829  AD19  8A          XXAD19 TXA 
+01830  AD1A  51 C1              EOR ($C1),Y
+01831  AD1C  29 0F              AND #$0F
+01832  AD1E  F0 03              BEQ XXAD23
+01833  AD20  20 BC AC           JSR XXACBC
+01834  AD23  20 FB AC    XXAD23 JSR XXACFB
+01835  AD26  B0 F1              BCS XXAD19
+01836  AD28  CA                 DEX 
+01837  AD29  10 E0              BPL XXAD0B
+01838  AD2B  20 7A A8           JSR XXA87A
+01839  AD2E  4C 34 A2           JMP XXA234
+01840  AD31              ;********************************
+01841  AD31  A0 FF       XXAD31 LDY #$FF
+01842  AD33  84 C3              STY $C3
+01843  AD35  C8                 INY 
+01844  AD36  84 C1              STY $C1
+01845  AD38  A9 94              LDA #$94
+01846  AD3A  85 C2              STA $C2
+01847  AD3C  A9 97              LDA #$97
+01848  AD3E  85 C4              STA $C4
+01849  AD40  60                 RTS 
+01850  AD41              ;********************************
+01851  AD41  A2 60              LDX #$60
+01852  AD43  8D 0B 90    XXAD43 STA $900B
+01853  AD46  A9 0F              LDA #$0F
+01854  AD48  8D 0E 90           STA $900E
+01855  AD4B  A0 00       XXAD4B LDY #$00
+01856  AD4D  88          XXAD4D DEY 
+01857  AD4E  D0 FD              BNE XXAD4D
+01858  AD50  CA                 DEX 
+01859  AD51  D0 F8              BNE XXAD4B
+01860  AD53  A9 00              LDA #$00
+01861  AD55  8D 0E 90           STA $900E
+01862  AD58  8D 0B 90           STA $900B
+01863  AD5B  60                 RTS 
+01864  AD5C              ;********************************
+01865  AD5C  A2 02       XXAD5C LDX #$02
+01866  AD5E              ;********************************
+01867  AD5E  2C                 .BYTE $2C
+01868  AD5F              ;********************************
+01869  AD5F  A2 00       XXAD5F LDX #$00
+01870  AD61  B4 C1              LDY $C1,X
+
+
+
+
+
+
+HESMON.ASM......PAGE 0035
+
+LINE# LOC   CODE        LINE
+
+
+01871  AD63  D0 08              BNE XXAD6D
+01872  AD65  B4 C2              LDY $C2,X
+01873  AD67  D0 02              BNE XXAD6B
+01874  AD69  E6 3B              INC $3B
+01875  AD6B  D6 C2       XXAD6B DEC $C2,X
+01876  AD6D  D6 C1       XXAD6D DEC $C1,X
+01877  AD6F  60                 RTS 
+01878  AD70              ;********************************
+01879  AD70  A2 02       XXAD70 LDX #$02
+01880  AD72  B5 C0       XXAD72 LDA $C0,X
+01881  AD74  48                 PHA 
+01882  AD75  BD 28 01           LDA $0128,X
+01883  AD78  95 C0              STA $C0,X
+01884  AD7A  68                 PLA 
+01885  AD7B  9D 28 01           STA $0128,X
+01886  AD7E  CA                 DEX 
+01887  AD7F  D0 F1              BNE XXAD72
+01888  AD81  60                 RTS 
+01889  AD82              ;********************************
+01890  AD82  20 88 AD    XXAD82 JSR XXAD88
+01891  AD85  20 42 E7           JSR $E742
+01892  AD88  48          XXAD88 PHA 
+01893  AD89  BA                 TSX 
+01894  AD8A  BD 02 01           LDA $0102,X
+01895  AD8D  85 3F              STA $3F
+01896  AD8F  BD 03 01           LDA $0103,X
+01897  AD92  85 40              STA $40
+01898  AD94  A0 01              LDY #$01
+01899  AD96  A9 02              LDA #$02
+01900  AD98  91 3F              STA ($3F),Y
+01901  AD9A  D1 3F              CMP ($3F),Y
+01902  AD9C  D0 05              BNE XXADA3
+01903  AD9E  A2 56              LDX #$56        ;'V'
+01904  ADA0  4C 7F A8           JMP XXA87F
+01905  ADA3              ;********************************
+01906  ADA3  A4 D3       XXADA3 LDY $D3
+01907  ADA5  B1 D1              LDA ($D1),Y
+01908  ADA7  49 80              EOR #$80
+01909  ADA9  91 D1              STA ($D1),Y
+01910  ADAB  20 B2 EA           JSR $EAB2
+01911  ADAE  B1 F3              LDA ($F3),Y
+01912  ADB0  AE 87 02           LDX $0287
+01913  ADB3  8D 87 02           STA $0287
+01914  ADB6  8A                 TXA 
+01915  ADB7  91 F3              STA ($F3),Y
+01916  ADB9  68                 PLA 
+01917  ADBA  60                 RTS 
+01918  ADBB              ;********************************
+01919  ADBB  20 C7 A5    XXADBB JSR XXA5C7
+01920  ADBE  8D 77 02           STA $0277
+01921  ADC1  20 CD A5           JSR XXA5CD
+01922  ADC4  A9 01              LDA #$01
+01923  ADC6  85 C6              STA $C6
+01924  ADC8  4C CF FF           JMP CHRIN
+01925  ADCB              ;********************************
+
+
+
+
+
+
+HESMON.ASM......PAGE 0036
+
+LINE# LOC   CODE        LINE
+
+
+01926  ADCB  20 CC FF           JSR CLRCHN
+01927  ADCE  D8                 CLD 
+01928  ADCF  68                 PLA 
+01929  ADD0  8D 25 01           STA $0125
+01930  ADD3  68                 PLA 
+01931  ADD4  8D 24 01           STA $0124
+01932  ADD7  68                 PLA 
+01933  ADD8  8D 23 01           STA $0123
+01934  ADDB  68                 PLA 
+01935  ADDC  8D 22 01           STA $0122
+01936  ADDF  68                 PLA 
+01937  ADE0  18                 CLC 
+01938  ADE1  69 FF              ADC #$FF
+01939  ADE3  8D 20 01           STA $0120
+01940  ADE6  68                 PLA 
+01941  ADE7  69 FF              ADC #$FF
+01942  ADE9  8D 21 01           STA $0121
+01943  ADEC  A9 42              LDA #$42        ;'B'
+01944  ADEE  D0 79              BNE XXAE69
+01945  ADF0              ;********************************
+01946  ADF0              ; 
+01947  ADF0              ;********************************
+01948  ADF0  A9 FF       XXADF0 LDA #$FF
+01949  ADF2  48                 PHA 
+01950  ADF3  48                 PHA 
+01951  ADF4  A9 00              LDA #$00
+01952  ADF6  8D 27 01           STA $0127
+01953  ADF9  8D 23 01           STA $0123
+01954  ADFC  08                 PHP 
+01955  ADFD  68                 PLA 
+01956  ADFE  29 EF              AND #$EF
+01957  AE00  8D 22 01           STA $0122
+01958  AE03  8E 24 01           STX $0124
+01959  AE06  8C 25 01           STY $0125
+01960  AE09  68                 PLA 
+01961  AE0A  18                 CLC 
+01962  AE0B  69 01              ADC #$01
+01963  AE0D  8D 20 01           STA $0120
+01964  AE10  68                 PLA 
+01965  AE11  69 00              ADC #$00
+01966  AE13  8D 21 01           STA $0121
+01967  AE16  AC 27 01           LDY $0127
+01968  AE19  10 03              BPL XXAE1E
+01969  AE1B  4C B0 AE           JMP XXAEB0
+01970  AE1E              ;********************************
+01971  AE1E  20 8D FD    XXAE1E JSR $FD8D
+01972  AE21  20 52 FD    XXAE21 JSR $FD52
+01973  AE24  78                 SEI 
+01974  AE25  20 F9 FD           JSR $FDF9
+01975  AE28  A9 02              LDA #$02
+01976  AE2A  8D 1E 91           STA $911E
+01977  AE2D  58                 CLI 
+01978  AE2E  20 18 E5           JSR $E518
+01979  AE31  AD 27 01           LDA $0127
+01980  AE34  D0 09              BNE XXAE3F
+
+
+
+
+
+
+HESMON.ASM......PAGE 0037
+
+LINE# LOC   CODE        LINE
+
+
+01981  AE36  20 5B E4           JSR $E45B
+01982  AE39  20 A4 E3           JSR $E3A4
+01983  AE3C  A2 FA              LDX #$FA
+01984  AE3E  9A                 TXS 
+01985  AE3F  A9 CB       XXAE3F LDA #$CB
+01986  AE41  8D 16 03           STA $0316
+01987  AE44  A9 AD              LDA #$AD
+01988  AE46  8D 17 03           STA $0317
+01989  AE49  A9 82              LDA #$82
+01990  AE4B  8D 18 03           STA $0318
+01991  AE4E  A9 AE              LDA #$AE
+01992  AE50  8D 19 03           STA $0319
+01993  AE53  A9 19              LDA #$19
+01994  AE55  8D 0F 90           STA $900F
+01995  AE58  A9 04              LDA #$04
+01996  AE5A  8D 86 02           STA $0286
+01997  AE5D  A9 53              LDA #$53        ;'S'
+01998  AE5F  AC 27 01           LDY $0127
+01999  AE62  D0 05              BNE XXAE69
+02000  AE64  20 7D A8           JSR XXA87D
+02001  AE67  A9 43              LDA #$43        ;'C'
+02002  AE69  20 D5 AF    XXAE69 JSR XXAFD5
+02003  AE6C  85 3A              STA $3A
+02004  AE6E  BA                 TSX 
+02005  AE6F  8E 26 01           STX $0126
+02006  AE72  58                 CLI 
+02007  AE73  20 D7 CA           JSR $CAD7
+02008  AE76  A6 3A              LDX $3A
+02009  AE78  A9 2A              LDA #$2A        ;'*'
+02010  AE7A  20 26 A5           JSR XXA526
+02011  AE7D  A9 52              LDA #$52        ;'R'
+02012  AE7F  4C 7F A2           JMP XXA27F
+02013  AE82              ;********************************
+02014  AE82  48                 PHA 
+02015  AE83  8A                 TXA 
+02016  AE84  48                 PHA 
+02017  AE85  98                 TYA 
+02018  AE86  48                 PHA 
+02019  AE87              ;********************************
+02020  AE87              ;
+02021  AE87              ;********************************
+02022  AE87  AD 1D 91    XXAE87 LDA $911D
+02023  AE8A  30 03              BMI XXAE8F
+02024  AE8C  4C 56 FF    XXAE8C JMP $FF56
+02025  AE8F              ;********************************
+02026  AE8F  2C 11 91    XXAE8F BIT $9111
+02027  AE92  29 22              AND #$22        ;'"'
+02028  AE94  F0 F6              BEQ XXAE8C
+02029  AE96  A8                 TAY 
+02030  AE97  D8                 CLD 
+02031  AE98  68                 PLA 
+02032  AE99  8D 25 01           STA $0125
+02033  AE9C  68                 PLA 
+02034  AE9D  8D 24 01           STA $0124
+02035  AEA0  68                 PLA 
+
+
+
+
+
+
+HESMON.ASM......PAGE 0038
+
+LINE# LOC   CODE        LINE
+
+
+02036  AEA1  8D 23 01           STA $0123
+02037  AEA4  68                 PLA 
+02038  AEA5  8D 22 01           STA $0122
+02039  AEA8  68                 PLA 
+02040  AEA9  8D 20 01           STA $0120
+02041  AEAC  68                 PLA 
+02042  AEAD  8D 21 01           STA $0121
+02043  AEB0  BA          XXAEB0 TSX 
+02044  AEB1  8E 26 01           STX $0126
+02045  AEB4  A9 22              LDA #$22        ;'"'
+02046  AEB6  8D 1E 91           STA $911E
+02047  AEB9  58                 CLI 
+02048  AEBA  98                 TYA 
+02049  AEBB  29 02              AND #$02
+02050  AEBD  F0 06              BEQ XXAEC5
+02051  AEBF  8D 27 01           STA $0127
+02052  AEC2  4C 21 AE           JMP XXAE21
+02053  AEC5              ;********************************
+02054  AEC5  20 D5 AF    XXAEC5 JSR XXAFD5
+02055  AEC8  2C 27 01           BIT $0127
+02056  AECB  50 25              BVC XXAEF2
+02057  AECD  AD 21 01           LDA $0121
+02058  AED0  CD 34 01           CMP $0134
+02059  AED3  D0 15              BNE XXAEEA
+02060  AED5  AD 20 01           LDA $0120
+02061  AED8  CD 33 01           CMP $0133
+02062  AEDB  D0 0D              BNE XXAEEA
+02063  AEDD  AD 2B 01           LDA $012B
+02064  AEE0  D0 05              BNE XXAEE7
+02065  AEE2  CE 2C 01           DEC $012C
+02066  AEE5  30 06              BMI XXAEED
+02067  AEE7  CE 2B 01    XXAEE7 DEC $012B
+02068  AEEA  4C 88 AF    XXAEEA JMP XXAF88
+02069  AEED              ;********************************
+02070  AEED  A9 80       XXAEED LDA #$80
+02071  AEEF  8D 27 01           STA $0127
+02072  AEF2  10 3A       XXAEF2 BPL XXAF2E
+02073  AEF4  20 D7 CA           JSR $CAD7
+02074  AEF7  20 41 A3           JSR XXA341
+02075  AEFA  20 D4 A2           JSR XXA2D4
+02076  AEFD  AD 20 01           LDA $0120
+02077  AF00  AE 21 01           LDX $0121
+02078  AF03  85 C1              STA $C1
+02079  AF05  86 C2              STX $C2
+02080  AF07  20 D2 A5           JSR XXA5D2
+02081  AF0A  20 E4 FF    XXAF0A JSR GETIN
+02082  AF0D  F0 FB              BEQ XXAF0A
+02083  AF0F  C9 03              CMP #$03
+02084  AF11  D0 03              BNE XXAF16
+02085  AF13  4C 34 A2           JMP XXA234
+02086  AF16              ;********************************
+02087  AF16  C9 4A       XXAF16 CMP #$4A        ;'J'
+02088  AF18  D0 07              BNE XXAF21
+02089  AF1A  A9 01              LDA #$01
+02090  AF1C  8D 27 01           STA $0127
+
+
+
+
+
+
+HESMON.ASM......PAGE 0039
+
+LINE# LOC   CODE        LINE
+
+
+02091  AF1F  D0 67              BNE XXAF88
+02092  AF21  C9 20       XXAF21 CMP #$20        ;' '
+02093  AF23  F0 63              BEQ XXAF88
+02094  AF25  48                 PHA 
+02095  AF26  20 E4 FF    XXAF26 JSR GETIN
+02096  AF29  D0 FB              BNE XXAF26
+02097  AF2B  68                 PLA 
+02098  AF2C  D0 5A              BNE XXAF88
+02099  AF2E  A9 AD       XXAF2E LDA #$AD
+02100  AF30  48                 PHA 
+02101  AF31  A9 F8              LDA #$F8
+02102  AF33  48                 PHA 
+02103  AF34  BA                 TSX 
+02104  AF35  8E 26 01           STX $0126
+02105  AF38  A9 80              LDA #$80
+02106  AF3A  8D 27 01           STA $0127
+02107  AF3D  A2 82              LDX #$82
+02108  AF3F  D0 4A              BNE XXAF8B
+02109  AF41  20 CF FF           JSR CHRIN
+02110  AF44  A2 02              LDX #$02
+02111  AF46  C9 43              CMP #$43        ;'C'
+02112  AF48  D0 02              BNE XXAF4C
+02113  AF4A  A2 00              LDX #$00
+02114  AF4C  BD 00 C0    XXAF4C LDA $C000,X
+02115  AF4F  8D 20 01           STA $0120
+02116  AF52  BD 01 C0           LDA $C001,X
+02117  AF55  8D 21 01           STA $0121
+02118  AF58  A9 00              LDA #$00
+02119  AF5A  8D 27 01           STA $0127
+02120  AF5D  F0 1F              BEQ XXAF7E
+02121  AF5F  AD 35 01           LDA $0135
+02122  AF62  AE 36 01           LDX $0136
+02123  AF65  8D 2B 01           STA $012B
+02124  AF68  8E 2C 01           STX $012C
+02125  AF6B  A9 40              LDA #$40        ;'@'
+02126  AF6D              ;********************************
+02127  AF6D                                     ;BIT $00A9
+02128  AF6D  2C                 .BYTE $2C
+02129  AF6E  A9 00              LDA #$00
+02130  AF70                                     ;BIT $80A9
+02131  AF70  2C                 .BYTE $2C
+02132  AF71  A9 80              LDA #$80
+02133  AF73              ;********************************
+02134  AF73  8D 27 01           STA $0127
+02135  AF76  20 FC A2           JSR XXA2FC
+02136  AF79  90 03              BCC XXAF7E
+02137  AF7B  20 A3 A2           JSR XXA2A3
+02138  AF7E  20 D7 CA    XXAF7E JSR $CAD7
+02139  AF81  A2 82              LDX #$82
+02140  AF83  AD 27 01           LDA $0127
+02141  AF86  F0 03              BEQ XXAF8B
+02142  AF88  A2 A2       XXAF88 LDX #$A2
+02143  AF8A  78                 SEI 
+02144  AF8B  A9 00       XXAF8B LDA #$00
+02145  AF8D  8D 1B 91           STA $911B
+
+
+
+
+
+
+HESMON.ASM......PAGE 0040
+
+LINE# LOC   CODE        LINE
+
+
+02146  AF90  2C 11 91           BIT $9111
+02147  AF93  2C 18 91           BIT $9118
+02148  AF96  8E 1E 91           STX $911E
+02149  AF99  20 D5 AF           JSR XXAFD5
+02150  AF9C  AE 26 01           LDX $0126
+02151  AF9F  9A                 TXS 
+02152  AFA0  AD 22 01           LDA $0122
+02153  AFA3  48                 PHA 
+02154  AFA4  AE 24 01           LDX $0124
+02155  AFA7  AC 25 01           LDY $0125
+02156  AFAA  A9 0C              LDA #$0C
+02157  AFAC  8D 18 91           STA $9118
+02158  AFAF  A9 00              LDA #$00
+02159  AFB1  8D 19 91           STA $9119
+02160  AFB4  AD 23 01           LDA $0123
+02161  AFB7  28                 PLP 
+02162  AFB8  6C 20 01           JMP ($0120)
+02163  AFBB              ;********************************
+02164  AFBB  20 04 A3           JSR XXA304
+02165  AFBE  8D 33 01           STA $0133
+02166  AFC1  8E 34 01           STX $0134
+02167  AFC4  20 35 A5           JSR XXA535
+02168  AFC7  B0 03              BCS XXAFCC
+02169  AFC9  A9 00              LDA #$00
+02170  AFCB  AA                 TAX 
+02171  AFCC  8D 35 01    XXAFCC STA $0135
+02172  AFCF  8E 36 01           STX $0136
+02173  AFD2  4C 34 A2           JMP XXA234
+02174  AFD5              ;********************************
+02175  AFD5  48          XXAFD5 PHA 
+02176  AFD6  98                 TYA 
+02177  AFD7  48                 PHA 
+02178  AFD8  A2 09              LDX #$09
+02179  AFDA  BD 37 01    XXAFDA LDA $0137,X
+02180  AFDD  B4 39              LDY $39,X
+02181  AFDF  95 39              STA $39,X
+02182  AFE1  98                 TYA 
+02183  AFE2  9D 37 01           STA $0137,X
+02184  AFE5  CA                 DEX 
+02185  AFE6  10 F2              BPL XXAFDA
+02186  AFE8  68                 PLA 
+02187  AFE9  A8                 TAY 
+02188  AFEA  68                 PLA 
+02189  AFEB  60                 RTS 
+02190  AFEC              ;********************************
+02191  AFEC              ;********************************
+02192  AFEC  AA                 .BYTE $AA
+02193  AFED  AA                 .BYTE $AA
+02194  AFEE  AA                 .BYTE $AA
+02195  AFEF  AA                 .BYTE $AA
+02196  AFF0  AA                 .BYTE $AA
+02197  AFF1  AA                 .BYTE $AA
+02198  AFF2  AA                 .BYTE $AA
+02199  AFF3  AA                 .BYTE $AA
+02200  AFF4  AA                 .BYTE $AA
+
+
+
+
+
+
+HESMON.ASM......PAGE 0041
+
+LINE# LOC   CODE        LINE
+
+
+02201  AFF5  AA                 .BYTE $AA
+02202  AFF6  AA                 .BYTE $AA
+02203  AFF7  AA                 .BYTE $AA
+02204  AFF8  AA                 .BYTE $AA
+02205  AFF9  AA                 .BYTE $AA
+02206  AFFA  54                 .BYTE $54
+02207  AFFB  4D                 .BYTE $4D
+02208  AFFC  50                 .BYTE $50
+02209  AFFD  08                 .BYTE $08
+02210  AFFE  29                 .BYTE $29
+02211  AFFF  82                 .BYTE $82
+02212  B000              ;********************************
+02213  B000              ;********************************
+02214  B000              .END
+
+
+ERRORS = 00000
+
+
+SYMBOL TABLE
+
+SYMBOL VALUE
+ CHKOUT   FFC9    CHRIN    FFCF    CHROUT   FFD2    CLOSE    FFC3
+ CLRCHN   FFCC    GETIN    FFE4    OPEN     FFC0    XXA011   A011
+ XXA016   A016    XXA02A   A02A    XXA032   A032    XXA03D   A03D
+ XXA049   A049    XXA04B   A04B    XXA06E   A06E    XXA074   A074
+ XXA07E   A07E    XXA09B   A09B    XXA0A3   A0A3    XXA0B1   A0B1
+ XXA0C3   A0C3    XXA0C8   A0C8    XXA0CE   A0CE    XXA0D8   A0D8
+ XXA0F5   A0F5    XXA0FD   A0FD    XXA104   A104    XXA107   A107
+ XXA10C   A10C    XXA113   A113    XXA116   A116    XXA11D   A11D
+ XXA124   A124    XXA127   A127    XXA133   A133    XXA138   A138
+ XXA13A   A13A    XXA13D   A13D    XXA145   A145    XXA154   A154
+ XXA156   A156    XXA157   A157    XXA158   A158    XXA15A   A15A
+ XXA168   A168    XXA174   A174    XXA17B   A17B    XXA182   A182
+ XXA191   A191    XXA1A1   A1A1    XXA1A9   A1A9    XXA1CD   A1CD
+ XXA1D6   A1D6    XXA1DE   A1DE    XXA204   A204    XXA207   A207
+ XXA223   A223    XXA229   A229    XXA234   A234    XXA237   A237
+ XXA24C   A24C    XXA268   A268    XXA274   A274    XXA27C   A27C
+ XXA27F   A27F    XXA285   A285    XXA29D   A29D    XXA2A3   A2A3
+ XXA2AE   A2AE    XXA2B7   A2B7    XXA2BB   A2BB    XXA2C6   A2C6
+ XXA2CF   A2CF    XXA2D4   A2D4    XXA2DB   A2DB    XXA2EB   A2EB
+ XXA2F2   A2F2    XXA2FB   A2FB    XXA2FC   A2FC    XXA2FF   A2FF
+ XXA304   A304    XXA309   A309    XXA30C   A30C    XXA30E   A30E
+ XXA322   A322    XXA325   A325    XXA33E   A33E    XXA341   A341
+ XXA34C   A34C    XXA350   A350    XXA359   A359    XXA364   A364
+ XXA374   A374    XXA397   A397    XXA39C   A39C    XXA3A6   A3A6
+ XXA3B5   A3B5    XXA3B8   A3B8    XXA3BE   A3BE    XXA3C1   A3C1
+ XXA3C9   A3C9    XXA3CC   A3CC    XXA3D1   A3D1    XXA3D6   A3D6
+ XXA3D8   A3D8    XXA3E6   A3E6    XXA3F9   A3F9    XXA400   A400
+ XXA410   A410    XXA41D   A41D    XXA430   A430    XXA43B   A43B
+ XXA44D   A44D    XXA450   A450    XXA460   A460    XXA46F   A46F
+ XXA483   A483    XXA486   A486    XXA494   A494    XXA4A4   A4A4
+ XXA4A9   A4A9    XXA4B2   A4B2    XXA4B9   A4B9    XXA4CA   A4CA
+ XXA4E1   A4E1    XXA4F0   A4F0    XXA4F2   A4F2    XXA4F7   A4F7
+
+
+
+
+
+
+
+
+SYMBOL TABLE
+
+SYMBOL VALUE
+ XXA505   A505    XXA508   A508    XXA50F   A50F    XXA51A   A51A
+ XXA521   A521    XXA526   A526    XXA52B   A52B    XXA52F   A52F
+ XXA535   A535    XXA53A   A53A    XXA54A   A54A    XXA54B   A54B
+ XXA555   A555    XXA558   A558    XXA55D   A55D    XXA55E   A55E
+ XXA566   A566    XXA576   A576    XXA577   A577    XXA584   A584
+ XXA58C   A58C    XXA59A   A59A    XXA59F   A59F    XXA5AE   A5AE
+ XXA5B6   A5B6    XXA5B9   A5B9    XXA5BF   A5BF    XXA5C2   A5C2
+ XXA5C7   A5C7    XXA5CA   A5CA    XXA5CD   A5CD    XXA5D2   A5D2
+ XXA5D4   A5D4    XXA5D7   A5D7    XXA5E4   A5E4    XXA5EC   A5EC
+ XXA5FA   A5FA    XXA60C   A60C    XXA611   A611    XXA619   A619
+ XXA621   A621    XXA625   A625    XXA627   A627    XXA62F   A62F
+ XXA630   A630    XXA636   A636    XXA63F   A63F    XXA640   A640
+ XXA644   A644    XXA653   A653    XXA65E   A65E    XXA662   A662
+ XXA666   A666    XXA67B   A67B    XXA67F   A67F    XXA686   A686
+ XXA68A   A68A    XXA6A3   A6A3    XXA6A4   A6A4    XXA6AA   A6AA
+ XXA6AB   A6AB    XXA6BA   A6BA    XXA6BE   A6BE    XXA6D1   A6D1
+ XXA72B   A72B    XXA76F   A76F    XXA77C   A77C    XXA782   A782
+ XXA789   A789    XXA7C9   A7C9    XXA809   A809    XXA823   A823
+ XXA840   A840    XXA841   A841    XXA843   A843    XXA87A   A87A
+ XXA87D   A87D    XXA87F   A87F    XXA8C3   A8C3    XXA8C6   A8C6
+ XXA8E0   A8E0    XXA8E3   A8E3    XXA8E9   A8E9    XXA91B   A91B
+ XXA920   A920    XXA936   A936    XXA937   A937    XXA953   A953
+ XXA969   A969    XXA984   A984    XXA9A3   A9A3    XXA9A8   A9A8
+ XXA9B2   A9B2    XXA9BF   A9BF    XXA9CA   A9CA    XXA9CC   A9CC
+ XXA9D7   A9D7    XXA9F3   A9F3    XXA9F6   A9F6    XXA9F9   A9F9
+ XXAA12   AA12    XXAA20   AA20    XXAA29   AA29    XXAA3C   AA3C
+ XXAA50   AA50    XXAA5B   AA5B    XXAA5F   AA5F    XXAA6A   AA6A
+ XXAA6B   AA6B    XXAA7C   AA7C    XXAA91   AA91    XXAA96   AA96
+ XXAA9E   AA9E    XXAAB2   AAB2    XXAABA   AABA    XXAACE   AACE
+ XXAAD3   AAD3    XXAAD7   AAD7    XXAAE7   AAE7    XXAAF3   AAF3
+ XXAB06   AB06    XXAB1E   AB1E    XXAB2E   AB2E    XXAB3A   AB3A
+ XXAB4C   AB4C    XXAB5D   AB5D    XXAB95   AB95    XXABAE   ABAE
+ XXABB5   ABB5    XXABB8   ABB8    XXABC1   ABC1    XXABCE   ABCE
+ XXABEA   ABEA    XXAC05   AC05    XXAC07   AC07    XXAC23   AC23
+ XXAC2C   AC2C    XXAC32   AC32    XXAC38   AC38    XXAC47   AC47
+ XXAC57   AC57    XXAC5F   AC5F    XXAC6E   AC6E    XXAC74   AC74
+ XXAC7D   AC7D    XXAC87   AC87    XXAC90   AC90    XXAC98   AC98
+ XXACA1   ACA1    XXACAB   ACAB    XXACBC   ACBC    XXACC6   ACC6
+ XXACCD   ACCD    XXACD6   ACD6    XXACDF   ACDF    XXACEE   ACEE
+ XXACFB   ACFB    XXAD01   AD01    XXAD0B   AD0B    XXAD0E   AD0E
+ XXAD19   AD19    XXAD23   AD23    XXAD31   AD31    XXAD43   AD43
+ XXAD4B   AD4B    XXAD4D   AD4D    XXAD5C   AD5C    XXAD5F   AD5F
+ XXAD6B   AD6B    XXAD6D   AD6D    XXAD70   AD70    XXAD72   AD72
+ XXAD82   AD82    XXAD88   AD88    XXADA3   ADA3    XXADBB   ADBB
+ XXADF0   ADF0    XXAE1E   AE1E    XXAE21   AE21    XXAE3F   AE3F
+ XXAE69   AE69    XXAE87   AE87    XXAE8C   AE8C    XXAE8F   AE8F
+ XXAEB0   AEB0    XXAEC5   AEC5    XXAEE7   AEE7    XXAEEA   AEEA
+ XXAEED   AEED    XXAEF2   AEF2    XXAF0A   AF0A    XXAF16   AF16
+ XXAF21   AF21    XXAF26   AF26    XXAF2E   AF2E    XXAF4C   AF4C
+ XXAF7E   AF7E    XXAF88   AF88    XXAF8B   AF8B    XXAFCC   AFCC
+ XXAFD5   AFD5    XXAFDA   AFDA   
+
+END OF ASSEMBLY
+

@@ -1,0 +1,13 @@
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore 64 Cartridges\c64 diagnostic tass>64tass c64diag.asm -L c64diag.lst -o c64diag.prg  
+64tass Turbo Assembler Macro V1.53.1515
+64TASS comes with ABSOLUTELY NO WARRANTY; This is free software, and you
+are welcome to redistribute it under certain conditions; See LICENSE!
+
+Assembling file:   c64diag.asm
+Error messages:    None
+Warning messages:  None
+Passes:            3
+Memory range:      $8000-$8adb   $0adc
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore 64 Cartridges\c64 diagnostic tass>rem pause 

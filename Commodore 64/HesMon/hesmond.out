@@ -1,0 +1,13 @@
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore 64 Cartridges\hesmon tass>64tass hesmond.asm -L hesmond.lst -o hesmond.prg  
+64tass Turbo Assembler Macro V1.53.1515
+64TASS comes with ABSOLUTELY NO WARRANTY; This is free software, and you
+are welcome to redistribute it under certain conditions; See LICENSE!
+
+Assembling file:   hesmond.asm
+Error messages:    None
+Warning messages:  None
+Passes:            3
+Memory range:      $8000-$8fff   $1000
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore 64 Cartridges\hesmon tass>rem pause 

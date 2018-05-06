@@ -1,0 +1,13 @@
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore Cartridges\superexpander tass>64tass superex.asm -L superex.lst -o superex.prg  
+64tass Turbo Assembler Macro V1.53.1515
+64TASS comes with ABSOLUTELY NO WARRANTY; This is free software, and you
+are welcome to redistribute it under certain conditions; See LICENSE!
+
+Assembling file:   superex.asm
+Error messages:    None
+Warning messages:  None
+Passes:            3
+Memory range:      $8000-$9fff   $2000
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore Cartridges\superexpander tass>rem pause 

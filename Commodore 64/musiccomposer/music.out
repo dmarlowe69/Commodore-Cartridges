@@ -1,0 +1,13 @@
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore Cartridges\musiccomposer tass>64tass music.asm -L music.lst -o music.prg  
+64tass Turbo Assembler Macro V1.53.1515
+64TASS comes with ABSOLUTELY NO WARRANTY; This is free software, and you
+are welcome to redistribute it under certain conditions; See LICENSE!
+
+Assembling file:   music.asm
+Error messages:    None
+Warning messages:  None
+Passes:            3
+Memory range:      $e000-$ffff   $2000
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore Cartridges\musiccomposer tass>rem pause 

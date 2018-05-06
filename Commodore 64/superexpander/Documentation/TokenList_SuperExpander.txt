@@ -1,0 +1,22 @@
+; SuperExpander
+description=SuperExpander
+#include TokenList_BasicV2.txt
+
+key,      $CC 
+graphic,  $CD 
+scnclr,   $CE 
+circle,   $CF 
+draw,     $D0 
+region,   $D1 
+color,    $D2 
+point,    $D3 
+sound,    $D4 
+char,     $D5 
+paint,    $D6 
+rpot,     $D7 
+rpen,     $D8 
+rsnd,     $D9 
+rcolr,    $DA 
+rgr,      $DB 
+rjoy,     $DC 
+rdot,     $DD 

@@ -1,0 +1,5684 @@
+
+; 64tass Turbo Assembler Macro V1.53.1515 listing file
+; 64tass -L 1541diag.lst -o 1541diag.prg 1541diag.asm
+; Sun Oct 08 18:08:15 2017
+
+;Offset	;Hex		;Monitor	;Source
+
+;******  Processing input file: 1541diag.asm
+
+=$ff81					CINT=$FF81
+=$ff93					SECOND=$FF93
+=$ff96					TKSA=$FF96
+=$ffa5					ACPTR=$FFA5
+=$ffa8					CIOUT=$FFA8
+=$ffab					UNTLK=$FFAB
+=$ffae					UNLSN=$FFAE
+=$ffb1					LISTEN=$FFB1
+=$ffb4					TALK=$FFB4
+=$ffba					SETLFS=$FFBA
+=$ffbd					SETNAM=$FFBD
+=$ffc0					OPEN=$FFC0
+=$ffc3					CLOSE=$FFC3
+=$ffd2					CHROUT=$FFD2
+=$ffe4					GETIN=$FFE4
+=$ffe7					CLALL=$FFE7
+=$fff0					PLOT=$FFF0
+>8000	09 80				       .WORD XX8009
+>8002	32 80				       .WORD XX8032
+>8004	c3				       .BYTE $C3
+>8005	c2				       .BYTE $C2
+>8006	cd				       .BYTE $CD
+>8007	38				       .BYTE $38
+>8008	30				       .BYTE $30
+.8009	4c 12 80	jmp $8012	XX8009 JMP XX8012
+.800c	20 d0 80	jsr $80d0	XX800C JSR XX80D0
+.800f	20 a5 81	jsr $81a5	XX800F JSR XX81A5
+.8012	78		sei		XX8012 SEI
+.8013	8e 16 d0	stx $d016	       STX $D016
+.8016	20 a3 fd	jsr $fda3	       JSR $FDA3
+.8019	20 50 fd	jsr $fd50	       JSR $FD50
+.801c	20 15 fd	jsr $fd15	       JSR $FD15
+.801f	20 5b ff	jsr $ff5b	       JSR $FF5B
+.8022	58		cli		       CLI
+.8023	20 53 e4	jsr $e453	       JSR $E453
+.8026	20 bf e3	jsr $e3bf	       JSR $E3BF
+.8029	20 22 e4	jsr $e422	       JSR $E422
+.802c	a2 fb		ldx #$fb	       LDX #$FB
+.802e	9a		txs		       TXS
+.802f	4c 3c 80	jmp $803c	       JMP XX803C
+>8032	78				XX8032 .BYTE $78
+>8033	20				       .BYTE $20
+>8034	81				       .BYTE $81
+>8035	ff				       .BYTE $FF
+>8036	20				       .BYTE $20
+>8037	84				       .BYTE $84
+>8038	ff				       .BYTE $FF
+>8039	20				       .BYTE $20
+>803a	8a				       .BYTE $8A
+>803b	ff				       .BYTE $FF
+.803c	a9 ff		lda #$ff	XX803C LDA #$FF
+.803e	85 cc		sta $cc		       STA $CC
+.8040	20 5c 82	jsr $825c	       JSR XX825C
+.8043	20 3b 81	jsr $813b	XX8043 JSR XX813B
+.8046	20 2b 81	jsr $812b	       JSR XX812B
+.8049	a9 e2		lda #$e2	       LDA #$E2
+.804b	8d 18 03	sta $0318	       STA $0318
+.804e	a9 fc		lda #$fc	       LDA #$FC
+.8050	8d 19 03	sta $0319	       STA $0319
+.8053	a9 0f		lda #$0f	       LDA #$0F
+.8055	8d 86 02	sta $0286	       STA $0286
+.8058	a9 74		lda #$74	       LDA #$74
+.805a	a0 93		ldy #$93	       LDY #$93
+.805c	20 1b 83	jsr $831b	       JSR XX831B
+.805f	a9 20		lda #$20	       LDA #$20      ;' '
+.8061	a0 94		ldy #$94	       LDY #$94
+.8063	20 1b 83	jsr $831b	       JSR XX831B
+.8066	a9 08		lda #$08	       LDA #$08
+.8068	85 ba		sta $ba		       STA $BA
+.806a	20 25 81	jsr $8125	       JSR XX8125
+.806d	58		cli		       CLI
+.806e	20 e4 ff	jsr $ffe4	ZZ806E       JSR GETIN
+.8071	c9 42		cmp #$42	       CMP #$42      ;'B'
+.8073	f0 55		beq $80ca	       BEQ XX80CA
+.8075	c9 44		cmp #$44	       CMP #$44      ;'D'
+.8077	f0 57		beq $80d0	       BEQ XX80D0
+.8079	c9 48		cmp #$48	       CMP #$48      ;'H'
+.807b	f0 4a		beq $80c7	       BEQ XX80C7
+.807d	c9 49		cmp #$49	       CMP #$49      ;'I'
+.807f	f0 43		beq $80c4	       BEQ XX80C4
+.8081	c9 57		cmp #$57	       CMP #$57      ;'W'
+.8083	f0 48		beq $80cd	       BEQ XX80CD
+.8085	c9 50		cmp #$50	       CMP #$50      ;'P'
+.8087	f0 5e		beq $80e7	       BEQ XX80E7
+.8089	c9 4b		cmp #$4b	       CMP #$4B      ;'K'
+.808b	f0 5d		beq $80ea	       BEQ XX80EA
+.808d	c9 53		cmp #$53	       CMP #$53      ;'S'
+.808f	f0 48		beq $80d9	       BEQ XX80D9
+.8091	c9 41		cmp #$41	       CMP #$41      ;'A'
+.8093	f0 47		beq $80dc	       BEQ XX80DC
+.8095	c9 45		cmp #$45	       CMP #$45      ;'E'
+.8097	f0 48		beq $80e1	       BEQ XX80E1
+.8099	c9 46		cmp #$46	       CMP #$46      ;'F'
+.809b	f0 39		beq $80d6	       BEQ XX80D6
+.809d	c9 56		cmp #$56	       CMP #$56      ;'V'
+.809f	f0 43		beq $80e4	       BEQ XX80E4
+.80a1	c9 43		cmp #$43	       CMP #$43      ;'C'
+.80a3	f0 2e		beq $80d3	       BEQ XX80D3
+>80a5	a9				       .BYTE $A9
+>80a6	00				       .BYTE $00
+>80a7	d4				       .BYTE $D4
+>80a8	f0				       .BYTE $F0
+>80a9	a2				       .BYTE $A2
+>80aa	2f				       .BYTE $2F
+>80ab	7c				       .BYTE $7C
+>80ac	f0				       .BYTE $F0
+>80ad	39				       .BYTE $39
+>80ae	14				       .BYTE $14
+>80af	b0				       .BYTE $B0
+>80b0	5d				       .BYTE $5D
+>80b1	7b				       .BYTE $7B
+>80b2	93				       .BYTE $93
+>80b3	d4				       .BYTE $D4
+>80b4	ad				       .BYTE $AD
+>80b5	ca				       .BYTE $CA
+>80b6	0c				       .BYTE $0C
+>80b7	ee				       .BYTE $EE
+>80b8	ce				       .BYTE $CE
+>80b9	d0				       .BYTE $D0
+>80ba	f3				       .BYTE $F3
+>80bb	44				       .BYTE $44
+>80bc	4c				       .BYTE $4C
+>80bd	c9				       .BYTE $C9
+>80be	6a				       .BYTE $6A
+>80bf	1c				       .BYTE $1C
+>80c0	20				       .BYTE $20
+>80c1	ff				       .BYTE $FF
+>80c2	f0				       .BYTE $F0
+>80c3	aa				       .BYTE $AA
+.80c4	4c 47 81	jmp $8147	XX80C4 JMP XX8147
+.80c7	4c 12 8c	jmp $8c12	XX80C7 JMP XX8C12
+.80ca	4c 7b 8a	jmp $8a7b	XX80CA JMP XX8A7B
+.80cd	4c bf 8c	jmp $8cbf	XX80CD JMP XX8CBF
+.80d0	4c a2 82	jmp $82a2	XX80D0 JMP XX82A2
+.80d3	4c 6e 81	jmp $816e	XX80D3 JMP XX816E
+.80d6	4c 17 8a	jmp $8a17	XX80D6 JMP XX8A17
+.80d9	a9 31		lda #$31	XX80D9 LDA #$31      ;'1'
+>80db	2c				       .BYTE $2C
+.80dc	a9 32		lda #$32	XX80DC LDA #$32      ;'2'
+.80de	4c 81 8f	jmp $8f81	       JMP XX8F81
+.80e1	4c 8c 8e	jmp $8e8c	XX80E1 JMP XX8E8C
+.80e4	4c 5c 8f	jmp $8f5c	XX80E4 JMP XX8F5C
+.80e7	a9 00		lda #$00	XX80E7 LDA #$00
+>80e9	2c				       .BYTE $2C
+.80ea	a9 01		lda #$01	XX80EA LDA #$01
+.80ec	20 64 82	jsr $8264	       JSR XX8264
+.80ef	20 3b 81	jsr $813b	       JSR XX813B
+.80f2	a0 00		ldy #$00	       LDY #$00
+.80f4	84 c6		sty $c6		       STY $C6
+.80f6	ad 12 d0	lda $d012	XX80F6 LDA $D012
+.80f9	d0 fb		bne $80f6	       BNE XX80F6
+.80fb	ca		dex		       DEX
+.80fc	d0 f8		bne $80f6	       BNE XX80F6
+.80fe	c8		iny		       INY
+.80ff	c0 04		cpy #$04	       CPY #$04
+.8101	d0 f3		bne $80f6	       BNE XX80F6
+.8103	20 81 ff	jsr $ff81	       JSR CINT
+.8106	20 bf e3	jsr $e3bf	       JSR $E3BF
+.8109	a9 01		lda #$01	       LDA #$01
+.810b	85 2b		sta $2b		       STA $2B
+.810d	a9 08		lda #$08	       LDA #$08
+.810f	85 2c		sta $2c		       STA $2C
+.8111	a5 ae		lda $ae		       LDA $AE
+.8113	85 2d		sta $2d		       STA $2D
+.8115	a5 af		lda $af		       LDA $AF
+.8117	85 2e		sta $2e		       STA $2E
+.8119	20 25 81	jsr $8125	       JSR XX8125
+.811c	20 33 a5	jsr $a533	       JSR $A533
+.811f	20 59 a6	jsr $a659	       JSR $A659
+.8122	4c ae a7	jmp $a7ae	       JMP $A7AE
+.8125	a9 1b		lda #$1b	XX8125 LDA #$1B
+.8127	8d 11 d0	sta $d011	       STA $D011
+.812a	60		rts		       RTS
+.812b	20 44 e5	jsr $e544	XX812B JSR $E544
+.812e	a9 00		lda #$00	       LDA #$00
+.8130	8d 21 d0	sta $d021	       STA $D021
+.8133	85 c6		sta $c6		       STA $C6
+.8135	a9 0b		lda #$0b	       LDA #$0B
+.8137	8d 20 d0	sta $d020	       STA $D020
+.813a	60		rts		       RTS
+.813b	78		sei		XX813B SEI
+.813c	ac 12 d0	ldy $d012	       LDY $D012
+.813f	d0 fa		bne $813b	       BNE XX813B
+.8141	8c 11 d0	sty $d011	       STY $D011
+.8144	4c 44 e5	jmp $e544	       JMP $E544
+.8147	20 44 e5	jsr $e544	XX8147 JSR $E544
+.814a	20 c1 81	jsr $81c1	       JSR XX81C1
+.814d	a9 49		lda #$49	       LDA #$49      ;'I'
+.814f	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8152	a9 30		lda #$30	       LDA #$30      ;'0'
+.8154	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8157	a9 3a		lda #$3a	       LDA #$3A      ;':'
+.8159	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.815c	20 ae ff	jsr $ffae	       JSR UNLSN
+.815f	20 e7 ff	jsr $ffe7	       JSR CLALL
+.8162	20 d6 81	jsr $81d6	       JSR XX81D6
+.8165	20 e1 81	jsr $81e1	       JSR XX81E1
+.8168	20 00 83	jsr $8300	       JSR XX8300
+.816b	4c 43 80	jmp $8043	       JMP XX8043
+.816e	20 2b 81	jsr $812b	XX816E JSR XX812B
+.8171	a9 16		lda #$16	       LDA #$16
+.8173	a0 95		ldy #$95	       LDY #$95
+.8175	20 1b 83	jsr $831b	       JSR XX831B
+.8178	20 03 82	jsr $8203	       JSR XX8203
+.817b	a2 03		ldx #$03	       LDX #$03
+.817d	a0 03		ldy #$03	       LDY #$03
+.817f	20 0c e5	jsr $e50c	       JSR $E50C
+.8182	20 c1 81	jsr $81c1	       JSR XX81C1
+.8185	a5 fd		lda $fd		       LDA $FD
+.8187	f0 1c		beq $81a5	       BEQ XX81A5
+.8189	a0 00		ldy #$00	       LDY #$00
+.818b	b9 7b 04	lda $047b,y	XX818B LDA $047B,Y
+.818e	c9 01		cmp #$01	       CMP #$01
+.8190	90 06		bcc $8198	       BCC XX8198
+.8192	c9 1a		cmp #$1a	       CMP #$1A
+.8194	b0 02		bcs $8198	       BCS XX8198
+.8196	09 40		ora #$40	       ORA #$40      ;'@'
+.8198	20 a8 ff	jsr $ffa8	XX8198 JSR CIOUT
+.819b	a9 20		lda #$20	       LDA #$20      ;' '
+.819d	99 7b 04	sta $047b,y	       STA $047B,Y
+.81a0	c8		iny		       INY
+.81a1	c4 fd		cpy $fd		       CPY $FD
+.81a3	d0 e6		bne $818b	       BNE XX818B
+.81a5	20 ae ff	jsr $ffae	XX81A5 JSR UNLSN
+.81a8	20 e7 ff	jsr $ffe7	       JSR CLALL
+.81ab	20 e1 81	jsr $81e1	       JSR XX81E1
+.81ae	20 00 83	jsr $8300	XX81AE JSR XX8300
+.81b1	4c 43 80	jmp $8043	       JMP XX8043
+.81b4	20 25 81	jsr $8125	XX81B4 JSR XX8125
+.81b7	a9 5e		lda #$5e	       LDA #$5E      ;'^'
+.81b9	a0 93		ldy #$93	       LDY #$93
+.81bb	20 1b 83	jsr $831b	       JSR XX831B
+.81be	4c ae 81	jmp $81ae	       JMP XX81AE
+.81c1	a9 00		lda #$00	XX81C1 LDA #$00
+.81c3	85 90		sta $90		       STA $90
+.81c5	a5 ba		lda $ba		       LDA $BA
+.81c7	20 b1 ff	jsr $ffb1	       JSR LISTEN
+.81ca	a9 6f		lda #$6f	       LDA #$6F
+.81cc	85 b9		sta $b9		       STA $B9
+.81ce	20 93 ff	jsr $ff93	       JSR SECOND
+.81d1	a5 90		lda $90		       LDA $90
+.81d3	d0 df		bne $81b4	       BNE XX81B4
+.81d5	60		rts		       RTS
+.81d6	20 c1 81	jsr $81c1	XX81D6 JSR XX81C1
+.81d9	20 ae ff	jsr $ffae	       JSR UNLSN
+.81dc	a5 90		lda $90		       LDA $90
+.81de	d0 d4		bne $81b4	       BNE XX81B4
+.81e0	60		rts		       RTS
+.81e1	a9 00		lda #$00	XX81E1 LDA #$00
+.81e3	85 90		sta $90		       STA $90
+.81e5	a5 ba		lda $ba		       LDA $BA
+.81e7	20 b4 ff	jsr $ffb4	       JSR TALK
+.81ea	a9 6f		lda #$6f	       LDA #$6F
+.81ec	20 96 ff	jsr $ff96	       JSR TKSA
+.81ef	a5 90		lda $90		       LDA $90
+.81f1	d0 c1		bne $81b4	       BNE XX81B4
+.81f3	20 fb 82	jsr $82fb	       JSR XX82FB
+.81f6	20 a5 ff	jsr $ffa5	XX81F6 JSR ACPTR
+.81f9	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.81fc	c9 0d		cmp #$0d	       CMP #$0D
+.81fe	d0 f6		bne $81f6	       BNE XX81F6
+.8200	4c ab ff	jmp $ffab	       JMP UNTLK
+.8203	a9 19		lda #$19	XX8203 LDA #$19
+.8205	a2 7b		ldx #$7b	       LDX #$7B
+.8207	a0 04		ldy #$04	       LDY #$04
+.8209	85 fc		sta $fc		XX8209 STA $FC
+.820b	86 fe		stx $fe		       STX $FE
+.820d	84 ff		sty $ff		       STY $FF
+.820f	a9 00		lda #$00	       LDA #$00
+.8211	85 fd		sta $fd		       STA $FD
+.8213	85 c6		sta $c6		       STA $C6
+.8215	20 3e 82	jsr $823e	XX8215 JSR XX823E
+.8218	20 e4 ff	jsr $ffe4	XX8218 JSR GETIN
+.821b	f0 fb		beq $8218	       BEQ XX8218
+.821d	20 3e 82	jsr $823e	       JSR XX823E
+.8220	c9 0d		cmp #$0d	       CMP #$0D
+.8222	f0 19		beq $823d	       BEQ XX823D
+.8224	c9 14		cmp #$14	       CMP #$14
+.8226	f0 21		beq $8249	       BEQ XX8249
+.8228	c9 20		cmp #$20	       CMP #$20      ;' '
+.822a	90 0e		bcc $823a	       BCC XX823A
+.822c	c9 7f		cmp #$7f	       CMP #$7F
+.822e	b0 0a		bcs $823a	       BCS XX823A
+.8230	c4 fc		cpy $fc		       CPY $FC
+.8232	f0 06		beq $823a	       BEQ XX823A
+.8234	29 bf		and #$bf	       AND #$BF
+.8236	91 fe		sta ($fe),y	       STA ($FE),Y
+.8238	e6 fd		inc $fd		       INC $FD
+.823a	4c 15 82	jmp $8215	XX823A JMP XX8215
+.823d	60		rts		XX823D RTS
+.823e	a4 fd		ldy $fd		XX823E LDY $FD
+.8240	48		pha		       PHA
+.8241	b1 fe		lda ($fe),y	       LDA ($FE),Y
+.8243	49 80		eor #$80	       EOR #$80
+.8245	91 fe		sta ($fe),y	       STA ($FE),Y
+.8247	68		pla		       PLA
+.8248	60		rts		       RTS
+.8249	c6 fd		dec $fd		XX8249 DEC $FD
+.824b	a4 fd		ldy $fd		       LDY $FD
+.824d	c0 ff		cpy #$ff	       CPY #$FF
+.824f	d0 04		bne $8255	       BNE XX8255
+.8251	a0 00		ldy #$00	       LDY #$00
+.8253	84 fd		sty $fd		       STY $FD
+.8255	a9 20		lda #$20	XX8255 LDA #$20      ;' '
+.8257	91 fe		sta ($fe),y	       STA ($FE),Y
+.8259	4c 15 82	jmp $8215	       JMP XX8215
+.825c	a2 00		ldx #$00	XX825C LDX #$00
+.825e	a0 c0		ldy #$c0	       LDY #$C0
+.8260	a9 02		lda #$02	       LDA #$02
+.8262	d0 04		bne $8268	       BNE XX8268
+.8264	a2 01		ldx #$01	XX8264 LDX #$01
+.8266	a0 08		ldy #$08	       LDY #$08
+.8268	86 ae		stx $ae		XX8268 STX $AE
+.826a	84 af		sty $af		       STY $AF
+.826c	0a		asl a		       ASL A
+.826d	aa		tax		       TAX
+.826e	bd a3 83	lda $83a3,x	       LDA XX83A3,X
+.8271	85 2b		sta $2b		       STA $2B
+.8273	bd a9 83	lda $83a9,x	       LDA XX83A9,X
+.8276	85 2d		sta $2d		       STA $2D
+.8278	e8		inx		       INX
+.8279	bd a3 83	lda $83a3,x	       LDA XX83A3,X
+.827c	85 2c		sta $2c		       STA $2C
+.827e	bd a9 83	lda $83a9,x	       LDA XX83A9,X
+.8281	85 2e		sta $2e		       STA $2E
+.8283	a0 00		ldy #$00	XX8283 LDY #$00
+.8285	b1 2b		lda ($2b),y	       LDA ($2B),Y
+.8287	91 ae		sta ($ae),y	       STA ($AE),Y
+.8289	e6 2b		inc $2b		       INC $2B
+.828b	d0 02		bne $828f	       BNE XX828F
+.828d	e6 2c		inc $2c		       INC $2C
+.828f	e6 ae		inc $ae		XX828F INC $AE
+.8291	d0 02		bne $8295	       BNE XX8295
+.8293	e6 af		inc $af		       INC $AF
+.8295	a5 2b		lda $2b		XX8295 LDA $2B
+.8297	c5 2d		cmp $2d		       CMP $2D
+.8299	d0 e8		bne $8283	       BNE XX8283
+.829b	a5 2c		lda $2c		       LDA $2C
+.829d	c5 2e		cmp $2e		       CMP $2E
+.829f	d0 e2		bne $8283	       BNE XX8283
+.82a1	60		rts		       RTS
+>82a2	20				XX82A2 .BYTE $20
+>82a3	44				       .BYTE $44
+>82a4	e5				       .BYTE $E5
+>82a5	20				       .BYTE $20
+>82a6	d6				       .BYTE $D6
+>82a7	81				       .BYTE $81
+>82a8	a9				       .BYTE $A9
+>82a9	01				       .BYTE $01
+>82aa	a2				       .BYTE $A2
+>82ab	f7				       .BYTE $F7
+>82ac	a0				       .BYTE $A0
+>82ad	82				       .BYTE $82
+>82ae	20				       .BYTE $20
+>82af	bd				       .BYTE $BD
+>82b0	ff				       .BYTE $FF
+>82b1	a6				       .BYTE $A6
+>82b2	ba				       .BYTE $BA
+>82b3	a0				       .BYTE $A0
+>82b4	60				       .BYTE $60
+>82b5	20				       .BYTE $20
+>82b6	ba				       .BYTE $BA
+>82b7	ff				       .BYTE $FF
+>82b8	20				       .BYTE $20
+>82b9	d5				       .BYTE $D5
+>82ba	f3				       .BYTE $F3
+>82bb	20				       .BYTE $20
+>82bc	19				       .BYTE $19
+>82bd	f2				       .BYTE $F2
+>82be	20				       .BYTE $20
+>82bf	a5				       .BYTE $A5
+>82c0	ff				       .BYTE $FF
+>82c1	20				       .BYTE $20
+>82c2	a5				       .BYTE $A5
+>82c3	ff				       .BYTE $FF
+>82c4	20				       .BYTE $20
+>82c5	a5				       .BYTE $A5
+>82c6	ff				       .BYTE $FF
+>82c7	20				       .BYTE $20
+>82c8	a5				       .BYTE $A5
+>82c9	ff				       .BYTE $FF
+>82ca	a5				       .BYTE $A5
+>82cb	c6				       .BYTE $C6
+>82cc	05				       .BYTE $05
+>82cd	90				       .BYTE $90
+>82ce	d0				       .BYTE $D0
+>82cf	1b				       .BYTE $1B
+>82d0	20				       .BYTE $20
+>82d1	a5				       .BYTE $A5
+>82d2	ff				       .BYTE $FF
+>82d3	aa				       .BYTE $AA
+>82d4	20				       .BYTE $20
+>82d5	a5				       .BYTE $A5
+>82d6	ff				       .BYTE $FF
+>82d7	20				       .BYTE $20
+>82d8	cd				       .BYTE $CD
+>82d9	bd				       .BYTE $BD
+>82da	20				       .BYTE $20
+>82db	fb				       .BYTE $FB
+>82dc	82				       .BYTE $82
+>82dd	20				       .BYTE $20
+>82de	a5				       .BYTE $A5
+>82df	ff				       .BYTE $FF
+>82e0	20				       .BYTE $20
+>82e1	16				       .BYTE $16
+>82e2	e7				       .BYTE $E7
+>82e3	d0				       .BYTE $D0
+>82e4	f8				       .BYTE $F8
+>82e5	20				       .BYTE $20
+>82e6	f8				       .BYTE $F8
+>82e7	82				       .BYTE $82
+>82e8	4c				       .BYTE $4C
+>82e9	c4				       .BYTE $C4
+>82ea	82				       .BYTE $82
+>82eb	20				       .BYTE $20
+>82ec	42				       .BYTE $42
+>82ed	f6				       .BYTE $F6
+>82ee	20				       .BYTE $20
+>82ef	f3				       .BYTE $F3
+>82f0	f6				       .BYTE $F6
+>82f1	20				       .BYTE $20
+>82f2	00				       .BYTE $00
+>82f3	83				       .BYTE $83
+>82f4	4c				       .BYTE $4C
+>82f5	43				       .BYTE $43
+>82f6	80				       .BYTE $80
+>82f7	24				       .BYTE $24
+>82f8	a9				       .BYTE $A9
+>82f9	0d				       .BYTE $0D
+>82fa	2c				       .BYTE $2C
+>82fb	a9				XX82FB .BYTE $A9
+>82fc	20				       .BYTE $20
+>82fd	4c				       .BYTE $4C
+>82fe	d2				       .BYTE $D2
+>82ff	ff				       .BYTE $FF
+.8300	a2 18		ldx #$18	XX8300 LDX #$18
+.8302	a0 0c		ldy #$0c	       LDY #$0C
+.8304	20 0c e5	jsr $e50c	       JSR $E50C
+.8307	a9 f9		lda #$f9	       LDA #$F9
+.8309	a0 95		ldy #$95	       LDY #$95
+.830b	20 1b 83	jsr $831b	       JSR XX831B
+.830e	a9 00		lda #$00	       LDA #$00
+.8310	85 c6		sta $c6		       STA $C6
+.8312	20 25 81	jsr $8125	       JSR XX8125
+.8315	20 e4 ff	jsr $ffe4	XX8315 JSR GETIN
+.8318	f0 fb		beq $8315	       BEQ XX8315
+.831a	60		rts		       RTS
+.831b	85 fe		sta $fe		XX831B STA $FE
+.831d	84 ff		sty $ff		       STY $FF
+.831f	a0 00		ldy #$00	       LDY #$00
+.8321	b1 fe		lda ($fe),y	XX8321 LDA ($FE),Y
+.8323	f0 29		beq $834e	       BEQ XX834E
+.8325	c9 a1		cmp #$a1	       CMP #$A1
+.8327	f0 2f		beq $8358	       BEQ XX8358
+.8329	c9 a2		cmp #$a2	       CMP #$A2
+.832b	f0 28		beq $8355	       BEQ XX8355
+.832d	c9 a3		cmp #$a3	       CMP #$A3
+.832f	f0 21		beq $8352	       BEQ XX8352
+.8331	c9 a4		cmp #$a4	       CMP #$A4
+.8333	f0 1a		beq $834f	       BEQ XX834F
+.8335	c9 80		cmp #$80	       CMP #$80
+.8337	d0 11		bne $834a	       BNE XX834A
+.8339	c8		iny		       INY
+.833a	b1 fe		lda ($fe),y	       LDA ($FE),Y
+.833c	aa		tax		       TAX
+.833d	c8		iny		       INY
+.833e	b1 fe		lda ($fe),y	       LDA ($FE),Y
+.8340	20 d2 ff	jsr $ffd2	XX8340 JSR CHROUT
+.8343	ca		dex		       DEX
+.8344	d0 fa		bne $8340	       BNE XX8340
+.8346	c8		iny		       INY
+.8347	4c 21 83	jmp $8321	       JMP XX8321
+.834a	a2 01		ldx #$01	XX834A LDX #$01
+.834c	d0 f2		bne $8340	       BNE XX8340
+.834e	60		rts		XX834E RTS
+.834f	a2 15		ldx #$15	XX834F LDX #$15
+>8351	2c				       .BYTE $2C
+.8352	a2 0e		ldx #$0e	XX8352 LDX #$0E
+>8354	2c				       .BYTE $2C
+.8355	a2 07		ldx #$07	XX8355 LDX #$07
+>8357	2c				       .BYTE $2C
+.8358	a2 00		ldx #$00	XX8358 LDX #$00
+.835a	bd 69 83	lda $8369,x	XX835A LDA XX8369,X
+.835d	f0 06		beq $8365	       BEQ XX8365
+.835f	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.8362	e8		inx		       INX
+.8363	d0 f5		bne $835a	       BNE XX835A
+.8365	c8		iny		XX8365 INY
+.8366	4c 21 83	jmp $8321	       JMP XX8321
+>8369	54 52 41 43 4b 20		XX8369 .TEXT 'TRACK '
+>836f	00				       .BYTE $00
+>8370	20 44 49 53 4b 20		       .TEXT ' DISK '
+>8376	00				       .BYTE $00
+>8377	53 45 43 54 4f 52		       .TEXT 'SECTOR'
+>837d	00				       .BYTE $00
+>837e	20 43 48 45 43 4b 20		       .TEXT ' CHECK '
+>8385	00				       .BYTE $00
+>8386	a9				XX8386 .BYTE $A9
+>8387	2e				       .BYTE $2E
+>8388	a0				       .BYTE $A0
+>8389	95				       .BYTE $95
+.838a	20 1b 83	jsr $831b	       JSR XX831B
+.838d	58		cli		       CLI
+.838e	20 e4 ff	jsr $ffe4	XX838E JSR GETIN
+.8391	c9 0d		cmp #$0d	       CMP #$0D
+.8393	d0 f9		bne $838e	       BNE XX838E
+.8395	a2 03		ldx #$03	       LDX #$03
+.8397	a0 00		ldy #$00	       LDY #$00
+.8399	20 0c e5	jsr $e50c	       JSR $E50C
+.839c	a9 3f		lda #$3f	       LDA #$3F      ;'?'
+.839e	a0 95		ldy #$95	       LDY #$95
+.83a0	4c 1b 83	jmp $831b	       JMP XX831B
+>83a3	af				XX83A3 .BYTE $AF
+>83a4	83				       .BYTE $83
+>83a5	b6				       .BYTE $B6
+>83a6	88				       .BYTE $88
+>83a7	18				       .BYTE $18
+>83a8	98				       .BYTE $98
+>83a9	b6				XX83A9 .BYTE $B6
+>83aa	88				       .BYTE $88
+>83ab	17				       .BYTE $17
+>83ac	8a				       .BYTE $8A
+>83ad	e9				       .BYTE $E9
+>83ae	9f				       .BYTE $9F
+>83af	22				       .BYTE $22
+>83b0	08				       .BYTE $08
+>83b1	0a				       .BYTE $0A
+>83b2	00				       .BYTE $00
+>83b3	44 4e				       .TEXT 'DN'
+>83b5	b2				       .BYTE $B2
+>83b6	c2				       .BYTE $C2
+>83b7	28 31 38 36 29 3a		       .TEXT '(186):'
+>83bd	97				       .BYTE $97
+>83be	35 33 32 38 30 2c 31 31		       .TEXT '53280,11:'
+>83c6	3a
+>83c7	97				       .BYTE $97
+>83c8	35 33 32 38 31 2c 30		       .TEXT '53281,0'
+>83cf	00				       .BYTE $00
+>83d0	30				       .TEXT '0'
+>83d1	08				       .BYTE $08
+>83d2	64				       .BYTE $64
+>83d3	00				       .BYTE $00
+>83d4	a0				       .BYTE $A0
+>83d5	32 3a				       .TEXT '2:'
+>83d7	a0				       .BYTE $A0
+>83d8	38 3a				       .TEXT '8:'
+>83da	a0				       .BYTE $A0
+>83db	31 35				       .TEXT '15'
+>83dd	00				       .BYTE $00
+>83de	3e				       .TEXT '>'
+>83df	08				       .BYTE $08
+>83e0	24				       .TEXT '$'
+>83e1	04				       .BYTE $04
+>83e2	9f				       .BYTE $9F
+>83e3	31 35 2c 44 4e 2c 31 35		       .TEXT '15,DN,15'
+>83eb	00				       .BYTE $00
+>83ec	5d				       .TEXT ']'
+>83ed	08				       .BYTE $08
+>83ee	2e				       .TEXT '.'
+>83ef	04				       .BYTE $04
+>83f0	99				       .BYTE $99
+>83f1	22				       .TEXT '"'
+>83f2	93				       .BYTE $93
+>83f3	11				       .BYTE $11
+>83f4	99				       .BYTE $99
+>83f5	20				       .TEXT ' '
+>83f6	12				       .BYTE $12
+>83f7	20 50 45 52 46 4f 52 4d		       .TEXT ' PERFORMANCE TEST "'
+>83ff	41 4e 43 45 20 54 45 53 54 20 22
+>840a	00				       .BYTE $00
+>840b	74				       .BYTE $74
+>840c	08				       .BYTE $08
+>840d	60				       .BYTE $60
+>840e	04				       .BYTE $04
+>840f	99				       .BYTE $99
+>8410	22				       .TEXT '"'
+>8411	11				       .BYTE $11
+>8412	9b				       .BYTE $9B
+>8413	20 50 52 45 53 53 20 52		       .TEXT ' PRESS RETURN"'
+>841b	45 54 55 52 4e 22
+>8421	00				       .BYTE $00
+>8422	8c				       .BYTE $8C
+>8423	08				       .BYTE $08
+>8424	6a				       .BYTE $6A
+>8425	04				       .BYTE $04
+>8426	a1				       .BYTE $A1
+>8427	41 24 3a			       .TEXT 'A$:'
+>842a	8b				       .BYTE $8B
+>842b	41 24				       .TEXT 'A$'
+>842d	b3				       .BYTE $B3
+>842e	b1				       .BYTE $B1
+>842f	c7				       .BYTE $C7
+>8430	28 31 33 29			       .TEXT '(13)'
+>8434	a7				       .BYTE $A7
+>8435	31 31 33 30			       .TEXT '1130'
+>8439	00				       .BYTE $00
+>843a	97				       .BYTE $97
+>843b	08				       .BYTE $08
+>843c	92				       .BYTE $92
+>843d	04				       .BYTE $04
+>843e	4d 41 58			       .TEXT 'MAX'
+>8441	b2				       .BYTE $B2
+>8442	38 30				       .TEXT '80'
+>8444	00				       .BYTE $00
+>8445	a8				       .BYTE $A8
+>8446	08				       .BYTE $08
+>8447	ba				       .BYTE $BA
+>8448	04				       .BYTE $04
+>8449	54 49 24			       .TEXT 'TI$'
+>844c	b2				       .BYTE $B2
+>844d	22 30 30 30 30 30 30 22		       .TEXT '"000000"'
+>8455	00				       .BYTE $00
+>8456	bc				       .BYTE $BC
+>8457	08				       .BYTE $08
+>8458	c4				       .BYTE $C4
+>8459	04				       .BYTE $04
+>845a	99				       .BYTE $99
+>845b	22				       .TEXT '"'
+>845c	11				       .BYTE $11
+>845d	20 46 4f 52 4d 41 54 54		       .TEXT ' FORMATTING"'
+>8465	49 4e 47 22
+>8469	00				       .BYTE $00
+>846a	dc				       .BYTE $DC
+>846b	08				       .BYTE $08
+>846c	d8				       .BYTE $D8
+>846d	04				       .BYTE $04
+>846e	98				       .BYTE $98
+>846f	31 35 2c 22 4e 30 3a 54		       .TEXT '15,"N0:TEST DISK,00":'
+>8477	45 53 54 20 44 49 53 4b 2c 30 30 22 3a
+>8484	8d				       .BYTE $8D
+>8485	31 39 37 30			       .TEXT '1970'
+>8489	00				       .BYTE $00
+>848a	f0				       .BYTE $F0
+>848b	08				       .BYTE $08
+>848c	ec				       .BYTE $EC
+>848d	04				       .BYTE $04
+>848e	8b				       .BYTE $8B
+>848f	54 49				       .TEXT 'TI'
+>8491	b3				       .BYTE $B3
+>8492	4d 41 58			       .TEXT 'MAX'
+>8495	ac				       .BYTE $AC
+>8496	36 30				       .TEXT '60'
+>8498	a7				       .BYTE $A7
+>8499	31 33 31 30			       .TEXT '1310'
+>849d	00				       .BYTE $00
+>849e	fa				       .BYTE $FA
+>849f	08				       .BYTE $08
+>84a0	14				       .BYTE $14
+>84a1	05				       .BYTE $05
+>84a2	8d				       .BYTE $8D
+>84a3	32 30 30 30			       .TEXT '2000'
+>84a7	00				       .BYTE $00
+>84a8	17				       .BYTE $17
+>84a9	09				       .BYTE $09
+>84aa	1e				       .BYTE $1E
+>84ab	05				       .BYTE $05
+>84ac	99				       .BYTE $99
+>84ad	22				       .BYTE '"'
+>84ae	11				       .BYTE $11
+>84af	1e				       .BYTE $1E
+>84b0	20 4d 45 43 48 41 4e 49		       .TEXT ' MECHANICAL TEST OK"'
+>84b8	43 41 4c 20 54 45 53 54 20 4f 4b 22
+>84c4	00				       .BYTE $00
+>84c5	37				       .BYTE '7'
+>84c6	09				       .BYTE $09
+>84c7	50				       .BYTE 'P'
+>84c8	05				       .BYTE $05
+>84c9	99				       .BYTE $99
+>84ca	22				       .BYTE '"'
+>84cb	11				       .BYTE $11
+>84cc	9b				       .BYTE $9B
+>84cd	20 4f 50 45 4e 20 46 49		       .TEXT ' OPEN FILE FOR WRITING"'
+>84d5	4c 45 20 46 4f 52 20 57 52 49 54 49 4e 47 22
+>84e4	00				       .BYTE $00
+>84e5	56				       .BYTE 'V'
+>84e6	09				       .BYTE $09
+>84e7	5a				       .BYTE 'Z'
+>84e8	05				       .BYTE $05
+>84e9	9f				       .BYTE $9F
+>84ea	32 2c 44 4e 2c 32 2c 22		       .TEXT '2,DN,2,"0:TEST,S,W":'
+>84f2	30 3a 54 45 53 54 2c 53 2c 57 22 3a
+>84fe	8d				       .BYTE $8D
+>84ff	31 39 37 30			       .TEXT '1970'
+>8503	00				       .BYTE $00
+>8504	67				       .BYTE $67
+>8505	09				       .BYTE $09
+>8506	6e				       .BYTE $6E
+>8507	05				       .BYTE $05
+>8508	99				       .BYTE $99
+>8509	22				       .BYTE '"'
+>850a	11				       .BYTE $11
+>850b	20 57 52 49 54 49 4e 47		       .TEXT ' WRITING"'
+>8513	22
+>8514	00				       .BYTE $00
+>8515	7f				       .BYTE $7F
+>8516	09				       .BYTE $09
+>8517	78				       .BYTE $78
+>8518	05				       .BYTE $05
+>8519	81				       .BYTE $81
+>851a	49				       .BYTE 'I'
+>851b	b2				       .BYTE $B2
+>851c	31 30 30 30			       .TEXT '1000'
+>8520	a4				       .BYTE $A4
+>8521	32 30 30 30 3a			       .TEXT '2000:'
+>8526	98				       .BYTE $98
+>8527	32 2c 49 3a			       .TEXT '2,I:'
+>852b	82				       .BYTE $82
+>852c	00				       .BYTE $00
+>852d	89				       .BYTE $89
+>852e	09				       .BYTE $09
+>852f	82				       .BYTE $82
+>8530	05				       .BYTE $05
+>8531	8d				       .BYTE $8D
+>8532	31 39 37 30			       .TEXT '1970'
+>8536	00				       .BYTE $00
+>8537	a6				       .BYTE $A6
+>8538	09				       .BYTE $09
+>8539	8c				       .BYTE $8C
+>853a	05				       .BYTE $05
+>853b	99				       .BYTE $99
+>853c	22				       .BYTE '"'
+>853d	11				       .BYTE $11
+>853e	20 43 4c 4f 53 45 20 46		       .TEXT ' CLOSE FILE":'
+>8546	49 4c 45 22 3a
+>854b	a0				       .BYTE $A0
+>854c	32 3a				       .TEXT '2:'
+>854e	8d				       .BYTE $8D
+>854f	31 39 37 30			       .TEXT '1970'
+>8553	00				       .BYTE $00
+>8554	b9				       .BYTE $B9
+>8555	09				       .BYTE $09
+>8556	c8				       .BYTE $C8
+>8557	05				       .BYTE $05
+>8558	99				       .BYTE $99
+>8559	22				       .BYTE '"'
+>855a	11				       .BYTE $11
+>855b	20 4f 50 45 4e 20 46 49		       .TEXT ' OPEN FILE"'
+>8563	4c 45 22
+>8566	00				       .BYTE $00
+>8567	d8				       .BYTE $D8
+>8568	09				       .BYTE $09
+>8569	d2				       .BYTE $D2
+>856a	05				       .BYTE $05
+>856b	9f				       .BYTE $9F
+>856c	32 2c 44 4e 2c 32 2c 22		       .TEXT '2,DN,2,"0:TEST,S,R":'
+>8574	30 3a 54 45 53 54 2c 53 2c 52 22 3a
+>8580	8d				       .BYTE $8D
+>8581	31 39 37 30			       .TEXT '1970'
+>8585	00				       .BYTE $00
+>8586	e9				       .BYTE $E9
+>8587	09				       .BYTE $09
+>8588	e6				       .BYTE $E6
+>8589	05				       .BYTE $05
+>858a	99				       .BYTE $99
+>858b	22				       .BYTE '"'
+>858c	11				       .BYTE $11
+>858d	20 52 45 41 44 49 4e 47		       .TEXT ' READING"'
+>8595	22
+>8596	00				       .BYTE $00
+>8597	fa				       .BYTE $FA
+>8598	09				       .BYTE $09
+>8599	f0				       .BYTE $F0
+>859a	05				       .BYTE $05
+>859b	81				       .BYTE $81
+>859c	49				       .BYTE 'I'
+>859d	b2				       .BYTE $B2
+>859e	31 30 30 30			       .TEXT '1000'
+>85a2	a4				       .BYTE $A4
+>85a3	32 30 30 30			       .TEXT '2000'
+>85a7	00				       .BYTE $00
+>85a8	03				       .BYTE $03
+>85a9	0a				       .BYTE $0A
+>85aa	fa				       .BYTE $FA
+>85ab	05				       .BYTE $05
+>85ac	84				       .BYTE $84
+>85ad	32 2c 4a			       .TEXT '2,J'
+>85b0	00				       .BYTE $00
+>85b1	24				       .BYTE '$'
+>85b2	0a				       .BYTE $0A
+>85b3	04				       .BYTE $04
+>85b4	06				       .BYTE $06
+>85b5	8b				       .BYTE $8B
+>85b6	4a				       .BYTE 'J'
+>85b7	b3				       .BYTE $B3
+>85b8	b1				       .BYTE $B1
+>85b9	49				       .BYTE 'I'
+>85ba	a7				       .BYTE $A7
+>85bb	99				       .BYTE $99
+>85bc	22				       .BYTE '"'
+>85bd	96				       .BYTE $96
+>85be	20 52 45 41 44 20 45 52		       .TEXT ' READ ERROR:":'
+>85c6	52 4f 52 3a 22 3a
+>85cc	8d				       .BYTE $8D
+>85cd	31 39 37 30			       .TEXT '1970'
+>85d1	00				       .BYTE $00
+>85d2	2a				       .BYTE '*'
+>85d3	0a				       .BYTE $0A
+>85d4	0e				       .BYTE $0E
+>85d5	06				       .BYTE $06
+>85d6	82				       .BYTE $82
+>85d7	00				       .BYTE $00
+>85d8	34				       .BYTE '4'
+>85d9	0a				       .BYTE $0A
+>85da	18				       .BYTE $18
+>85db	06				       .BYTE $06
+>85dc	8d				       .BYTE $8D
+>85dd	31 39 37 30			       .TEXT '1970'
+>85e1	00				       .BYTE $00
+>85e2	51				       .BYTE 'Q'
+>85e3	0a				       .BYTE $0A
+>85e4	22				       .BYTE '"'
+>85e5	06				       .BYTE $06
+>85e6	99				       .BYTE $99
+>85e7	22				       .BYTE '"'
+>85e8	11				       .BYTE $11
+>85e9	20 43 4c 4f 53 45 20 46		       .TEXT ' CLOSE FILE":'
+>85f1	49 4c 45 22 3a
+>85f6	a0				       .BYTE $A0
+>85f7	32 3a				       .TEXT '2:'
+>85f9	8d				       .BYTE $8D
+>85fa	31 39 37 30			       .TEXT '1970'
+>85fe	00				       .BYTE $00
+>85ff	67				       .BYTE $67
+>8600	0a				       .BYTE $0A
+>8601	5e				       .BYTE '^'
+>8602	06				       .BYTE $06
+>8603	99				       .BYTE $99
+>8604	22				       .BYTE '"'
+>8605	11				       .BYTE $11
+>8606	20 53 43 52 41 54 43 48		       .TEXT ' SCRATCH FILE"'
+>860e	20 46 49 4c 45 22
+>8614	00				       .BYTE $00
+>8615	7f				       .BYTE $7F
+>8616	0a				       .BYTE $0A
+>8617	68				       .BYTE $68
+>8618	06				       .BYTE $06
+>8619	98				       .BYTE $98
+>861a	31 35 2c 22 53 30 3a 54		       .TEXT '15,"S0:TEST":'
+>8622	45 53 54 22 3a
+>8627	8d				       .BYTE $8D
+>8628	31 39 37 30			       .TEXT '1970'
+>862c	00				       .BYTE $00
+>862d	8f				       .BYTE $8F
+>862e	0a				       .BYTE $0A
+>862f	9a				       .BYTE $9A
+>8630	06				       .BYTE $06
+>8631	9f				       .BYTE $9F
+>8632	38 2c 44 4e 2c 38 2c 22		       .TEXT '8,DN,8,"#"'
+>863a	23 22
+>863c	00				       .BYTE $00
+>863d	ad				       .BYTE $AD
+>863e	0a				       .BYTE $0A
+>863f	a4				       .BYTE $A4
+>8640	06				       .BYTE $06
+>8641	4e 4e 25			       .TEXT 'NN%'
+>8644	b2				       .BYTE $B2
+>8645	28 31				       .TEXT '(1'
+>8647	aa				       .BYTE $AA
+>8648	bb				       .BYTE $BB
+>8649	28 54 49 29			       .TEXT '(TI)'
+>864d	ac				       .BYTE $AC
+>864e	32 35 34			       .TEXT '254'
+>8651	aa				       .BYTE $AA
+>8652	4e 4e 25 29			       .TEXT 'NN%)'
+>8656	af				       .BYTE $AF
+>8657	32 35 35			       .TEXT '255'
+>865a	00				       .BYTE $00
+>865b	c1				       .BYTE $C1
+>865c	0a				       .BYTE $0A
+>865d	ae				       .BYTE $AE
+>865e	06				       .BYTE $06
+>865f	98				       .BYTE $98
+>8660	31 35 2c 22 42 2d 50 22		       .TEXT '15,"B-P";8;NN%'
+>8668	3b 38 3b 4e 4e 25
+>866e	00				       .BYTE $00
+>866f	e4				       .BYTE $E4
+>8670	0a				       .BYTE $0A
+>8671	b8				       .BYTE $B8
+>8672	06				       .BYTE $06
+>8673	4e 4e 24			       .TEXT 'NN$'
+>8676	b2				       .BYTE $B2
+>8677	22 22 3a			       .TEXT '"":'
+>867a	81				       .BYTE $81
+>867b	49				       .BYTE 'I'
+>867c	b2				       .BYTE $B2
+>867d	31				       .BYTE '1'
+>867e	a4				       .BYTE $A4
+>867f	32 35 35 3a 4e 4e 24		       .TEXT '255:NN$'
+>8686	b2				       .BYTE $B2
+>8687	4e 4e 24			       .TEXT 'NN$'
+>868a	aa				       .BYTE $AA
+>868b	c7				       .BYTE $C7
+>868c	28 49 29 3a			       .TEXT '(I):'
+>8690	82				       .BYTE $82
+>8691	00				       .BYTE $00
+>8692	f0				       .BYTE $F0
+>8693	0a				       .BYTE $0A
+>8694	c2				       .BYTE $C2
+>8695	06				       .BYTE $06
+>8696	98				       .BYTE $98
+>8697	38 2c 4e 4e 24 3b		       .TEXT '8,NN$;'
+>869d	00				       .BYTE $00
+>869e	08				       .BYTE $08
+>869f	0b				       .BYTE $0B
+>86a0	cc				       .BYTE $CC
+>86a1	06				       .BYTE $06
+>86a2	99				       .BYTE $99
+>86a3	22				       .BYTE '"'
+>86a4	11				       .BYTE $11
+>86a5	20 57 52 49 54 45 20 54		       .TEXT ' WRITE TRACK 35"'
+>86ad	52 41 43 4b 20 33 35 22
+>86b5	00				       .BYTE $00
+>86b6	25				       .BYTE '%'
+>86b7	0b				       .BYTE $0B
+>86b8	d6				       .BYTE $D6
+>86b9	06				       .BYTE $06
+>86ba	98				       .BYTE $98
+>86bb	31 35 2c 22 55 32 3a 22		       .TEXT '15,"U2:";8;0;35;0:'
+>86c3	3b 38 3b 30 3b 33 35 3b 30 3a
+>86cd	8d				       .BYTE $8D
+>86ce	31 39 37 30			       .TEXT '1970'
+>86d2	00				       .BYTE $00
+>86d3	3c				       .BYTE '<'
+>86d4	0b				       .BYTE $0B
+>86d5	ea				       .BYTE $EA
+>86d6	06				       .BYTE $06
+>86d7	99				       .BYTE $99
+>86d8	22				       .BYTE '"'
+>86d9	11				       .BYTE $11
+>86da	20 57 52 49 54 45 20 54		       .TEXT ' WRITE TRACK 1"'
+>86e2	52 41 43 4b 20 31 22
+>86e9	00				       .BYTE $00
+>86ea	58				       .BYTE 'X'
+>86eb	0b				       .BYTE $0B
+>86ec	f4				       .BYTE $F4
+>86ed	06				       .BYTE $06
+>86ee	98				       .BYTE $98
+>86ef	31 35 2c 22 55 32 3a 22		       .TEXT '15,"U2:";8;0;1;0:'
+>86f7	3b 38 3b 30 3b 31 3b 30 3a
+>8700	8d				       .BYTE $8D
+>8701	31 39 37 30			       .TEXT '1970'
+>8705	00				       .BYTE $00
+>8706	6f				       .BYTE $6F
+>8707	0b				       .BYTE $0B
+>8708	08				       .BYTE $08
+>8709	07				       .BYTE $07
+>870a	99				       .BYTE $99
+>870b	22				       .BYTE '"'
+>870c	11				       .BYTE $11
+>870d	20 52 45 41 44 20 54 52		       .TEXT ' READ TRACK 35"'
+>8715	41 43 4b 20 33 35 22
+>871c	00				       .BYTE $00
+>871d	8c				       .BYTE $8C
+>871e	0b				       .BYTE $0B
+>871f	12				       .BYTE $12
+>8720	07				       .BYTE $07
+>8721	98				       .BYTE $98
+>8722	31 35 2c 22 55 31 3a 22		       .TEXT '15,"U1:";8;0;35;0:'
+>872a	3b 38 3b 30 3b 33 35 3b 30 3a
+>8734	8d				       .BYTE $8D
+>8735	31 39 37 30			       .TEXT '1970'
+>8739	00				       .BYTE $00
+>873a	a2				       .BYTE $A2
+>873b	0b				       .BYTE $0B
+>873c	26				       .BYTE '&'
+>873d	07				       .BYTE $07
+>873e	99				       .BYTE $99
+>873f	22				       .BYTE '"'
+>8740	11				       .BYTE $11
+>8741	20 52 45 41 44 20 54 52		       .TEXT ' READ TRACK 1"'
+>8749	41 43 4b 20 31 22
+>874f	00				       .BYTE $00
+>8750	be				       .BYTE $BE
+>8751	0b				       .BYTE $0B
+>8752	30				       .BYTE '0'
+>8753	07				       .BYTE $07
+>8754	98				       .BYTE $98
+>8755	31 35 2c 22 55 31 3a 22		       .TEXT '15,"U1:";8;0;1;0:'
+>875d	3b 38 3b 30 3b 31 3b 30 3a
+>8766	8d				       .BYTE $8D
+>8767	31 39 37 30			       .TEXT '1970'
+>876b	00				       .BYTE $00
+>876c	c5				       .BYTE $C5
+>876d	0b				       .BYTE $0B
+>876e	44				       .BYTE 'D'
+>876f	07				       .BYTE $07
+>8770	a0				       .BYTE $A0
+>8771	38				       .BYTE '8'
+>8772	00				       .BYTE $00
+>8773	da				       .BYTE $DA
+>8774	0b				       .BYTE $0B
+>8775	58				       .BYTE 'X'
+>8776	07				       .BYTE $07
+>8777	99				       .BYTE $99
+>8778	22				       .BYTE '"'
+>8779	11				       .BYTE $11
+>877a	1e				       .BYTE $1E
+>877b	20				       .BYTE ' '
+>877c	12				       .BYTE $12
+>877d	20 50 41 53 53 45 44 21		       .TEXT ' PASSED! "'
+>8785	20 22
+>8787	00				       .BYTE $00
+>8788	ef				       .BYTE $EF
+>8789	0b				       .BYTE $0B
+>878a	6c				       .BYTE $6C
+>878b	07				       .BYTE $07
+>878c	99				       .BYTE $99
+>878d	22				       .BYTE '"'
+>878e	11				       .BYTE $11
+>878f	9b				       .BYTE $9B
+>8790	20 41 47 41 49 4e 28 59		       .TEXT ' AGAIN(Y/N)"'
+>8798	2f 4e 29 22
+>879c	00				       .BYTE $00
+>879d	0d				       .BYTE $0D
+>879e	0c				       .BYTE $0C
+>879f	80				       .BYTE $80
+>87a0	07				       .BYTE $07
+>87a1	a1				       .BYTE $A1
+>87a2	41 24 3a			       .TEXT 'A$:'
+>87a5	8b				       .BYTE $8B
+>87a6	41 24				       .TEXT 'A$'
+>87a8	b3				       .BYTE $B3
+>87a9	b1				       .BYTE $B1
+>87aa	22 59 22			       .TEXT '"Y"'
+>87ad	af				       .BYTE $AF
+>87ae	41 24				       .TEXT 'A$'
+>87b0	b3				       .BYTE $B3
+>87b1	b1				       .BYTE $B1
+>87b2	22 4e 22			       .TEXT '"N"'
+>87b5	a7				       .BYTE $A7
+>87b6	31 39 32 30			       .TEXT '1920'
+>87ba	00				       .BYTE $00
+>87bb	1e				       .BYTE $1E
+>87bc	0c				       .BYTE $0C
+>87bd	85				       .BYTE $85
+>87be	07				       .BYTE $07
+>87bf	8b				       .BYTE $8B
+>87c0	41 24				       .TEXT 'A$'
+>87c2	b2				       .BYTE $B2
+>87c3	22 59 22			       .TEXT '"Y"'
+>87c6	a7				       .BYTE $A7
+>87c7	89				       .BYTE $89
+>87c8	31 30 30			       .TEXT '100'
+>87cb	00				       .BYTE $00
+>87cc	29				       .BYTE ')'
+>87cd	0c				       .BYTE $0C
+>87ce	8a				       .BYTE $8A
+>87cf	07				       .BYTE $07
+>87d0	9e				       .BYTE $9E
+>87d1	36 34 37 33 38			       .TEXT '64738'
+>87d6	00				       .BYTE $00
+>87d7	3e				       .BYTE '>'
+>87d8	0c				       .BYTE $0C
+>87d9	b2				       .BYTE $B2
+>87da	07				       .BYTE $07
+>87db	84				       .BYTE $84
+>87dc	31 35 2c 45 4e 2c 45 4d		       .TEXT '15,EN,EM$,ET,ES'
+>87e4	24 2c 45 54 2c 45 53
+>87eb	00				       .BYTE $00
+>87ec	53				       .BYTE 'S'
+>87ed	0c				       .BYTE $0C
+>87ee	bc				       .BYTE $BC
+>87ef	07				       .BYTE $07
+>87f0	99				       .BYTE $99
+>87f1	22 22 3b 45 4e 3b 45 4d		       .TEXT '"";EN;EM$;ET;ES'
+>87f9	24 3b 45 54 3b 45 53
+>8800	00				       .BYTE $00
+>8801	5f				       .BYTE '_'
+>8802	0c				       .BYTE $0C
+>8803	c6				       .BYTE $C6
+>8804	07				       .BYTE $07
+>8805	8b				       .BYTE $8B
+>8806	45 4e				       .TEXT 'EN'
+>8808	b3				       .BYTE $B3
+>8809	32				       .BYTE '2'
+>880a	a7				       .BYTE $A7
+>880b	8e				       .BYTE $8E
+>880c	00				       .BYTE $00
+>880d	74				       .BYTE $74
+>880e	0c				       .BYTE $0C
+>880f	d0				       .BYTE $D0
+>8810	07				       .BYTE $07
+>8811	99				       .BYTE $99
+>8812	22				       .BYTE '"'
+>8813	11				       .BYTE $11
+>8814	96				       .BYTE $96
+>8815	20				       .BYTE ' '
+>8816	12				       .BYTE $12
+>8817	20 46 41 49 4c 45 44 21		       .TEXT ' FAILED! "'
+>881f	20 22
+>8821	00				       .BYTE $00
+>8822	92				       .BYTE $92
+>8823	0c				       .BYTE $0C
+>8824	e4				       .BYTE $E4
+>8825	07				       .BYTE $07
+>8826	99				       .BYTE $99
+>8827	22				       .BYTE '"'
+>8828	11				       .BYTE $11
+>8829	96				       .BYTE $96
+>882a	20 45 52 52 4f 52 3a 22		       .TEXT ' ERROR:";EN;EM$;ET;ES'
+>8832	3b 45 4e 3b 45 4d 24 3b 45 54 3b 45 53
+>883f	00				       .BYTE $00
+>8840	9e				       .BYTE $9E
+>8841	0c				       .BYTE $0C
+>8842	ee				       .BYTE $EE
+>8843	07				       .BYTE $07
+>8844	54 4d 24			       .TEXT 'TM$'
+>8847	b2				       .BYTE $B2
+>8848	54 49 24			       .TEXT 'TI$'
+>884b	00				       .BYTE $00
+>884c	b9				       .BYTE $B9
+>884d	0c				       .BYTE $0C
+>884e	f8				       .BYTE $F8
+>884f	07				       .BYTE $07
+>8850	99				       .BYTE $99
+>8851	22				       .BYTE '"'
+>8852	11				       .BYTE $11
+>8853	9b				       .BYTE $9B
+>8854	20 43 4f 4e 54 49 4e 55		       .TEXT ' CONTINUE (Y/N)?";'
+>885c	45 20 28 59 2f 4e 29 3f 22 3b
+>8866	00				       .BYTE $00
+>8867	d7				       .BYTE $D7
+>8868	0c				       .BYTE $0C
+>8869	02				       .BYTE $02
+>886a	08				       .BYTE $08
+>886b	a1				       .BYTE $A1
+>886c	41 24 3a			       .TEXT 'A$:'
+>886f	8b				       .BYTE $8B
+>8870	41 24				       .TEXT 'A$'
+>8872	b3				       .BYTE $B3
+>8873	b1				       .BYTE $B1
+>8874	22 59 22			       .TEXT '"Y"'
+>8877	af				       .BYTE $AF
+>8878	41 24				       .TEXT 'A$'
+>887a	b3				       .BYTE $B3
+>887b	b1				       .BYTE $B1
+>887c	22 4e 22			       .TEXT '"N"'
+>887f	a7				       .BYTE $A7
+>8880	32 30 35 30			       .TEXT '2050'
+>8884	00				       .BYTE $00
+>8885	e2				       .BYTE $E2
+>8886	0c				       .BYTE $0C
+>8887	0c				       .BYTE $0C
+>8888	08				       .BYTE $08
+>8889	99				       .BYTE $99
+>888a	41 24 22			       .TEXT 'A$"'
+>888d	11				       .BYTE $11
+>888e	22				       .BYTE '"'
+>888f	00				       .BYTE $00
+>8890	f4				       .BYTE $F4
+>8891	0c				       .BYTE $0C
+>8892	16				       .BYTE $16
+>8893	08				       .BYTE $08
+>8894	8b				       .BYTE $8B
+>8895	41 24				       .TEXT 'A$'
+>8897	b2				       .BYTE $B2
+>8898	22 4e 22			       .TEXT '"N"'
+>889b	a7				       .BYTE $A7
+>889c	89				       .BYTE $89
+>889d	31 39 30 30			       .TEXT '1900'
+>88a1	00				       .BYTE $00
+>88a2	00				       .BYTE $00
+>88a3	0d				       .BYTE $0D
+>88a4	20				       .BYTE ' '
+>88a5	08				       .BYTE $08
+>88a6	54 49 24			       .TEXT 'TI$'
+>88a9	b2				       .BYTE $B2
+>88aa	54 4d 24			       .TEXT 'TM$'
+>88ad	00				       .BYTE $00
+>88ae	06				       .BYTE $06
+>88af	0d				       .BYTE $0D
+>88b0	2a				       .BYTE '*'
+>88b1	08				       .BYTE $08
+>88b2	8e				       .BYTE $8E
+>88b3	00				       .BYTE $00
+>88b4	00				       .BYTE $00
+>88b5	00				       .BYTE $00
+>88b6	22				       .BYTE '"'
+>88b7	08				       .BYTE $08
+>88b8	05				       .BYTE $05
+>88b9	00				       .BYTE $00
+>88ba	44 4e				       .TEXT 'DN'
+>88bc	b2				       .BYTE $B2
+>88bd	c2				       .BYTE $C2
+>88be	28 31 38 36 29 3a		       .TEXT '(186):'
+>88c4	97				       .BYTE $97
+>88c5	35 33 32 38 30 2c 31 31		       .TEXT '53280,11:'
+>88cd	3a
+>88ce	97				       .BYTE $97
+>88cf	35 33 32 38 31 2c 30		       .TEXT '53281,0'
+>88d6	00				       .BYTE $00
+>88d7	3e				       .BYTE '>'
+>88d8	08				       .BYTE $08
+>88d9	06				       .BYTE $06
+>88da	00				       .BYTE $00
+>88db	99				       .BYTE $99
+>88dc	22				       .BYTE '"'
+>88dd	93				       .BYTE $93
+>88de	11				       .BYTE $11
+>88df	99				       .BYTE $99
+>88e0	20				       .BYTE ' '
+>88e1	12				       .BYTE $12
+>88e2	20 52 45 56 45 52 53 45		       .TEXT ' REVERSE KNOCK "'
+>88ea	20 4b 4e 4f 43 4b 20 22
+>88f2	00				       .BYTE $00
+>88f3	55				       .BYTE 'U'
+>88f4	08				       .BYTE $08
+>88f5	07				       .BYTE $07
+>88f6	00				       .BYTE $00
+>88f7	99				       .BYTE $99
+>88f8	22				       .BYTE '"'
+>88f9	11				       .BYTE $11
+>88fa	9b				       .BYTE $9B
+>88fb	20 50 52 45 53 53 20 52		       .TEXT ' PRESS RETURN"'
+>8903	45 54 55 52 4e 22
+>8909	00				       .BYTE $00
+>890a	6a				       .BYTE $6A
+>890b	08				       .BYTE $08
+>890c	08				       .BYTE $08
+>890d	00				       .BYTE $00
+>890e	a1				       .BYTE $A1
+>890f	41 24 3a			       .TEXT 'A$:'
+>8912	8b				       .BYTE $8B
+>8913	41 24				       .TEXT 'A$'
+>8915	b3				       .BYTE $B3
+>8916	b1				       .BYTE $B1
+>8917	c7				       .BYTE $C7
+>8918	28 31 33 29			       .TEXT '(13)'
+>891c	a7				       .BYTE $A7
+>891d	38				       .BYTE '8'
+>891e	00				       .BYTE $00
+>891f	81				       .BYTE $81
+>8920	08				       .BYTE $08
+>8921	09				       .BYTE $09
+>8922	00				       .BYTE $00
+>8923	99				       .BYTE $99
+>8924	22				       .BYTE '"'
+>8925	91				       .BYTE $91
+>8926	9b				       .BYTE $9B
+>8927	20 20 20 20 20 20 20 20		       .TEXT '             "'
+>892f	20 20 20 20 20 22
+>8935	00				       .BYTE $00
+>8936	aa				       .BYTE $AA
+>8937	08				       .BYTE $08
+>8938	0a				       .BYTE $0A
+>8939	00				       .BYTE $00
+>893a	9f				       .BYTE $9F
+>893b	20 31 35 2c 44 4e 2c 31		       .TEXT ' 15,DN,15,"I":SP'
+>8943	35 2c 22 49 22 3a 53 50
+>894b	b2				       .BYTE $B2
+>894c	31 3a				       .TEXT '1:'
+>894e	81				       .BYTE $81
+>894f	49				       .BYTE 'I'
+>8950	b2				       .BYTE $B2
+>8951	31 20				       .TEXT '1 '
+>8953	a4				       .BYTE $A4
+>8954	20 31 30 30 3a			       .TEXT ' 100:'
+>8959	8d				       .BYTE $8D
+>895a	34 30 3a			       .TEXT '40:'
+>895d	82				       .BYTE $82
+>895e	00				       .BYTE $00
+>895f	e1				       .BYTE $E1
+>8960	08				       .BYTE $08
+>8961	1e				       .BYTE $1E
+>8962	00				       .BYTE $00
+>8963	81				       .BYTE $81
+>8964	49				       .BYTE 'I'
+>8965	b2				       .BYTE $B2
+>8966	31 20				       .TEXT '1 '
+>8968	a4				       .BYTE $A4
+>8969	20 32 30 3a 53 50		       .TEXT ' 20:SP'
+>896f	b2				       .BYTE $B2
+>8970	ab				       .BYTE $AB
+>8971	31 3a				       .TEXT '1:'
+>8973	8d				       .BYTE $8D
+>8974	34 30 3a			       .TEXT '40:'
+>8977	82				       .BYTE $82
+>8978	3a				       .BYTE ':'
+>8979	99				       .BYTE $99
+>897a	22 20 44 4f 4e 45 21 22		       .TEXT '" DONE!":'
+>8982	3a
+>8983	98				       .BYTE $98
+>8984	31 35 2c 22 49 22 3a		       .TEXT '15,"I":'
+>898b	a0				       .BYTE $A0
+>898c	31 35 3a			       .TEXT '15:'
+>898f	9e				       .BYTE $9E
+>8990	36 34 37 33 38			       .TEXT '64738'
+>8995	00				       .BYTE $00
+>8996	16				       .BYTE $16
+>8997	09				       .BYTE $09
+>8998	28				       .BYTE '('
+>8999	00				       .BYTE $00
+>899a	98				       .BYTE $98
+>899b	31 35 2c 22 4d 2d 52 22		       .TEXT '15,"M-R"'
+>89a3	c7				       .BYTE $C7
+>89a4	28 30 29			       .TEXT '(0)'
+>89a7	c7				       .BYTE $C7
+>89a8	28 32 38 29 3a			       .TEXT '(28):'
+>89ad	a1				       .BYTE $A1
+>89ae	23 31 35 2c 41 24 3a 41		       .TEXT '#15,A$:A'
+>89b6	b2				       .BYTE $B2
+>89b7	c6				       .BYTE $C6
+>89b8	28 41 24			       .TEXT '(A$'
+>89bb	aa				       .BYTE $AA
+>89bc	c7				       .BYTE $C7
+>89bd	28 30 29 29 3a 42 49		       .TEXT '(0)):BI'
+>89c4	b2				       .BYTE $B2
+>89c5	41 20				       .TEXT 'A '
+>89c7	af				       .BYTE $AF
+>89c8	20 33				       .TEXT ' 3'
+>89ca	00				       .BYTE $00
+>89cb	2d				       .BYTE '-'
+>89cc	09				       .BYTE $09
+>89cd	32				       .BYTE '2'
+>89ce	00				       .BYTE $00
+>89cf	42 49				       .TEXT 'BI'
+>89d1	b2				       .BYTE $B2
+>89d2	42 49				       .TEXT 'BI'
+>89d4	aa				       .BYTE $AA
+>89d5	53 50 3a 42 49			       .TEXT 'SP:BI'
+>89da	b2				       .BYTE $B2
+>89db	42 49 20			       .TEXT 'BI '
+>89de	af				       .BYTE $AF
+>89df	20 33				       .TEXT ' 3'
+>89e1	00				       .BYTE $00
+>89e2	60				       .BYTE $60
+>89e3	09				       .BYTE $09
+>89e4	3c				       .BYTE '<'
+>89e5	00				       .BYTE $00
+>89e6	52				       .BYTE 'R'
+>89e7	b2				       .BYTE $B2
+>89e8	28 41 20			       .TEXT '(A '
+>89eb	af				       .BYTE $AF
+>89ec	20 32 35 32 29 20		       .TEXT ' 252) '
+>89f2	b0				       .BYTE $B0
+>89f3	20 42 49 3a 20			       .TEXT ' BI: '
+>89f8	98				       .BYTE $98
+>89f9	31 35 2c 22 4d 2d 57 22		       .TEXT '15,"M-W"'
+>8a01	c7				       .BYTE $C7
+>8a02	28 30 29			       .TEXT '(0)'
+>8a05	c7				       .BYTE $C7
+>8a06	28 32 38 29			       .TEXT '(28)'
+>8a0a	c7				       .BYTE $C7
+>8a0b	28 31 29			       .TEXT '(1)'
+>8a0e	c7				       .BYTE $C7
+>8a0f	28 52 29			       .TEXT '(R)'
+>8a12	3a				       .BYTE $3A
+>8a13	8e				       .BYTE $8E
+>8a14	00				       .BYTE $00
+>8a15	00				       .BYTE $00
+>8a16	00				       .BYTE $00
+.8a17	20 2b 81	jsr $812b	XX8A17 JSR XX812B
+.8a1a	a9 cc		lda #$cc	       LDA #$CC
+.8a1c	a0 96		ldy #$96	       LDY #$96
+.8a1e	20 1b 83	jsr $831b	       JSR XX831B
+.8a21	a2 7e		ldx #$7e	       LDX #$7E
+.8a23	a0 04		ldy #$04	       LDY #$04
+.8a25	a9 10		lda #$10	       LDA #$10
+.8a27	20 09 82	jsr $8209	       JSR XX8209
+.8a2a	a2 db		ldx #$db	       LDX #$DB
+.8a2c	a0 c4		ldy #$c4	       LDY #$C4
+.8a2e	20 65 8a	jsr $8a65	       JSR XX8A65
+.8a31	a9 ed		lda #$ed	       LDA #$ED
+.8a33	a0 96		ldy #$96	       LDY #$96
+.8a35	20 1b 83	jsr $831b	       JSR XX831B
+.8a38	a2 a4		ldx #$a4	       LDX #$A4
+.8a3a	a0 04		ldy #$04	       LDY #$04
+.8a3c	a9 05		lda #$05	       LDA #$05
+.8a3e	20 09 82	jsr $8209	       JSR XX8209
+.8a41	a2 ed		ldx #$ed	       LDX #$ED
+.8a43	a0 c4		ldy #$c4	       LDY #$C4
+.8a45	20 65 8a	jsr $8a65	       JSR XX8A65
+.8a48	a9 97		lda #$97	       LDA #$97
+.8a4a	8d 00 dd	sta $dd00	       STA $DD00
+.8a4d	a2 01		ldx #$01	       LDX #$01
+.8a4f	20 00 c0	jsr $c000	       JSR $C000
+.8a52	20 8f 92	jsr $928f	       JSR XX928F
+.8a55	a9 00		lda #$00	       LDA #$00
+.8a57	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8a5a	a9 03		lda #$03	       LDA #$03
+.8a5c	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8a5f	20 ae ff	jsr $ffae	       JSR UNLSN
+.8a62	4c 0c 80	jmp $800c	       JMP XX800C
+.8a65	86 fb		stx $fb		XX8A65 STX $FB
+.8a67	84 fc		sty $fc		       STY $FC
+.8a69	a0 00		ldy #$00	       LDY #$00
+.8a6b	b1 fe		lda ($fe),y	XX8A6B LDA ($FE),Y
+.8a6d	c9 1f		cmp #$1f	       CMP #$1F
+.8a6f	b0 02		bcs $8a73	       BCS XX8A73
+.8a71	09 40		ora #$40	       ORA #$40      ;'@'
+.8a73	91 fb		sta ($fb),y	XX8A73 STA ($FB),Y
+.8a75	c8		iny		       INY
+.8a76	c4 fd		cpy $fd		       CPY $FD
+.8a78	d0 f1		bne $8a6b	       BNE XX8A6B
+.8a7a	60		rts		       RTS
+.8a7b	20 2b 81	jsr $812b	XX8A7B JSR XX812B
+.8a7e	20 87 8a	jsr $8a87	       JSR XX8A87
+.8a81	20 00 83	jsr $8300	       JSR XX8300
+.8a84	4c 43 80	jmp $8043	       JMP XX8043
+.8a87	20 05 8c	jsr $8c05	XX8A87 JSR XX8C05
+.8a8a	20 b3 8b	jsr $8bb3	       JSR XX8BB3
+.8a8d	a2 00		ldx #$00	       LDX #$00
+.8a8f	a9 0c		lda #$0c	XX8A8F LDA #$0C
+.8a91	9d 00 d8	sta $d800,x	       STA $D800,X
+.8a94	9d 00 d9	sta $d900,x	       STA $D900,X
+.8a97	9d 00 da	sta $da00,x	       STA $DA00,X
+.8a9a	9d e8 da	sta $dae8,x	       STA $DAE8,X
+.8a9d	e8		inx		       INX
+.8a9e	d0 ef		bne $8a8f	       BNE XX8A8F
+.8aa0	a9 24		lda #$24	       LDA #$24      ;'$'
+.8aa2	85 ff		sta $ff		       STA $FF
+.8aa4	a9 2b		lda #$2b	       LDA #$2B      ;'+'
+.8aa6	85 f8		sta $f8		       STA $F8
+.8aa8	85 f0		sta $f0		       STA $F0
+.8aaa	20 6a 8b	jsr $8b6a	       JSR XX8B6A
+.8aad	a5 fb		lda $fb		XX8AAD LDA $FB
+.8aaf	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8ab2	84 fd		sty $fd		       STY $FD
+.8ab4	a0 28		ldy #$28	       LDY #$28      ;'('
+.8ab6	91 f8		sta ($f8),y	       STA ($F8),Y
+.8ab8	20 65 8b	jsr $8b65	       JSR XX8B65
+.8abb	a0 00		ldy #$00	       LDY #$00
+.8abd	a5 fd		lda $fd		       LDA $FD
+.8abf	91 f8		sta ($f8),y	       STA ($F8),Y
+.8ac1	20 65 8b	jsr $8b65	       JSR XX8B65
+.8ac4	e6 f8		inc $f8		       INC $F8
+.8ac6	e6 f0		inc $f0		       INC $F0
+.8ac8	20 77 8b	jsr $8b77	       JSR XX8B77
+.8acb	d0 e0		bne $8aad	       BNE XX8AAD
+.8acd	a9 15		lda #$15	       LDA #$15
+.8acf	85 ff		sta $ff		       STA $FF
+.8ad1	a9 79		lda #$79	       LDA #$79
+.8ad3	85 f8		sta $f8		       STA $F8
+.8ad5	85 f0		sta $f0		       STA $F0
+.8ad7	20 6a 8b	jsr $8b6a	       JSR XX8B6A
+.8ada	c6 fb		dec $fb		       DEC $FB
+.8adc	a5 fb		lda $fb		XX8ADC LDA $FB
+.8ade	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8ae1	84 fd		sty $fd		       STY $FD
+.8ae3	a0 01		ldy #$01	       LDY #$01
+.8ae5	91 f8		sta ($f8),y	       STA ($F8),Y
+.8ae7	20 65 8b	jsr $8b65	       JSR XX8B65
+.8aea	88		dey		       DEY
+.8aeb	a5 fd		lda $fd		       LDA $FD
+.8aed	91 f8		sta ($f8),y	       STA ($F8),Y
+.8aef	20 65 8b	jsr $8b65	       JSR XX8B65
+.8af2	20 4e 8b	jsr $8b4e	       JSR XX8B4E
+.8af5	20 77 8b	jsr $8b77	       JSR XX8B77
+.8af8	d0 e2		bne $8adc	       BNE XX8ADC
+.8afa	a9 04		lda #$04	       LDA #$04
+.8afc	85 fa		sta $fa		       STA $FA
+.8afe	20 6a 8b	jsr $8b6a	       JSR XX8B6A
+.8b01	a9 7a		lda #$7a	XX8B01 LDA #$7A
+.8b03	85 f8		sta $f8		       STA $F8
+.8b05	a9 04		lda #$04	       LDA #$04
+.8b07	85 f9		sta $f9		       STA $F9
+.8b09	a5 fb		lda $fb		       LDA $FB
+.8b0b	c9 24		cmp #$24	       CMP #$24      ;'$'
+.8b0d	f0 55		beq $8b64	       BEQ XX8B64
+.8b0f	aa		tax		       TAX
+.8b10	bc 8f 8b	ldy $8b8f,x	       LDY XX8B8F,X
+.8b13	84 fc		sty $fc		       STY $FC
+.8b15	18		clc		       CLC
+.8b16	65 f8		adc $f8		       ADC $F8
+.8b18	85 f8		sta $f8		       STA $F8
+.8b1a	a4 fa		ldy $fa		       LDY $FA
+.8b1c	c8		iny		       INY
+.8b1d	b9 00 7f	lda $7f00,y	       LDA $7F00,Y
+.8b20	85 fd		sta $fd		       STA $FD
+.8b22	c8		iny		       INY
+.8b23	b9 00 7f	lda $7f00,y	       LDA $7F00,Y
+.8b26	85 fe		sta $fe		       STA $FE
+.8b28	c8		iny		       INY
+.8b29	b9 00 7f	lda $7f00,y	       LDA $7F00,Y
+.8b2c	85 ff		sta $ff		       STA $FF
+.8b2e	c8		iny		       INY
+.8b2f	84 fa		sty $fa		       STY $FA
+.8b31	a9 20		lda #$20	XX8B31 LDA #$20      ;' '
+.8b33	18		clc		       CLC
+.8b34	66 ff		ror $ff		       ROR $FF
+.8b36	66 fe		ror $fe		       ROR $FE
+.8b38	66 fd		ror $fd		       ROR $FD
+.8b3a	b0 02		bcs $8b3e	       BCS XX8B3E
+.8b3c	a9 2a		lda #$2a	       LDA #$2A      ;'*'
+.8b3e	a0 00		ldy #$00	XX8B3E LDY #$00
+.8b40	91 f8		sta ($f8),y	       STA ($F8),Y
+.8b42	20 4e 8b	jsr $8b4e	       JSR XX8B4E
+.8b45	c6 fc		dec $fc		       DEC $FC
+.8b47	d0 e8		bne $8b31	       BNE XX8B31
+.8b49	e6 fb		inc $fb		       INC $FB
+.8b4b	4c 01 8b	jmp $8b01	       JMP XX8B01
+.8b4e	a5 f8		lda $f8		XX8B4E LDA $F8
+.8b50	18		clc		       CLC
+.8b51	69 28		adc #$28	       ADC #$28      ;'('
+.8b53	85 f8		sta $f8		       STA $F8
+.8b55	90 02		bcc $8b59	       BCC XX8B59
+.8b57	e6 f9		inc $f9		       INC $F9
+.8b59	a5 f0		lda $f0		XX8B59 LDA $F0
+.8b5b	18		clc		       CLC
+.8b5c	69 28		adc #$28	       ADC #$28      ;'('
+.8b5e	85 f0		sta $f0		       STA $F0
+.8b60	90 02		bcc $8b64	       BCC XX8B64
+.8b62	e6 f1		inc $f1		       INC $F1
+.8b64	60		rts		XX8B64 RTS
+.8b65	a9 0d		lda #$0d	XX8B65 LDA #$0D
+.8b67	91 f0		sta ($f0),y	       STA ($F0),Y
+.8b69	60		rts		       RTS
+.8b6a	a9 04		lda #$04	XX8B6A LDA #$04
+.8b6c	85 f9		sta $f9		       STA $F9
+.8b6e	a9 d8		lda #$d8	       LDA #$D8
+.8b70	85 f1		sta $f1		       STA $F1
+.8b72	a9 01		lda #$01	       LDA #$01
+.8b74	85 fb		sta $fb		       STA $FB
+.8b76	60		rts		       RTS
+.8b77	e6 fb		inc $fb		XX8B77 INC $FB
+.8b79	a5 fb		lda $fb		       LDA $FB
+.8b7b	c5 ff		cmp $ff		       CMP $FF
+.8b7d	60		rts		       RTS
+.8b7e	a2 2f		ldx #$2f	XX8B7E LDX #$2F      ;'/'
+.8b80	38		sec		       SEC
+.8b81	e9 64		sbc #$64	XX8B81 SBC #$64
+.8b83	e8		inx		       INX
+.8b84	b0 fb		bcs $8b81	       BCS XX8B81
+.8b86	a0 3a		ldy #$3a	       LDY #$3A      ;':'
+.8b88	69 0a		adc #$0a	XX8B88 ADC #$0A
+.8b8a	88		dey		       DEY
+.8b8b	90 fb		bcc $8b88	       BCC XX8B88
+.8b8d	09 30		ora #$30	       ORA #$30      ;'0'
+.8b8f	60		rts		XX8B8F RTS
+>8b90	15				       .BYTE $15
+>8b91	15				       .BYTE $15
+>8b92	15				       .BYTE $15
+>8b93	15				       .BYTE $15
+>8b94	15				       .BYTE $15
+>8b95	15				       .BYTE $15
+>8b96	15				       .BYTE $15
+>8b97	15				       .BYTE $15
+>8b98	15				       .BYTE $15
+>8b99	15				       .BYTE $15
+>8b9a	15				       .BYTE $15
+>8b9b	15				       .BYTE $15
+>8b9c	15				       .BYTE $15
+>8b9d	15				       .BYTE $15
+>8b9e	15				       .BYTE $15
+>8b9f	15				       .BYTE $15
+>8ba0	15				       .BYTE $15
+>8ba1	13				       .BYTE $13
+>8ba2	13				       .BYTE $13
+>8ba3	13				       .BYTE $13
+>8ba4	13				       .BYTE $13
+>8ba5	13				       .BYTE $13
+>8ba6	13				       .BYTE $13
+>8ba7	13				       .BYTE $13
+>8ba8	12				       .BYTE $12
+>8ba9	12				       .BYTE $12
+>8baa	12				       .BYTE $12
+>8bab	12				       .BYTE $12
+>8bac	12				       .BYTE $12
+>8bad	12				       .BYTE $12
+>8bae	11				       .BYTE $11
+>8baf	11				       .BYTE $11
+>8bb0	11				       .BYTE $11
+>8bb1	11				       .BYTE $11
+>8bb2	11				       .BYTE $11
+>8bb3	a9				XX8BB3 .BYTE $A9
+>8bb4	00				       .BYTE $00
+.8bb5	85 fe		sta $fe		       STA $FE
+.8bb7	a9 7f		lda #$7f	       LDA #$7F
+.8bb9	85 ff		sta $ff		       STA $FF
+.8bbb	a9 02		lda #$02	XX8BBB LDA #$02
+.8bbd	a6 ba		ldx $ba		       LDX $BA
+.8bbf	a8		tay		       TAY
+.8bc0	20 ba ff	jsr $ffba	       JSR SETLFS
+.8bc3	a9 01		lda #$01	       LDA #$01
+.8bc5	a2 bd		ldx #$bd	       LDX #$BD
+.8bc7	a0 c7		ldy #$c7	       LDY #$C7
+.8bc9	20 bd ff	jsr $ffbd	       JSR SETNAM
+.8bcc	20 c0 ff	jsr $ffc0	       JSR OPEN
+.8bcf	a5 ba		lda $ba		       LDA $BA
+.8bd1	20 b1 ff	jsr $ffb1	       JSR LISTEN
+.8bd4	a9 6f		lda #$6f	       LDA #$6F
+.8bd6	20 93 ff	jsr $ff93	       JSR SECOND
+.8bd9	a0 00		ldy #$00	       LDY #$00
+.8bdb	b9 be c7	lda $c7be,y	XX8BDB LDA $C7BE,Y
+.8bde	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8be1	c8		iny		       INY
+.8be2	c0 0c		cpy #$0c	       CPY #$0C
+.8be4	d0 f5		bne $8bdb	       BNE XX8BDB
+.8be6	20 ae ff	jsr $ffae	       JSR UNLSN
+.8be9	a5 ba		lda $ba		       LDA $BA
+.8beb	20 b4 ff	jsr $ffb4	       JSR TALK
+.8bee	a9 62		lda #$62	       LDA #$62
+.8bf0	20 96 ff	jsr $ff96	       JSR TKSA
+.8bf3	a0 00		ldy #$00	       LDY #$00
+.8bf5	20 a5 ff	jsr $ffa5	XX8BF5 JSR ACPTR
+.8bf8	91 fe		sta ($fe),y	       STA ($FE),Y
+.8bfa	c8		iny		       INY
+.8bfb	d0 f8		bne $8bf5	       BNE XX8BF5
+.8bfd	20 ab ff	jsr $ffab	       JSR UNTLK
+.8c00	a9 02		lda #$02	       LDA #$02
+.8c02	4c c3 ff	jmp $ffc3	       JMP CLOSE
+.8c05	a9 12		lda #$12	XX8C05 LDA #$12
+.8c07	8d ca c7	sta $c7ca	       STA $C7CA
+.8c0a	a9 00		lda #$00	       LDA #$00
+.8c0c	8d cb c7	sta $c7cb	       STA $C7CB
+.8c0f	4c bc 8d	jmp $8dbc	       JMP XX8DBC
+.8c12	20 2b 81	jsr $812b	XX8C12 JSR XX812B
+.8c15	a9 8e		lda #$8e	       LDA #$8E
+.8c17	a0 97		ldy #$97	       LDY #$97
+.8c19	20 1b 83	jsr $831b	       JSR XX831B
+.8c1c	78		sei		       SEI
+.8c1d	a9 37		lda #$37	       LDA #$37      ;'7'
+.8c1f	85 01		sta $01		       STA $01
+.8c21	58		cli		       CLI
+.8c22	20 e4 ff	jsr $ffe4	XX8C22 JSR GETIN
+.8c25	a2 00		ldx #$00	       LDX #$00
+.8c27	dd 63 8c	cmp $8c63,x	XX8C27 CMP XX8C63,X
+.8c2a	f0 07		beq $8c33	       BEQ XX8C33
+.8c2c	e8		inx		       INX
+.8c2d	e0 08		cpx #$08	       CPX #$08
+.8c2f	d0 f6		bne $8c27	       BNE XX8C27
+.8c31	f0 ef		beq $8c22	       BEQ XX8C22
+.8c33	e0 07		cpx #$07	XX8C33 CPX #$07
+.8c35	f0 29		beq $8c60	       BEQ XX8C60
+.8c37	8a		txa		       TXA
+.8c38	0a		asl a		       ASL A
+.8c39	aa		tax		       TAX
+.8c3a	bd 6b 8c	lda $8c6b,x	       LDA XX8C6B,X
+.8c3d	85 fe		sta $fe		       STA $FE
+.8c3f	bd 6c 8c	lda $8c6c,x	       LDA XX8C6C,X
+.8c42	85 ff		sta $ff		       STA $FF
+.8c44	a5 ba		lda $ba		       LDA $BA
+.8c46	20 b1 ff	jsr $ffb1	       JSR LISTEN
+.8c49	a9 6f		lda #$6f	       LDA #$6F
+.8c4b	20 93 ff	jsr $ff93	       JSR SECOND
+.8c4e	a0 00		ldy #$00	       LDY #$00
+.8c50	b1 fe		lda ($fe),y	XX8C50 LDA ($FE),Y
+.8c52	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8c55	c8		iny		       INY
+.8c56	c0 20		cpy #$20	       CPY #$20      ;' '
+.8c58	d0 f6		bne $8c50	       BNE XX8C50
+.8c5a	20 ae ff	jsr $ffae	       JSR UNLSN
+.8c5d	4c 22 8c	jmp $8c22	       JMP XX8C22
+.8c60	4c e2 fc	jmp $fce2	XX8C60 JMP $FCE2
+>8c63	85				XX8C63 .BYTE $85
+>8c64	89				       .BYTE $89
+>8c65	86				       .BYTE $86
+>8c66	8a				       .BYTE $8A
+>8c67	8b				       .BYTE $8B
+>8c68	87				       .BYTE $87
+>8c69	88				       .BYTE $88
+>8c6a	8c				       .BYTE $8C
+>8c6b	95				XX8C6B .BYTE $95
+>8c6c	8c				XX8C6C .BYTE $8C
+>8c6d	83				       .BYTE $83
+>8c6e	8c				       .BYTE $8C
+>8c6f	8a				       .BYTE $8A
+>8c70	8c				       .BYTE $8C
+>8c71	a0				       .BYTE $A0
+>8c72	8c				       .BYTE $8C
+>8c73	a9				       .BYTE $A9
+>8c74	8c				       .BYTE $8C
+>8c75	79				       .BYTE $79
+>8c76	8c				       .BYTE $8C
+>8c77	7e				       .BYTE $7E
+>8c78	8c				       .BYTE $8C
+>8c79	4d				       .BYTE $4D
+>8c7a	2d				       .BYTE $2D
+>8c7b	45				       .BYTE $45
+>8c7c	82				       .BYTE $82
+>8c7d	f9				       .BYTE $F9
+>8c7e	4d				       .BYTE $4D
+>8c7f	2d				       .BYTE $2D
+>8c80	45				       .BYTE $45
+>8c81	e8				       .BYTE $E8
+>8c82	f9				       .BYTE $F9
+>8c83	4d				       .BYTE $4D
+>8c84	2d				       .BYTE $2D
+>8c85	57				       .BYTE $57
+>8c86	00				       .BYTE $00
+>8c87	00				       .BYTE $00
+>8c88	01				       .BYTE $01
+>8c89	c0				       .BYTE $C0
+>8c8a	4d				       .BYTE $4D
+>8c8b	2d				       .BYTE $2D
+>8c8c	45				       .BYTE $45
+>8c8d	05				       .BYTE $05
+>8c8e	02				       .BYTE $02
+>8c8f	ee				       .BYTE $EE
+>8c90	00				       .BYTE $00
+>8c91	1c				       .BYTE $1C
+>8c92	4c				       .BYTE $4C
+>8c93	82				       .BYTE $82
+>8c94	f9				       .BYTE $F9
+>8c95	4d				       .BYTE $4D
+>8c96	2d				       .BYTE $2D
+>8c97	45				       .BYTE $45
+>8c98	05				       .BYTE $05
+>8c99	02				       .BYTE $02
+>8c9a	ce				       .BYTE $CE
+>8c9b	00				       .BYTE $00
+>8c9c	1c				       .BYTE $1C
+>8c9d	4c				       .BYTE $4C
+>8c9e	82				       .BYTE $82
+>8c9f	f9				       .BYTE $F9
+>8ca0	4d				       .BYTE $4D
+>8ca1	2d				       .BYTE $2D
+>8ca2	45				       .BYTE $45
+>8ca3	05				       .BYTE $05
+>8ca4	02				       .BYTE $02
+>8ca5	a9				       .BYTE $A9
+>8ca6	12				       .BYTE $12
+>8ca7	d0				       .BYTE $D0
+>8ca8	07				       .BYTE $07
+>8ca9	4d				       .BYTE $4D
+>8caa	2d				       .BYTE $2D
+>8cab	45				       .BYTE $45
+>8cac	05				       .BYTE $05
+>8cad	02				       .BYTE $02
+>8cae	a9				       .BYTE $A9
+>8caf	23				       .BYTE $23
+>8cb0	85				       .BYTE $85
+>8cb1	06				       .BYTE $06
+>8cb2	a9				       .BYTE $A9
+>8cb3	00				       .BYTE $00
+>8cb4	85				       .BYTE $85
+>8cb5	07				       .BYTE $07
+>8cb6	a9				       .BYTE $A9
+>8cb7	b0				       .BYTE $B0
+>8cb8	85				       .BYTE $85
+>8cb9	00				       .BYTE $00
+>8cba	a5				       .BYTE $A5
+>8cbb	00				       .BYTE $00
+>8cbc	30				       .BYTE $30
+>8cbd	fc				       .BYTE $FC
+>8cbe	60				       .BYTE $60
+.8cbf	20 2b 81	jsr $812b	XX8CBF JSR XX812B
+.8cc2	20 3b 81	jsr $813b	       JSR XX813B
+.8cc5	a9 f9		lda #$f9	       LDA #$F9
+.8cc7	a0 96		ldy #$96	       LDY #$96
+.8cc9	20 1b 83	jsr $831b	       JSR XX831B
+.8ccc	a9 70		lda #$70	       LDA #$70
+.8cce	8d c8 05	sta $05c8	       STA $05C8
+.8cd1	49 0d		eor #$0d	       EOR #$0D
+.8cd3	8d f0 05	sta $05f0	       STA $05F0
+.8cd6	20 25 81	jsr $8125	       JSR XX8125
+.8cd9	20 05 8c	jsr $8c05	       JSR XX8C05
+.8cdc	a2 00		ldx #$00	       LDX #$00
+.8cde	86 02		stx $02		       STX $02
+.8ce0	86 ae		stx $ae		       STX $AE
+.8ce2	58		cli		       CLI
+.8ce3	a9 32		lda #$32	XX8CE3 LDA #$32      ;'2'
+.8ce5	cd 12 d0	cmp $d012	XX8CE5 CMP $D012
+.8ce8	d0 fb		bne $8ce5	       BNE XX8CE5
+.8cea	e6 af		inc $af		       INC $AF
+.8cec	20 e4 ff	jsr $ffe4	       JSR GETIN
+.8cef	c9 52		cmp #$52	       CMP #$52      ;'R'
+.8cf1	f0 7e		beq $8d71	       BEQ XX8D71
+.8cf3	a6 02		ldx $02		       LDX $02
+.8cf5	f0 ec		beq $8ce3	       BEQ XX8CE3
+.8cf7	c9 4c		cmp #$4c	       CMP #$4C      ;'L'
+.8cf9	f0 79		beq $8d74	       BEQ XX8D74
+.8cfb	c9 11		cmp #$11	       CMP #$11
+.8cfd	f0 3d		beq $8d3c	       BEQ XX8D3C
+.8cff	c9 1d		cmp #$1d	       CMP #$1D
+.8d01	f0 33		beq $8d36	       BEQ XX8D36
+.8d03	c9 91		cmp #$91	       CMP #$91
+.8d05	f0 24		beq $8d2b	       BEQ XX8D2B
+.8d07	c9 9d		cmp #$9d	       CMP #$9D
+.8d09	f0 1a		beq $8d25	       BEQ XX8D25
+.8d0b	c9 85		cmp #$85	       CMP #$85
+.8d0d	f0 13		beq $8d22	       BEQ XX8D22
+.8d0f	a5 af		lda $af		       LDA $AF
+.8d11	29 0f		and #$0f	       AND #$0F
+.8d13	d0 ce		bne $8ce3	       BNE XX8CE3
+.8d15	a6 ae		ldx $ae		       LDX $AE
+.8d17	bd c8 04	lda $04c8,x	       LDA $04C8,X
+.8d1a	49 80		eor #$80	       EOR #$80
+.8d1c	9d c8 04	sta $04c8,x	       STA $04C8,X
+.8d1f	4c e3 8c	jmp $8ce3	       JMP XX8CE3
+.8d22	4c e2 fc	jmp $fce2	XX8D22 JMP $FCE2
+.8d25	a6 ae		ldx $ae		XX8D25 LDX $AE
+.8d27	ca		dex		       DEX
+.8d28	4c 44 8d	jmp $8d44	       JMP XX8D44
+.8d2b	a5 ae		lda $ae		XX8D2B LDA $AE
+.8d2d	38		sec		       SEC
+.8d2e	e9 28		sbc #$28	       SBC #$28      ;'('
+.8d30	90 b1		bcc $8ce3	       BCC XX8CE3
+.8d32	aa		tax		       TAX
+.8d33	4c 44 8d	jmp $8d44	       JMP XX8D44
+.8d36	a6 ae		ldx $ae		XX8D36 LDX $AE
+.8d38	e8		inx		       INX
+.8d39	4c 44 8d	jmp $8d44	       JMP XX8D44
+.8d3c	a5 ae		lda $ae		XX8D3C LDA $AE
+.8d3e	18		clc		       CLC
+.8d3f	69 28		adc #$28	       ADC #$28      ;'('
+.8d41	b0 a0		bcs $8ce3	       BCS XX8CE3
+.8d43	aa		tax		       TAX
+.8d44	20 68 8d	jsr $8d68	XX8D44 JSR XX8D68
+.8d47	86 ae		stx $ae		       STX $AE
+.8d49	a6 ae		ldx $ae		XX8D49 LDX $AE
+.8d4b	bd c8 04	lda $04c8,x	       LDA $04C8,X
+.8d4e	48		pha		       PHA
+.8d4f	20 76 8e	jsr $8e76	       JSR XX8E76
+.8d52	8e 05 06	stx $0605	       STX $0605
+.8d55	8d 04 06	sta $0604	       STA $0604
+.8d58	68		pla		       PLA
+.8d59	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8d5c	8e 2b 06	stx $062b	       STX $062B
+.8d5f	8c 2c 06	sty $062c	       STY $062C
+.8d62	8d 2d 06	sta $062d	       STA $062D
+.8d65	4c e3 8c	jmp $8ce3	       JMP XX8CE3
+.8d68	a4 ae		ldy $ae		XX8D68 LDY $AE
+.8d6a	b9 00 50	lda $5000,y	       LDA $5000,Y
+.8d6d	99 c8 04	sta $04c8,y	       STA $04C8,Y
+.8d70	60		rts		       RTS
+.8d71	4c ee 8d	jmp $8dee	XX8D71 JMP XX8DEE
+.8d74	20 68 8d	jsr $8d68	XX8D74 JSR XX8D68
+.8d77	ad c8 04	lda $04c8	       LDA $04C8
+.8d7a	8d ca c7	sta $c7ca	       STA $C7CA
+.8d7d	ad c9 04	lda $04c9	       LDA $04C9
+.8d80	8d cb c7	sta $c7cb	       STA $C7CB
+.8d83	20 bc 8d	jsr $8dbc	XX8D83 JSR XX8DBC
+.8d86	20 d5 8d	jsr $8dd5	       JSR XX8DD5
+.8d89	a9 c8		lda #$c8	       LDA #$C8
+.8d8b	85 fe		sta $fe		       STA $FE
+.8d8d	a9 04		lda #$04	       LDA #$04
+.8d8f	85 ff		sta $ff		       STA $FF
+.8d91	20 bb 8b	jsr $8bbb	       JSR XX8BBB
+.8d94	a0 00		ldy #$00	       LDY #$00
+.8d96	b1 fe		lda ($fe),y	XX8D96 LDA ($FE),Y
+.8d98	99 00 50	sta $5000,y	       STA $5000,Y
+.8d9b	c8		iny		       INY
+.8d9c	d0 f8		bne $8d96	       BNE XX8D96
+.8d9e	20 b5 8d	jsr $8db5	       JSR XX8DB5
+.8da1	a9 89		lda #$89	       LDA #$89
+.8da3	a0 97		ldy #$97	       LDY #$97
+.8da5	20 1b 83	jsr $831b	       JSR XX831B
+.8da8	20 b5 8d	jsr $8db5	       JSR XX8DB5
+.8dab	20 e1 81	jsr $81e1	       JSR XX81E1
+.8dae	a9 01		lda #$01	       LDA #$01
+.8db0	85 02		sta $02		       STA $02
+.8db2	4c 49 8d	jmp $8d49	       JMP XX8D49
+.8db5	a2 03		ldx #$03	XX8DB5 LDX #$03
+.8db7	a0 00		ldy #$00	       LDY #$00
+.8db9	4c 0c e5	jmp $e50c	       JMP $E50C
+.8dbc	ad ca c7	lda $c7ca	XX8DBC LDA $C7CA
+.8dbf	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8dc2	8c c5 c7	sty $c7c5	       STY $C7C5
+.8dc5	8d c6 c7	sta $c7c6	       STA $C7C6
+.8dc8	ad cb c7	lda $c7cb	       LDA $C7CB
+.8dcb	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8dce	8c c8 c7	sty $c7c8	       STY $C7C8
+.8dd1	8d c9 c7	sta $c7c9	       STA $C7C9
+.8dd4	60		rts		       RTS
+.8dd5	ad ca c7	lda $c7ca	XX8DD5 LDA $C7CA
+.8dd8	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8ddb	8c f5 05	sty $05f5	       STY $05F5
+.8dde	8d f6 05	sta $05f6	       STA $05F6
+.8de1	ad cb c7	lda $c7cb	       LDA $C7CB
+.8de4	20 7e 8b	jsr $8b7e	       JSR XX8B7E
+.8de7	8c fb 05	sty $05fb	       STY $05FB
+.8dea	8d fc 05	sta $05fc	       STA $05FC
+.8ded	60		rts		       RTS
+.8dee	a9 00		lda #$00	XX8DEE LDA #$00
+.8df0	85 fd		sta $fd		       STA $FD
+.8df2	85 c6		sta $c6		       STA $C6
+.8df4	a9 02		lda #$02	       LDA #$02
+.8df6	85 fc		sta $fc		       STA $FC
+.8df8	a2 f5		ldx #$f5	       LDX #$F5
+.8dfa	a0 05		ldy #$05	       LDY #$05
+.8dfc	86 fe		stx $fe		       STX $FE
+.8dfe	84 ff		sty $ff		       STY $FF
+.8e00	20 15 82	jsr $8215	       JSR XX8215
+.8e03	ae f6 05	ldx $05f6	       LDX $05F6
+.8e06	ac f5 05	ldy $05f5	       LDY $05F5
+.8e09	20 56 8e	jsr $8e56	       JSR XX8E56
+.8e0c	a5 fb		lda $fb		       LDA $FB
+.8e0e	8d ca c7	sta $c7ca	       STA $C7CA
+.8e11	f0 db		beq $8dee	       BEQ XX8DEE
+.8e13	c9 24		cmp #$24	       CMP #$24      ;'$'
+.8e15	b0 d7		bcs $8dee	       BCS XX8DEE
+.8e17	a9 00		lda #$00	XX8E17 LDA #$00
+.8e19	85 fd		sta $fd		       STA $FD
+.8e1b	85 c6		sta $c6		       STA $C6
+.8e1d	a9 02		lda #$02	       LDA #$02
+.8e1f	85 fc		sta $fc		       STA $FC
+.8e21	a2 fb		ldx #$fb	       LDX #$FB
+.8e23	a0 05		ldy #$05	       LDY #$05
+.8e25	86 fe		stx $fe		       STX $FE
+.8e27	84 ff		sty $ff		       STY $FF
+.8e29	20 15 82	jsr $8215	       JSR XX8215
+.8e2c	ae fc 05	ldx $05fc	       LDX $05FC
+.8e2f	ac fb 05	ldy $05fb	       LDY $05FB
+.8e32	20 56 8e	jsr $8e56	       JSR XX8E56
+.8e35	a5 fb		lda $fb		       LDA $FB
+.8e37	8d cb c7	sta $c7cb	       STA $C7CB
+.8e3a	c9 16		cmp #$16	       CMP #$16
+.8e3c	b0 d9		bcs $8e17	       BCS XX8E17
+.8e3e	ad ca c7	lda $c7ca	       LDA $C7CA
+.8e41	a2 03		ldx #$03	       LDX #$03
+.8e43	dd 6e 8e	cmp $8e6e,x	XX8E43 CMP XX8E6E,X
+.8e46	90 03		bcc $8e4b	       BCC XX8E4B
+.8e48	ca		dex		       DEX
+.8e49	10 f8		bpl $8e43	       BPL XX8E43
+.8e4b	ad cb c7	lda $c7cb	XX8E4B LDA $C7CB
+.8e4e	dd 72 8e	cmp $8e72,x	       CMP XX8E72,X
+.8e51	b0 c4		bcs $8e17	       BCS XX8E17
+.8e53	4c 83 8d	jmp $8d83	       JMP XX8D83
+>8e56	8a				XX8E56 .BYTE $8A
+>8e57	29				       .BYTE $29
+>8e58	0f				       .BYTE $0F
+>8e59	85				       .BYTE $85
+>8e5a	fb				       .BYTE $FB
+>8e5b	98				       .BYTE $98
+>8e5c	29				       .BYTE $29
+>8e5d	0f				       .BYTE $0F
+>8e5e	aa				       .BYTE $AA
+>8e5f	f0				       .BYTE $F0
+>8e60	0a				       .BYTE $0A
+>8e61	a5				       .BYTE $A5
+>8e62	fb				       .BYTE $FB
+>8e63	18				       .BYTE $18
+>8e64	69				       .BYTE $69
+>8e65	0a				       .BYTE $0A
+>8e66	85				       .BYTE $85
+>8e67	fb				       .BYTE $FB
+>8e68	ca				       .BYTE $CA
+>8e69	d0				       .BYTE $D0
+>8e6a	f6				       .BYTE $F6
+>8e6b	a5				       .BYTE $A5
+>8e6c	fb				       .BYTE $FB
+>8e6d	60				       .BYTE $60
+>8e6e	24				XX8E6E .BYTE $24
+>8e6f	1f				       .BYTE $1F
+>8e70	19				       .BYTE $19
+>8e71	12				       .BYTE $12
+>8e72	11				XX8E72 .BYTE $11
+>8e73	12				       .BYTE $12
+>8e74	13				       .BYTE $13
+>8e75	15				       .BYTE $15
+.8e76	48		pha		XX8E76 PHA
+.8e77	29 0f		and #$0f	       AND #$0F
+.8e79	20 82 8e	jsr $8e82	       JSR XX8E82
+.8e7c	aa		tax		       TAX
+.8e7d	68		pla		       PLA
+.8e7e	4a		lsr a		       LSR A
+.8e7f	4a		lsr a		       LSR A
+.8e80	4a		lsr a		       LSR A
+.8e81	4a		lsr a		       LSR A
+.8e82	18		clc		XX8E82 CLC
+.8e83	69 30		adc #$30	       ADC #$30      ;'0'
+.8e85	c9 3a		cmp #$3a	       CMP #$3A      ;':'
+.8e87	30 02		bmi $8e8b	       BMI XX8E8B
+.8e89	e9 39		sbc #$39	       SBC #$39      ;'9'
+.8e8b	60		rts		XX8E8B RTS
+.8e8c	20 2b 81	jsr $812b	XX8E8C JSR XX812B
+.8e8f	a9 45		lda #$45	       LDA #$45      ;'E'
+.8e91	a0 95		ldy #$95	       LDY #$95
+.8e93	20 1b 83	jsr $831b	       JSR XX831B
+.8e96	20 86 83	jsr $8386	       JSR XX8386
+.8e99	a2 03		ldx #$03	       LDX #$03
+.8e9b	20 57 8f	jsr $8f57	       JSR XX8F57
+.8e9e	a9 59		lda #$59	       LDA #$59      ;'Y'
+.8ea0	a0 95		ldy #$95	       LDY #$95
+.8ea2	20 1b 83	jsr $831b	       JSR XX831B
+.8ea5	20 ab 8e	jsr $8eab	       JSR XX8EAB
+.8ea8	4c 0f 80	jmp $800f	       JMP XX800F
+.8eab	20 05 8c	jsr $8c05	XX8EAB JSR XX8C05
+.8eae	a2 02		ldx #$02	       LDX #$02
+.8eb0	20 00 c0	jsr $c000	       JSR $C000
+.8eb3	20 8f 92	jsr $928f	       JSR XX928F
+.8eb6	a9 00		lda #$00	       LDA #$00
+.8eb8	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8ebb	a9 03		lda #$03	       LDA #$03
+.8ebd	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8ec0	20 ae ff	jsr $ffae	       JSR UNLSN
+.8ec3	a9 01		lda #$01	       LDA #$01
+.8ec5	85 f8		sta $f8		       STA $F8
+.8ec7	78		sei		       SEI
+.8ec8	a2 03		ldx #$03	XX8EC8 LDX #$03
+.8eca	a0 08		ldy #$08	       LDY #$08
+.8ecc	20 0c e5	jsr $e50c	       JSR $E50C
+.8ecf	a9 99		lda #$99	       LDA #$99
+.8ed1	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.8ed4	a9 00		lda #$00	       LDA #$00
+.8ed6	a6 f8		ldx $f8		       LDX $F8
+.8ed8	20 cd bd	jsr $bdcd	       JSR $BDCD
+.8edb	78		sei		       SEI
+.8edc	2c 00 dd	bit $dd00	XX8EDC       BIT $DD00
+.8edf	70 fb		bvs $8edc	       BVS XX8EDC
+.8ee1	a9 23		lda #$23	       LDA #$23      ;'#'
+.8ee3	8d 00 dd	sta $dd00	       STA $DD00
+.8ee6	2c 00 dd	bit $dd00	XX8EE6       BIT $DD00
+.8ee9	50 fb		bvc $8ee6	       BVC XX8EE6
+.8eeb	a9 03		lda #$03	       LDA #$03
+.8eed	8d 00 dd	sta $dd00	       STA $DD00
+.8ef0	ea		nop		       NOP
+.8ef1	ea		nop		       NOP
+.8ef2	ea		nop		       NOP
+.8ef3	e6 f8		inc $f8		XX8EF3 INC $F8
+.8ef5	a5 f8		lda $f8		       LDA $F8
+.8ef7	c9 12		cmp #$12	       CMP #$12
+.8ef9	f0 f8		beq $8ef3	       BEQ XX8EF3
+.8efb	c9 24		cmp #$24	       CMP #$24      ;'$'
+.8efd	d0 c9		bne $8ec8	       BNE XX8EC8
+.8eff	a0 00		ldy #$00	       LDY #$00
+.8f01	a5 ba		lda $ba		XX8F01 LDA $BA
+.8f03	20 b1 ff	jsr $ffb1	       JSR LISTEN
+.8f06	a9 6f		lda #$6f	       LDA #$6F
+.8f08	20 93 ff	jsr $ff93	       JSR SECOND
+.8f0b	98		tya		       TYA
+.8f0c	18		clc		       CLC
+.8f0d	69 c4		adc #$c4	       ADC #$C4
+.8f0f	8d cd c7	sta $c7cd	       STA $C7CD
+.8f12	a2 04		ldx #$04	       LDX #$04
+.8f14	bd cc c7	lda $c7cc,x	XX8F14 LDA $C7CC,X
+.8f17	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8f1a	ca		dex		       DEX
+.8f1b	10 f7		bpl $8f14	       BPL XX8F14
+.8f1d	20 ae ff	jsr $ffae	       JSR UNLSN
+.8f20	a5 ba		lda $ba		       LDA $BA
+.8f22	20 b4 ff	jsr $ffb4	       JSR TALK
+.8f25	a9 6f		lda #$6f	       LDA #$6F
+.8f27	20 96 ff	jsr $ff96	       JSR TKSA
+.8f2a	20 a5 ff	jsr $ffa5	       JSR ACPTR
+.8f2d	99 f8 00	sta $00f8,y	       STA $00F8,Y
+.8f30	c8		iny		       INY
+.8f31	c0 02		cpy #$02	       CPY #$02
+.8f33	d0 cc		bne $8f01	       BNE XX8F01
+.8f35	20 ab ff	jsr $ffab	       JSR UNTLK
+.8f38	a2 05		ldx #$05	       LDX #$05
+.8f3a	20 57 8f	jsr $8f57	       JSR XX8F57
+.8f3d	a9 67		lda #$67	       LDA #$67
+.8f3f	a0 95		ldy #$95	       LDY #$95
+.8f41	20 1b 83	jsr $831b	       JSR XX831B
+.8f44	a2 05		ldx #$05	       LDX #$05
+.8f46	a0 0e		ldy #$0e	       LDY #$0E
+.8f48	20 0c e5	jsr $e50c	       JSR $E50C
+.8f4b	a9 99		lda #$99	       LDA #$99
+.8f4d	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.8f50	a6 f8		ldx $f8		       LDX $F8
+.8f52	a5 f9		lda $f9		       LDA $F9
+.8f54	4c cd bd	jmp $bdcd	       JMP $BDCD
+.8f57	a0 00		ldy #$00	XX8F57 LDY #$00
+.8f59	4c 0c e5	jmp $e50c	       JMP $E50C
+.8f5c	20 2b 81	jsr $812b	XX8F5C JSR XX812B
+.8f5f	a9 76		lda #$76	       LDA #$76
+.8f61	a0 95		ldy #$95	       LDY #$95
+.8f63	20 1b 83	jsr $831b	       JSR XX831B
+.8f66	20 86 83	jsr $8386	       JSR XX8386
+.8f69	a2 03		ldx #$03	       LDX #$03
+.8f6b	20 00 c0	jsr $c000	       JSR $C000
+.8f6e	20 8f 92	jsr $928f	       JSR XX928F
+.8f71	a9 c9		lda #$c9	       LDA #$C9
+.8f73	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8f76	a9 03		lda #$03	       LDA #$03
+.8f78	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8f7b	20 ae ff	jsr $ffae	       JSR UNLSN
+.8f7e	4c 0f 80	jmp $800f	       JMP XX800F
+.8f81	48		pha		XX8F81 PHA
+.8f82	20 2b 81	jsr $812b	       JSR XX812B
+.8f85	a2 00		ldx #$00	       LDX #$00
+.8f87	20 00 c0	jsr $c000	       JSR $C000
+.8f8a	68		pla		       PLA
+.8f8b	c9 31		cmp #$31	       CMP #$31      ;'1'
+.8f8d	f0 03		beq $8f92	       BEQ XX8F92
+.8f8f	4c 9e 90	jmp $909e	       JMP XX909E
+.8f92	20 2b 81	jsr $812b	XX8F92 JSR XX812B
+.8f95	a9 88		lda #$88	       LDA #$88
+.8f97	a0 95		ldy #$95	       LDY #$95
+.8f99	20 1b 83	jsr $831b	       JSR XX831B
+.8f9c	20 86 83	jsr $8386	       JSR XX8386
+.8f9f	a0 95		ldy #$95	       LDY #$95
+.8fa1	a9 97		lda #$97	       LDA #$97
+.8fa3	20 1b 83	jsr $831b	       JSR XX831B
+.8fa6	a9 12		lda #$12	       LDA #$12
+.8fa8	20 b9 92	jsr $92b9	       JSR XX92B9
+.8fab	20 ac 92	jsr $92ac	XX8FAB JSR XX92AC
+.8fae	a9 05		lda #$05	       LDA #$05
+.8fb0	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.8fb3	20 7a 92	jsr $927a	       JSR XX927A
+.8fb6	a0 05		ldy #$05	       LDY #$05
+.8fb8	20 a5 ff	jsr $ffa5	XX8FB8 JSR ACPTR
+.8fbb	99 8a 00	sta $008a,y	       STA $008A,Y
+.8fbe	88		dey		       DEY
+.8fbf	d0 f7		bne $8fb8	       BNE XX8FB8
+.8fc1	20 ab ff	jsr $ffab	       JSR UNTLK
+.8fc4	a5 8b		lda $8b		       LDA $8B
+.8fc6	f0 03		beq $8fcb	       BEQ XX8FCB
+.8fc8	4c 84 90	jmp $9084	       JMP XX9084
+.8fcb	d8		cld		XX8FCB CLD
+.8fcc	38		sec		       SEC
+.8fcd	a5 8f		lda $8f		       LDA $8F
+.8fcf	e9 db		sbc #$db	       SBC #$DB
+.8fd1	85 8d		sta $8d		       STA $8D
+.8fd3	a5 8e		lda $8e		       LDA $8E
+.8fd5	e9 46		sbc #$46	       SBC #$46      ;'F'
+.8fd7	85 8c		sta $8c		       STA $8C
+.8fd9	b0 24		bcs $8fff	       BCS XX8FFF
+.8fdb	a9 2b		lda #$2b	       LDA #$2B      ;'+'
+.8fdd	85 b3		sta $b3		       STA $B3
+.8fdf	38		sec		       SEC
+.8fe0	a9 db		lda #$db	       LDA #$DB
+.8fe2	e5 8f		sbc $8f		       SBC $8F
+.8fe4	85 8d		sta $8d		       STA $8D
+.8fe6	a9 46		lda #$46	       LDA #$46      ;'F'
+.8fe8	e5 8e		sbc $8e		       SBC $8E
+.8fea	85 8c		sta $8c		       STA $8C
+.8fec	20 13 92	jsr $9213	       JSR XX9213
+.8fef	18		clc		       CLC
+.8ff0	a5 b1		lda $b1		       LDA $B1
+.8ff2	69 2c		adc #$2c	       ADC #$2C      ;','
+.8ff4	85 b1		sta $b1		       STA $B1
+.8ff6	a9 01		lda #$01	       LDA #$01
+.8ff8	69 00		adc #$00	       ADC #$00
+.8ffa	85 b0		sta $b0		       STA $B0
+.8ffc	4c 26 90	jmp $9026	       JMP XX9026
+.8fff	a9 2d		lda #$2d	XX8FFF LDA #$2D      ;'-'
+.9001	85 b3		sta $b3		       STA $B3
+.9003	20 13 92	jsr $9213	       JSR XX9213
+.9006	a5 b2		lda $b2		       LDA $B2
+.9008	c9 00		cmp #$00	       CMP #$00
+.900a	f0 0d		beq $9019	       BEQ XX9019
+.900c	e6 b1		inc $b1		       INC $B1
+.900e	d0 02		bne $9012	       BNE XX9012
+.9010	e6 b0		inc $b0		       INC $B0
+.9012	38		sec		XX9012 SEC
+.9013	a9 0a		lda #$0a	       LDA #$0A
+.9015	e5 b2		sbc $b2		       SBC $B2
+.9017	85 b2		sta $b2		       STA $B2
+.9019	38		sec		XX9019 SEC
+.901a	a9 2c		lda #$2c	       LDA #$2C      ;','
+.901c	e5 b1		sbc $b1		       SBC $B1
+.901e	85 b1		sta $b1		       STA $B1
+.9020	a9 01		lda #$01	       LDA #$01
+.9022	e9 00		sbc #$00	       SBC #$00
+.9024	85 b0		sta $b0		       STA $B0
+.9026	a5 b4		lda $b4		XX9026 LDA $B4
+.9028	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.902b	a2 07		ldx #$07	       LDX #$07
+.902d	20 98 90	jsr $9098	       JSR XX9098
+.9030	a9 12		lda #$12	       LDA #$12
+.9032	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.9035	a5 b0		lda $b0		       LDA $B0
+.9037	a6 b1		ldx $b1		       LDX $B1
+.9039	20 cd bd	jsr $bdcd	       JSR $BDCD
+.903c	a9 2e		lda #$2e	       LDA #$2E      ;'.'
+.903e	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.9041	a9 00		lda #$00	       LDA #$00
+.9043	a6 b2		ldx $b2		       LDX $B2
+.9045	20 cd bd	jsr $bdcd	       JSR $BDCD
+.9048	a2 09		ldx #$09	       LDX #$09
+.904a	20 98 90	jsr $9098	       JSR XX9098
+.904d	a5 b3		lda $b3		       LDA $B3
+.904f	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.9052	a6 8e		ldx $8e		       LDX $8E
+.9054	e0 0a		cpx #$0a	       CPX #$0A
+.9056	b0 03		bcs $905b	       BCS XX905B
+.9058	20 fb 82	jsr $82fb	       JSR XX82FB
+.905b	a9 00		lda #$00	XX905B LDA #$00
+.905d	20 cd bd	jsr $bdcd	       JSR $BDCD
+.9060	a9 2e		lda #$2e	       LDA #$2E      ;'.'
+.9062	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.9065	a9 00		lda #$00	       LDA #$00
+.9067	a6 8f		ldx $8f		       LDX $8F
+.9069	20 cd bd	jsr $bdcd	       JSR $BDCD
+.906c	20 e4 ff	jsr $ffe4	       JSR GETIN
+.906f	f0 0b		beq $907c	       BEQ XX907C
+.9071	a9 0c		lda #$0c	XX9071 LDA #$0C
+.9073	20 b9 92	jsr $92b9	       JSR XX92B9
+.9076	20 e7 ff	jsr $ffe7	       JSR CLALL
+.9079	4c e2 fc	jmp $fce2	       JMP $FCE2
+.907c	a9 0f		lda #$0f	XX907C LDA #$0F
+.907e	20 b9 92	jsr $92b9	       JSR XX92B9
+.9081	4c ab 8f	jmp $8fab	       JMP XX8FAB
+.9084	a2 07		ldx #$07	XX9084 LDX #$07
+.9086	20 98 90	jsr $9098	       JSR XX9098
+.9089	a0 96		ldy #$96	       LDY #$96
+.908b	a9 0a		lda #$0a	       LDA #$0A
+.908d	20 1b 83	jsr $831b	       JSR XX831B
+.9090	20 e4 ff	jsr $ffe4	XX9090 JSR GETIN
+.9093	f0 fb		beq $9090	       BEQ XX9090
+.9095	4c 71 90	jmp $9071	       JMP XX9071
+.9098	a0 0f		ldy #$0f	XX9098 LDY #$0F
+.909a	18		clc		       CLC
+.909b	4c f0 ff	jmp $fff0	       JMP PLOT
+.909e	20 2b 81	jsr $812b	XX909E JSR XX812B
+.90a1	a0 96		ldy #$96	       LDY #$96
+.90a3	a9 12		lda #$12	       LDA #$12
+.90a5	20 1b 83	jsr $831b	       JSR XX831B
+.90a8	a9 00		lda #$00	       LDA #$00
+.90aa	85 c6		sta $c6		       STA $C6
+.90ac	20 e4 ff	jsr $ffe4	XX90AC JSR GETIN
+.90af	c9 31		cmp #$31	       CMP #$31      ;'1'
+.90b1	f0 0f		beq $90c2	       BEQ XX90C2
+.90b3	c9 41		cmp #$41	       CMP #$41      ;'A'
+.90b5	f0 17		beq $90ce	       BEQ XX90CE
+.90b7	c9 20		cmp #$20	       CMP #$20      ;' '
+.90b9	f0 16		beq $90d1	       BEQ XX90D1
+.90bb	c9 85		cmp #$85	       CMP #$85
+.90bd	d0 ed		bne $90ac	       BNE XX90AC
+.90bf	4c e2 fc	jmp $fce2	       JMP $FCE2
+.90c2	20 d6 91	jsr $91d6	XX90C2 JSR XX91D6
+.90c5	a9 01		lda #$01	       LDA #$01
+.90c7	85 8f		sta $8f		       STA $8F
+.90c9	a9 15		lda #$15	       LDA #$15
+.90cb	4c da 90	jmp $90da	       JMP XX90DA
+.90ce	a9 02		lda #$02	XX90CE LDA #$02
+>90d0	2c				       .BYTE $2C
+.90d1	a9 00		lda #$00	XX90D1 LDA #$00
+.90d3	85 8f		sta $8f		       STA $8F
+.90d5	20 d6 91	jsr $91d6	XX90D5 JSR XX91D6
+.90d8	a9 00		lda #$00	       LDA #$00
+.90da	20 c9 92	jsr $92c9	XX90DA JSR XX92C9
+.90dd	f0 03		beq $90e2	       BEQ XX90E2
+.90df	4c 9b 91	jmp $919b	       JMP XX919B
+.90e2	a9 99		lda #$99	XX90E2 LDA #$99
+.90e4	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.90e7	a6 02		ldx $02		       LDX $02
+.90e9	20 0f 93	jsr $930f	       JSR XX930F
+.90ec	a2 01		ldx #$01	       LDX #$01
+.90ee	20 55 93	jsr $9355	       JSR XX9355
+.90f1	ad f1 13	lda $13f1	       LDA $13F1
+.90f4	c5 02		cmp $02		       CMP $02
+.90f6	f0 05		beq $90fd	       BEQ XX90FD
+.90f8	a9 96		lda #$96	       LDA #$96
+.90fa	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.90fd	ae f1 13	ldx $13f1	XX90FD LDX $13F1
+.9100	20 0f 93	jsr $930f	       JSR XX930F
+.9103	a2 02		ldx #$02	       LDX #$02
+.9105	20 55 93	jsr $9355	       JSR XX9355
+.9108	a6 8d		ldx $8d		       LDX $8D
+.910a	e0 64		cpx #$64	       CPX #$64
+.910c	d0 04		bne $9112	       BNE XX9112
+.910e	a9 99		lda #$99	       LDA #$99
+.9110	d0 0a		bne $911c	       BNE XX911C
+.9112	e0 5e		cpx #$5e	XX9112 CPX #$5E      ;'^'
+.9114	b0 04		bcs $911a	       BCS XX911A
+.9116	a9 96		lda #$96	       LDA #$96
+.9118	d0 02		bne $911c	       BNE XX911C
+.911a	a9 9e		lda #$9e	XX911A LDA #$9E
+.911c	20 d2 ff	jsr $ffd2	XX911C JSR CHROUT
+.911f	a6 8d		ldx $8d		       LDX $8D
+.9121	20 0f 93	jsr $930f	       JSR XX930F
+.9124	a5 8f		lda $8f		       LDA $8F
+.9126	c9 01		cmp #$01	       CMP #$01
+.9128	f0 42		beq $916c	       BEQ XX916C
+.912a	a2 01		ldx #$01	       LDX #$01
+.912c	20 55 93	jsr $9355	       JSR XX9355
+.912f	a9 03		lda #$03	       LDA #$03
+.9131	20 c9 92	jsr $92c9	       JSR XX92C9
+.9134	f0 03		beq $9139	       BEQ XX9139
+.9136	4c 97 91	jmp $9197	       JMP XX9197
+.9139	a6 8d		ldx $8d		XX9139 LDX $8D
+.913b	d0 04		bne $9141	       BNE XX9141
+.913d	a9 99		lda #$99	       LDA #$99
+.913f	d0 0a		bne $914b	       BNE XX914B
+.9141	e0 51		cpx #$51	XX9141 CPX #$51      ;'Q'
+.9143	90 04		bcc $9149	       BCC XX9149
+.9145	a9 96		lda #$96	       LDA #$96
+.9147	d0 02		bne $914b	       BNE XX914B
+.9149	a9 9e		lda #$9e	XX9149 LDA #$9E
+.914b	20 d2 ff	jsr $ffd2	XX914B JSR CHROUT
+.914e	a6 8d		ldx $8d		       LDX $8D
+.9150	20 0f 93	jsr $930f	       JSR XX930F
+.9153	ad f3 13	lda $13f3	       LDA $13F3
+.9156	0d f2 13	ora $13f2	       ORA $13F2
+.9159	f0 11		beq $916c	       BEQ XX916C
+.915b	ad f2 13	lda $13f2	       LDA $13F2
+.915e	cd f3 13	cmp $13f3	       CMP $13F3
+.9161	b0 04		bcs $9167	       BCS XX9167
+.9163	a9 2b		lda #$2b	       LDA #$2B      ;'+'
+.9165	d0 02		bne $9169	       BNE XX9169
+.9167	a9 2d		lda #$2d	XX9167 LDA #$2D      ;'-'
+.9169	20 d2 ff	jsr $ffd2	XX9169 JSR CHROUT
+.916c	e6 02		inc $02		XX916C INC $02
+.916e	a5 8f		lda $8f		       LDA $8F
+.9170	c9 01		cmp #$01	       CMP #$01
+.9172	f0 3d		beq $91b1	       BEQ XX91B1
+.9174	a5 02		lda $02		       LDA $02
+.9176	c9 24		cmp #$24	       CMP #$24      ;'$'
+.9178	f0 29		beq $91a3	       BEQ XX91A3
+.917a	c9 13		cmp #$13	       CMP #$13
+.917c	d0 0a		bne $9188	       BNE XX9188
+.917e	a9 14		lda #$14	       LDA #$14
+.9180	85 be		sta $be		       STA $BE
+.9182	a9 07		lda #$07	       LDA #$07
+.9184	85 bf		sta $bf		       STA $BF
+.9186	d0 02		bne $918a	       BNE XX918A
+.9188	e6 bf		inc $bf		XX9188 INC $BF
+.918a	a4 be		ldy $be		XX918A LDY $BE
+.918c	a6 bf		ldx $bf		       LDX $BF
+.918e	18		clc		       CLC
+.918f	20 f0 ff	jsr $fff0	       JSR PLOT
+.9192	a9 06		lda #$06	       LDA #$06
+.9194	4c da 90	jmp $90da	       JMP XX90DA
+.9197	a9 09		lda #$09	XX9197 LDA #$09
+.9199	d0 02		bne $919d	       BNE XX919D
+.919b	a9 0c		lda #$0c	XX919B LDA #$0C
+.919d	20 be 91	jsr $91be	XX919D JSR XX91BE
+.91a0	4c 9e 90	jmp $909e	       JMP XX909E
+.91a3	a5 8f		lda $8f		XX91A3 LDA $8F
+.91a5	c9 02		cmp #$02	       CMP #$02
+.91a7	d0 ee		bne $9197	       BNE XX9197
+.91a9	a9 09		lda #$09	       LDA #$09
+.91ab	20 b9 92	jsr $92b9	       JSR XX92B9
+.91ae	4c d5 90	jmp $90d5	       JMP XX90D5
+.91b1	a9 18		lda #$18	XX91B1 LDA #$18
+.91b3	20 be 91	jsr $91be	       JSR XX91BE
+.91b6	a9 1b		lda #$1b	       LDA #$1B
+.91b8	20 b9 92	jsr $92b9	       JSR XX92B9
+.91bb	4c 9e 90	jmp $909e	       JMP XX909E
+.91be	20 b9 92	jsr $92b9	XX91BE JSR XX92B9
+.91c1	a2 18		ldx #$18	       LDX #$18
+.91c3	a0 15		ldy #$15	       LDY #$15
+.91c5	18		clc		       CLC
+.91c6	20 f0 ff	jsr $fff0	       JSR PLOT
+.91c9	a0 95		ldy #$95	       LDY #$95
+.91cb	a9 f9		lda #$f9	       LDA #$F9
+.91cd	20 1b 83	jsr $831b	       JSR XX831B
+.91d0	20 e4 ff	jsr $ffe4	XX91D0 JSR GETIN
+.91d3	f0 fb		beq $91d0	       BEQ XX91D0
+.91d5	60		rts		       RTS
+.91d6	20 44 e5	jsr $e544	XX91D6 JSR $E544
+.91d9	a0 96		ldy #$96	       LDY #$96
+.91db	a9 6c		lda #$6c	       LDA #$6C
+.91dd	20 1b 83	jsr $831b	       JSR XX831B
+.91e0	20 4b 93	jsr $934b	       JSR XX934B
+.91e3	a9 b2		lda #$b2	       LDA #$B2
+.91e5	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.91e8	20 4b 93	jsr $934b	       JSR XX934B
+.91eb	a9 12		lda #$12	       LDA #$12
+.91ed	85 02		sta $02		       STA $02
+.91ef	a9 0d		lda #$0d	XX91EF LDA #$0D
+.91f1	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.91f4	a2 13		ldx #$13	       LDX #$13
+.91f6	20 51 93	jsr $9351	       JSR XX9351
+.91f9	a9 62		lda #$62	       LDA #$62
+.91fb	20 d2 ff	jsr $ffd2	       JSR CHROUT
+.91fe	c6 02		dec $02		       DEC $02
+.9200	d0 ed		bne $91ef	       BNE XX91EF
+.9202	a2 07		ldx #$07	       LDX #$07
+.9204	a0 01		ldy #$01	       LDY #$01
+.9206	86 bf		stx $bf		       STX $BF
+.9208	84 be		sty $be		       STY $BE
+.920a	18		clc		       CLC
+.920b	20 f0 ff	jsr $fff0	       JSR PLOT
+.920e	a9 01		lda #$01	       LDA #$01
+.9210	85 02		sta $02		       STA $02
+.9212	60		rts		       RTS
+.9213	a0 00		ldy #$00	XX9213 LDY #$00
+.9215	a2 00		ldx #$00	       LDX #$00
+.9217	38		sec		XX9217 SEC
+.9218	a5 8d		lda $8d		       LDA $8D
+.921a	e9 3c		sbc #$3c	       SBC #$3C      ;'<'
+.921c	85 8f		sta $8f		       STA $8F
+.921e	a5 8c		lda $8c		       LDA $8C
+.9220	e9 00		sbc #$00	       SBC #$00
+.9222	85 8e		sta $8e		       STA $8E
+.9224	90 29		bcc $924f	       BCC XX924F
+.9226	a5 8f		lda $8f		       LDA $8F
+.9228	85 8d		sta $8d		       STA $8D
+.922a	a5 8e		lda $8e		       LDA $8E
+.922c	85 8c		sta $8c		       STA $8C
+.922e	c8		iny		       INY
+.922f	d0 e6		bne $9217	       BNE XX9217
+.9231	88		dey		       DEY
+.9232	84 b1		sty $b1		XX9232 STY $B1
+.9234	86 b2		stx $b2		       STX $B2
+.9236	84 8e		sty $8e		       STY $8E
+.9238	86 8f		stx $8f		       STX $8F
+.923a	c0 02		cpy #$02	       CPY #$02
+.923c	90 09		bcc $9247	       BCC XX9247
+.923e	c0 04		cpy #$04	       CPY #$04
+.9240	90 09		bcc $924b	       BCC XX924B
+.9242	a9 1c		lda #$1c	       LDA #$1C
+.9244	85 b4		sta $b4		XX9244 STA $B4
+.9246	60		rts		       RTS
+.9247	a9 99		lda #$99	XX9247 LDA #$99
+.9249	d0 f9		bne $9244	       BNE XX9244
+.924b	a9 9e		lda #$9e	XX924B LDA #$9E
+.924d	d0 f5		bne $9244	       BNE XX9244
+.924f	38		sec		XX924F SEC
+.9250	a5 8d		lda $8d		       LDA $8D
+.9252	e9 06		sbc #$06	       SBC #$06
+.9254	85 8f		sta $8f		       STA $8F
+.9256	a5 8c		lda $8c		       LDA $8C
+.9258	e9 00		sbc #$00	       SBC #$00
+.925a	85 8e		sta $8e		       STA $8E
+.925c	90 d4		bcc $9232	       BCC XX9232
+.925e	a5 8f		lda $8f		       LDA $8F
+.9260	85 8d		sta $8d		       STA $8D
+.9262	a5 8e		lda $8e		       LDA $8E
+.9264	85 8c		sta $8c		       STA $8C
+.9266	e8		inx		       INX
+.9267	d0 e6		bne $924f	       BNE XX924F
+.9269	a5 ba		lda $ba		       LDA $BA
+.926b	20 b1 ff	jsr $ffb1	       JSR LISTEN
+.926e	a5 b9		lda $b9		       LDA $B9
+.9270	29 ef		and #$ef	       AND #$EF
+.9272	09 e0		ora #$e0	       ORA #$E0
+.9274	20 93 ff	jsr $ff93	       JSR SECOND
+.9277	4c ae ff	jmp $ffae	       JMP UNLSN
+.927a	20 ae ff	jsr $ffae	XX927A JSR UNLSN
+.927d	a5 ba		lda $ba		       LDA $BA
+.927f	20 b4 ff	jsr $ffb4	       JSR TALK
+.9282	a9 6f		lda #$6f	       LDA #$6F
+.9284	85 b9		sta $b9		       STA $B9
+.9286	4c 96 ff	jmp $ff96	       JMP TKSA
+.9289	a9 57		lda #$57	       LDA #$57      ;'W'
+>928b	2c				       .BYTE $2C
+.928c	a9 52		lda #$52	XX928C LDA #$52      ;'R'
+>928e	2c				       .BYTE $2C
+.928f	a9 45		lda #$45	XX928F LDA #$45      ;'E'
+.9291	48		pha		       PHA
+.9292	a5 ba		lda $ba		       LDA $BA
+.9294	20 b1 ff	jsr $ffb1	       JSR LISTEN
+.9297	a9 6f		lda #$6f	       LDA #$6F
+.9299	85 b9		sta $b9		       STA $B9
+.929b	20 93 ff	jsr $ff93	       JSR SECOND
+.929e	a9 4d		lda #$4d	       LDA #$4D      ;'M'
+.92a0	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.92a3	a9 2d		lda #$2d	       LDA #$2D      ;'-'
+.92a5	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.92a8	68		pla		       PLA
+.92a9	4c a8 ff	jmp $ffa8	       JMP CIOUT
+.92ac	20 8c 92	jsr $928c	XX92AC JSR XX928C
+.92af	a9 e0		lda #$e0	       LDA #$E0
+.92b1	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.92b4	a9 06		lda #$06	       LDA #$06
+.92b6	4c a8 ff	jmp $ffa8	       JMP CIOUT
+.92b9	48		pha		XX92B9 PHA
+.92ba	20 8f 92	jsr $928f	       JSR XX928F
+.92bd	68		pla		       PLA
+.92be	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.92c1	a9 04		lda #$04	       LDA #$04
+.92c3	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.92c6	4c ae ff	jmp $ffae	       JMP UNLSN
+.92c9	20 b9 92	jsr $92b9	XX92C9 JSR XX92B9
+.92cc	20 ac 92	jsr $92ac	       JSR XX92AC
+.92cf	a9 14		lda #$14	       LDA #$14
+.92d1	20 a8 ff	jsr $ffa8	       JSR CIOUT
+.92d4	20 7a 92	jsr $927a	       JSR XX927A
+.92d7	a0 00		ldy #$00	       LDY #$00
+.92d9	20 a5 ff	jsr $ffa5	XX92D9 JSR ACPTR
+.92dc	99 e0 13	sta $13e0,y	       STA $13E0,Y
+.92df	c8		iny		       INY
+.92e0	c0 14		cpy #$14	       CPY #$14
+.92e2	d0 f5		bne $92d9	       BNE XX92D9
+.92e4	20 ab ff	jsr $ffab	       JSR UNTLK
+.92e7	a0 00		ldy #$00	       LDY #$00
+.92e9	84 8d		sty $8d		       STY $8D
+.92eb	84 8e		sty $8e		       STY $8E
+.92ed	84 8c		sty $8c		       STY $8C
+.92ef	a9 10		lda #$10	       LDA #$10
+.92f1	85 8b		sta $8b		       STA $8B
+.92f3	c8		iny		XX92F3 INY
+.92f4	c0 11		cpy #$11	       CPY #$11
+.92f6	f0 0e		beq $9306	       BEQ XX9306
+.92f8	a5 8d		lda $8d		       LDA $8D
+.92fa	18		clc		       CLC
+.92fb	79 e0 13	adc $13e0,y	       ADC $13E0,Y
+.92fe	85 8d		sta $8d		       STA $8D
+.9300	90 f1		bcc $92f3	       BCC XX92F3
+.9302	e6 8e		inc $8e		       INC $8E
+.9304	d0 ed		bne $92f3	       BNE XX92F3
+.9306	20 25 93	jsr $9325	XX9306 JSR XX9325
+.9309	20 e4 ff	jsr $ffe4	       JSR GETIN
+.930c	c9 00		cmp #$00	       CMP #$00
+.930e	60		rts		       RTS
+.930f	e0 0a		cpx #$0a	XX930F CPX #$0A
+.9311	90 09		bcc $931c	       BCC XX931C
+.9313	e0 64		cpx #$64	       CPX #$64
+.9315	90 08		bcc $931f	       BCC XX931F
+.9317	a9 00		lda #$00	XX9317 LDA #$00
+.9319	4c cd bd	jmp $bdcd	       JMP $BDCD
+.931c	20 fb 82	jsr $82fb	XX931C JSR XX82FB
+.931f	20 fb 82	jsr $82fb	XX931F JSR XX82FB
+.9322	4c 17 93	jmp $9317	       JMP XX9317
+.9325	a9 00		lda #$00	XX9325 LDA #$00
+.9327	85 b0		sta $b0		       STA $B0
+.9329	85 b1		sta $b1		       STA $B1
+.932b	a2 10		ldx #$10	       LDX #$10
+.932d	06 8d		asl $8d		XX932D ASL $8D
+.932f	26 8e		rol $8e		       ROL $8E
+.9331	26 b0		rol $b0		       ROL $B0
+.9333	26 b1		rol $b1		       ROL $B1
+.9335	a5 b0		lda $b0		       LDA $B0
+.9337	38		sec		       SEC
+.9338	e5 8b		sbc $8b		       SBC $8B
+.933a	a8		tay		       TAY
+.933b	a5 b1		lda $b1		       LDA $B1
+.933d	e5 8c		sbc $8c		       SBC $8C
+.933f	90 06		bcc $9347	       BCC XX9347
+.9341	e6 8d		inc $8d		       INC $8D
+.9343	85 b1		sta $b1		       STA $B1
+.9345	84 b0		sty $b0		       STY $B0
+.9347	ca		dex		XX9347 DEX
+.9348	d0 e3		bne $932d	       BNE XX932D
+.934a	60		rts		       RTS
+.934b	a2 13		ldx #$13	XX934B LDX #$13
+.934d	a9 63		lda #$63	       LDA #$63
+.934f	d0 06		bne $9357	       BNE XX9357
+.9351	a9 1d		lda #$1d	XX9351 LDA #$1D
+.9353	d0 02		bne $9357	       BNE XX9357
+.9355	a9 20		lda #$20	XX9355 LDA #$20      ;' '
+.9357	20 d2 ff	jsr $ffd2	XX9357 JSR CHROUT
+.935a	ca		dex		       DEX
+.935b	d0 fa		bne $9357	       BNE XX9357
+.935d	60		rts		       RTS
+>935e	96				       .BYTE $96
+>935f	3f				       .BYTE $3F
+>9360	44				       .BYTE $44
+>9361	45				       .BYTE $45
+>9362	56				       .BYTE $56
+>9363	49				       .BYTE $49
+>9364	43				       .BYTE $43
+>9365	45				       .BYTE $45
+>9366	20				       .BYTE $20
+>9367	4e				       .BYTE $4E
+>9368	4f				       .BYTE $4F
+>9369	54				       .BYTE $54
+>936a	20				       .BYTE $20
+>936b	50				       .BYTE $50
+>936c	52				       .BYTE $52
+>936d	45				       .BYTE $45
+>936e	53				       .BYTE $53
+>936f	45				       .BYTE $45
+>9370	4e				       .BYTE $4E
+>9371	54				       .BYTE $54
+>9372	9b				       .BYTE $9B
+>9373	00				       .BYTE $00
+>9374	93				       .BYTE $93
+>9375	9b				       .BYTE $9B
+>9376	0d				       .BYTE $0D
+>9377	80				       .BYTE $80
+>9378	0a				       .BYTE $0A
+>9379	20				       .BYTE $20
+>937a	12				       .BYTE $12
+>937b	99				       .BYTE $99
+>937c	20				       .BYTE $20
+>937d	31				       .BYTE $31
+>937e	35				       .BYTE $35
+>937f	34				       .BYTE $34
+>9380	31				       .BYTE $31
+>9381	20				       .BYTE $20
+>9382	44				       .BYTE $44
+>9383	49				       .BYTE $49
+>9384	41				       .BYTE $41
+>9385	47				       .BYTE $47
+>9386	2f				       .BYTE $2F
+>9387	54				       .BYTE $54
+>9388	45				       .BYTE $45
+>9389	53				       .BYTE $53
+>938a	54				       .BYTE $54
+>938b	20				       .BYTE $20
+>938c	43				       .BYTE $43
+>938d	41				       .BYTE $41
+>938e	52				       .BYTE $52
+>938f	54				       .BYTE $54
+>9390	20				       .BYTE $20
+>9391	0d				       .BYTE $0D
+>9392	80				       .BYTE $80
+>9393	0a				       .BYTE $0A
+>9394	20				       .BYTE $20
+>9395	12				       .BYTE $12
+>9396	99				       .BYTE $99
+>9397	20				       .BYTE $20
+>9398	57				       .BYTE $57
+>9399	57				       .BYTE $57
+>939a	57				       .BYTE $57
+>939b	2e				       .BYTE $2E
+>939c	57				       .BYTE $57
+>939d	4f				       .BYTE $4F
+>939e	52				       .BYTE $52
+>939f	4c				       .BYTE $4C
+>93a0	44				       .BYTE $44
+>93a1	4f				       .BYTE $4F
+>93a2	46				       .BYTE $46
+>93a3	4a				       .BYTE $4A
+>93a4	41				       .BYTE $41
+>93a5	4e				       .BYTE $4E
+>93a6	49				       .BYTE $49
+>93a7	2e				       .BYTE $2E
+>93a8	43				       .BYTE $43
+>93a9	4f				       .BYTE $4F
+>93aa	4d				       .BYTE $4D
+>93ab	20				       .BYTE $20
+>93ac	0d				       .BYTE $0D
+>93ad	0d				       .BYTE $0D
+>93ae	97				       .BYTE $97
+>93af	80				       .BYTE $80
+>93b0	28				       .BYTE $28
+>93b1	60				       .BYTE $60
+>93b2	0d				       .BYTE $0D
+>93b3	80				       .BYTE $80
+>93b4	0d				       .BYTE $0D
+>93b5	20				       .BYTE $20
+>93b6	12				       .BYTE $12
+>93b7	99				       .BYTE $99
+>93b8	41				       .BYTE $41
+>93b9	92				       .BYTE $92
+>93ba	9b				       .BYTE $9B
+>93bb	4c				       .BYTE $4C
+>93bc	49				       .BYTE $49
+>93bd	47				       .BYTE $47
+>93be	4e				       .BYTE $4E
+>93bf	4d				       .BYTE $4D
+>93c0	45				       .BYTE $45
+>93c1	4e				       .BYTE $4E
+>93c2	54				       .BYTE $54
+>93c3	a4				       .BYTE $A4
+>93c4	0d				       .BYTE $0D
+>93c5	80				       .BYTE $80
+>93c6	0d				       .BYTE $0D
+>93c7	20				       .BYTE $20
+>93c8	53				       .BYTE $53
+>93c9	48				       .BYTE $48
+>93ca	4f				       .BYTE $4F
+>93cb	57				       .BYTE $57
+>93cc	20				       .BYTE $20
+>93cd	12				       .BYTE $12
+>93ce	99				       .BYTE $99
+>93cf	42				       .BYTE $42
+>93d0	92				       .BYTE $92
+>93d1	9b				       .BYTE $9B
+>93d2	41				       .BYTE $41
+>93d3	4d				       .BYTE $4D
+>93d4	0d				       .BYTE $0D
+>93d5	80				       .BYTE $80
+>93d6	0d				       .BYTE $0D
+>93d7	20				       .BYTE $20
+>93d8	44				       .BYTE $44
+>93d9	49				       .BYTE $49
+>93da	53				       .BYTE $53
+>93db	4b				       .BYTE $4B
+>93dc	20				       .BYTE $20
+>93dd	12				       .BYTE $12
+>93de	99				       .BYTE $99
+>93df	43				       .BYTE $43
+>93e0	92				       .BYTE $92
+>93e1	9b				       .BYTE $9B
+>93e2	4f				       .BYTE $4F
+>93e3	4d				       .BYTE $4D
+>93e4	4d				       .BYTE $4D
+>93e5	41				       .BYTE $41
+>93e6	4e				       .BYTE $4E
+>93e7	44				       .BYTE $44
+>93e8	0d				       .BYTE $0D
+>93e9	80				       .BYTE $80
+>93ea	0d				       .BYTE $0D
+>93eb	20				       .BYTE $20
+>93ec	12				       .BYTE $12
+>93ed	99				       .BYTE $99
+>93ee	44				       .BYTE $44
+>93ef	92				       .BYTE $92
+>93f0	9b				       .BYTE $9B
+>93f1	49				       .BYTE $49
+>93f2	52				       .BYTE $52
+>93f3	45				       .BYTE $45
+>93f4	43				       .BYTE $43
+>93f5	54				       .BYTE $54
+>93f6	4f				       .BYTE $4F
+>93f7	52				       .BYTE $52
+>93f8	59				       .BYTE $59
+>93f9	0d				       .BYTE $0D
+>93fa	80				       .BYTE $80
+>93fb	0d				       .BYTE $0D
+>93fc	20				       .BYTE $20
+>93fd	12				       .BYTE $12
+>93fe	99				       .BYTE $99
+>93ff	45				       .BYTE $45
+>9400	92				       .BYTE $92
+>9401	9b				       .BYTE $9B
+>9402	52				       .BYTE $52
+>9403	52				       .BYTE $52
+>9404	4f				       .BYTE $4F
+>9405	52				       .BYTE $52
+>9406	20				       .BYTE $20
+>9407	53				       .BYTE $53
+>9408	43				       .BYTE $43
+>9409	41				       .BYTE $41
+>940a	4e				       .BYTE $4E
+>940b	0d				       .BYTE $0D
+>940c	80				       .BYTE $80
+>940d	0d				       .BYTE $0D
+>940e	20				       .BYTE $20
+>940f	46				       .BYTE $46
+>9410	41				       .BYTE $41
+>9411	53				       .BYTE $53
+>9412	54				       .BYTE $54
+>9413	20				       .BYTE $20
+>9414	12				       .BYTE $12
+>9415	99				       .BYTE $99
+>9416	46				       .BYTE $46
+>9417	92				       .BYTE $92
+>9418	9b				       .BYTE $9B
+>9419	4f				       .BYTE $4F
+>941a	52				       .BYTE $52
+>941b	4d				       .BYTE $4D
+>941c	41				       .BYTE $41
+>941d	54				       .BYTE $54
+>941e	0d				       .BYTE $0D
+>941f	00				       .BYTE $00
+>9420	80				       .BYTE $80
+>9421	0d				       .BYTE $0D
+>9422	20				       .BYTE $20
+>9423	12				       .BYTE $12
+>9424	99				       .BYTE $99
+>9425	48				       .BYTE $48
+>9426	92				       .BYTE $92
+>9427	9b				       .BYTE $9B
+>9428	45				       .BYTE $45
+>9429	41				       .BYTE $41
+>942a	44				       .BYTE $44
+>942b	20				       .BYTE $20
+>942c	45				       .BYTE $45
+>942d	58				       .BYTE $58
+>942e	45				       .BYTE $45
+>942f	52				       .BYTE $52
+>9430	43				       .BYTE $43
+>9431	49				       .BYTE $49
+>9432	53				       .BYTE $53
+>9433	45				       .BYTE $45
+>9434	52				       .BYTE $52
+>9435	0d				       .BYTE $0D
+>9436	80				       .BYTE $80
+>9437	0d				       .BYTE $0D
+>9438	20				       .BYTE $20
+>9439	53				       .BYTE $53
+>943a	45				       .BYTE $45
+>943b	4e				       .BYTE $4E
+>943c	44				       .BYTE $44
+>943d	20				       .BYTE $20
+>943e	12				       .BYTE $12
+>943f	99				       .BYTE $99
+>9440	49				       .BYTE $49
+>9441	92				       .BYTE $92
+>9442	9b				       .BYTE $9B
+>9443	30				       .BYTE $30
+>9444	3a				       .BYTE $3A
+>9445	0d				       .BYTE $0D
+>9446	80				       .BYTE $80
+>9447	0d				       .BYTE $0D
+>9448	20				       .BYTE $20
+>9449	52				       .BYTE $52
+>944a	45				       .BYTE $45
+>944b	56				       .BYTE $56
+>944c	45				       .BYTE $45
+>944d	52				       .BYTE $52
+>944e	53				       .BYTE $53
+>944f	45				       .BYTE $45
+>9450	20				       .BYTE $20
+>9451	12				       .BYTE $12
+>9452	99				       .BYTE $99
+>9453	4b				       .BYTE $4B
+>9454	92				       .BYTE $92
+>9455	9b				       .BYTE $9B
+>9456	4e				       .BYTE $4E
+>9457	4f				       .BYTE $4F
+>9458	43				       .BYTE $43
+>9459	4b				       .BYTE $4B
+>945a	0d				       .BYTE $0D
+>945b	80				       .BYTE $80
+>945c	0d				       .BYTE $0D
+>945d	20				       .BYTE $20
+>945e	12				       .BYTE $12
+>945f	99				       .BYTE $99
+>9460	53				       .BYTE $53
+>9461	92				       .BYTE $92
+>9462	9b				       .BYTE $9B
+>9463	50				       .BYTE $50
+>9464	45				       .BYTE $45
+>9465	45				       .BYTE $45
+>9466	44				       .BYTE $44
+>9467	a4				       .BYTE $A4
+>9468	0d				       .BYTE $0D
+>9469	80				       .BYTE $80
+>946a	0d				       .BYTE $0D
+>946b	20				       .BYTE $20
+>946c	12				       .BYTE $12
+>946d	99				       .BYTE $99
+>946e	50				       .BYTE $50
+>946f	92				       .BYTE $92
+>9470	9b				       .BYTE $9B
+>9471	45				       .BYTE $45
+>9472	52				       .BYTE $52
+>9473	46				       .BYTE $46
+>9474	4f				       .BYTE $4F
+>9475	52				       .BYTE $52
+>9476	4d				       .BYTE $4D
+>9477	41				       .BYTE $41
+>9478	4e				       .BYTE $4E
+>9479	43				       .BYTE $43
+>947a	45				       .BYTE $45
+>947b	20				       .BYTE $20
+>947c	54				       .BYTE $54
+>947d	45				       .BYTE $45
+>947e	53				       .BYTE $53
+>947f	54				       .BYTE $54
+>9480	0d				       .BYTE $0D
+>9481	80				       .BYTE $80
+>9482	0d				       .BYTE $0D
+>9483	20				       .BYTE $20
+>9484	12				       .BYTE $12
+>9485	99				       .BYTE $99
+>9486	56				       .BYTE $56
+>9487	92				       .BYTE $92
+>9488	9b				       .BYTE $9B
+>9489	41				       .BYTE $41
+>948a	4c				       .BYTE $4C
+>948b	49				       .BYTE $49
+>948c	44				       .BYTE $44
+>948d	41				       .BYTE $41
+>948e	54				       .BYTE $54
+>948f	45				       .BYTE $45
+>9490	a2				       .BYTE $A2
+>9491	0d				       .BYTE $0D
+>9492	80				       .BYTE $80
+>9493	0d				       .BYTE $0D
+>9494	20				       .BYTE $20
+>9495	a3				       .BYTE $A3
+>9496	20				       .BYTE $20
+>9497	56				       .BYTE $56
+>9498	49				       .BYTE $49
+>9499	45				       .BYTE $45
+>949a	12				       .BYTE $12
+>949b	99				       .BYTE $99
+>949c	57				       .BYTE $57
+>949d	92				       .BYTE $92
+>949e	9b				       .BYTE $9B
+>949f	0d				       .BYTE $0D
+>94a0	97				       .BYTE $97
+>94a1	80				       .BYTE $80
+>94a2	24				       .BYTE $24
+>94a3	20				       .BYTE $20
+>94a4	56				       .BYTE $56
+>94a5	31				       .BYTE $31
+>94a6	2e				       .BYTE $2E
+>94a7	30				       .BYTE $30
+>94a8	97				       .BYTE $97
+>94a9	80				       .BYTE $80
+>94aa	28				       .BYTE $28
+>94ab	60				       .BYTE $60
+>94ac	0d				       .BYTE $0D
+>94ad	9b				       .BYTE $9B
+>94ae	20				       .BYTE $20
+>94af	20				       .BYTE $20
+>94b0	20				       .BYTE $20
+>94b1	49				       .BYTE $49
+>94b2	4e				       .BYTE $4E
+>94b3	53				       .BYTE $53
+>94b4	45				       .BYTE $45
+>94b5	52				       .BYTE $52
+>94b6	54				       .BYTE $54
+>94b7	20				       .BYTE $20
+>94b8	41				       .BYTE $41
+>94b9	4e				       .BYTE $4E
+>94ba	20				       .BYTE $20
+>94bb	99				       .BYTE $99
+>94bc	45				       .BYTE $45
+>94bd	4d				       .BYTE $4D
+>94be	50				       .BYTE $50
+>94bf	54				       .BYTE $54
+>94c0	59				       .BYTE $59
+>94c1	9b				       .BYTE $9B
+>94c2	a2				       .BYTE $A2
+>94c3	49				       .BYTE $49
+>94c4	4e				       .BYTE $4E
+>94c5	54				       .BYTE $54
+>94c6	4f				       .BYTE $4F
+>94c7	20				       .BYTE $20
+>94c8	44				       .BYTE $44
+>94c9	52				       .BYTE $52
+>94ca	49				       .BYTE $49
+>94cb	56				       .BYTE $56
+>94cc	45				       .BYTE $45
+>94cd	20				       .BYTE $20
+>94ce	99				       .BYTE $99
+>94cf	38				       .BYTE $38
+>94d0	9b				       .BYTE $9B
+>94d1	2e				       .BYTE $2E
+>94d2	0d				       .BYTE $0D
+>94d3	0d				       .BYTE $0D
+>94d4	20				       .BYTE $20
+>94d5	20				       .BYTE $20
+>94d6	57				       .BYTE $57
+>94d7	41				       .BYTE $41
+>94d8	52				       .BYTE $52
+>94d9	4e				       .BYTE $4E
+>94da	49				       .BYTE $49
+>94db	4e				       .BYTE $4E
+>94dc	47				       .BYTE $47
+>94dd	3a				       .BYTE $3A
+>94de	41				       .BYTE $41
+>94df	4c				       .BYTE $4C
+>94e0	4c				       .BYTE $4C
+>94e1	20				       .BYTE $20
+>94e2	44				       .BYTE $44
+>94e3	41				       .BYTE $41
+>94e4	54				       .BYTE $54
+>94e5	41				       .BYTE $41
+>94e6	20				       .BYTE $20
+>94e7	4f				       .BYTE $4F
+>94e8	4e				       .BYTE $4E
+>94e9	20				       .BYTE $20
+>94ea	54				       .BYTE $54
+>94eb	48				       .BYTE $48
+>94ec	45				       .BYTE $45
+>94ed	a2				       .BYTE $A2
+>94ee	57				       .BYTE $57
+>94ef	49				       .BYTE $49
+>94f0	4c				       .BYTE $4C
+>94f1	4c				       .BYTE $4C
+>94f2	20				       .BYTE $20
+>94f3	42				       .BYTE $42
+>94f4	45				       .BYTE $45
+>94f5	0d				       .BYTE $0D
+>94f6	80				       .BYTE $80
+>94f7	06				       .BYTE $06
+>94f8	20				       .BYTE $20
+>94f9	44				       .BYTE $44
+>94fa	45				       .BYTE $45
+>94fb	53				       .BYTE $53
+>94fc	54				       .BYTE $54
+>94fd	52				       .BYTE $52
+>94fe	4f				       .BYTE $4F
+>94ff	59				       .BYTE $59
+>9500	45				       .BYTE $45
+>9501	44				       .BYTE $44
+>9502	20				       .BYTE $20
+>9503	44				       .BYTE $44
+>9504	55				       .BYTE $55
+>9505	52				       .BYTE $52
+>9506	49				       .BYTE $49
+>9507	4e				       .BYTE $4E
+>9508	47				       .BYTE $47
+>9509	20				       .BYTE $20
+>950a	54				       .BYTE $54
+>950b	48				       .BYTE $48
+>950c	45				       .BYTE $45
+>950d	20				       .BYTE $20
+>950e	54				       .BYTE $54
+>950f	45				       .BYTE $45
+>9510	53				       .BYTE $53
+>9511	54				       .BYTE $54
+>9512	53				       .BYTE $53
+>9513	20				       .BYTE $20
+>9514	21				       .BYTE $21
+>9515	00				       .BYTE $00
+>9516	0d				       .BYTE $0D
+>9517	20				       .BYTE $20
+>9518	12				       .BYTE $12
+>9519	99				       .BYTE $99
+>951a	a2				       .BYTE $A2
+>951b	43				       .BYTE $43
+>951c	4f				       .BYTE $4F
+>951d	4d				       .BYTE $4D
+>951e	4d				       .BYTE $4D
+>951f	41				       .BYTE $41
+>9520	4e				       .BYTE $4E
+>9521	44				       .BYTE $44
+>9522	20				       .BYTE $20
+>9523	0d				       .BYTE $0D
+>9524	0d				       .BYTE $0D
+>9525	9b				       .BYTE $9B
+>9526	20				       .BYTE $20
+>9527	40				       .BYTE $40
+>9528	3e				       .BYTE $3E
+>9529	99				       .BYTE $99
+>952a	80				       .BYTE $80
+>952b	19				       .BYTE $19
+>952c	20				       .BYTE $20
+>952d	00				       .BYTE $00
+>952e	20				       .BYTE $20
+>952f	9b				       .BYTE $9B
+>9530	50				       .BYTE $50
+>9531	52				       .BYTE $52
+>9532	45				       .BYTE $45
+>9533	53				       .BYTE $53
+>9534	53				       .BYTE $53
+>9535	20				       .BYTE $20
+>9536	52				       .BYTE $52
+>9537	45				       .BYTE $45
+>9538	54				       .BYTE $54
+>9539	55				       .BYTE $55
+>953a	52				       .BYTE $52
+>953b	4e				       .BYTE $4E
+>953c	0d				       .BYTE $0D
+>953d	0d				       .BYTE $0D
+>953e	00				       .BYTE $00
+>953f	80				       .BYTE $80
+>9540	0e				       .BYTE $0E
+>9541	20				       .BYTE $20
+>9542	0d				       .BYTE $0D
+>9543	0d				       .BYTE $0D
+>9544	00				       .BYTE $00
+>9545	93				       .BYTE $93
+>9546	0d				       .BYTE $0D
+>9547	20				       .BYTE $20
+>9548	12				       .BYTE $12
+>9549	99				       .BYTE $99
+>954a	20				       .BYTE $20
+>954b	45				       .BYTE $45
+>954c	52				       .BYTE $52
+>954d	52				       .BYTE $52
+>954e	4f				       .BYTE $4F
+>954f	52				       .BYTE $52
+>9550	20				       .BYTE $20
+>9551	53				       .BYTE $53
+>9552	43				       .BYTE $43
+>9553	41				       .BYTE $41
+>9554	4e				       .BYTE $4E
+>9555	20				       .BYTE $20
+>9556	0d				       .BYTE $0D
+>9557	0d				       .BYTE $0D
+>9558	00				       .BYTE $00
+>9559	20				       .BYTE $20
+>955a	9b				       .BYTE $9B
+>955b	54				       .BYTE $54
+>955c	52				       .BYTE $52
+>955d	41				       .BYTE $41
+>955e	43				       .BYTE $43
+>955f	4b				       .BYTE $4B
+>9560	3a				       .BYTE $3A
+>9561	80				       .BYTE $80
+>9562	06				       .BYTE $06
+>9563	20				       .BYTE $20
+>9564	0d				       .BYTE $0D
+>9565	0d				       .BYTE $0D
+>9566	00				       .BYTE $00
+>9567	20				       .BYTE $20
+>9568	9b				       .BYTE $9B
+>9569	42				       .BYTE $42
+>956a	41				       .BYTE $41
+>956b	44				       .BYTE $44
+>956c	20				       .BYTE $20
+>956d	a3				       .BYTE $A3
+>956e	53				       .BYTE $53
+>956f	3a				       .BYTE $3A
+>9570	20				       .BYTE $20
+>9571	20				       .BYTE $20
+>9572	20				       .BYTE $20
+>9573	0d				       .BYTE $0D
+>9574	0d				       .BYTE $0D
+>9575	00				       .BYTE $00
+>9576	93				       .BYTE $93
+>9577	0d				       .BYTE $0D
+>9578	20				       .BYTE $20
+>9579	12				       .BYTE $12
+>957a	99				       .BYTE $99
+>957b	20				       .BYTE $20
+>957c	56				       .BYTE $56
+>957d	41				       .BYTE $41
+>957e	4c				       .BYTE $4C
+>957f	49				       .BYTE $49
+>9580	44				       .BYTE $44
+>9581	41				       .BYTE $41
+>9582	54				       .BYTE $54
+>9583	45				       .BYTE $45
+>9584	a2				       .BYTE $A2
+>9585	0d				       .BYTE $0D
+>9586	0d				       .BYTE $0D
+>9587	00				       .BYTE $00
+>9588	93				       .BYTE $93
+>9589	0d				       .BYTE $0D
+>958a	20				       .BYTE $20
+>958b	12				       .BYTE $12
+>958c	99				       .BYTE $99
+>958d	20				       .BYTE $20
+>958e	53				       .BYTE $53
+>958f	50				       .BYTE $50
+>9590	45				       .BYTE $45
+>9591	45				       .BYTE $45
+>9592	44				       .BYTE $44
+>9593	a4				       .BYTE $A4
+>9594	0d				       .BYTE $0D
+>9595	0d				       .BYTE $0D
+>9596	00				       .BYTE $00
+>9597	92				       .BYTE $92
+>9598	9b				       .BYTE $9B
+>9599	20				       .BYTE $20
+>959a	4e				       .BYTE $4E
+>959b	4f				       .BYTE $4F
+>959c	52				       .BYTE $52
+>959d	4d				       .BYTE $4D
+>959e	41				       .BYTE $41
+>959f	4c				       .BYTE $4C
+>95a0	20				       .BYTE $20
+>95a1	53				       .BYTE $53
+>95a2	50				       .BYTE $50
+>95a3	45				       .BYTE $45
+>95a4	45				       .BYTE $45
+>95a5	44				       .BYTE $44
+>95a6	3a				       .BYTE $3A
+>95a7	20				       .BYTE $20
+>95a8	12				       .BYTE $12
+>95a9	99				       .BYTE $99
+>95aa	33				       .BYTE $33
+>95ab	30				       .BYTE $30
+>95ac	30				       .BYTE $30
+>95ad	2e				       .BYTE $2E
+>95ae	30				       .BYTE $30
+>95af	92				       .BYTE $92
+>95b0	99				       .BYTE $99
+>95b1	20				       .BYTE $20
+>95b2	52				       .BYTE $52
+>95b3	50				       .BYTE $50
+>95b4	4d				       .BYTE $4D
+>95b5	0d				       .BYTE $0D
+>95b6	0d				       .BYTE $0D
+>95b7	92				       .BYTE $92
+>95b8	9b				       .BYTE $9B
+>95b9	20				       .BYTE $20
+>95ba	44				       .BYTE $44
+>95bb	52				       .BYTE $52
+>95bc	49				       .BYTE $49
+>95bd	56				       .BYTE $56
+>95be	45				       .BYTE $45
+>95bf	20				       .BYTE $20
+>95c0	53				       .BYTE $53
+>95c1	50				       .BYTE $50
+>95c2	45				       .BYTE $45
+>95c3	45				       .BYTE $45
+>95c4	44				       .BYTE $44
+>95c5	3a				       .BYTE $3A
+>95c6	20				       .BYTE $20
+>95c7	20				       .BYTE $20
+>95c8	12				       .BYTE $12
+>95c9	99				       .BYTE $99
+>95ca	20				       .BYTE $20
+>95cb	20				       .BYTE $20
+>95cc	20				       .BYTE $20
+>95cd	20				       .BYTE $20
+>95ce	20				       .BYTE $20
+>95cf	92				       .BYTE $92
+>95d0	99				       .BYTE $99
+>95d1	20				       .BYTE $20
+>95d2	52				       .BYTE $52
+>95d3	50				       .BYTE $50
+>95d4	4d				       .BYTE $4D
+>95d5	0d				       .BYTE $0D
+>95d6	0d				       .BYTE $0D
+>95d7	92				       .BYTE $92
+>95d8	9b				       .BYTE $9B
+>95d9	20				       .BYTE $20
+>95da	44				       .BYTE $44
+>95db	49				       .BYTE $49
+>95dc	46				       .BYTE $46
+>95dd	46				       .BYTE $46
+>95de	45				       .BYTE $45
+>95df	52				       .BYTE $52
+>95e0	41				       .BYTE $41
+>95e1	4e				       .BYTE $4E
+>95e2	43				       .BYTE $43
+>95e3	45				       .BYTE $45
+>95e4	3a				       .BYTE $3A
+>95e5	20				       .BYTE $20
+>95e6	20				       .BYTE $20
+>95e7	20				       .BYTE $20
+>95e8	12				       .BYTE $12
+>95e9	99				       .BYTE $99
+>95ea	20				       .BYTE $20
+>95eb	20				       .BYTE $20
+>95ec	20				       .BYTE $20
+>95ed	20				       .BYTE $20
+>95ee	20				       .BYTE $20
+>95ef	92				       .BYTE $92
+>95f0	99				       .BYTE $99
+>95f1	20				       .BYTE $20
+>95f2	52				       .BYTE $52
+>95f3	50				       .BYTE $50
+>95f4	4d				       .BYTE $4D
+>95f5	0d				       .BYTE $0D
+>95f6	0d				       .BYTE $0D
+>95f7	0d				       .BYTE $0D
+>95f8	0d				       .BYTE $0D
+>95f9	99				       .BYTE $99
+>95fa	20				       .BYTE $20
+>95fb	50				       .BYTE $50
+>95fc	52				       .BYTE $52
+>95fd	45				       .BYTE $45
+>95fe	53				       .BYTE $53
+>95ff	53				       .BYTE $53
+>9600	20				       .BYTE $20
+>9601	41				       .BYTE $41
+>9602	4e				       .BYTE $4E
+>9603	59				       .BYTE $59
+>9604	20				       .BYTE $20
+>9605	4b				       .BYTE $4B
+>9606	45				       .BYTE $45
+>9607	59				       .BYTE $59
+>9608	9b				       .BYTE $9B
+>9609	00				       .BYTE $00
+>960a	96				       .BYTE $96
+>960b	12				       .BYTE $12
+>960c	45				       .BYTE $45
+>960d	52				       .BYTE $52
+>960e	52				       .BYTE $52
+>960f	4f				       .BYTE $4F
+>9610	52				       .BYTE $52
+>9611	00				       .BYTE $00
+>9612	93				       .BYTE $93
+>9613	0d				       .BYTE $0D
+>9614	20				       .BYTE $20
+>9615	12				       .BYTE $12
+>9616	99				       .BYTE $99
+>9617	20				       .BYTE $20
+>9618	41				       .BYTE $41
+>9619	4c				       .BYTE $4C
+>961a	49				       .BYTE $49
+>961b	47				       .BYTE $47
+>961c	4e				       .BYTE $4E
+>961d	4d				       .BYTE $4D
+>961e	45				       .BYTE $45
+>961f	4e				       .BYTE $4E
+>9620	54				       .BYTE $54
+>9621	a4				       .BYTE $A4
+>9622	0d				       .BYTE $0D
+>9623	0d				       .BYTE $0D
+>9624	0d				       .BYTE $0D
+>9625	0d				       .BYTE $0D
+>9626	20				       .BYTE $20
+>9627	99				       .BYTE $99
+>9628	12				       .BYTE $12
+>9629	53				       .BYTE $53
+>962a	50				       .BYTE $50
+>962b	41				       .BYTE $41
+>962c	43				       .BYTE $43
+>962d	45				       .BYTE $45
+>962e	92				       .BYTE $92
+>962f	9b				       .BYTE $9B
+>9630	20				       .BYTE $20
+>9631	54				       .BYTE $54
+>9632	4f				       .BYTE $4F
+>9633	a4				       .BYTE $A4
+>9634	0d				       .BYTE $0D
+>9635	0d				       .BYTE $0D
+>9636	20				       .BYTE $20
+>9637	99				       .BYTE $99
+>9638	12				       .BYTE $12
+>9639	41				       .BYTE $41
+>963a	92				       .BYTE $92
+>963b	9b				       .BYTE $9B
+>963c	20				       .BYTE $20
+>963d	54				       .BYTE $54
+>963e	4f				       .BYTE $4F
+>963f	20				       .BYTE $20
+>9640	4c				       .BYTE $4C
+>9641	4f				       .BYTE $4F
+>9642	4f				       .BYTE $4F
+>9643	50				       .BYTE $50
+>9644	0d				       .BYTE $0D
+>9645	0d				       .BYTE $0D
+>9646	20				       .BYTE $20
+>9647	99				       .BYTE $99
+>9648	12				       .BYTE $12
+>9649	31				       .BYTE $31
+>964a	92				       .BYTE $92
+>964b	9b				       .BYTE $9B
+>964c	20				       .BYTE $20
+>964d	54				       .BYTE $54
+>964e	4f				       .BYTE $4F
+>964f	20				       .BYTE $20
+>9650	53				       .BYTE $53
+>9651	54				       .BYTE $54
+>9652	4f				       .BYTE $4F
+>9653	50				       .BYTE $50
+>9654	20				       .BYTE $20
+>9655	41				       .BYTE $41
+>9656	54				       .BYTE $54
+>9657	20				       .BYTE $20
+>9658	a1				       .BYTE $A1
+>9659	31				       .BYTE $31
+>965a	0d				       .BYTE $0D
+>965b	0d				       .BYTE $0D
+>965c	20				       .BYTE $20
+>965d	99				       .BYTE $99
+>965e	12				       .BYTE $12
+>965f	46				       .BYTE $46
+>9660	31				       .BYTE $31
+>9661	92				       .BYTE $92
+>9662	9b				       .BYTE $9B
+>9663	20				       .BYTE $20
+>9664	54				       .BYTE $54
+>9665	4f				       .BYTE $4F
+>9666	20				       .BYTE $20
+>9667	45				       .BYTE $45
+>9668	58				       .BYTE $58
+>9669	49				       .BYTE $49
+>966a	54				       .BYTE $54
+>966b	00				       .BYTE $00
+>966c	0d				       .BYTE $0D
+>966d	20				       .BYTE $20
+>966e	20				       .BYTE $20
+>966f	9e				       .BYTE $9E
+>9670	7a				       .BYTE $7A
+>9671	20				       .BYTE $20
+>9672	9a				       .BYTE $9A
+>9673	3d				       .BYTE $3D
+>9674	20				       .BYTE $20
+>9675	a1				       .BYTE $A1
+>9676	52				       .BYTE $52
+>9677	45				       .BYTE $45
+>9678	41				       .BYTE $41
+>9679	44				       .BYTE $44
+>967a	0d				       .BYTE $0D
+>967b	20				       .BYTE $20
+>967c	20				       .BYTE $20
+>967d	81				       .BYTE $81
+>967e	61				       .BYTE $61
+>967f	20				       .BYTE $20
+>9680	9a				       .BYTE $9A
+>9681	3d				       .BYTE $3D
+>9682	20				       .BYTE $20
+>9683	4f				       .BYTE $4F
+>9684	4e				       .BYTE $4E
+>9685	20				       .BYTE $20
+>9686	a1				       .BYTE $A1
+>9687	25				       .BYTE $25
+>9688	0d				       .BYTE $0D
+>9689	20				       .BYTE $20
+>968a	20				       .BYTE $20
+>968b	99				       .BYTE $99
+>968c	78				       .BYTE $78
+>968d	20				       .BYTE $20
+>968e	9a				       .BYTE $9A
+>968f	3d				       .BYTE $3D
+>9690	20				       .BYTE $20
+>9691	42				       .BYTE $42
+>9692	45				       .BYTE $45
+>9693	54				       .BYTE $54
+>9694	57				       .BYTE $57
+>9695	45				       .BYTE $45
+>9696	45				       .BYTE $45
+>9697	4e				       .BYTE $4E
+>9698	20				       .BYTE $20
+>9699	a1				       .BYTE $A1
+>969a	25				       .BYTE $25
+>969b	0d				       .BYTE $0D
+>969c	0d				       .BYTE $0D
+>969d	20				       .BYTE $20
+>969e	20				       .BYTE $20
+>969f	96				       .BYTE $96
+>96a0	54				       .BYTE $54
+>96a1	52				       .BYTE $52
+>96a2	20				       .BYTE $20
+>96a3	20				       .BYTE $20
+>96a4	20				       .BYTE $20
+>96a5	9e				       .BYTE $9E
+>96a6	7a				       .BYTE $7A
+>96a7	20				       .BYTE $20
+>96a8	20				       .BYTE $20
+>96a9	20				       .BYTE $20
+>96aa	81				       .BYTE $81
+>96ab	61				       .BYTE $61
+>96ac	20				       .BYTE $20
+>96ad	20				       .BYTE $20
+>96ae	20				       .BYTE $20
+>96af	20				       .BYTE $20
+>96b0	99				       .BYTE $99
+>96b1	78				       .BYTE $78
+>96b2	20				       .BYTE $20
+>96b3	20				       .BYTE $20
+>96b4	20				       .BYTE $20
+>96b5	20				       .BYTE $20
+>96b6	96				       .BYTE $96
+>96b7	54				       .BYTE $54
+>96b8	52				       .BYTE $52
+>96b9	20				       .BYTE $20
+>96ba	20				       .BYTE $20
+>96bb	20				       .BYTE $20
+>96bc	9e				       .BYTE $9E
+>96bd	7a				       .BYTE $7A
+>96be	20				       .BYTE $20
+>96bf	20				       .BYTE $20
+>96c0	20				       .BYTE $20
+>96c1	81				       .BYTE $81
+>96c2	61				       .BYTE $61
+>96c3	20				       .BYTE $20
+>96c4	20				       .BYTE $20
+>96c5	20				       .BYTE $20
+>96c6	20				       .BYTE $20
+>96c7	99				       .BYTE $99
+>96c8	78				       .BYTE $78
+>96c9	9a				       .BYTE $9A
+>96ca	0d				       .BYTE $0D
+>96cb	00				       .BYTE $00
+>96cc	93				       .BYTE $93
+>96cd	0d				       .BYTE $0D
+>96ce	20				       .BYTE $20
+>96cf	12				       .BYTE $12
+>96d0	99				       .BYTE $99
+>96d1	20				       .BYTE $20
+>96d2	46				       .BYTE $46
+>96d3	41				       .BYTE $41
+>96d4	53				       .BYTE $53
+>96d5	54				       .BYTE $54
+>96d6	20				       .BYTE $20
+>96d7	46				       .BYTE $46
+>96d8	4f				       .BYTE $4F
+>96d9	52				       .BYTE $52
+>96da	4d				       .BYTE $4D
+>96db	41				       .BYTE $41
+>96dc	54				       .BYTE $54
+>96dd	20				       .BYTE $20
+>96de	0d				       .BYTE $0D
+>96df	0d				       .BYTE $0D
+>96e0	20				       .BYTE $20
+>96e1	99				       .BYTE $99
+>96e2	4e				       .BYTE $4E
+>96e3	41				       .BYTE $41
+>96e4	4d				       .BYTE $4D
+>96e5	45				       .BYTE $45
+>96e6	3a				       .BYTE $3A
+>96e7	9b				       .BYTE $9B
+>96e8	80				       .BYTE $80
+>96e9	11				       .BYTE $11
+>96ea	20				       .BYTE $20
+>96eb	0d				       .BYTE $0D
+>96ec	00				       .BYTE $00
+>96ed	20				       .BYTE $20
+>96ee	99				       .BYTE $99
+>96ef	49				       .BYTE $49
+>96f0	44				       .BYTE $44
+>96f1	3a				       .BYTE $3A
+>96f2	9b				       .BYTE $9B
+>96f3	80				       .BYTE $80
+>96f4	06				       .BYTE $06
+>96f5	20				       .BYTE $20
+>96f6	0d				       .BYTE $0D
+>96f7	0d				       .BYTE $0D
+>96f8	00				       .BYTE $00
+>96f9	93				       .BYTE $93
+>96fa	0d				       .BYTE $0D
+>96fb	20				       .BYTE $20
+>96fc	12				       .BYTE $12
+>96fd	99				       .BYTE $99
+>96fe	20				       .BYTE $20
+>96ff	a3				       .BYTE $A3
+>9700	20				       .BYTE $20
+>9701	56				       .BYTE $56
+>9702	49				       .BYTE $49
+>9703	45				       .BYTE $45
+>9704	57				       .BYTE $57
+>9705	20				       .BYTE $20
+>9706	0d				       .BYTE $0D
+>9707	0d				       .BYTE $0D
+>9708	0d				       .BYTE $0D
+>9709	97				       .BYTE $97
+>970a	80				       .BYTE $80
+>970b	28				       .BYTE $28
+>970c	60				       .BYTE $60
+>970d	97				       .BYTE $97
+>970e	80				       .BYTE $80
+>970f	ff				       .BYTE $FF
+>9710	20				       .BYTE $20
+>9711	20				       .BYTE $20
+>9712	97				       .BYTE $97
+>9713	80				       .BYTE $80
+>9714	28				       .BYTE $28
+>9715	60				       .BYTE $60
+>9716	20				       .BYTE $20
+>9717	9b				       .BYTE $9B
+>9718	20				       .BYTE $20
+>9719	54				       .BYTE $54
+>971a	52				       .BYTE $52
+>971b	3a				       .BYTE $3A
+>971c	99				       .BYTE $99
+>971d	31				       .BYTE $31
+>971e	38				       .BYTE $38
+>971f	9b				       .BYTE $9B
+>9720	20				       .BYTE $20
+>9721	53				       .BYTE $53
+>9722	45				       .BYTE $45
+>9723	3a				       .BYTE $3A
+>9724	99				       .BYTE $99
+>9725	30				       .BYTE $30
+>9726	30				       .BYTE $30
+>9727	9b				       .BYTE $9B
+>9728	20				       .BYTE $20
+>9729	20				       .BYTE $20
+>972a	48				       .BYTE $48
+>972b	45				       .BYTE $45
+>972c	58				       .BYTE $58
+>972d	3a				       .BYTE $3A
+>972e	24				       .BYTE $24
+>972f	99				       .BYTE $99
+>9730	20				       .BYTE $20
+>9731	20				       .BYTE $20
+>9732	80				       .BYTE $80
+>9733	21				       .BYTE $21
+>9734	20				       .BYTE $20
+>9735	9b				       .BYTE $9B
+>9736	44				       .BYTE $44
+>9737	45				       .BYTE $45
+>9738	43				       .BYTE $43
+>9739	3a				       .BYTE $3A
+>973a	99				       .BYTE $99
+>973b	20				       .BYTE $20
+>973c	20				       .BYTE $20
+>973d	20				       .BYTE $20
+>973e	0d				       .BYTE $0D
+>973f	0d				       .BYTE $0D
+>9740	0d				       .BYTE $0D
+>9741	20				       .BYTE $20
+>9742	12				       .BYTE $12
+>9743	99				       .BYTE $99
+>9744	52				       .BYTE $52
+>9745	92				       .BYTE $92
+>9746	9b				       .BYTE $9B
+>9747	45				       .BYTE $45
+>9748	41				       .BYTE $41
+>9749	44				       .BYTE $44
+>974a	20				       .BYTE $20
+>974b	54				       .BYTE $54
+>974c	52				       .BYTE $52
+>974d	2f				       .BYTE $2F
+>974e	53				       .BYTE $53
+>974f	45				       .BYTE $45
+>9750	0d				       .BYTE $0D
+>9751	0d				       .BYTE $0D
+>9752	20				       .BYTE $20
+>9753	46				       .BYTE $46
+>9754	4f				       .BYTE $4F
+>9755	4c				       .BYTE $4C
+>9756	4c				       .BYTE $4C
+>9757	4f				       .BYTE $4F
+>9758	57				       .BYTE $57
+>9759	20				       .BYTE $20
+>975a	12				       .BYTE $12
+>975b	99				       .BYTE $99
+>975c	4c				       .BYTE $4C
+>975d	92				       .BYTE $92
+>975e	9b				       .BYTE $9B
+>975f	49				       .BYTE $49
+>9760	4e				       .BYTE $4E
+>9761	4b				       .BYTE $4B
+>9762	0d				       .BYTE $0D
+>9763	0d				       .BYTE $0D
+>9764	20				       .BYTE $20
+>9765	12				       .BYTE $12
+>9766	99				       .BYTE $99
+>9767	43				       .BYTE $43
+>9768	52				       .BYTE $52
+>9769	53				       .BYTE $53
+>976a	52				       .BYTE $52
+>976b	92				       .BYTE $92
+>976c	9b				       .BYTE $9B
+>976d	20				       .BYTE $20
+>976e	4b				       .BYTE $4B
+>976f	45				       .BYTE $45
+>9770	59				       .BYTE $59
+>9771	53				       .BYTE $53
+>9772	20				       .BYTE $20
+>9773	54				       .BYTE $54
+>9774	4f				       .BYTE $4F
+>9775	20				       .BYTE $20
+>9776	4d				       .BYTE $4D
+>9777	4f				       .BYTE $4F
+>9778	56				       .BYTE $56
+>9779	45				       .BYTE $45
+>977a	0d				       .BYTE $0D
+>977b	0d				       .BYTE $0D
+>977c	20				       .BYTE $20
+>977d	12				       .BYTE $12
+>977e	99				       .BYTE $99
+>977f	46				       .BYTE $46
+>9780	31				       .BYTE $31
+>9781	92				       .BYTE $92
+>9782	9b				       .BYTE $9B
+>9783	20				       .BYTE $20
+>9784	45				       .BYTE $45
+>9785	58				       .BYTE $58
+>9786	49				       .BYTE $49
+>9787	54				       .BYTE $54
+>9788	00				       .BYTE $00
+>9789	9b				       .BYTE $9B
+>978a	80				       .BYTE $80
+>978b	28				       .BYTE $28
+>978c	20				       .BYTE $20
+>978d	00				       .BYTE $00
+>978e	93				       .BYTE $93
+>978f	0d				       .BYTE $0D
+>9790	20				       .BYTE $20
+>9791	12				       .BYTE $12
+>9792	99				       .BYTE $99
+>9793	20				       .BYTE $20
+>9794	48				       .BYTE $48
+>9795	45				       .BYTE $45
+>9796	41				       .BYTE $41
+>9797	44				       .BYTE $44
+>9798	20				       .BYTE $20
+>9799	45				       .BYTE $45
+>979a	58				       .BYTE $58
+>979b	45				       .BYTE $45
+>979c	52				       .BYTE $52
+>979d	43				       .BYTE $43
+>979e	49				       .BYTE $49
+>979f	53				       .BYTE $53
+>97a0	45				       .BYTE $45
+>97a1	52				       .BYTE $52
+>97a2	20				       .BYTE $20
+>97a3	0d				       .BYTE $0D
+>97a4	0d				       .BYTE $0D
+>97a5	20				       .BYTE $20
+>97a6	99				       .BYTE $99
+>97a7	46				       .BYTE $46
+>97a8	31				       .BYTE $31
+>97a9	9b				       .BYTE $9B
+>97aa	2f				       .BYTE $2F
+>97ab	99				       .BYTE $99
+>97ac	46				       .BYTE $46
+>97ad	33				       .BYTE $33
+>97ae	20				       .BYTE $20
+>97af	9b				       .BYTE $9B
+>97b0	53				       .BYTE $53
+>97b1	54				       .BYTE $54
+>97b2	45				       .BYTE $45
+>97b3	50				       .BYTE $50
+>97b4	20				       .BYTE $20
+>97b5	48				       .BYTE $48
+>97b6	41				       .BYTE $41
+>97b7	4c				       .BYTE $4C
+>97b8	46				       .BYTE $46
+>97b9	a1				       .BYTE $A1
+>97ba	44				       .BYTE $44
+>97bb	4f				       .BYTE $4F
+>97bc	57				       .BYTE $57
+>97bd	4e				       .BYTE $4E
+>97be	2f				       .BYTE $2F
+>97bf	55				       .BYTE $55
+>97c0	50				       .BYTE $50
+>97c1	0d				       .BYTE $0D
+>97c2	20				       .BYTE $20
+>97c3	99				       .BYTE $99
+>97c4	46				       .BYTE $46
+>97c5	32				       .BYTE $32
+>97c6	20				       .BYTE $20
+>97c7	20				       .BYTE $20
+>97c8	20				       .BYTE $20
+>97c9	20				       .BYTE $20
+>97ca	9b				       .BYTE $9B
+>97cb	42				       .BYTE $42
+>97cc	55				       .BYTE $55
+>97cd	4d				       .BYTE $4D
+>97ce	50				       .BYTE $50
+>97cf	20				       .BYTE $20
+>97d0	54				       .BYTE $54
+>97d1	4f				       .BYTE $4F
+>97d2	20				       .BYTE $20
+>97d3	a1				       .BYTE $A1
+>97d4	30				       .BYTE $30
+>97d5	31				       .BYTE $31
+>97d6	0d				       .BYTE $0D
+>97d7	20				       .BYTE $20
+>97d8	99				       .BYTE $99
+>97d9	46				       .BYTE $46
+>97da	34				       .BYTE $34
+>97db	9b				       .BYTE $9B
+>97dc	2f				       .BYTE $2F
+>97dd	99				       .BYTE $99
+>97de	46				       .BYTE $46
+>97df	36				       .BYTE $36
+>97e0	20				       .BYTE $20
+>97e1	9b				       .BYTE $9B
+>97e2	53				       .BYTE $53
+>97e3	45				       .BYTE $45
+>97e4	45				       .BYTE $45
+>97e5	4b				       .BYTE $4B
+>97e6	20				       .BYTE $20
+>97e7	54				       .BYTE $54
+>97e8	4f				       .BYTE $4F
+>97e9	20				       .BYTE $20
+>97ea	a1				       .BYTE $A1
+>97eb	31				       .BYTE $31
+>97ec	38				       .BYTE $38
+>97ed	2f				       .BYTE $2F
+>97ee	33				       .BYTE $33
+>97ef	35				       .BYTE $35
+>97f0	0d				       .BYTE $0D
+>97f1	20				       .BYTE $20
+>97f2	99				       .BYTE $99
+>97f3	46				       .BYTE $46
+>97f4	35				       .BYTE $35
+>97f5	9b				       .BYTE $9B
+>97f6	2f				       .BYTE $2F
+>97f7	99				       .BYTE $99
+>97f8	46				       .BYTE $46
+>97f9	37				       .BYTE $37
+>97fa	20				       .BYTE $20
+>97fb	9b				       .BYTE $9B
+>97fc	4d				       .BYTE $4D
+>97fd	4f				       .BYTE $4F
+>97fe	54				       .BYTE $54
+>97ff	4f				       .BYTE $4F
+>9800	52				       .BYTE $52
+>9801	20				       .BYTE $20
+>9802	4f				       .BYTE $4F
+>9803	4e				       .BYTE $4E
+>9804	2f				       .BYTE $2F
+>9805	4f				       .BYTE $4F
+>9806	46				       .BYTE $46
+>9807	46				       .BYTE $46
+>9808	0d				       .BYTE $0D
+>9809	20				       .BYTE $20
+>980a	99				       .BYTE $99
+>980b	46				       .BYTE $46
+>980c	38				       .BYTE $38
+>980d	20				       .BYTE $20
+>980e	20				       .BYTE $20
+>980f	20				       .BYTE $20
+>9810	20				       .BYTE $20
+>9811	9b				       .BYTE $9B
+>9812	45				       .BYTE $45
+>9813	58				       .BYTE $58
+>9814	49				       .BYTE $49
+>9815	54				       .BYTE $54
+>9816	0d				       .BYTE $0D
+>9817	00				       .BYTE $00
+>9818	8a				       .BYTE $8A
+>9819	a8				       .BYTE $A8
+>981a	0a				       .BYTE $0A
+>981b	aa				       .BYTE $AA
+>981c	bd				       .BYTE $BD
+>981d	59				       .BYTE $59
+>981e	c0				       .BYTE $C0
+>981f	85				       .BYTE $85
+>9820	fb				       .BYTE $FB
+>9821	bd				       .BYTE $BD
+>9822	5a				       .BYTE $5A
+>9823	c0				       .BYTE $C0
+>9824	85				       .BYTE $85
+>9825	fc				       .BYTE $FC
+>9826	bd				       .BYTE $BD
+>9827	61				       .BYTE $61
+>9828	c0				       .BYTE $C0
+>9829	85				       .BYTE $85
+>982a	fd				       .BYTE $FD
+>982b	bd				       .BYTE $BD
+>982c	62				       .BYTE $62
+>982d	c0				       .BYTE $C0
+>982e	85				       .BYTE $85
+>982f	fe				       .BYTE $FE
+>9830	b9				       .BYTE $B9
+>9831	69				       .BYTE $69
+>9832	c0				       .BYTE $C0
+>9833	85				       .BYTE $85
+>9834	02				       .BYTE $02
+>9835	20				XX9835 .BYTE $20
+>9836	89				       .BYTE $89
+>9837	92				       .BYTE $92
+>9838	a5				       .BYTE $A5
+>9839	fd				       .BYTE $FD
+>983a	20				       .BYTE $20
+>983b	a8				       .BYTE $A8
+>983c	ff				       .BYTE $FF
+>983d	a5				       .BYTE $A5
+>983e	fe				       .BYTE $FE
+>983f	20				       .BYTE $20
+>9840	a8				       .BYTE $A8
+>9841	ff				       .BYTE $FF
+>9842	a9				       .BYTE $A9
+>9843	20				       .BYTE $20
+>9844	20				       .BYTE $20
+>9845	a8				       .BYTE $A8
+>9846	ff				       .BYTE $FF
+>9847	a0				       .BYTE $A0
+>9848	00				       .BYTE $00
+>9849	b1				       .BYTE $B1
+>984a	fb				       .BYTE $FB
+>984b	20				       .BYTE $20
+>984c	a8				       .BYTE $A8
+>984d	ff				       .BYTE $FF
+>984e	c8				       .BYTE $C8
+>984f	c0				       .BYTE $C0
+>9850	20				       .BYTE $20
+>9851	90				       .BYTE $90
+>9852	f6				       .BYTE $F6
+>9853	18				       .BYTE $18
+>9854	a5				       .BYTE $A5
+>9855	fb				       .BYTE $FB
+>9856	69				       .BYTE $69
+>9857	20				       .BYTE $20
+>9858	85				       .BYTE $85
+>9859	fb				       .BYTE $FB
+>985a	90				       .BYTE $90
+>985b	02				       .BYTE $02
+>985c	e6				       .BYTE $E6
+>985d	fc				       .BYTE $FC
+>985e	18				       .BYTE $18
+>985f	a5				       .BYTE $A5
+.9860	fd 69 20	sbc $2069,x	       SBC $2069,X
+.9863	85 fd		sta $fd		       STA $FD
+.9865	90 02		bcc $9869	       BCC XX9869
+.9867	e6 fe		inc $fe		       INC $FE
+.9869	20 ae ff	jsr $ffae	XX9869 JSR UNLSN
+.986c	c6 02		dec $02		       DEC $02
+.986e	d0 c5		bne $9835	       BNE XX9835
+.9870	60		rts		       RTS
+>9871	6d				       .BYTE $6D
+>9872	c0				       .BYTE $C0
+>9873	1c				       .BYTE $1C
+>9874	c3				       .BYTE $C3
+>9875	f8				       .BYTE $F8
+>9876	c4				       .BYTE $C4
+>9877	f2				       .BYTE $F2
+>9878	c5				       .BYTE $C5
+>9879	00				       .BYTE $00
+>987a	04				       .BYTE $04
+>987b	00				       .BYTE $00
+>987c	03				       .BYTE $03
+>987d	00				       .BYTE $00
+>987e	03				       .BYTE $03
+>987f	00				       .BYTE $00
+>9880	03				       .BYTE $03
+>9881	16				       .BYTE $16
+>9882	0f				       .BYTE $0F
+>9883	08				       .BYTE $08
+>9884	0f				       .BYTE $0F
+>9885	4c				       .BYTE $4C
+>9886	1e				       .BYTE $1E
+>9887	04				       .BYTE $04
+>9888	4c				       .BYTE $4C
+>9889	cf				       .BYTE $CF
+>988a	04				       .BYTE $04
+>988b	4c				       .BYTE $4C
+>988c	d8				       .BYTE $D8
+>988d	04				       .BYTE $04
+>988e	4c				       .BYTE $4C
+>988f	9f				       .BYTE $9F
+>9890	04				       .BYTE $04
+>9891	4c				       .BYTE $4C
+>9892	a3				       .BYTE $A3
+>9893	04				       .BYTE $04
+>9894	4c				       .BYTE $4C
+>9895	3d				       .BYTE $3D
+>9896	06				       .BYTE $06
+>9897	4c				       .BYTE $4C
+>9898	00				       .BYTE $00
+>9899	06				       .BYTE $06
+>989a	4c				       .BYTE $4C
+>989b	90				       .BYTE $90
+>989c	04				       .BYTE $04
+>989d	4c				       .BYTE $4C
+>989e	b3				       .BYTE $B3
+>989f	04				       .BYTE $04
+>98a0	4c				       .BYTE $4C
+>98a1	ca				       .BYTE $CA
+>98a2	04				       .BYTE $04
+>98a3	20				       .BYTE $20
+>98a4	fa				       .BYTE $FA
+>98a5	04				       .BYTE $04
+>98a6	d0				       .BYTE $D0
+>98a7	0a				       .BYTE $0A
+>98a8	a5				       .BYTE $A5
+>98a9	18				       .BYTE $18
+>98aa	c9				       .BYTE $C9
+>98ab	2e				       .BYTE $2E
+>98ac	90				       .BYTE $90
+>98ad	02				       .BYTE $02
+>98ae	a9				       .BYTE $A9
+>98af	2c				       .BYTE $2C
+>98b0	69				       .BYTE $69
+>98b1	01				       .BYTE $01
+>98b2	85				       .BYTE $85
+>98b3	22				       .BYTE $22
+>98b4	a5				       .BYTE $A5
+>98b5	22				       .BYTE $22
+>98b6	c9				       .BYTE $C9
+>98b7	01				       .BYTE $01
+>98b8	f0				       .BYTE $F0
+>98b9	07				       .BYTE $07
+>98ba	20				       .BYTE $20
+>98bb	ba				       .BYTE $BA
+>98bc	05				       .BYTE $05
+>98bd	c6				       .BYTE $C6
+>98be	22				       .BYTE $22
+>98bf	d0				       .BYTE $D0
+>98c0	f3				       .BYTE $F3
+>98c1	a9				       .BYTE $A9
+>98c2	01				       .BYTE $01
+>98c3	85				       .BYTE $85
+>98c4	18				       .BYTE $18
+>98c5	20				       .BYTE $20
+>98c6	3f				       .BYTE $3F
+>98c7	05				       .BYTE $05
+>98c8	a2				       .BYTE $A2
+>98c9	00				       .BYTE $00
+>98ca	20				       .BYTE $20
+>98cb	c1				       .BYTE $C1
+>98cc	05				       .BYTE $05
+>98cd	a0				       .BYTE $A0
+>98ce	00				       .BYTE $00
+>98cf	20				       .BYTE $20
+>98d0	d2				       .BYTE $D2
+>98d1	05				       .BYTE $05
+>98d2	a9				       .BYTE $A9
+>98d3	ee				       .BYTE $EE
+>98d4	8d				       .BYTE $8D
+>98d5	0c				       .BYTE $0C
+>98d6	1c				       .BYTE $1C
+>98d7	20				       .BYTE $20
+>98d8	f5				       .BYTE $F5
+>98d9	05				       .BYTE $05
+>98da	a0				       .BYTE $A0
+>98db	00				       .BYTE $00
+>98dc	84				       .BYTE $84
+>98dd	4d				       .BYTE $4D
+>98de	20				       .BYTE $20
+>98df	5e				       .BYTE $5E
+>98e0	05				       .BYTE $05
+>98e1	f0				       .BYTE $F0
+>98e2	04				       .BYTE $04
+>98e3	a2				       .BYTE $A2
+>98e4	00				       .BYTE $00
+>98e5	d0				       .BYTE $D0
+>98e6	18				       .BYTE $18
+>98e7	a5				       .BYTE $A5
+>98e8	18				       .BYTE $18
+>98e9	8d				       .BYTE $8D
+>98ea	f1				       .BYTE $F1
+>98eb	06				       .BYTE $06
+>98ec	a4				       .BYTE $A4
+>98ed	22				       .BYTE $22
+>98ee	cc				       .BYTE $CC
+>98ef	f1				       .BYTE $F1
+>98f0	06				       .BYTE $06
+>98f1	d0				       .BYTE $D0
+>98f2	03				       .BYTE $03
+>98f3	ee				       .BYTE $EE
+>98f4	f2				       .BYTE $F2
+>98f5	06				       .BYTE $06
+>98f6	c8				       .BYTE $C8
+>98f7	cc				       .BYTE $CC
+>98f8	f1				       .BYTE $F1
+>98f9	06				       .BYTE $06
+>98fa	d0				       .BYTE $D0
+>98fb	03				       .BYTE $03
+>98fc	ee				       .BYTE $EE
+>98fd	f3				       .BYTE $F3
+>98fe	06				       .BYTE $06
+>98ff	a4				       .BYTE $A4
+>9900	4d				       .BYTE $4D
+>9901	8a				       .BYTE $8A
+>9902	99				       .BYTE $99
+>9903	e0				       .BYTE $E0
+>9904	06				       .BYTE $06
+>9905	e6				       .BYTE $E6
+>9906	4d				       .BYTE $4D
+>9907	a5				       .BYTE $A5
+>9908	4d				       .BYTE $4D
+>9909	c9				       .BYTE $C9
+>990a	11				       .BYTE $11
+>990b	d0				       .BYTE $D0
+>990c	d1				       .BYTE $D1
+>990d	ad				       .BYTE $AD
+>990e	00				       .BYTE $00
+>990f	1c				       .BYTE $1C
+>9910	29				       .BYTE $29
+>9911	f7				       .BYTE $F7
+>9912	4c				       .BYTE $4C
+>9913	b8				       .BYTE $B8
+>9914	04				       .BYTE $04
+>9915	20				       .BYTE $20
+>9916	fa				       .BYTE $FA
+>9917	04				       .BYTE $04
+>9918	d0				       .BYTE $D0
+>9919	98				       .BYTE $98
+>991a	a5				       .BYTE $A5
+>991b	18				       .BYTE $18
+>991c	c9				       .BYTE $C9
+>991d	2e				       .BYTE $2E
+>991e	90				       .BYTE $90
+>991f	92				       .BYTE $92
+>9920	a9				       .BYTE $A9
+>9921	2d				       .BYTE $2D
+>9922	d0				       .BYTE $D0
+>9923	8e				       .BYTE $8E
+>9924	78				       .BYTE $78
+>9925	20				       .BYTE $20
+>9926	bd				       .BYTE $BD
+>9927	05				       .BYTE $05
+>9928	78				       .BYTE $78
+>9929	a5				       .BYTE $A5
+>992a	22				       .BYTE $22
+>992b	c9				       .BYTE $C9
+>992c	12				       .BYTE $12
+>992d	f0				       .BYTE $F0
+>992e	09				       .BYTE $09
+>992f	90				       .BYTE $90
+>9930	15				       .BYTE $15
+>9931	c6				       .BYTE $C6
+>9932	22				       .BYTE $22
+>9933	20				       .BYTE $20
+>9934	ba				       .BYTE $BA
+>9935	05				       .BYTE $05
+>9936	f0				       .BYTE $F0
+>9937	f1				       .BYTE $F1
+>9938	ad				       .BYTE $AD
+>9939	00				       .BYTE $00
+>993a	1c				       .BYTE $1C
+>993b	29				       .BYTE $29
+>993c	f3				       .BYTE $F3
+>993d	8d				       .BYTE $8D
+>993e	00				       .BYTE $00
+>993f	1c				       .BYTE $1C
+>9940	a9				       .BYTE $A9
+>9941	ec				       .BYTE $EC
+>9942	8d				       .BYTE $8D
+>9943	0c				       .BYTE $0C
+>9944	1c				       .BYTE $1C
+>9945	60				       .BYTE $60
+>9946	e6				       .BYTE $E6
+>9947	22				       .BYTE $22
+>9948	20				       .BYTE $20
+>9949	b0				       .BYTE $B0
+>994a	05				       .BYTE $05
+>994b	f0				       .BYTE $F0
+>994c	dc				       .BYTE $DC
+>994d	d0				       .BYTE $D0
+>994e	e9				       .BYTE $E9
+>994f	20				       .BYTE $20
+>9950	f2				       .BYTE $F2
+>9951	04				       .BYTE $04
+>9952	d0				       .BYTE $D0
+>9953	d4				       .BYTE $D4
+>9954	20				       .BYTE $20
+>9955	e8				       .BYTE $E8
+>9956	04				       .BYTE $04
+>9957	20				       .BYTE $20
+>9958	b3				       .BYTE $B3
+>9959	05				       .BYTE $05
+>995a	4c				       .BYTE $4C
+>995b	48				       .BYTE $48
+>995c	04				       .BYTE $04
+>995d	20				       .BYTE $20
+>995e	e8				       .BYTE $E8
+>995f	04				       .BYTE $04
+>9960	20				       .BYTE $20
+>9961	b3				       .BYTE $B3
+>9962	05				       .BYTE $05
+>9963	e6				       .BYTE $E6
+>9964	22				       .BYTE $22
+>9965	a5				       .BYTE $A5
+>9966	22				       .BYTE $22
+>9967	20				       .BYTE $20
+>9968	43				       .BYTE $43
+>9969	05				       .BYTE $05
+>996a	4c				       .BYTE $4C
+>996b	48				       .BYTE $48
+>996c	04				       .BYTE $04
+>996d	78				       .BYTE $78
+>996e	ad				       .BYTE $AD
+>996f	00				       .BYTE $00
+>9970	1c				       .BYTE $1C
+>9971	09				       .BYTE $09
+>9972	08				       .BYTE $08
+>9973	8d				       .BYTE $8D
+>9974	00				       .BYTE $00
+>9975	1c				       .BYTE $1C
+>9976	60				       .BYTE $60
+>9977	78				       .BYTE $78
+>9978	ad				       .BYTE $AD
+>9979	00				       .BYTE $00
+>997a	1c				       .BYTE $1C
+>997b	09				       .BYTE $09
+>997c	0c				       .BYTE $0C
+>997d	d0				       .BYTE $D0
+>997e	f4				       .BYTE $F4
+>997f	20				       .BYTE $20
+>9980	f2				       .BYTE $F2
+>9981	04				       .BYTE $04
+>9982	a9				       .BYTE $A9
+>9983	ee				       .BYTE $EE
+>9984	8d				       .BYTE $8D
+>9985	0c				       .BYTE $0C
+>9986	1c				       .BYTE $1C
+>9987	a0				       .BYTE $A0
+>9988	00				       .BYTE $00
+>9989	20				       .BYTE $20
+>998a	d2				       .BYTE $D2
+>998b	05				       .BYTE $05
+>998c	20				       .BYTE $20
+>998d	27				       .BYTE $27
+>998e	05				       .BYTE $05
+>998f	f0				       .BYTE $F0
+>9990	1a				       .BYTE $1A
+>9991	a9				       .BYTE $A9
+>9992	08				       .BYTE $08
+>9993	85				       .BYTE $85
+>9994	4a				       .BYTE $4A
+>9995	20				       .BYTE $20
+>9996	ba				       .BYTE $BA
+>9997	05				       .BYTE $05
+>9998	c6				       .BYTE $C6
+>9999	4a				       .BYTE $4A
+>999a	d0				       .BYTE $D0
+>999b	f9				       .BYTE $F9
+>999c	20				       .BYTE $20
+>999d	27				       .BYTE $27
+>999e	05				       .BYTE $05
+>999f	f0				       .BYTE $F0
+>99a0	0a				       .BYTE $0A
+>99a1	20				       .BYTE $20
+>99a2	b3				       .BYTE $B3
+>99a3	05				       .BYTE $05
+>99a4	20				       .BYTE $20
+>99a5	27				       .BYTE $27
+>99a6	05				       .BYTE $05
+>99a7	f0				       .BYTE $F0
+>99a8	02				       .BYTE $02
+>99a9	a9				       .BYTE $A9
+>99aa	2d				       .BYTE $2D
+>99ab	60				       .BYTE $60
+>99ac	a2				       .BYTE $A2
+>99ad	03				       .BYTE $03
+>99ae	20				       .BYTE $20
+>99af	48				       .BYTE $48
+>99b0	05				       .BYTE $05
+>99b1	8a				       .BYTE $8A
+>99b2	48				       .BYTE $48
+>99b3	20				       .BYTE $20
+>99b4	5a				       .BYTE $5A
+>99b5	05				       .BYTE $05
+>99b6	f0				       .BYTE $F0
+>99b7	08				       .BYTE $08
+>99b8	68				       .BYTE $68
+>99b9	aa				       .BYTE $AA
+>99ba	ca				       .BYTE $CA
+>99bb	10				       .BYTE $10
+>99bc	f1				       .BYTE $F1
+>99bd	a9				       .BYTE $A9
+>99be	20				       .BYTE $20
+>99bf	60				       .BYTE $60
+>99c0	68				       .BYTE $68
+>99c1	a9				       .BYTE $A9
+>99c2	00				       .BYTE $00
+>99c3	60				       .BYTE $60
+>99c4	a5				       .BYTE $A5
+>99c5	18				       .BYTE $18
+>99c6	85				       .BYTE $85
+>99c7	22				       .BYTE $22
+>99c8	20				       .BYTE $20
+>99c9	4b				       .BYTE $4B
+>99ca	f2				       .BYTE $F2
+>99cb	85				       .BYTE $85
+>99cc	43				       .BYTE $43
+>99cd	ad				       .BYTE $AD
+>99ce	00				       .BYTE $00
+>99cf	1c				       .BYTE $1C
+>99d0	29				       .BYTE $29
+>99d1	9f				       .BYTE $9F
+>99d2	1d				       .BYTE $1D
+>99d3	56				       .BYTE $56
+>99d4	05				       .BYTE $05
+>99d5	8d				       .BYTE $8D
+>99d6	00				       .BYTE $00
+>99d7	1c				       .BYTE $1C
+>99d8	a9				       .BYTE $A9
+>99d9	00				       .BYTE $00
+>99da	60				       .BYTE $60
+>99db	00				       .BYTE $00
+>99dc	20				       .BYTE $20
+>99dd	40				       .BYTE $40
+>99de	60				       .BYTE $60
+>99df	a9				       .BYTE $A9
+>99e0	ff				       .BYTE $FF
+>99e1	d0				       .BYTE $D0
+>99e2	02				       .BYTE $02
+>99e3	a9				       .BYTE $A9
+>99e4	00				       .BYTE $00
+>99e5	85				       .BYTE $85
+>99e6	4b				       .BYTE $4B
+>99e7	a2				       .BYTE $A2
+>99e8	64				       .BYTE $64
+>99e9	20				       .BYTE $20
+>99ea	db				       .BYTE $DB
+>99eb	05				       .BYTE $05
+>99ec	d0				       .BYTE $D0
+>99ed	33				       .BYTE $33
+>99ee	50				       .BYTE $50
+>99ef	fe				       .BYTE $FE
+>99f0	b8				       .BYTE $B8
+>99f1	ad				       .BYTE $AD
+>99f2	01				       .BYTE $01
+>99f3	1c				       .BYTE $1C
+>99f4	c9				       .BYTE $C9
+>99f5	52				       .BYTE $52
+>99f6	d0				       .BYTE $D0
+>99f7	2a				       .BYTE $2A
+>99f8	99				       .BYTE $99
+>99f9	24				       .BYTE $24
+>99fa	00				       .BYTE $00
+>99fb	c8				       .BYTE $C8
+>99fc	50				       .BYTE $50
+>99fd	fe				       .BYTE $FE
+>99fe	b8				       .BYTE $B8
+>99ff	ad				       .BYTE $AD
+>9a00	01				       .BYTE $01
+>9a01	1c				       .BYTE $1C
+>9a02	99				       .BYTE $99
+>9a03	24				       .BYTE $24
+>9a04	00				       .BYTE $00
+>9a05	c8				       .BYTE $C8
+>9a06	c0				       .BYTE $C0
+>9a07	08				       .BYTE $08
+>9a08	d0				       .BYTE $D0
+>9a09	f2				       .BYTE $F2
+>9a0a	8a				       .BYTE $8A
+>9a0b	48				       .BYTE $48
+>9a0c	20				       .BYTE $20
+>9a0d	97				       .BYTE $97
+>9a0e	f4				       .BYTE $F4
+>9a0f	68				       .BYTE $68
+>9a10	aa				       .BYTE $AA
+>9a11	a9				       .BYTE $A9
+>9a12	00				       .BYTE $00
+>9a13	45				       .BYTE $45
+>9a14	16				       .BYTE $16
+>9a15	45				       .BYTE $45
+>9a16	17				       .BYTE $17
+>9a17	45				       .BYTE $45
+>9a18	18				       .BYTE $18
+>9a19	45				       .BYTE $45
+>9a1a	19				       .BYTE $19
+>9a1b	c5				       .BYTE $C5
+>9a1c	1a				       .BYTE $1A
+>9a1d	f0				       .BYTE $F0
+>9a1e	09				       .BYTE $09
+>9a1f	a9				       .BYTE $A9
+>9a20	27				       .BYTE $27
+>9a21	60				       .BYTE $60
+>9a22	ca				       .BYTE $CA
+>9a23	d0				       .BYTE $D0
+>9a24	c4				       .BYTE $C4
+>9a25	a9				       .BYTE $A9
+>9a26	20				       .BYTE $20
+>9a27	60				       .BYTE $60
+>9a28	a5				       .BYTE $A5
+>9a29	4b				       .BYTE $4B
+>9a2a	d0				       .BYTE $D0
+>9a2b	06				       .BYTE $06
+>9a2c	a5				       .BYTE $A5
+>9a2d	4d				       .BYTE $4D
+>9a2e	c5				       .BYTE $C5
+>9a2f	19				       .BYTE $19
+>9a30	d0				       .BYTE $D0
+>9a31	f0				       .BYTE $F0
+>9a32	a9				       .BYTE $A9
+>9a33	00				       .BYTE $00
+>9a34	60				       .BYTE $60
+>9a35	20				       .BYTE $20
+>9a36	b3				       .BYTE $B3
+>9a37	05				       .BYTE $05
+>9a38	ae				       .BYTE $AE
+>9a39	00				       .BYTE $00
+>9a3a	1c				       .BYTE $1C
+>9a3b	e8				       .BYTE $E8
+>9a3c	4c				       .BYTE $4C
+>9a3d	c1				       .BYTE $C1
+>9a3e	05				       .BYTE $05
+>9a3f	20				       .BYTE $20
+>9a40	bd				       .BYTE $BD
+>9a41	05				       .BYTE $05
+>9a42	ae				       .BYTE $AE
+>9a43	00				       .BYTE $00
+>9a44	1c				       .BYTE $1C
+>9a45	ca				       .BYTE $CA
+>9a46	8a				       .BYTE $8A
+>9a47	29				       .BYTE $29
+>9a48	03				       .BYTE $03
+>9a49	85				       .BYTE $85
+>9a4a	44				       .BYTE $44
+>9a4b	ad				       .BYTE $AD
+>9a4c	00				       .BYTE $00
+>9a4d	1c				       .BYTE $1C
+>9a4e	29				       .BYTE $29
+>9a4f	fc				       .BYTE $FC
+>9a50	05				       .BYTE $05
+>9a51	44				       .BYTE $44
+>9a52	8d				       .BYTE $8D
+>9a53	00				       .BYTE $00
+>9a54	1c				       .BYTE $1C
+>9a55	a0				       .BYTE $A0
+>9a56	06				       .BYTE $06
+>9a57	a2				       .BYTE $A2
+>9a58	00				       .BYTE $00
+>9a59	ca				       .BYTE $CA
+>9a5a	d0				       .BYTE $D0
+>9a5b	fd				       .BYTE $FD
+>9a5c	88				       .BYTE $88
+>9a5d	d0				       .BYTE $D0
+>9a5e	fa				       .BYTE $FA
+>9a5f	60				       .BYTE $60
+>9a60	a9				       .BYTE $A9
+>9a61	d0				       .BYTE $D0
+>9a62	8d				       .BYTE $8D
+>9a63	05				       .BYTE $05
+>9a64	18				       .BYTE $18
+>9a65	2c				       .BYTE $2C
+>9a66	05				       .BYTE $05
+>9a67	18				       .BYTE $18
+>9a68	10				       .BYTE $10
+>9a69	0d				       .BYTE $0D
+>9a6a	2c				       .BYTE $2C
+>9a6b	00				       .BYTE $00
+>9a6c	1c				       .BYTE $1C
+>9a6d	30				       .BYTE $30
+>9a6e	f6				       .BYTE $F6
+>9a6f	ad				       .BYTE $AD
+>9a70	01				       .BYTE $01
+>9a71	1c				       .BYTE $1C
+>9a72	b8				       .BYTE $B8
+>9a73	a0				       .BYTE $A0
+>9a74	00				       .BYTE $00
+>9a75	98				       .BYTE $98
+>9a76	60				       .BYTE $60
+>9a77	a9				       .BYTE $A9
+>9a78	21				       .BYTE $21
+>9a79	60				       .BYTE $60
+>9a7a	a9				       .BYTE $A9
+>9a7b	00				       .BYTE $00
+>9a7c	a0				       .BYTE $A0
+>9a7d	13				       .BYTE $13
+>9a7e	99				       .BYTE $99
+>9a7f	e0				       .BYTE $E0
+>9a80	06				       .BYTE $06
+>9a81	88				       .BYTE $88
+>9a82	10				       .BYTE $10
+>9a83	fa				       .BYTE $FA
+>9a84	60				       .BYTE $60
+>9a85	20				       .BYTE $20
+>9a86	f2				       .BYTE $F2
+>9a87	04				       .BYTE $04
+>9a88	29				       .BYTE $29
+>9a89	10				       .BYTE $10
+>9a8a	d0				       .BYTE $D0
+>9a8b	05				       .BYTE $05
+>9a8c	a9				       .BYTE $A9
+>9a8d	26				       .BYTE $26
+>9a8e	4c				       .BYTE $4C
+>9a8f	91				       .BYTE $91
+>9a90	06				       .BYTE $06
+>9a91	a9				       .BYTE $A9
+>9a92	ee				       .BYTE $EE
+>9a93	8d				       .BYTE $8D
+>9a94	0c				       .BYTE $0C
+>9a95	1c				       .BYTE $1C
+>9a96	a9				       .BYTE $A9
+>9a97	03				       .BYTE $03
+>9a98	8d				       .BYTE $8D
+>9a99	e5				       .BYTE $E5
+>9a9a	06				       .BYTE $06
+>9a9b	a0				       .BYTE $A0
+>9a9c	00				       .BYTE $00
+>9a9d	20				       .BYTE $20
+>9a9e	d2				       .BYTE $D2
+>9a9f	05				       .BYTE $05
+>9aa0	ce				       .BYTE $CE
+>9aa1	e5				       .BYTE $E5
+>9aa2	06				       .BYTE $06
+>9aa3	d0				       .BYTE $D0
+>9aa4	f6				       .BYTE $F6
+>9aa5	20				       .BYTE $20
+>9aa6	f5				       .BYTE $F5
+>9aa7	05				       .BYTE $05
+>9aa8	20				       .BYTE $20
+>9aa9	27				       .BYTE $27
+>9aaa	05				       .BYTE $05
+>9aab	d0				       .BYTE $D0
+>9aac	08				       .BYTE $08
+>9aad	a5				       .BYTE $A5
+>9aae	18				       .BYTE $18
+>9aaf	c9				       .BYTE $C9
+>9ab0	24				       .BYTE $24
+>9ab1	90				       .BYTE $90
+>9ab2	02				       .BYTE $02
+>9ab3	85				       .BYTE $85
+>9ab4	22				       .BYTE $22
+>9ab5	a5				       .BYTE $A5
+>9ab6	22				       .BYTE $22
+>9ab7	c9				       .BYTE $C9
+>9ab8	24				       .BYTE $24
+>9ab9	b0				       .BYTE $B0
+>9aba	07				       .BYTE $07
+>9abb	e6				       .BYTE $E6
+>9abc	22				       .BYTE $22
+>9abd	20				       .BYTE $20
+>9abe	b0				       .BYTE $B0
+>9abf	05				       .BYTE $05
+>9ac0	f0				       .BYTE $F0
+>9ac1	f3				       .BYTE $F3
+>9ac2	20				       .BYTE $20
+>9ac3	e8				       .BYTE $E8
+>9ac4	04				       .BYTE $04
+>9ac5	a9				       .BYTE $A9
+>9ac6	ce				       .BYTE $CE
+>9ac7	8d				       .BYTE $8D
+>9ac8	0c				       .BYTE $0C
+>9ac9	1c				       .BYTE $1C
+>9aca	a9				       .BYTE $A9
+>9acb	ff				       .BYTE $FF
+>9acc	8d				       .BYTE $8D
+>9acd	01				       .BYTE $01
+>9ace	1c				       .BYTE $1C
+>9acf	8d				       .BYTE $8D
+>9ad0	03				       .BYTE $03
+>9ad1	1c				       .BYTE $1C
+>9ad2	a9				       .BYTE $A9
+>9ad3	55				       .BYTE $55
+>9ad4	a2				       .BYTE $A2
+>9ad5	28				       .BYTE $28
+>9ad6	a0				       .BYTE $A0
+>9ad7	00				       .BYTE $00
+>9ad8	8c				       .BYTE $8C
+>9ad9	e4				       .BYTE $E4
+>9ada	06				       .BYTE $06
+>9adb	50				       .BYTE $50
+>9adc	fe				       .BYTE $FE
+>9add	b8				       .BYTE $B8
+>9ade	8d				       .BYTE $8D
+>9adf	01				       .BYTE $01
+>9ae0	1c				       .BYTE $1C
+>9ae1	88				       .BYTE $88
+>9ae2	d0				       .BYTE $D0
+>9ae3	f7				       .BYTE $F7
+>9ae4	ca				       .BYTE $CA
+>9ae5	d0				       .BYTE $D0
+>9ae6	f4				       .BYTE $F4
+>9ae7	a2				       .BYTE $A2
+>9ae8	05				       .BYTE $05
+>9ae9	a9				       .BYTE $A9
+>9aea	ff				       .BYTE $FF
+>9aeb	50				       .BYTE $50
+>9aec	fe				       .BYTE $FE
+>9aed	b8				       .BYTE $B8
+>9aee	8d				       .BYTE $8D
+>9aef	01				       .BYTE $01
+>9af0	1c				       .BYTE $1C
+>9af1	ca				       .BYTE $CA
+>9af2	d0				       .BYTE $D0
+>9af3	f7				       .BYTE $F7
+>9af4	50				       .BYTE $50
+>9af5	fe				       .BYTE $FE
+>9af6	b8				       .BYTE $B8
+>9af7	20				       .BYTE $20
+>9af8	00				       .BYTE $00
+>9af9	fe				       .BYTE $FE
+>9afa	20				       .BYTE $20
+>9afb	a0				       .BYTE $A0
+>9afc	06				       .BYTE $06
+>9afd	d0				       .BYTE $D0
+>9afe	17				       .BYTE $17
+>9aff	20				       .BYTE $20
+>9b00	97				       .BYTE $97
+>9b01	06				       .BYTE $06
+>9b02	d0				       .BYTE $D0
+>9b03	12				       .BYTE $12
+>9b04	8e				       .BYTE $8E
+>9b05	e0				       .BYTE $E0
+>9b06	06				       .BYTE $06
+>9b07	8c				       .BYTE $8C
+>9b08	e1				       .BYTE $E1
+>9b09	06				       .BYTE $06
+>9b0a	20				       .BYTE $20
+>9b0b	97				       .BYTE $97
+>9b0c	06				       .BYTE $06
+>9b0d	d0				       .BYTE $D0
+>9b0e	07				       .BYTE $07
+>9b0f	8e				       .BYTE $8E
+>9b10	e2				       .BYTE $E2
+>9b11	06				       .BYTE $06
+>9b12	8c				       .BYTE $8C
+>9b13	e3				       .BYTE $E3
+>9b14	06				       .BYTE $06
+>9b15	60				       .BYTE $60
+>9b16	8d				       .BYTE $8D
+>9b17	e4				       .BYTE $E4
+>9b18	06				       .BYTE $06
+>9b19	4c				       .BYTE $4C
+>9b1a	b3				       .BYTE $B3
+>9b1b	04				       .BYTE $04
+>9b1c	a9				       .BYTE $A9
+>9b1d	00				       .BYTE $00
+>9b1e	aa				       .BYTE $AA
+>9b1f	a8				       .BYTE $A8
+>9b20	2c				       .BYTE $2C
+>9b21	00				       .BYTE $00
+>9b22	1c				       .BYTE $1C
+>9b23	10				       .BYTE $10
+>9b24	fb				       .BYTE $FB
+>9b25	2c				       .BYTE $2C
+>9b26	00				       .BYTE $00
+>9b27	1c				       .BYTE $1C
+>9b28	10				       .BYTE $10
+>9b29	08				       .BYTE $08
+>9b2a	e8				       .BYTE $E8
+>9b2b	d0				       .BYTE $D0
+>9b2c	f8				       .BYTE $F8
+>9b2d	c8				       .BYTE $C8
+>9b2e	d0				       .BYTE $D0
+>9b2f	f5				       .BYTE $F5
+>9b30	a9				       .BYTE $A9
+>9b31	21				       .BYTE $21
+>9b32	b8				       .BYTE $B8
+>9b33	60				       .BYTE $60
+>9b34	a5				       .BYTE $A5
+>9b35	22				       .BYTE $22
+>9b36	d0				       .BYTE $D0
+>9b37	0d				       .BYTE $0D
+>9b38	a9				       .BYTE $A9
+>9b39	c0				       .BYTE $C0
+>9b3a	85				       .BYTE $85
+>9b3b	00				       .BYTE $00
+>9b3c	58				       .BYTE $58
+>9b3d	a5				       .BYTE $A5
+>9b3e	00				       .BYTE $00
+>9b3f	30				       .BYTE $30
+>9b40	fc				       .BYTE $FC
+>9b41	24				       .BYTE $24
+>9b42	20				       .BYTE $20
+>9b43	70				       .BYTE $70
+>9b44	fc				       .BYTE $FC
+>9b45	78				       .BYTE $78
+>9b46	ad				       .BYTE $AD
+>9b47	00				       .BYTE $00
+>9b48	1c				       .BYTE $1C
+>9b49	09				       .BYTE $09
+>9b4a	0c				       .BYTE $0C
+>9b4b	8d				       .BYTE $8D
+>9b4c	00				       .BYTE $00
+>9b4d	1c				       .BYTE $1C
+>9b4e	a2				       .BYTE $A2
+>9b4f	00				       .BYTE $00
+>9b50	88				       .BYTE $88
+>9b51	d0				       .BYTE $D0
+>9b52	fd				       .BYTE $FD
+>9b53	ca				       .BYTE $CA
+>9b54	d0				       .BYTE $D0
+>9b55	fa				       .BYTE $FA
+>9b56	a9				       .BYTE $A9
+>9b57	01				       .BYTE $01
+>9b58	85				       .BYTE $85
+>9b59	18				       .BYTE $18
+>9b5a	ad				       .BYTE $AD
+>9b5b	d1				       .BYTE $D1
+>9b5c	04				       .BYTE $04
+>9b5d	85				       .BYTE $85
+>9b5e	16				       .BYTE $16
+>9b5f	85				       .BYTE $85
+>9b60	12				       .BYTE $12
+>9b61	ad				       .BYTE $AD
+>9b62	d2				       .BYTE $D2
+>9b63	04				       .BYTE $04
+>9b64	85				       .BYTE $85
+>9b65	17				       .BYTE $17
+>9b66	85				       .BYTE $85
+>9b67	13				       .BYTE $13
+>9b68	a9				       .BYTE $A9
+>9b69	05				       .BYTE $05
+>9b6a	85				       .BYTE $85
+>9b6b	31				       .BYTE $31
+>9b6c	20				       .BYTE $20
+>9b6d	b6				       .BYTE $B6
+>9b6e	04				       .BYTE $04
+>9b6f	a9				       .BYTE $A9
+>9b70	00				       .BYTE $00
+>9b71	85				       .BYTE $85
+>9b72	3a				       .BYTE $3A
+>9b73	20				       .BYTE $20
+>9b74	8f				       .BYTE $8F
+>9b75	f7				       .BYTE $F7
+>9b76	a0				       .BYTE $A0
+>9b77	bb				       .BYTE $BB
+>9b78	b9				       .BYTE $B9
+>9b79	00				       .BYTE $00
+>9b7a	01				       .BYTE $01
+>9b7b	99				       .BYTE $99
+>9b7c	00				       .BYTE $00
+>9b7d	06				       .BYTE $06
+>9b7e	c8				       .BYTE $C8
+>9b7f	d0				       .BYTE $D0
+>9b80	f7				       .BYTE $F7
+>9b81	a9				       .BYTE $A9
+>9b82	07				       .BYTE $07
+>9b83	85				       .BYTE $85
+>9b84	31				       .BYTE $31
+>9b85	85				       .BYTE $85
+>9b86	6e				       .BYTE $6E
+>9b87	a9				       .BYTE $A9
+>9b88	84				       .BYTE $84
+>9b89	85				       .BYTE $85
+>9b8a	b4				       .BYTE $B4
+>9b8b	a9				       .BYTE $A9
+>9b8c	f0				       .BYTE $F0
+>9b8d	8d				       .BYTE $8D
+>9b8e	4f				       .BYTE $4F
+>9b8f	02				       .BYTE $02
+>9b90	20				       .BYTE $20
+>9b91	b6				       .BYTE $B6
+>9b92	04				       .BYTE $04
+>9b93	20				       .BYTE $20
+>9b94	b7				       .BYTE $B7
+>9b95	ee				       .BYTE $EE
+>9b96	a0				       .BYTE $A0
+>9b97	1b				       .BYTE $1B
+>9b98	b9				       .BYTE $B9
+>9b99	bf				       .BYTE $BF
+>9b9a	04				       .BYTE $04
+>9b9b	99				       .BYTE $99
+>9b9c	90				       .BYTE $90
+>9b9d	07				       .BYTE $07
+>9b9e	88				       .BYTE $88
+>9b9f	10				       .BYTE $10
+>9ba0	f7				       .BYTE $F7
+>9ba1	a9				       .BYTE $A9
+>9ba2	41				       .BYTE $41
+>9ba3	8d				       .BYTE $8D
+>9ba4	02				       .BYTE $02
+>9ba5	07				       .BYTE $07
+>9ba6	a9				       .BYTE $A9
+>9ba7	2a				       .BYTE $2A
+>9ba8	8d				       .BYTE $8D
+>9ba9	03				       .BYTE $03
+>9baa	07				       .BYTE $07
+>9bab	a9				       .BYTE $A9
+>9bac	11				       .BYTE $11
+>9bad	8d				       .BYTE $8D
+>9bae	48				       .BYTE $48
+>9baf	07				       .BYTE $07
+>9bb0	a9				       .BYTE $A9
+>9bb1	fc				       .BYTE $FC
+>9bb2	8d				       .BYTE $8D
+>9bb3	49				       .BYTE $49
+>9bb4	07				       .BYTE $07
+>9bb5	20				       .BYTE $20
+>9bb6	e9				       .BYTE $E9
+>9bb7	f5				       .BYTE $F5
+>9bb8	85				       .BYTE $85
+>9bb9	3a				       .BYTE $3A
+>9bba	20				       .BYTE $20
+>9bbb	8f				       .BYTE $8F
+>9bbc	f7				       .BYTE $F7
+>9bbd	a5				       .BYTE $A5
+>9bbe	18				       .BYTE $18
+>9bbf	20				       .BYTE $20
+>9bc0	69				       .BYTE $69
+>9bc1	04				       .BYTE $04
+>9bc2	a5				       .BYTE $A5
+>9bc3	22				       .BYTE $22
+>9bc4	c9				       .BYTE $C9
+>9bc5	12				       .BYTE $12
+>9bc6	d0				       .BYTE $D0
+>9bc7	09				       .BYTE $09
+>9bc8	a9				       .BYTE $A9
+>9bc9	07				       .BYTE $07
+>9bca	85				       .BYTE $85
+>9bcb	31				       .BYTE $31
+>9bcc	a9				       .BYTE $A9
+>9bcd	01				       .BYTE $01
+>9bce	8d				       .BYTE $8D
+>9bcf	17				       .BYTE $17
+>9bd0	04				       .BYTE $04
+>9bd1	a9				       .BYTE $A9
+>9bd2	ff				       .BYTE $FF
+>9bd3	8d				       .BYTE $8D
+>9bd4	03				       .BYTE $03
+>9bd5	1c				       .BYTE $1C
+>9bd6	8d				       .BYTE $8D
+>9bd7	01				       .BYTE $01
+>9bd8	1c				       .BYTE $1C
+>9bd9	a9				       .BYTE $A9
+>9bda	ce				       .BYTE $CE
+>9bdb	8d				       .BYTE $8D
+>9bdc	0c				       .BYTE $0C
+>9bdd	1c				       .BYTE $1C
+>9bde	a0				       .BYTE $A0
+>9bdf	00				       .BYTE $00
+>9be0	84				       .BYTE $84
+>9be1	19				       .BYTE $19
+>9be2	84				       .BYTE $84
+>9be3	c2				       .BYTE $C2
+>9be4	84				       .BYTE $84
+>9be5	c0				       .BYTE $C0
+>9be6	a5				       .BYTE $A5
+>9be7	19				       .BYTE $19
+>9be8	45				       .BYTE $45
+>9be9	18				       .BYTE $18
+>9bea	45				       .BYTE $45
+>9beb	17				       .BYTE $17
+>9bec	45				       .BYTE $45
+>9bed	16				       .BYTE $16
+>9bee	85				       .BYTE $85
+>9bef	1a				       .BYTE $1A
+>9bf0	20				       .BYTE $20
+>9bf1	34				       .BYTE $34
+>9bf2	f9				       .BYTE $F9
+>9bf3	a2				       .BYTE $A2
+>9bf4	00				       .BYTE $00
+>9bf5	a4				       .BYTE $A4
+>9bf6	c0				       .BYTE $C0
+>9bf7	b5				       .BYTE $B5
+>9bf8	24				       .BYTE $24
+>9bf9	99				       .BYTE $99
+>9bfa	00				       .BYTE $00
+>9bfb	06				       .BYTE $06
+>9bfc	c8				       .BYTE $C8
+>9bfd	e8				       .BYTE $E8
+>9bfe	e0				       .BYTE $E0
+>9bff	08				       .BYTE $08
+>9c00	d0				       .BYTE $D0
+>9c01	f5				       .BYTE $F5
+>9c02	e6				       .BYTE $E6
+>9c03	19				       .BYTE $19
+>9c04	a5				       .BYTE $A5
+>9c05	19				       .BYTE $19
+>9c06	c5				       .BYTE $C5
+>9c07	43				       .BYTE $43
+>9c08	d0				       .BYTE $D0
+>9c09	da				       .BYTE $DA
+>9c0a	a2				       .BYTE $A2
+>9c0b	05				       .BYTE $05
+>9c0c	50				       .BYTE $50
+>9c0d	fe				       .BYTE $FE
+>9c0e	b8				       .BYTE $B8
+>9c0f	a9				       .BYTE $A9
+>9c10	ff				       .BYTE $FF
+>9c11	8d				       .BYTE $8D
+>9c12	01				       .BYTE $01
+>9c13	1c				       .BYTE $1C
+>9c14	ca				       .BYTE $CA
+>9c15	d0				       .BYTE $D0
+>9c16	f5				       .BYTE $F5
+>9c17	a2				       .BYTE $A2
+>9c18	08				       .BYTE $08
+>9c19	a4				       .BYTE $A4
+>9c1a	c2				       .BYTE $C2
+>9c1b	50				       .BYTE $50
+>9c1c	fe				       .BYTE $FE
+>9c1d	b8				       .BYTE $B8
+>9c1e	b9				       .BYTE $B9
+>9c1f	00				       .BYTE $00
+>9c20	06				       .BYTE $06
+>9c21	8d				       .BYTE $8D
+>9c22	01				       .BYTE $01
+>9c23	1c				       .BYTE $1C
+>9c24	c8				       .BYTE $C8
+>9c25	ca				       .BYTE $CA
+>9c26	d0				       .BYTE $D0
+>9c27	f3				       .BYTE $F3
+>9c28	84				       .BYTE $84
+>9c29	c2				       .BYTE $C2
+>9c2a	a2				       .BYTE $A2
+>9c2b	0b				       .BYTE $0B
+>9c2c	50				       .BYTE $50
+>9c2d	fe				       .BYTE $FE
+>9c2e	b8				       .BYTE $B8
+>9c2f	a9				       .BYTE $A9
+>9c30	55				       .BYTE $55
+>9c31	8d				       .BYTE $8D
+>9c32	01				       .BYTE $01
+>9c33	1c				       .BYTE $1C
+>9c34	ca				       .BYTE $CA
+>9c35	d0				       .BYTE $D0
+>9c36	f5				       .BYTE $F5
+>9c37	a2				       .BYTE $A2
+>9c38	05				       .BYTE $05
+>9c39	50				       .BYTE $50
+>9c3a	fe				       .BYTE $FE
+>9c3b	b8				       .BYTE $B8
+>9c3c	a9				       .BYTE $A9
+>9c3d	ff				       .BYTE $FF
+>9c3e	8d				       .BYTE $8D
+>9c3f	01				       .BYTE $01
+>9c40	1c				       .BYTE $1C
+>9c41	ca				       .BYTE $CA
+>9c42	d0				       .BYTE $D0
+>9c43	f5				       .BYTE $F5
+>9c44	a0				       .BYTE $A0
+>9c45	bb				       .BYTE $BB
+>9c46	50				       .BYTE $50
+>9c47	fe				       .BYTE $FE
+>9c48	b8				       .BYTE $B8
+>9c49	b9				       .BYTE $B9
+>9c4a	00				       .BYTE $00
+>9c4b	06				       .BYTE $06
+>9c4c	8d				       .BYTE $8D
+>9c4d	01				       .BYTE $01
+>9c4e	1c				       .BYTE $1C
+>9c4f	c8				       .BYTE $C8
+>9c50	d0				       .BYTE $D0
+>9c51	f4				       .BYTE $F4
+>9c52	50				       .BYTE $50
+>9c53	fe				       .BYTE $FE
+>9c54	b8				       .BYTE $B8
+>9c55	b1				       .BYTE $B1
+>9c56	30				       .BYTE $30
+>9c57	8d				       .BYTE $8D
+>9c58	01				       .BYTE $01
+>9c59	1c				       .BYTE $1C
+>9c5a	c8				       .BYTE $C8
+>9c5b	d0				       .BYTE $D0
+>9c5c	f5				       .BYTE $F5
+>9c5d	a2				       .BYTE $A2
+>9c5e	09				       .BYTE $09
+>9c5f	50				       .BYTE $50
+>9c60	fe				       .BYTE $FE
+>9c61	b8				       .BYTE $B8
+>9c62	a9				       .BYTE $A9
+>9c63	55				       .BYTE $55
+>9c64	8d				       .BYTE $8D
+>9c65	01				       .BYTE $01
+>9c66	1c				       .BYTE $1C
+>9c67	ca				       .BYTE $CA
+>9c68	d0				       .BYTE $D0
+>9c69	f5				       .BYTE $F5
+>9c6a	a9				       .BYTE $A9
+>9c6b	05				       .BYTE $05
+>9c6c	85				       .BYTE $85
+>9c6d	31				       .BYTE $31
+>9c6e	a9				       .BYTE $A9
+>9c6f	06				       .BYTE $06
+>9c70	8d				       .BYTE $8D
+>9c71	17				       .BYTE $17
+>9c72	04				       .BYTE $04
+>9c73	c6				       .BYTE $C6
+>9c74	19				       .BYTE $19
+>9c75	d0				       .BYTE $D0
+>9c76	93				       .BYTE $93
+>9c77	20				       .BYTE $20
+>9c78	00				       .BYTE $00
+>9c79	fe				       .BYTE $FE
+>9c7a	a5				       .BYTE $A5
+>9c7b	18				       .BYTE $18
+>9c7c	c9				       .BYTE $C9
+>9c7d	23				       .BYTE $23
+>9c7e	f0				       .BYTE $F0
+>9c7f	05				       .BYTE $05
+>9c80	e6				       .BYTE $E6
+>9c81	18				       .BYTE $18
+>9c82	4c				       .BYTE $4C
+>9c83	89				       .BYTE $89
+>9c84	03				       .BYTE $03
+>9c85	a9				       .BYTE $A9
+>9c86	07				       .BYTE $07
+>9c87	85				       .BYTE $85
+>9c88	31				       .BYTE $31
+>9c89	20				       .BYTE $20
+>9c8a	f2				       .BYTE $F2
+>9c8b	f5				       .BYTE $F5
+>9c8c	a9				       .BYTE $A9
+>9c8d	30				       .BYTE $30
+>9c8e	85				       .BYTE $85
+>9c8f	20				       .BYTE $20
+>9c90	a9				       .BYTE $A9
+>9c91	ff				       .BYTE $FF
+>9c92	85				       .BYTE $85
+>9c93	48				       .BYTE $48
+>9c94	a9				       .BYTE $A9
+>9c95	00				       .BYTE $00
+>9c96	85				       .BYTE $85
+>9c97	3e				       .BYTE $3E
+>9c98	8d				       .BYTE $8D
+>9c99	00				       .BYTE $00
+>9c9a	18				       .BYTE $18
+>9c9b	58				       .BYTE $58
+>9c9c	60				       .BYTE $60
+.9c9d	48		pha		       PHA
+.9c9e	38		sec		       SEC
+.9c9f	e5 22		sbc $22		       SBC $22
+.9ca1	f0 14		beq $9cb7	       BEQ XX9CB7
+.9ca3	0a		asl a		       ASL A
+.9ca4	85 4a		sta $4a		       STA $4A
+.9ca6	20 2e fa	jsr $fa2e	XX9CA6 JSR $FA2E
+.9ca9	a9 95		lda #$95	       LDA #$95
+.9cab	8d 05 18	sta $1805	       STA $1805
+.9cae	ad 05 18	lda $1805	XX9CAE LDA $1805
+.9cb1	30 fb		bmi $9cae	       BMI XX9CAE
+.9cb3	a5 4a		lda $4a		       LDA $4A
+.9cb5	d0 ef		bne $9ca6	       BNE XX9CA6
+.9cb7	68		pla		XX9CB7 PLA
+.9cb8	85 22		sta $22		       STA $22
+.9cba	a2 04		ldx #$04	       LDX #$04
+.9cbc	dd a9 04	cmp $04a9,x	XX9CBC CMP $04A9,X
+.9cbf	ca		dex		       DEX
+.9cc0	b0 fa		bcs $9cbc	       BCS XX9CBC
+.9cc2	bd ae 04	lda $04ae,x	       LDA $04AE,X
+.9cc5	85 43		sta $43		       STA $43
+.9cc7	ad 00 1c	lda $1c00	       LDA $1C00
+.9cca	09 08		ora #$08	       ORA #$08
+.9ccc	29 9f		and #$9f	       AND #$9F
+.9cce	1d b2 04	ora $04b2,x	       ORA $04B2,X
+.9cd1	8d 00 1c	sta $1c00	       STA $1C00
+.9cd4	a9 ee		lda #$ee	       LDA #$EE
+.9cd6	8d 0c 1c	sta $1c0c	       STA $1C0C
+.9cd9	a9 05		lda #$05	       LDA #$05
+.9cdb	85 31		sta $31		       STA $31
+.9cdd	60		rts		       RTS
+>9cde	29				       .BYTE $29
+>9cdf	1f				       .BYTE $1F
+>9ce0	19				       .BYTE $19
+>9ce1	12				       .BYTE $12
+>9ce2	11				       .BYTE $11
+>9ce3	12				       .BYTE $12
+>9ce4	13				       .BYTE $13
+>9ce5	15				       .BYTE $15
+>9ce6	00				       .BYTE $00
+>9ce7	20				       .BYTE $20
+>9ce8	40				       .BYTE $40
+>9ce9	60				       .BYTE $60
+>9cea	a0				       .BYTE $A0
+>9ceb	00				       .BYTE $00
+>9cec	98				       .BYTE $98
+>9ced	91				       .BYTE $91
+>9cee	30				       .BYTE $30
+>9cef	c8				       .BYTE $C8
+>9cf0	d0				       .BYTE $D0
+>9cf1	fb				       .BYTE $FB
+>9cf2	60				       .BYTE $60
+>9cf3	a0				       .BYTE $A0
+>9cf4	a0				       .BYTE $A0
+>9cf5	a0				       .BYTE $A0
+>9cf6	a0				       .BYTE $A0
+>9cf7	a0				       .BYTE $A0
+>9cf8	a0				       .BYTE $A0
+>9cf9	a0				       .BYTE $A0
+>9cfa	a0				       .BYTE $A0
+>9cfb	a0				       .BYTE $A0
+>9cfc	a0				       .BYTE $A0
+>9cfd	a0				       .BYTE $A0
+>9cfe	a0				       .BYTE $A0
+>9cff	a0				       .BYTE $A0
+>9d00	a0				       .BYTE $A0
+>9d01	a0				       .BYTE $A0
+>9d02	a0				       .BYTE $A0
+>9d03	a0				       .BYTE $A0
+>9d04	a0				       .BYTE $A0
+>9d05	30				       .BYTE $30
+>9d06	30				       .BYTE $30
+>9d07	a0				       .BYTE $A0
+>9d08	32				       .BYTE $32
+>9d09	41				       .BYTE $41
+>9d0a	a0				       .BYTE $A0
+>9d0b	a0				       .BYTE $A0
+>9d0c	a0				       .BYTE $A0
+>9d0d	a0				       .BYTE $A0
+>9d0e	00				       .BYTE $00
+>9d0f	00				       .BYTE $00
+>9d10	a9				       .BYTE $A9
+>9d11	14				       .BYTE $14
+>9d12	8d				       .BYTE $8D
+>9d13	07				       .BYTE $07
+>9d14	1c				       .BYTE $1C
+>9d15	20				       .BYTE $20
+>9d16	be				       .BYTE $BE
+>9d17	03				       .BYTE $03
+>9d18	a9				       .BYTE $A9
+>9d19	00				       .BYTE $00
+>9d1a	85				       .BYTE $85
+>9d1b	c4				       .BYTE $C4
+>9d1c	85				       .BYTE $85
+>9d1d	c5				       .BYTE $C5
+>9d1e	a9				       .BYTE $A9
+>9d1f	01				       .BYTE $01
+>9d20	85				       .BYTE $85
+>9d21	0a				       .BYTE $0A
+>9d22	20				       .BYTE $20
+>9d23	4b				       .BYTE $4B
+>9d24	f2				       .BYTE $F2
+>9d25	85				       .BYTE $85
+>9d26	c0				       .BYTE $C0
+>9d27	85				       .BYTE $85
+>9d28	c1				       .BYTE $C1
+>9d29	a8				       .BYTE $A8
+>9d2a	a9				       .BYTE $A9
+>9d2b	00				       .BYTE $00
+>9d2c	88				       .BYTE $88
+>9d2d	99				       .BYTE $99
+>9d2e	e0				       .BYTE $E0
+>9d2f	06				       .BYTE $06
+>9d30	88				       .BYTE $88
+>9d31	10				       .BYTE $10
+>9d32	fa				       .BYTE $FA
+>9d33	a9				       .BYTE $A9
+>9d34	00				       .BYTE $00
+>9d35	85				       .BYTE $85
+>9d36	c6				       .BYTE $C6
+>9d37	a2				       .BYTE $A2
+>9d38	00				       .BYTE $00
+>9d39	86				       .BYTE $86
+>9d3a	0b				       .BYTE $0B
+>9d3b	a5				       .BYTE $A5
+>9d3c	0a				       .BYTE $0A
+>9d3d	0a				       .BYTE $0A
+>9d3e	0a				       .BYTE $0A
+>9d3f	85				       .BYTE $85
+>9d40	c2				       .BYTE $C2
+>9d41	a5				       .BYTE $A5
+>9d42	0b				       .BYTE $0B
+>9d43	4a				       .BYTE $4A
+>9d44	4a				       .BYTE $4A
+>9d45	4a				       .BYTE $4A
+>9d46	18				       .BYTE $18
+>9d47	65				       .BYTE $65
+>9d48	c2				       .BYTE $C2
+>9d49	aa				       .BYTE $AA
+>9d4a	a5				       .BYTE $A5
+>9d4b	0b				       .BYTE $0B
+>9d4c	29				       .BYTE $29
+>9d4d	07				       .BYTE $07
+>9d4e	a8				       .BYTE $A8
+>9d4f	bd				       .BYTE $BD
+>9d50	01				       .BYTE $01
+>9d51	07				       .BYTE $07
+>9d52	39				       .BYTE $39
+>9d53	f2				       .BYTE $F2
+>9d54	03				       .BYTE $03
+>9d55	f0				       .BYTE $F0
+>9d56	24				       .BYTE $24
+>9d57	a9				       .BYTE $A9
+>9d58	80				       .BYTE $80
+>9d59	85				       .BYTE $85
+>9d5a	02				       .BYTE $02
+>9d5b	a5				       .BYTE $A5
+>9d5c	02				       .BYTE $02
+>9d5d	30				       .BYTE $30
+>9d5e	fc				       .BYTE $FC
+>9d5f	c9				       .BYTE $C9
+>9d60	01				       .BYTE $01
+>9d61	f0				       .BYTE $F0
+>9d62	18				       .BYTE $18
+>9d63	b9				       .BYTE $B9
+>9d64	f2				       .BYTE $F2
+>9d65	03				       .BYTE $03
+>9d66	5d				       .BYTE $5D
+>9d67	01				       .BYTE $01
+>9d68	07				       .BYTE $07
+>9d69	9d				       .BYTE $9D
+>9d6a	01				       .BYTE $01
+>9d6b	07				       .BYTE $07
+>9d6c	8a				       .BYTE $8A
+>9d6d	29				       .BYTE $29
+>9d6e	fc				       .BYTE $FC
+>9d6f	aa				       .BYTE $AA
+>9d70	de				       .BYTE $DE
+>9d71	00				       .BYTE $00
+>9d72	07				       .BYTE $07
+>9d73	e6				       .BYTE $E6
+>9d74	c4				       .BYTE $C4
+>9d75	d0				       .BYTE $D0
+>9d76	02				       .BYTE $02
+>9d77	e6				       .BYTE $E6
+>9d78	c5				       .BYTE $C5
+>9d79	e6				       .BYTE $E6
+>9d7a	c6				       .BYTE $C6
+>9d7b	a6				       .BYTE $A6
+>9d7c	0b				       .BYTE $0B
+>9d7d	fe				       .BYTE $FE
+>9d7e	e0				       .BYTE $E0
+>9d7f	06				       .BYTE $06
+>9d80	c6				       .BYTE $C6
+>9d81	c0				       .BYTE $C0
+>9d82	f0				       .BYTE $F0
+>9d83	19				       .BYTE $19
+>9d84	8a				       .BYTE $8A
+>9d85	18				       .BYTE $18
+>9d86	69				       .BYTE $69
+>9d87	07				       .BYTE $07
+>9d88	c5				       .BYTE $C5
+>9d89	c1				       .BYTE $C1
+>9d8a	90				       .BYTE $90
+>9d8b	02				       .BYTE $02
+>9d8c	e5				       .BYTE $E5
+>9d8d	c1				       .BYTE $C1
+>9d8e	aa				       .BYTE $AA
+>9d8f	bd				       .BYTE $BD
+>9d90	e0				       .BYTE $E0
+>9d91	06				       .BYTE $06
+>9d92	f0				       .BYTE $F0
+>9d93	a5				       .BYTE $A5
+>9d94	e8				       .BYTE $E8
+>9d95	e4				       .BYTE $E4
+>9d96	c1				       .BYTE $C1
+>9d97	d0				       .BYTE $D0
+>9d98	f6				       .BYTE $F6
+>9d99	a2				       .BYTE $A2
+>9d9a	00				       .BYTE $00
+>9d9b	f0				       .BYTE $F0
+>9d9c	f2				       .BYTE $F2
+>9d9d	a5				       .BYTE $A5
+>9d9e	c6				       .BYTE $C6
+>9d9f	d0				       .BYTE $D0
+>9da0	1f				       .BYTE $1F
+>9da1	78				       .BYTE $78
+>9da2	a9				       .BYTE $A9
+>9da3	08				       .BYTE $08
+>9da4	8d				       .BYTE $8D
+>9da5	00				       .BYTE $00
+>9da6	18				       .BYTE $18
+>9da7	a9				       .BYTE $A9
+>9da8	01				       .BYTE $01
+>9da9	2c				       .BYTE $2C
+>9daa	00				       .BYTE $00
+>9dab	18				       .BYTE $18
+>9dac	f0				       .BYTE $F0
+>9dad	fb				       .BYTE $FB
+>9dae	a9				       .BYTE $A9
+>9daf	00				       .BYTE $00
+>9db0	8d				       .BYTE $8D
+>9db1	00				       .BYTE $00
+>9db2	18				       .BYTE $18
+>9db3	58				       .BYTE $58
+>9db4	e6				       .BYTE $E6
+>9db5	0a				       .BYTE $0A
+>9db6	a5				       .BYTE $A5
+>9db7	0a				       .BYTE $0A
+>9db8	c9				       .BYTE $C9
+>9db9	12				       .BYTE $12
+>9dba	f0				       .BYTE $F0
+>9dbb	f8				       .BYTE $F8
+>9dbc	c9				       .BYTE $C9
+>9dbd	24				       .BYTE $24
+>9dbe	f0				       .BYTE $F0
+>9dbf	03				       .BYTE $03
+>9dc0	4c				       .BYTE $4C
+>9dc1	12				       .BYTE $12
+>9dc2	03				       .BYTE $03
+>9dc3	a9				       .BYTE $A9
+>9dc4	90				       .BYTE $90
+>9dc5	85				       .BYTE $85
+>9dc6	04				       .BYTE $04
+>9dc7	24				       .BYTE $24
+>9dc8	04				       .BYTE $04
+>9dc9	30				       .BYTE $30
+>9dca	fc				       .BYTE $FC
+>9dcb	4c				       .BYTE $4C
+>9dcc	01				       .BYTE $01
+>9dcd	ff				       .BYTE $FF
+>9dce	a9				       .BYTE $A9
+>9dcf	08				       .BYTE $08
+>9dd0	0d				       .BYTE $0D
+>9dd1	00				       .BYTE $00
+>9dd2	1c				       .BYTE $1C
+>9dd3	8d				       .BYTE $8D
+>9dd4	00				       .BYTE $00
+>9dd5	1c				       .BYTE $1C
+>9dd6	a9				       .BYTE $A9
+>9dd7	12				       .BYTE $12
+>9dd8	85				       .BYTE $85
+>9dd9	0e				       .BYTE $0E
+>9dda	a9				       .BYTE $A9
+>9ddb	00				       .BYTE $00
+>9ddc	85				       .BYTE $85
+>9ddd	0f				       .BYTE $0F
+>9dde	a9				       .BYTE $A9
+>9ddf	b0				       .BYTE $B0
+>9de0	20				       .BYTE $20
+>9de1	d5				       .BYTE $D5
+>9de2	03				       .BYTE $03
+>9de3	a9				       .BYTE $A9
+>9de4	80				       .BYTE $80
+>9de5	85				       .BYTE $85
+>9de6	04				       .BYTE $04
+>9de7	a4				       .BYTE $A4
+>9de8	04				       .BYTE $04
+>9de9	30				       .BYTE $30
+>9dea	fc				       .BYTE $FC
+>9deb	c0				       .BYTE $C0
+>9dec	01				       .BYTE $01
+>9ded	f0				       .BYTE $F0
+>9dee	12				       .BYTE $12
+>9def	c9				       .BYTE $C9
+>9df0	80				       .BYTE $80
+>9df1	f0				       .BYTE $F0
+>9df2	0e				       .BYTE $0E
+>9df3	a0				       .BYTE $A0
+>9df4	c0				       .BYTE $C0
+>9df5	84				       .BYTE $84
+>9df6	04				       .BYTE $04
+>9df7	a4				       .BYTE $A4
+>9df8	04				       .BYTE $04
+>9df9	30				       .BYTE $30
+>9dfa	fc				       .BYTE $FC
+>9dfb	85				       .BYTE $85
+>9dfc	04				       .BYTE $04
+>9dfd	a4				       .BYTE $A4
+>9dfe	04				       .BYTE $04
+>9dff	30				       .BYTE $30
+>9e00	fc				       .BYTE $FC
+>9e01	60				       .BYTE $60
+>9e02	01				       .BYTE $01
+>9e03	02				       .BYTE $02
+>9e04	04				       .BYTE $04
+>9e05	08				       .BYTE $08
+>9e06	10				       .BYTE $10
+>9e07	20				       .BYTE $20
+>9e08	40				       .BYTE $40
+>9e09	80				       .BYTE $80
+>9e0a	a5				       .BYTE $A5
+>9e0b	06				       .BYTE $06
+>9e0c	20				       .BYTE $20
+>9e0d	4b				       .BYTE $4B
+>9e0e	f2				       .BYTE $F2
+>9e0f	85				       .BYTE $85
+>9e10	c0				       .BYTE $C0
+>9e11	a8				       .BYTE $A8
+>9e12	88				       .BYTE $88
+>9e13	a9				       .BYTE $A9
+>9e14	00				       .BYTE $00
+>9e15	99				       .BYTE $99
+>9e16	a0				       .BYTE $A0
+>9e17	06				       .BYTE $06
+>9e18	99				       .BYTE $99
+>9e19	c0				       .BYTE $C0
+>9e1a	06				       .BYTE $06
+>9e1b	88				       .BYTE $88
+>9e1c	10				       .BYTE $10
+>9e1d	f7				       .BYTE $F7
+>9e1e	c8				       .BYTE $C8
+>9e1f	84				       .BYTE $84
+>9e20	30				       .BYTE $30
+>9e21	84				       .BYTE $84
+>9e22	31				       .BYTE $31
+>9e23	a2				       .BYTE $A2
+>9e24	80				       .BYTE $80
+>9e25	86				       .BYTE $86
+>9e26	c1				       .BYTE $C1
+>9e27	20				       .BYTE $20
+>9e28	56				       .BYTE $56
+>9e29	f5				       .BYTE $F5
+>9e2a	50				       .BYTE $50
+>9e2b	fe				       .BYTE $FE
+>9e2c	b8				       .BYTE $B8
+>9e2d	ad				       .BYTE $AD
+>9e2e	01				       .BYTE $01
+>9e2f	1c				       .BYTE $1C
+>9e30	c9				       .BYTE $C9
+>9e31	52				       .BYTE $52
+>9e32	d0				       .BYTE $D0
+>9e33	18				       .BYTE $18
+>9e34	50				       .BYTE $50
+>9e35	fe				       .BYTE $FE
+>9e36	b8				       .BYTE $B8
+>9e37	ad				       .BYTE $AD
+>9e38	01				       .BYTE $01
+>9e39	1c				       .BYTE $1C
+>9e3a	99				       .BYTE $99
+>9e3b	25				       .BYTE $25
+>9e3c	00				       .BYTE $00
+>9e3d	c8				       .BYTE $C8
+>9e3e	c0				       .BYTE $C0
+>9e3f	04				       .BYTE $04
+>9e40	d0				       .BYTE $D0
+>9e41	f2				       .BYTE $F2
+>9e42	a0				       .BYTE $A0
+>9e43	24				       .BYTE $24
+>9e44	20				       .BYTE $20
+>9e45	e8				       .BYTE $E8
+>9e46	f7				       .BYTE $F7
+>9e47	a6				       .BYTE $A6
+>9e48	54				       .BYTE $54
+>9e49	bd				       .BYTE $BD
+>9e4a	a0				       .BYTE $A0
+>9e4b	06				       .BYTE $06
+>9e4c	d0				       .BYTE $D0
+>9e4d	75				       .BYTE $75
+>9e4e	a2				       .BYTE $A2
+>9e4f	03				       .BYTE $03
+>9e50	b5				       .BYTE $B5
+>9e51	52				       .BYTE $52
+>9e52	95				       .BYTE $95
+>9e53	ec				       .BYTE $EC
+>9e54	ca				       .BYTE $CA
+>9e55	10				       .BYTE $10
+>9e56	f9				       .BYTE $F9
+>9e57	20				       .BYTE $20
+>9e58	56				       .BYTE $56
+>9e59	f5				       .BYTE $F5
+>9e5a	50				       .BYTE $50
+>9e5b	fe				       .BYTE $FE
+>9e5c	b8				       .BYTE $B8
+>9e5d	ad				       .BYTE $AD
+>9e5e	01				       .BYTE $01
+>9e5f	1c				       .BYTE $1C
+>9e60	99				       .BYTE $99
+>9e61	24				       .BYTE $24
+>9e62	00				       .BYTE $00
+>9e63	c8				       .BYTE $C8
+>9e64	c0				       .BYTE $C0
+>9e65	05				       .BYTE $05
+>9e66	d0				       .BYTE $D0
+>9e67	f2				       .BYTE $F2
+>9e68	a0				       .BYTE $A0
+>9e69	24				       .BYTE $24
+>9e6a	20				       .BYTE $20
+>9e6b	e8				       .BYTE $E8
+>9e6c	f7				       .BYTE $F7
+>9e6d	a6				       .BYTE $A6
+>9e6e	ee				       .BYTE $EE
+>9e6f	fe				       .BYTE $FE
+>9e70	a0				       .BYTE $A0
+>9e71	06				       .BYTE $06
+>9e72	a5				       .BYTE $A5
+>9e73	53				       .BYTE $53
+>9e74	9d				       .BYTE $9D
+>9e75	c0				       .BYTE $C0
+>9e76	06				       .BYTE $06
+>9e77	a5				       .BYTE $A5
+>9e78	54				       .BYTE $54
+>9e79	9d				       .BYTE $9D
+>9e7a	e0				       .BYTE $E0
+>9e7b	06				       .BYTE $06
+>9e7c	c6				       .BYTE $C6
+>9e7d	c0				       .BYTE $C0
+>9e7e	d0				       .BYTE $D0
+>9e7f	a7				       .BYTE $A7
+>9e80	a5				       .BYTE $A5
+>9e81	06				       .BYTE $06
+>9e82	0a				       .BYTE $0A
+>9e83	0a				       .BYTE $0A
+>9e84	85				       .BYTE $85
+>9e85	c2				       .BYTE $C2
+>9e86	a5				       .BYTE $A5
+>9e87	07				       .BYTE $07
+>9e88	4a				       .BYTE $4A
+>9e89	4a				       .BYTE $4A
+>9e8a	4a				       .BYTE $4A
+>9e8b	18				       .BYTE $18
+>9e8c	65				       .BYTE $65
+>9e8d	c2				       .BYTE $C2
+>9e8e	aa				       .BYTE $AA
+>9e8f	a5				       .BYTE $A5
+>9e90	07				       .BYTE $07
+>9e91	29				       .BYTE $29
+>9e92	07				       .BYTE $07
+>9e93	a8				       .BYTE $A8
+>9e94	bd				       .BYTE $BD
+>9e95	01				       .BYTE $01
+>9e96	07				       .BYTE $07
+>9e97	39				       .BYTE $39
+>9e98	6e				       .BYTE $6E
+>9e99	04				       .BYTE $04
+>9e9a	f0				       .BYTE $F0
+>9e9b	10				       .BYTE $10
+>9e9c	bd				       .BYTE $BD
+>9e9d	01				       .BYTE $01
+>9e9e	07				       .BYTE $07
+>9e9f	59				       .BYTE $59
+>9ea0	6e				       .BYTE $6E
+>9ea1	04				       .BYTE $04
+>9ea2	9d				       .BYTE $9D
+>9ea3	01				       .BYTE $01
+>9ea4	07				       .BYTE $07
+>9ea5	8a				       .BYTE $8A
+>9ea6	29				       .BYTE $29
+>9ea7	fc				       .BYTE $FC
+>9ea8	aa				       .BYTE $AA
+>9ea9	de				       .BYTE $DE
+>9eaa	00				       .BYTE $00
+>9eab	07				       .BYTE $07
+>9eac	e6				       .BYTE $E6
+>9ead	c6				       .BYTE $C6
+>9eae	d0				       .BYTE $D0
+>9eaf	02				       .BYTE $02
+>9eb0	e6				       .BYTE $E6
+>9eb1	c7				       .BYTE $C7
+>9eb2	a6				       .BYTE $A6
+>9eb3	07				       .BYTE $07
+>9eb4	bd				       .BYTE $BD
+>9eb5	c0				       .BYTE $C0
+>9eb6	06				       .BYTE $06
+>9eb7	c5				       .BYTE $C5
+>9eb8	06				       .BYTE $06
+>9eb9	d0				       .BYTE $D0
+>9eba	0e				       .BYTE $0E
+>9ebb	bd				       .BYTE $BD
+>9ebc	e0				       .BYTE $E0
+>9ebd	06				       .BYTE $06
+>9ebe	85				       .BYTE $85
+>9ebf	07				       .BYTE $07
+>9ec0	4c				       .BYTE $4C
+>9ec1	76				       .BYTE $76
+>9ec2	03				       .BYTE $03
+>9ec3	c6				       .BYTE $C6
+>9ec4	c1				       .BYTE $C1
+>9ec5	d0				       .BYTE $D0
+>9ec6	b7				       .BYTE $B7
+>9ec7	f0				       .BYTE $F0
+>9ec8	b7				       .BYTE $B7
+>9ec9	85				       .BYTE $85
+>9eca	06				       .BYTE $06
+>9ecb	bd				       .BYTE $BD
+>9ecc	e0				       .BYTE $E0
+>9ecd	06				       .BYTE $06
+>9ece	85				       .BYTE $85
+>9ecf	07				       .BYTE $07
+>9ed0	4c				       .BYTE $4C
+>9ed1	9e				       .BYTE $9E
+>9ed2	fd				       .BYTE $FD
+>9ed3	a9				       .BYTE $A9
+>9ed4	08				       .BYTE $08
+>9ed5	0d				       .BYTE $0D
+>9ed6	00				       .BYTE $00
+>9ed7	1c				       .BYTE $1C
+>9ed8	8d				       .BYTE $8D
+>9ed9	00				       .BYTE $00
+>9eda	1c				       .BYTE $1C
+>9edb	a9				       .BYTE $A9
+>9edc	12				       .BYTE $12
+>9edd	8d				       .BYTE $8D
+>9ede	07				       .BYTE $07
+>9edf	1c				       .BYTE $1C
+>9ee0	20				       .BYTE $20
+>9ee1	76				       .BYTE $76
+>9ee2	04				       .BYTE $04
+>9ee3	20				       .BYTE $20
+>9ee4	a9				       .BYTE $A9
+>9ee5	04				       .BYTE $04
+>9ee6	a9				       .BYTE $A9
+>9ee7	12				       .BYTE $12
+>9ee8	85				       .BYTE $85
+>9ee9	0a				       .BYTE $0A
+>9eea	a9				       .BYTE $A9
+>9eeb	01				       .BYTE $01
+>9eec	85				       .BYTE $85
+>9eed	0b				       .BYTE $0B
+>9eee	a9				       .BYTE $A9
+>9eef	80				       .BYTE $80
+>9ef0	85				       .BYTE $85
+>9ef1	02				       .BYTE $02
+>9ef2	a5				       .BYTE $A5
+>9ef3	02				       .BYTE $02
+>9ef4	30				       .BYTE $30
+>9ef5	fc				       .BYTE $FC
+>9ef6	c9				       .BYTE $C9
+>9ef7	01				       .BYTE $01
+>9ef8	d0				       .BYTE $D0
+>9ef9	47				       .BYTE $47
+>9efa	a9				       .BYTE $A9
+>9efb	00				       .BYTE $00
+>9efc	85				       .BYTE $85
+>9efd	c4				       .BYTE $C4
+>9efe	a9				       .BYTE $A9
+>9eff	05				       .BYTE $05
+>9f00	85				       .BYTE $85
+>9f01	c5				       .BYTE $C5
+>9f02	a0				       .BYTE $A0
+>9f03	02				       .BYTE $02
+>9f04	b1				       .BYTE $B1
+>9f05	c4				       .BYTE $C4
+>9f06	10				       .BYTE $10
+>9f07	0d				       .BYTE $0D
+>9f08	29				       .BYTE $29
+>9f09	8f				       .BYTE $8F
+>9f0a	c9				       .BYTE $C9
+>9f0b	80				       .BYTE $80
+>9f0c	d0				       .BYTE $D0
+>9f0d	3a				       .BYTE $3A
+>9f0e	a0				       .BYTE $A0
+>9f0f	1e				       .BYTE $1E
+>9f10	a9				       .BYTE $A9
+>9f11	00				       .BYTE $00
+>9f12	91				       .BYTE $91
+>9f13	c4				       .BYTE $C4
+>9f14	c8				       .BYTE $C8
+>9f15	a9				       .BYTE $A9
+>9f16	00				       .BYTE $00
+>9f17	91				       .BYTE $91
+>9f18	c4				       .BYTE $C4
+>9f19	a5				       .BYTE $A5
+>9f1a	c4				       .BYTE $C4
+>9f1b	18				       .BYTE $18
+>9f1c	69				       .BYTE $69
+>9f1d	20				       .BYTE $20
+>9f1e	85				       .BYTE $85
+>9f1f	c4				       .BYTE $C4
+>9f20	90				       .BYTE $90
+>9f21	e0				       .BYTE $E0
+>9f22	a9				       .BYTE $A9
+>9f23	90				       .BYTE $90
+>9f24	85				       .BYTE $85
+>9f25	02				       .BYTE $02
+>9f26	a5				       .BYTE $A5
+>9f27	02				       .BYTE $02
+>9f28	30				       .BYTE $30
+>9f29	fc				       .BYTE $FC
+>9f2a	ad				       .BYTE $AD
+>9f2b	01				       .BYTE $01
+>9f2c	05				       .BYTE $05
+>9f2d	ae				       .BYTE $AE
+>9f2e	00				       .BYTE $00
+>9f2f	05				       .BYTE $05
+>9f30	d0				       .BYTE $D0
+>9f31	ba				       .BYTE $BA
+>9f32	a9				       .BYTE $A9
+>9f33	90				       .BYTE $90
+>9f34	85				       .BYTE $85
+>9f35	04				       .BYTE $04
+>9f36	a5				       .BYTE $A5
+>9f37	04				       .BYTE $04
+>9f38	30				       .BYTE $30
+>9f39	fc				       .BYTE $FC
+>9f3a	c9				       .BYTE $C9
+>9f3b	01				       .BYTE $01
+>9f3c	d0				       .BYTE $D0
+>9f3d	03				       .BYTE $03
+>9f3e	a9				       .BYTE $A9
+>9f3f	00				       .BYTE $00
+>9f40	2c				       .BYTE $2C
+>9f41	a9				       .BYTE $A9
+>9f42	80				       .BYTE $80
+>9f43	85				       .BYTE $85
+>9f44	c4				       .BYTE $C4
+>9f45	e6				       .BYTE $E6
+>9f46	1c				       .BYTE $1C
+>9f47	60				       .BYTE $60
+>9f48	c8				       .BYTE $C8
+>9f49	b1				       .BYTE $B1
+>9f4a	c4				       .BYTE $C4
+>9f4b	85				       .BYTE $85
+>9f4c	06				       .BYTE $06
+>9f4d	c8				       .BYTE $C8
+>9f4e	b1				       .BYTE $B1
+>9f4f	c4				       .BYTE $C4
+>9f50	85				       .BYTE $85
+>9f51	07				       .BYTE $07
+>9f52	a9				       .BYTE $A9
+>9f53	00				       .BYTE $00
+>9f54	85				       .BYTE $85
+>9f55	c6				       .BYTE $C6
+>9f56	85				       .BYTE $85
+>9f57	c7				       .BYTE $C7
+>9f58	a9				       .BYTE $A9
+>9f59	e0				       .BYTE $E0
+>9f5a	85				       .BYTE $85
+>9f5b	00				       .BYTE $00
+>9f5c	a5				       .BYTE $A5
+>9f5d	00				       .BYTE $00
+>9f5e	30				       .BYTE $30
+>9f5f	fc				       .BYTE $FC
+>9f60	c9				       .BYTE $C9
+>9f61	01				       .BYTE $01
+>9f62	d0				       .BYTE $D0
+>9f63	dd				       .BYTE $DD
+>9f64	a5				       .BYTE $A5
+>9f65	06				       .BYTE $06
+>9f66	f0				       .BYTE $F0
+>9f67	04				       .BYTE $04
+>9f68	c9				       .BYTE $C9
+>9f69	24				       .BYTE $24
+>9f6a	90				       .BYTE $90
+>9f6b	ec				       .BYTE $EC
+>9f6c	a0				       .BYTE $A0
+>9f6d	1e				       .BYTE $1E
+>9f6e	a5				       .BYTE $A5
+>9f6f	c6				       .BYTE $C6
+>9f70	91				       .BYTE $91
+>9f71	c4				       .BYTE $C4
+>9f72	c8				       .BYTE $C8
+>9f73	a5				       .BYTE $A5
+>9f74	c7				       .BYTE $C7
+>9f75	18				       .BYTE $18
+>9f76	90				       .BYTE $90
+>9f77	9f				       .BYTE $9F
+>9f78	01				       .BYTE $01
+>9f79	02				       .BYTE $02
+>9f7a	04				       .BYTE $04
+>9f7b	08				       .BYTE $08
+>9f7c	10				       .BYTE $10
+>9f7d	20				       .BYTE $20
+>9f7e	40				       .BYTE $40
+>9f7f	80				       .BYTE $80
+>9f80	a9				       .BYTE $A9
+>9f81	12				       .BYTE $12
+>9f82	85				       .BYTE $85
+>9f83	0e				       .BYTE $0E
+>9f84	a9				       .BYTE $A9
+>9f85	00				       .BYTE $00
+>9f86	85				       .BYTE $85
+>9f87	0f				       .BYTE $0F
+>9f88	ba				       .BYTE $BA
+>9f89	a9				       .BYTE $A9
+>9f8a	b0				       .BYTE $B0
+>9f8b	20				       .BYTE $20
+>9f8c	86				       .BYTE $86
+>9f8d	04				       .BYTE $04
+>9f8e	a9				       .BYTE $A9
+>9f8f	80				       .BYTE $80
+>9f90	85				       .BYTE $85
+>9f91	04				       .BYTE $04
+>9f92	a4				       .BYTE $A4
+>9f93	04				       .BYTE $04
+>9f94	30				       .BYTE $30
+>9f95	fc				       .BYTE $FC
+>9f96	c0				       .BYTE $C0
+>9f97	01				       .BYTE $01
+>9f98	f0				       .BYTE $F0
+>9f99	18				       .BYTE $18
+>9f9a	a0				       .BYTE $A0
+>9f9b	c0				       .BYTE $C0
+>9f9c	84				       .BYTE $84
+>9f9d	04				       .BYTE $04
+>9f9e	a4				       .BYTE $A4
+>9f9f	04				       .BYTE $04
+>9fa0	30				       .BYTE $30
+>9fa1	fc				       .BYTE $FC
+>9fa2	85				       .BYTE $85
+>9fa3	04				       .BYTE $04
+>9fa4	a4				       .BYTE $A4
+>9fa5	04				       .BYTE $04
+>9fa6	30				       .BYTE $30
+>9fa7	fc				       .BYTE $FC
+>9fa8	c0				       .BYTE $C0
+>9fa9	01				       .BYTE $01
+>9faa	f0				       .BYTE $F0
+>9fab	06				       .BYTE $06
+>9fac	e8				       .BYTE $E8
+>9fad	e8				       .BYTE $E8
+>9fae	9a				       .BYTE $9A
+>9faf	4c				       .BYTE $4C
+>9fb0	37				       .BYTE $37
+>9fb1	04				       .BYTE $04
+>9fb2	60				       .BYTE $60
+>9fb3	a2				       .BYTE $A2
+>9fb4	04				       .BYTE $04
+>9fb5	bd				       .BYTE $BD
+>9fb6	48				       .BYTE $48
+>9fb7	07				       .BYTE $07
+>9fb8	9d				       .BYTE $9D
+>9fb9	00				       .BYTE $00
+>9fba	05				       .BYTE $05
+>9fbb	ca				       .BYTE $CA
+>9fbc	d0				       .BYTE $D0
+>9fbd	f7				       .BYTE $F7
+>9fbe	a9				       .BYTE $A9
+>9fbf	00				       .BYTE $00
+>9fc0	85				       .BYTE $85
+>9fc1	6d				       .BYTE $6D
+>9fc2	a9				       .BYTE $A9
+>9fc3	07				       .BYTE $07
+>9fc4	85				       .BYTE $85
+>9fc5	6e				       .BYTE $6E
+>9fc6	20				       .BYTE $20
+>9fc7	ba				       .BYTE $BA
+>9fc8	ee				       .BYTE $EE
+>9fc9	a2				       .BYTE $A2
+>9fca	04				       .BYTE $04
+>9fcb	bd				       .BYTE $BD
+>9fcc	00				       .BYTE $00
+>9fcd	05				       .BYTE $05
+>9fce	9d				       .BYTE $9D
+>9fcf	48				       .BYTE $48
+>9fd0	07				       .BYTE $07
+>9fd1	ca				       .BYTE $CA
+>9fd2	d0				       .BYTE $D0
+>9fd3	f7				       .BYTE $F7
+>9fd4	60				       .BYTE $60
+>9fd5	23				       .BYTE $23
+>9fd6	55 31 3a 32 2c 30 2c 31		       .TEXT 'U1:2,0,18,00'
+>9fde	38 2c 30 30
+>9fe2	12				       .BYTE $12
+>9fe3	00				       .BYTE $00
+>9fe4	00				       .BYTE $00
+>9fe5	00				       .BYTE $00
+>9fe6	52 2d 4d			       .TEXT 'R-M'
+>9fe9	00				       .BYTE $00
+>9fea	57 57 57 2e 57 4f 52 4c		       .TEXT 'WWW.WORLDOFJANI.COM'
+>9ff2	44 4f 46 4a 41 4e 49 2e 43 4f 4d
+>9ffd	00				       .BYTE $00
+>9ffe	00				       .BYTE $00
+>9fff	00				       .BYTE $00
+
+;******  End of listing

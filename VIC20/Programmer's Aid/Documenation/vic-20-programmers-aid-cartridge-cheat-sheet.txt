@@ -1,0 +1,43 @@
+To Start: SYS 28681
+
+    COMMANDS
+
+    AUTO (sln#),(interval)			
+    RENUMBER (sln#),(interval) 
+    DELETE (sln#),(fln#)				
+    FIND (BASIC code or quoted string),(sln#),(fln#)			
+    CHANGE (old BASIC code or quoted string),(new BASIC code or quoted string),(sln#)-(fln#) *caution: doesn't understand REM statements
+    EDIT
+    KEY							KEY #, "string"
+    HELP
+    JUMP
+    TRACE
+    STEP
+    OFF
+    PROG
+    MERGE "(program name)",line#
+    KILL
+    
+    PROGRAM-mode		EDIT-mode
+
+    Key 1,  "LIST"		"LIST"
+    Key 2,  "MID$("		"AUTO"
+    Key 3,  "RUN(RETURN)"	"RUN(RETURN)"
+    Key 4,  "LEFT$("		"DELETE"
+    Key 5,  "GOTO"		"FIND"
+    Key 6,  "RIGHT$("		"CHANGE"
+    Key 7,  "INPUT"		"TRACE(RETURN)"
+    Key 8,  "CHR$("		"STEP(RETURN)"
+    Key 9,  "EDIT(RETURN)"	"PROG(RETURN)"
+    Key 10, "GOSUB"		"RENUMBER"
+    Key 11, "RETURN(RETURN)"	"MERGE"
+    Key 12, "STR$("		"OFF(RETURN)"
+    
+    SPECIAL KEYS
+    
+    CTRL A scroll program list down
+    CTRL E cancel quote and insert modes
+    CTRL L erade character after cursor on same line 
+    CTRL N erase all characters after cursor 
+    CTRL Q scroll program list up 
+    CTRL U erase all characters on cursor line

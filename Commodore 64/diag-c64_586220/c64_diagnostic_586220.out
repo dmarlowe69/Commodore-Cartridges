@@ -1,0 +1,4 @@
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore 64 Cartridges\diag-c64_586220 tass>64tass c64_diagnostic_586220.asm -L c64_diagnostic_586220.lst -o c64_diagnostic_586220.prg  
+
+C:\Users\denton\Desktop\My Commodore\Commodore MADS Projects\Commdore 64 Cartridges\diag-c64_586220 tass>rem pause 

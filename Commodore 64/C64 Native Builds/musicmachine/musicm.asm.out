@@ -1,0 +1,2682 @@
+MUSICM.ASM......PAGE 0001
+
+LINE# LOC   CODE        LINE
+
+
+00001  0000              *=$F000
+00002  F000              ;********************************
+00003  F000              ;********************************
+00004  F000  3C                 .BYTE $3C
+00005  F001  66                 .BYTE $66
+00006  F002  C3                 .BYTE $C3
+00007  F003  C3                 .BYTE $C3
+00008  F004  66                 .BYTE $66
+00009  F005  3C                 .BYTE $3C
+00010  F006  FF                 .BYTE $FF
+00011  F007  FF                 .BYTE $FF
+00012  F008  18                 .BYTE $18
+00013  F009  3C                 .BYTE $3C
+00014  F00A  66                 .BYTE $66
+00015  F00B  7E                 .BYTE $7E
+00016  F00C  66                 .BYTE $66
+00017  F00D  66                 .BYTE $66
+00018  F00E  66                 .BYTE $66
+00019  F00F  00                 .BYTE $00
+00020  F010  7C                 .BYTE $7C
+00021  F011  66                 .BYTE $66
+00022  F012  66                 .BYTE $66
+00023  F013  7C                 .BYTE $7C
+00024  F014  66                 .BYTE $66
+00025  F015  66                 .BYTE $66
+00026  F016  7C                 .BYTE $7C
+00027  F017  00                 .BYTE $00
+00028  F018  3C                 .BYTE $3C
+00029  F019  66                 .BYTE $66
+00030  F01A  60                 .BYTE $60
+00031  F01B  60                 .BYTE $60
+00032  F01C  60                 .BYTE $60
+00033  F01D  66                 .BYTE $66
+00034  F01E  3C                 .BYTE $3C
+00035  F01F  00                 .BYTE $00
+00036  F020  78                 .BYTE $78
+00037  F021  6C                 .BYTE $6C
+00038  F022  66                 .BYTE $66
+00039  F023  66                 .BYTE $66
+00040  F024  66                 .BYTE $66
+00041  F025  6C                 .BYTE $6C
+00042  F026  78                 .BYTE $78
+00043  F027  00                 .BYTE $00
+00044  F028  7E                 .BYTE $7E
+00045  F029  60                 .BYTE $60
+00046  F02A  60                 .BYTE $60
+00047  F02B  78                 .BYTE $78
+00048  F02C  60                 .BYTE $60
+00049  F02D  60                 .BYTE $60
+00050  F02E  7E                 .BYTE $7E
+00051  F02F  00                 .BYTE $00
+00052  F030  7E                 .BYTE $7E
+00053  F031  60                 .BYTE $60
+00054  F032  60                 .BYTE $60
+00055  F033  78                 .BYTE $78
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0002
+
+LINE# LOC   CODE        LINE
+
+
+00056  F034  60                 .BYTE $60
+00057  F035  60                 .BYTE $60
+00058  F036  60                 .BYTE $60
+00059  F037  00                 .BYTE $00
+00060  F038  3C                 .BYTE $3C
+00061  F039  66                 .BYTE $66
+00062  F03A  60                 .BYTE $60
+00063  F03B  6E                 .BYTE $6E
+00064  F03C  66                 .BYTE $66
+00065  F03D  66                 .BYTE $66
+00066  F03E  3C                 .BYTE $3C
+00067  F03F  00                 .BYTE $00
+00068  F040  66                 .BYTE $66
+00069  F041  66                 .BYTE $66
+00070  F042  66                 .BYTE $66
+00071  F043  7E                 .BYTE $7E
+00072  F044  66                 .BYTE $66
+00073  F045  66                 .BYTE $66
+00074  F046  66                 .BYTE $66
+00075  F047  00                 .BYTE $00
+00076  F048  3C                 .BYTE $3C
+00077  F049  18                 .BYTE $18
+00078  F04A  18                 .BYTE $18
+00079  F04B  18                 .BYTE $18
+00080  F04C  18                 .BYTE $18
+00081  F04D  18                 .BYTE $18
+00082  F04E  3C                 .BYTE $3C
+00083  F04F  00                 .BYTE $00
+00084  F050  1E                 .BYTE $1E
+00085  F051  0C                 .BYTE $0C
+00086  F052  0C                 .BYTE $0C
+00087  F053  0C                 .BYTE $0C
+00088  F054  0C                 .BYTE $0C
+00089  F055  6C                 .BYTE $6C
+00090  F056  38                 .BYTE $38
+00091  F057  00                 .BYTE $00
+00092  F058  66                 .BYTE $66
+00093  F059  6C                 .BYTE $6C
+00094  F05A  78                 .BYTE $78
+00095  F05B  70                 .BYTE $70
+00096  F05C  78                 .BYTE $78
+00097  F05D  6C                 .BYTE $6C
+00098  F05E  66                 .BYTE $66
+00099  F05F  00                 .BYTE $00
+00100  F060  60                 .BYTE $60
+00101  F061  60                 .BYTE $60
+00102  F062  60                 .BYTE $60
+00103  F063  60                 .BYTE $60
+00104  F064  60                 .BYTE $60
+00105  F065  60                 .BYTE $60
+00106  F066  7E                 .BYTE $7E
+00107  F067  00                 .BYTE $00
+00108  F068  63                 .BYTE $63
+00109  F069  77                 .BYTE $77
+00110  F06A  7F                 .BYTE $7F
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0003
+
+LINE# LOC   CODE        LINE
+
+
+00111  F06B  6B                 .BYTE $6B
+00112  F06C  63                 .BYTE $63
+00113  F06D  63                 .BYTE $63
+00114  F06E  63                 .BYTE $63
+00115  F06F  00                 .BYTE $00
+00116  F070  66                 .BYTE $66
+00117  F071  76                 .BYTE $76
+00118  F072  7E                 .BYTE $7E
+00119  F073  7E                 .BYTE $7E
+00120  F074  6E                 .BYTE $6E
+00121  F075  66                 .BYTE $66
+00122  F076  66                 .BYTE $66
+00123  F077  00                 .BYTE $00
+00124  F078  3C                 .BYTE $3C
+00125  F079  66                 .BYTE $66
+00126  F07A  66                 .BYTE $66
+00127  F07B  66                 .BYTE $66
+00128  F07C  66                 .BYTE $66
+00129  F07D  66                 .BYTE $66
+00130  F07E  3C                 .BYTE $3C
+00131  F07F  00                 .BYTE $00
+00132  F080  7C                 .BYTE $7C
+00133  F081  66                 .BYTE $66
+00134  F082  66                 .BYTE $66
+00135  F083  7C                 .BYTE $7C
+00136  F084  60                 .BYTE $60
+00137  F085  60                 .BYTE $60
+00138  F086  60                 .BYTE $60
+00139  F087  00                 .BYTE $00
+00140  F088  3C                 .BYTE $3C
+00141  F089  66                 .BYTE $66
+00142  F08A  66                 .BYTE $66
+00143  F08B  66                 .BYTE $66
+00144  F08C  66                 .BYTE $66
+00145  F08D  3C                 .BYTE $3C
+00146  F08E  0E                 .BYTE $0E
+00147  F08F  00                 .BYTE $00
+00148  F090  7C                 .BYTE $7C
+00149  F091  66                 .BYTE $66
+00150  F092  66                 .BYTE $66
+00151  F093  7C                 .BYTE $7C
+00152  F094  78                 .BYTE $78
+00153  F095  6C                 .BYTE $6C
+00154  F096  66                 .BYTE $66
+00155  F097  00                 .BYTE $00
+00156  F098  3C                 .BYTE $3C
+00157  F099  66                 .BYTE $66
+00158  F09A  60                 .BYTE $60
+00159  F09B  3C                 .BYTE $3C
+00160  F09C  06                 .BYTE $06
+00161  F09D  66                 .BYTE $66
+00162  F09E  3C                 .BYTE $3C
+00163  F09F  00                 .BYTE $00
+00164  F0A0  7E                 .BYTE $7E
+00165  F0A1  18                 .BYTE $18
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0004
+
+LINE# LOC   CODE        LINE
+
+
+00166  F0A2  18                 .BYTE $18
+00167  F0A3  18                 .BYTE $18
+00168  F0A4  18                 .BYTE $18
+00169  F0A5  18                 .BYTE $18
+00170  F0A6  18                 .BYTE $18
+00171  F0A7  00                 .BYTE $00
+00172  F0A8  66                 .BYTE $66
+00173  F0A9  66                 .BYTE $66
+00174  F0AA  66                 .BYTE $66
+00175  F0AB  66                 .BYTE $66
+00176  F0AC  66                 .BYTE $66
+00177  F0AD  66                 .BYTE $66
+00178  F0AE  3C                 .BYTE $3C
+00179  F0AF  00                 .BYTE $00
+00180  F0B0  66                 .BYTE $66
+00181  F0B1  66                 .BYTE $66
+00182  F0B2  66                 .BYTE $66
+00183  F0B3  66                 .BYTE $66
+00184  F0B4  66                 .BYTE $66
+00185  F0B5  3C                 .BYTE $3C
+00186  F0B6  18                 .BYTE $18
+00187  F0B7  00                 .BYTE $00
+00188  F0B8  63                 .BYTE $63
+00189  F0B9  63                 .BYTE $63
+00190  F0BA  63                 .BYTE $63
+00191  F0BB  6B                 .BYTE $6B
+00192  F0BC  7F                 .BYTE $7F
+00193  F0BD  77                 .BYTE $77
+00194  F0BE  63                 .BYTE $63
+00195  F0BF  00                 .BYTE $00
+00196  F0C0  66                 .BYTE $66
+00197  F0C1  66                 .BYTE $66
+00198  F0C2  3C                 .BYTE $3C
+00199  F0C3  18                 .BYTE $18
+00200  F0C4  3C                 .BYTE $3C
+00201  F0C5  66                 .BYTE $66
+00202  F0C6  66                 .BYTE $66
+00203  F0C7  00                 .BYTE $00
+00204  F0C8  66                 .BYTE $66
+00205  F0C9  66                 .BYTE $66
+00206  F0CA  66                 .BYTE $66
+00207  F0CB  3C                 .BYTE $3C
+00208  F0CC  18                 .BYTE $18
+00209  F0CD  18                 .BYTE $18
+00210  F0CE  18                 .BYTE $18
+00211  F0CF  00                 .BYTE $00
+00212  F0D0  7E                 .BYTE $7E
+00213  F0D1  06                 .BYTE $06
+00214  F0D2  0C                 .BYTE $0C
+00215  F0D3  18                 .BYTE $18
+00216  F0D4  30                 .BYTE $30
+00217  F0D5  60                 .BYTE $60
+00218  F0D6  7E                 .BYTE $7E
+00219  F0D7  00                 .BYTE $00
+00220  F0D8  3F                 .BYTE $3F
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0005
+
+LINE# LOC   CODE        LINE
+
+
+00221  F0D9  67                 .BYTE $67
+00222  F0DA  C3                 .BYTE $C3
+00223  F0DB  C3                 .BYTE $C3
+00224  F0DC  66                 .BYTE $66
+00225  F0DD  3C                 .BYTE $3C
+00226  F0DE  FF                 .BYTE $FF
+00227  F0DF  FF                 .BYTE $FF
+00228  F0E0  3F                 .BYTE $3F
+00229  F0E1  7F                 .BYTE $7F
+00230  F0E2  FF                 .BYTE $FF
+00231  F0E3  FF                 .BYTE $FF
+00232  F0E4  7E                 .BYTE $7E
+00233  F0E5  3C                 .BYTE $3C
+00234  F0E6  FF                 .BYTE $FF
+00235  F0E7  FF                 .BYTE $FF
+00236  F0E8  00                 .BYTE $00
+00237  F0E9  00                 .BYTE $00
+00238  F0EA  00                 .BYTE $00
+00239  F0EB  00                 .BYTE $00
+00240  F0EC  3C                 .BYTE $3C
+00241  F0ED  66                 .BYTE $66
+00242  F0EE  E7                 .BYTE $E7
+00243  F0EF  FF                 .BYTE $FF
+00244  F0F0  03                 .BYTE $03
+00245  F0F1  03                 .BYTE $03
+00246  F0F2  03                 .BYTE $03
+00247  F0F3  03                 .BYTE $03
+00248  F0F4  3F                 .BYTE $3F
+00249  F0F5  67                 .BYTE $67
+00250  F0F6  E7                 .BYTE $E7
+00251  F0F7  FF                 .BYTE $FF
+00252  F0F8  03                 .BYTE $03
+00253  F0F9  03                 .BYTE $03
+00254  F0FA  03                 .BYTE $03
+00255  F0FB  03                 .BYTE $03
+00256  F0FC  3F                 .BYTE $3F
+00257  F0FD  7F                 .BYTE $7F
+00258  F0FE  FF                 .BYTE $FF
+00259  F0FF  FF                 .BYTE $FF
+00260  F100  00                 .BYTE $00
+00261  F101  00                 .BYTE $00
+00262  F102  00                 .BYTE $00
+00263  F103  00                 .BYTE $00
+00264  F104  00                 .BYTE $00
+00265  F105  00                 .BYTE $00
+00266  F106  00                 .BYTE $00
+00267  F107  00                 .BYTE $00
+00268  F108  00                 .BYTE $00
+00269  F109  00                 .BYTE $00
+00270  F10A  00                 .BYTE $00
+00271  F10B  00                 .BYTE $00
+00272  F10C  00                 .BYTE $00
+00273  F10D  00                 .BYTE $00
+00274  F10E  FF                 .BYTE $FF
+00275  F10F  FF                 .BYTE $FF
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0006
+
+LINE# LOC   CODE        LINE
+
+
+00276  F110  00                 .BYTE $00
+00277  F111  00                 .BYTE $00
+00278  F112  00                 .BYTE $00
+00279  F113  60                 .BYTE $60
+00280  F114  60                 .BYTE $60
+00281  F115  00                 .BYTE $00
+00282  F116  FF                 .BYTE $FF
+00283  F117  FF                 .BYTE $FF
+00284  F118  00                 .BYTE $00
+00285  F119  00                 .BYTE $00
+00286  F11A  18                 .BYTE $18
+00287  F11B  3C                 .BYTE $3C
+00288  F11C  66                 .BYTE $66
+00289  F11D  C3                 .BYTE $C3
+00290  F11E  00                 .BYTE $00
+00291  F11F  00                 .BYTE $00
+00292  F120  00                 .BYTE $00
+00293  F121  60                 .BYTE $60
+00294  F122  70                 .BYTE $70
+00295  F123  78                 .BYTE $78
+00296  F124  6C                 .BYTE $6C
+00297  F125  66                 .BYTE $66
+00298  F126  E3                 .BYTE $E3
+00299  F127  00                 .BYTE $00
+00300  F128  03                 .BYTE $03
+00301  F129  03                 .BYTE $03
+00302  F12A  03                 .BYTE $03
+00303  F12B  03                 .BYTE $03
+00304  F12C  03                 .BYTE $03
+00305  F12D  03                 .BYTE $03
+00306  F12E  FF                 .BYTE $FF
+00307  F12F  FF                 .BYTE $FF
+00308  F130  C0                 .BYTE $C0
+00309  F131  60                 .BYTE $60
+00310  F132  30                 .BYTE $30
+00311  F133  18                 .BYTE $18
+00312  F134  0C                 .BYTE $0C
+00313  F135  00                 .BYTE $00
+00314  F136  FF                 .BYTE $FF
+00315  F137  FF                 .BYTE $FF
+00316  F138  66                 .BYTE $66
+00317  F139  3C                 .BYTE $3C
+00318  F13A  00                 .BYTE $00
+00319  F13B  00                 .BYTE $00
+00320  F13C  00                 .BYTE $00
+00321  F13D  00                 .BYTE $00
+00322  F13E  FF                 .BYTE $FF
+00323  F13F  FF                 .BYTE $FF
+00324  F140  00                 .BYTE $00
+00325  F141  7E                 .BYTE $7E
+00326  F142  66                 .BYTE $66
+00327  F143  66                 .BYTE $66
+00328  F144  66                 .BYTE $66
+00329  F145  E7                 .BYTE $E7
+00330  F146  00                 .BYTE $00
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0007
+
+LINE# LOC   CODE        LINE
+
+
+00331  F147  00                 .BYTE $00
+00332  F148  00                 .BYTE $00
+00333  F149  3C                 .BYTE $3C
+00334  F14A  3C                 .BYTE $3C
+00335  F14B  3C                 .BYTE $3C
+00336  F14C  3C                 .BYTE $3C
+00337  F14D  FF                 .BYTE $FF
+00338  F14E  00                 .BYTE $00
+00339  F14F  00                 .BYTE $00
+00340  F150  00                 .BYTE $00
+00341  F151  66                 .BYTE $66
+00342  F152  3C                 .BYTE $3C
+00343  F153  FF                 .BYTE $FF
+00344  F154  3C                 .BYTE $3C
+00345  F155  66                 .BYTE $66
+00346  F156  00                 .BYTE $00
+00347  F157  00                 .BYTE $00
+00348  F158  00                 .BYTE $00
+00349  F159  18                 .BYTE $18
+00350  F15A  18                 .BYTE $18
+00351  F15B  7E                 .BYTE $7E
+00352  F15C  18                 .BYTE $18
+00353  F15D  18                 .BYTE $18
+00354  F15E  00                 .BYTE $00
+00355  F15F  00                 .BYTE $00
+00356  F160  00                 .BYTE $00
+00357  F161  00                 .BYTE $00
+00358  F162  00                 .BYTE $00
+00359  F163  00                 .BYTE $00
+00360  F164  00                 .BYTE $00
+00361  F165  18                 .BYTE $18
+00362  F166  18                 .BYTE $18
+00363  F167  30                 .BYTE $30
+00364  F168  00                 .BYTE $00
+00365  F169  00                 .BYTE $00
+00366  F16A  00                 .BYTE $00
+00367  F16B  7E                 .BYTE $7E
+00368  F16C  00                 .BYTE $00
+00369  F16D  00                 .BYTE $00
+00370  F16E  00                 .BYTE $00
+00371  F16F  00                 .BYTE $00
+00372  F170  00                 .BYTE $00
+00373  F171  00                 .BYTE $00
+00374  F172  00                 .BYTE $00
+00375  F173  00                 .BYTE $00
+00376  F174  00                 .BYTE $00
+00377  F175  18                 .BYTE $18
+00378  F176  18                 .BYTE $18
+00379  F177  00                 .BYTE $00
+00380  F178  00                 .BYTE $00
+00381  F179  03                 .BYTE $03
+00382  F17A  06                 .BYTE $06
+00383  F17B  0C                 .BYTE $0C
+00384  F17C  18                 .BYTE $18
+00385  F17D  30                 .BYTE $30
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0008
+
+LINE# LOC   CODE        LINE
+
+
+00386  F17E  60                 .BYTE $60
+00387  F17F  00                 .BYTE $00
+00388  F180  3C                 .BYTE $3C
+00389  F181  66                 .BYTE $66
+00390  F182  6E                 .BYTE $6E
+00391  F183  76                 .BYTE $76
+00392  F184  66                 .BYTE $66
+00393  F185  66                 .BYTE $66
+00394  F186  3C                 .BYTE $3C
+00395  F187  00                 .BYTE $00
+00396  F188  18                 .BYTE $18
+00397  F189  18                 .BYTE $18
+00398  F18A  38                 .BYTE $38
+00399  F18B  18                 .BYTE $18
+00400  F18C  18                 .BYTE $18
+00401  F18D  18                 .BYTE $18
+00402  F18E  7E                 .BYTE $7E
+00403  F18F  00                 .BYTE $00
+00404  F190  3C                 .BYTE $3C
+00405  F191  66                 .BYTE $66
+00406  F192  06                 .BYTE $06
+00407  F193  0C                 .BYTE $0C
+00408  F194  30                 .BYTE $30
+00409  F195  60                 .BYTE $60
+00410  F196  7E                 .BYTE $7E
+00411  F197  00                 .BYTE $00
+00412  F198  3C                 .BYTE $3C
+00413  F199  66                 .BYTE $66
+00414  F19A  06                 .BYTE $06
+00415  F19B  1C                 .BYTE $1C
+00416  F19C  06                 .BYTE $06
+00417  F19D  66                 .BYTE $66
+00418  F19E  3C                 .BYTE $3C
+00419  F19F  00                 .BYTE $00
+00420  F1A0  06                 .BYTE $06
+00421  F1A1  0E                 .BYTE $0E
+00422  F1A2  1E                 .BYTE $1E
+00423  F1A3  66                 .BYTE $66
+00424  F1A4  7F                 .BYTE $7F
+00425  F1A5  06                 .BYTE $06
+00426  F1A6  06                 .BYTE $06
+00427  F1A7  00                 .BYTE $00
+00428  F1A8  7E                 .BYTE $7E
+00429  F1A9  60                 .BYTE $60
+00430  F1AA  7C                 .BYTE $7C
+00431  F1AB  06                 .BYTE $06
+00432  F1AC  06                 .BYTE $06
+00433  F1AD  66                 .BYTE $66
+00434  F1AE  3C                 .BYTE $3C
+00435  F1AF  00                 .BYTE $00
+00436  F1B0  3C                 .BYTE $3C
+00437  F1B1  66                 .BYTE $66
+00438  F1B2  60                 .BYTE $60
+00439  F1B3  7C                 .BYTE $7C
+00440  F1B4  66                 .BYTE $66
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0009
+
+LINE# LOC   CODE        LINE
+
+
+00441  F1B5  66                 .BYTE $66
+00442  F1B6  3C                 .BYTE $3C
+00443  F1B7  00                 .BYTE $00
+00444  F1B8  7E                 .BYTE $7E
+00445  F1B9  66                 .BYTE $66
+00446  F1BA  0C                 .BYTE $0C
+00447  F1BB  18                 .BYTE $18
+00448  F1BC  18                 .BYTE $18
+00449  F1BD  18                 .BYTE $18
+00450  F1BE  18                 .BYTE $18
+00451  F1BF  00                 .BYTE $00
+00452  F1C0  3C                 .BYTE $3C
+00453  F1C1  66                 .BYTE $66
+00454  F1C2  66                 .BYTE $66
+00455  F1C3  3C                 .BYTE $3C
+00456  F1C4  66                 .BYTE $66
+00457  F1C5  66                 .BYTE $66
+00458  F1C6  3C                 .BYTE $3C
+00459  F1C7  00                 .BYTE $00
+00460  F1C8  3C                 .BYTE $3C
+00461  F1C9  66                 .BYTE $66
+00462  F1CA  66                 .BYTE $66
+00463  F1CB  3E                 .BYTE $3E
+00464  F1CC  06                 .BYTE $06
+00465  F1CD  66                 .BYTE $66
+00466  F1CE  3C                 .BYTE $3C
+00467  F1CF  00                 .BYTE $00
+00468  F1D0  00                 .BYTE $00
+00469  F1D1  00                 .BYTE $00
+00470  F1D2  18                 .BYTE $18
+00471  F1D3  00                 .BYTE $00
+00472  F1D4  00                 .BYTE $00
+00473  F1D5  18                 .BYTE $18
+00474  F1D6  00                 .BYTE $00
+00475  F1D7  00                 .BYTE $00
+00476  F1D8  7E                 .BYTE $7E
+00477  F1D9  3C                 .BYTE $3C
+00478  F1DA  00                 .BYTE $00
+00479  F1DB  00                 .BYTE $00
+00480  F1DC  00                 .BYTE $00
+00481  F1DD  00                 .BYTE $00
+00482  F1DE  FF                 .BYTE $FF
+00483  F1DF  FF                 .BYTE $FF
+00484  F1E0  00                 .BYTE $00
+00485  F1E1  66                 .BYTE $66
+00486  F1E2  FF                 .BYTE $FF
+00487  F1E3  66                 .BYTE $66
+00488  F1E4  FF                 .BYTE $FF
+00489  F1E5  66                 .BYTE $66
+00490  F1E6  FF                 .BYTE $FF
+00491  F1E7  FF                 .BYTE $FF
+00492  F1E8  60                 .BYTE $60
+00493  F1E9  60                 .BYTE $60
+00494  F1EA  70                 .BYTE $70
+00495  F1EB  6C                 .BYTE $6C
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0010
+
+LINE# LOC   CODE        LINE
+
+
+00496  F1EC  66                 .BYTE $66
+00497  F1ED  6C                 .BYTE $6C
+00498  F1EE  FF                 .BYTE $FF
+00499  F1EF  FF                 .BYTE $FF
+00500  F1F0  0F                 .BYTE $0F
+00501  F1F1  18                 .BYTE $18
+00502  F1F2  31                 .BYTE $31
+00503  F1F3  33                 .BYTE $33
+00504  F1F4  33                 .BYTE $33
+00505  F1F5  31                 .BYTE $31
+00506  F1F6  18                 .BYTE $18
+00507  F1F7  0F                 .BYTE $0F
+00508  F1F8  F8                 .BYTE $F8
+00509  F1F9  0C                 .BYTE $0C
+00510  F1FA  E6                 .BYTE $E6
+00511  F1FB  06                 .BYTE $06
+00512  F1FC  06                 .BYTE $06
+00513  F1FD  E6                 .BYTE $E6
+00514  F1FE  0C                 .BYTE $0C
+00515  F1FF  F8                 .BYTE $F8
+00516  F200              ;********************************
+00517  F200  78          XXF200 SEI 
+00518  F201  D8                 CLD 
+00519  F202  A9 7F              LDA #$7F
+00520  F204  8D 0D DC           STA $DC0D
+00521  F207  8D 00 DC           STA $DC00
+00522  F20A  A2 FF              LDX #$FF
+00523  F20C  8E 02 DC           STX $DC02
+00524  F20F  E8                 INX 
+00525  F210  8E 03 DC           STX $DC03
+00526  F213  A2 FA              LDX #$FA
+00527  F215  9A                 TXS 
+00528  F216  A2 18              LDX #$18
+00529  F218  BD 84 F6    XXF218 LDA XXF684,X
+00530  F21B  9D 11 D0           STA $D011,X
+00531  F21E  BD 95 F6           LDA XXF695,X
+00532  F221  9D 00 D4           STA $D400,X
+00533  F224  CA                 DEX 
+00534  F225  10 F1              BPL XXF218
+00535  F227  A2 00              LDX #$00
+00536  F229  A9 20              LDA #$20        ;' '
+00537  F22B  A9 20       XXF22B LDA #$20        ;' '
+00538  F22D  9D 00 04           STA $0400,X
+00539  F230  9D 00 05           STA $0500,X
+00540  F233  9D 00 06           STA $0600,X
+00541  F236  9D 00 07           STA $0700,X
+00542  F239  A9 06              LDA #$06
+00543  F23B  9D 00 D8           STA $D800,X
+00544  F23E  9D 00 D9           STA $D900,X
+00545  F241  9D 00 DA           STA $DA00,X
+00546  F244  9D 00 DB           STA $DB00,X
+00547  F247  E8                 INX 
+00548  F248  D0 E1              BNE XXF22B
+00549  F24A  A9 FF              LDA #$FF
+00550  F24C  85 03              STA $03
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0011
+
+LINE# LOC   CODE        LINE
+
+
+00551  F24E  A9 04              LDA #$04
+00552  F250  8D 17 D4           STA $D417
+00553  F253  A9 08              LDA #$08
+00554  F255  85 07              STA $07
+00555  F257  A9 21              LDA #$21        ;'!'
+00556  F259  85 06              STA $06
+00557  F25B  A9 F3              LDA #$F3
+00558  F25D  85 26              STA $26
+00559  F25F  A9 F9              LDA #$F9
+00560  F261  85 27              STA $27
+00561  F263  A9 19              LDA #$19
+00562  F265  85 23              STA $23
+00563  F267  A9 00              LDA #$00
+00564  F269  85 21              STA $21
+00565  F26B  A9 01              LDA #$01
+00566  F26D  85 2D              STA $2D
+00567  F26F  A9 01              LDA #$01
+00568  F271  85 0C              STA $0C
+00569  F273  85 0B              STA $0B
+00570  F275  A9 48              LDA #$48        ;'H'
+00571  F277  85 2A              STA $2A
+00572  F279  A9 00              LDA #$00
+00573  F27B  85 04              STA $04
+00574  F27D  85 09              STA $09
+00575  F27F  A9 0A              LDA #$0A
+00576  F281  85 08              STA $08
+00577  F283  A9 00              LDA #$00
+00578  F285  85 05              STA $05
+00579  F287  A2 00              LDX #$00
+00580  F289  86 14              STX $14
+00581  F28B  86 15              STX $15
+00582  F28D  86 19              STX $19
+00583  F28F  86 1A              STX $1A
+00584  F291  86 29              STX $29
+00585  F293  86 25              STX $25
+00586  F295  86 22              STX $22
+00587  F297  86 24              STX $24
+00588  F299  58                 CLI 
+00589  F29A  BD FC F4    XXF29A LDA XXF4FC,X
+00590  F29D  F0 08              BEQ XXF2A7
+00591  F29F  29 3F              AND #$3F        ;'?'
+00592  F2A1  9D C4 07           STA $07C4,X
+00593  F2A4  E8                 INX 
+00594  F2A5  D0 F3              BNE XXF29A
+00595  F2A7  A2 00       XXF2A7 LDX #$00
+00596  F2A9  BD 1E F5    XXF2A9 LDA XXF51E,X
+00597  F2AC  F0 08              BEQ XXF2B6
+00598  F2AE  29 3F              AND #$3F        ;'?'
+00599  F2B0  9D 28 04           STA $0428,X
+00600  F2B3  E8                 INX 
+00601  F2B4  D0 F3              BNE XXF2A9
+00602  F2B6  A9 04       XXF2B6 LDA #$04
+00603  F2B8  85 0A              STA $0A
+00604  F2BA  20 45 F6           JSR XXF645
+00605  F2BD  A9 24              LDA #$24        ;'$'
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0012
+
+LINE# LOC   CODE        LINE
+
+
+00606  F2BF  8D D6 04           STA $04D6
+00607  F2C2  A5 04              LDA $04
+00608  F2C4  20 4D F6           JSR XXF64D
+00609  F2C7  A5 05              LDA $05
+00610  F2C9  20 74 F6           JSR XXF674
+00611  F2CC  A2 27              LDX #$27        ;'''
+00612  F2CE  A9 21              LDA #$21        ;'!'
+00613  F2D0  9D 58 06    XXF2D0 STA $0658,X
+00614  F2D3  9D 30 06           STA $0630,X
+00615  F2D6  9D 08 06           STA $0608,X
+00616  F2D9  9D E0 05           STA $05E0,X
+00617  F2DC  9D B8 05           STA $05B8,X
+00618  F2DF  CA                 DEX 
+00619  F2E0  10 EE              BPL XXF2D0
+00620  F2E2  A5 0C       XXF2E2 LDA $0C
+00621  F2E4  09 30              ORA #$30        ;'0'
+00622  F2E6  8D 4A 04           STA $044A
+00623  F2E9  AD 19 D4           LDA $D419
+00624  F2EC  C9 FF              CMP #$FF
+00625  F2EE  F0 05              BEQ XXF2F5
+00626  F2F0  4A                 LSR A
+00627  F2F1  4A                 LSR A
+00628  F2F2  4A                 LSR A
+00629  F2F3  85 23              STA $23
+00630  F2F5  A5 02       XXF2F5 LDA $02
+00631  F2F7  C5 03              CMP $03
+00632  F2F9  F0 E7              BEQ XXF2E2
+00633  F2FB  85 03       XXF2FB STA $03
+00634  F2FD  C9 FF              CMP #$FF
+00635  F2FF  F0 E1              BEQ XXF2E2
+00636  F301  AA                 TAX 
+00637  F302  BD CB FA           LDA XXFACB,X
+00638  F305  30 36              BMI XXF33D
+00639  F307  A4 0B              LDY $0B
+00640  F309  A6 0A              LDX $0A
+00641  F30B  20 3A F8           JSR XXF83A
+00642  F30E  E6 0B              INC $0B
+00643  F310  A5 0B              LDA $0B
+00644  F312  C5 0C              CMP $0C
+00645  F314  90 06              BCC XXF31C
+00646  F316  F0 04              BEQ XXF31C
+00647  F318  A9 01              LDA #$01
+00648  F31A  85 0B              STA $0B
+00649  F31C  A5 04       XXF31C LDA $04
+00650  F31E  C9 01              CMP #$01
+00651  F320  D0 C0              BNE XXF2E2
+00652  F322  A5 02       XXF322 LDA $02
+00653  F324  C5 03              CMP $03
+00654  F326  F0 FA              BEQ XXF322
+00655  F328  48                 PHA 
+00656  F329  A4 35              LDY $35
+00657  F32B  A9 00              LDA #$00
+00658  F32D  99 04 D4           STA $D404,Y
+00659  F330  A6 05              LDX $05
+00660  F332  E0 03              CPX #$03
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0013
+
+LINE# LOC   CODE        LINE
+
+
+00661  F334              ;       BCC XXF338
+00662  F334  90 02              BCC ZZF336+2
+00663  F336  8D 0B D4    ZZF336 STA $D40B
+00664  F339  68                 PLA 
+00665  F33A  4C FB F2           JMP XXF2FB
+00666  F33D              ;********************************
+00667  F33D  8A          XXF33D TXA 
+00668  F33E  C9 04              CMP #$04
+00669  F340  D0 0F              BNE XXF351
+00670  F342  A5 0C              LDA $0C
+00671  F344  C9 03              CMP #$03
+00672  F346  F0 9A              BEQ XXF2E2
+00673  F348  A5 21              LDA $21
+00674  F34A  49 01              EOR #$01
+00675  F34C  85 21              STA $21
+00676  F34E  4C E2 F2           JMP XXF2E2
+00677  F351              ;********************************
+00678  F351  C9 05       XXF351 CMP #$05
+00679  F353  D0 23              BNE XXF378
+00680  F355  E6 22              INC $22
+00681  F357  A5 22       XXF357 LDA $22
+00682  F359  0A                 ASL A
+00683  F35A  AA                 TAX 
+00684  F35B  BD 24 FA           LDA XXFA24,X
+00685  F35E  D0 06              BNE XXF366
+00686  F360  A9 00              LDA #$00
+00687  F362  85 22              STA $22
+00688  F364  F0 F1              BEQ XXF357
+00689  F366  78          XXF366 SEI 
+00690  F367  85 27              STA $27
+00691  F369  BD 23 FA           LDA XXFA23,X
+00692  F36C  85 26              STA $26
+00693  F36E  A9 00              LDA #$00
+00694  F370  85 25              STA $25
+00695  F372  85 24              STA $24
+00696  F374  58                 CLI 
+00697  F375  4C E2 F2           JMP XXF2E2
+00698  F378              ;********************************
+00699  F378  C9 02       XXF378 CMP #$02
+00700  F37A  D0 10              BNE XXF38C
+00701  F37C  E6 0A              INC $0A
+00702  F37E  A5 0A              LDA $0A
+00703  F380  C9 07              CMP #$07
+00704  F382  90 02              BCC XXF386
+00705  F384  C6 0A              DEC $0A
+00706  F386  20 45 F6    XXF386 JSR XXF645
+00707  F389  4C E2 F2    XXF389 JMP XXF2E2
+00708  F38C              ;********************************
+00709  F38C  C9 34       XXF38C CMP #$34        ;'4'
+00710  F38E  D0 4D              BNE XXF3DD
+00711  F390  A5 05              LDA $05
+00712  F392  C9 03              CMP #$03
+00713  F394  B0 F3              BCS XXF389
+00714  F396  A9 01              LDA #$01
+00715  F398  85 0B              STA $0B
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0014
+
+LINE# LOC   CODE        LINE
+
+
+00716  F39A  A9 00              LDA #$00
+00717  F39C  8D 04 D4           STA $D404
+00718  F39F  8D 0B D4           STA $D40B
+00719  F3A2  8D 12 D4           STA $D412
+00720  F3A5  E6 0C              INC $0C
+00721  F3A7  A5 0C              LDA $0C
+00722  F3A9  C9 04              CMP #$04
+00723  F3AB  D0 04              BNE XXF3B1
+00724  F3AD  A9 01       XXF3AD LDA #$01
+00725  F3AF  85 0C              STA $0C
+00726  F3B1  C9 03       XXF3B1 CMP #$03
+00727  F3B3  D0 16              BNE XXF3CB
+00728  F3B5  A9 00              LDA #$00
+00729  F3B7  85 21              STA $21
+00730  F3B9  A5 08              LDA $08
+00731  F3BB  8D 13 D4           STA $D413
+00732  F3BE  A5 09              LDA $09
+00733  F3C0  8D 14 D4           STA $D414
+00734  F3C3  A9 00              LDA #$00
+00735  F3C5  8D 17 D4           STA $D417
+00736  F3C8  4C E2 F2           JMP XXF2E2
+00737  F3CB              ;********************************
+00738  F3CB  A9 06       XXF3CB LDA #$06
+00739  F3CD  8D 13 D4           STA $D413
+00740  F3D0  A9 00              LDA #$00
+00741  F3D2  8D 14 D4           STA $D414
+00742  F3D5  A9 04              LDA #$04
+00743  F3D7  8D 17 D4           STA $D417
+00744  F3DA  4C E2 F2           JMP XXF2E2
+00745  F3DD              ;********************************
+00746  F3DD  C9 07       XXF3DD CMP #$07
+00747  F3DF  D0 08              BNE XXF3E9
+00748  F3E1  C6 0A              DEC $0A
+00749  F3E3  D0 A1              BNE XXF386
+00750  F3E5  E6 0A              INC $0A
+00751  F3E7  D0 9D              BNE XXF386
+00752  F3E9  C9 0F       XXF3E9 CMP #$0F
+00753  F3EB  D0 2A              BNE XXF417
+00754  F3ED  A9 00              LDA #$00
+00755  F3EF  8D 04 D4           STA $D404
+00756  F3F2  8D 0B D4           STA $D40B
+00757  F3F5  8D 12 D4           STA $D412
+00758  F3F8  E6 05              INC $05
+00759  F3FA  A5 05              LDA $05
+00760  F3FC  C9 04              CMP #$04
+00761  F3FE  90 04              BCC XXF404
+00762  F400  A9 00              LDA #$00
+00763  F402  85 05              STA $05
+00764  F404  20 74 F6    XXF404 JSR XXF674
+00765  F407  A5 05              LDA $05
+00766  F409  C9 03              CMP #$03
+00767  F40B  D0 07              BNE XXF414
+00768  F40D  A9 01              LDA #$01
+00769  F40F  85 0B              STA $0B
+00770  F411  4C AD F3           JMP XXF3AD
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0015
+
+LINE# LOC   CODE        LINE
+
+
+00771  F414              ;********************************
+00772  F414  4C E2 F2    XXF414 JMP XXF2E2
+00773  F417              ;********************************
+00774  F417  C9 39       XXF417 CMP #$39        ;'9'
+00775  F419  C9 3D              CMP #$3D        ;'='
+00776  F41B  D0 71              BNE XXF48E
+00777  F41D  A9 01              LDA #$01
+00778  F41F  85 0B              STA $0B
+00779  F421  E6 04              INC $04
+00780  F423  A5 04              LDA $04
+00781  F425  C9 03              CMP #$03
+00782  F427  90 04              BCC XXF42D
+00783  F429  A9 00              LDA #$00
+00784  F42B  85 04              STA $04
+00785  F42D  A5 04       XXF42D LDA $04
+00786  F42F  D0 2F              BNE XXF460
+00787  F431  A9 0A              LDA #$0A
+00788  F433  85 08              STA $08
+00789  F435  8D 05 D4           STA $D405
+00790  F438  8D 0C D4           STA $D40C
+00791  F43B  A9 06              LDA #$06
+00792  F43D  8D 13 D4           STA $D413
+00793  F440  A9 00              LDA #$00
+00794  F442  85 09              STA $09
+00795  F444  8D 06 D4           STA $D406
+00796  F447  8D 0D D4           STA $D40D
+00797  F44A  8D 14 D4           STA $D414
+00798  F44D  A6 0C              LDX $0C
+00799  F44F  E0 03              CPX #$03
+00800  F451  D0 05              BNE XXF458
+00801  F453  A9 0A              LDA #$0A
+00802  F455              ;********************************
+00803  F455              ;.END
+00804  F455              ;*=$F455
+00805  F455              ;********************************
+00806  F455  8D 13 D4           STA $D413
+00807  F458  A5 04       XXF458 LDA $04
+00808  F45A  20 4D F6           JSR XXF64D
+00809  F45D  4C E2 F2           JMP XXF2E2
+00810  F460              ;********************************
+00811  F460  A9 00       XXF460 LDA #$00
+00812  F462  85 08              STA $08
+00813  F464  8D 05 D4           STA $D405
+00814  F467  8D 0C D4           STA $D40C
+00815  F46A  A9 06              LDA #$06
+00816  F46C  8D 13 D4           STA $D413
+00817  F46F  A9 F0              LDA #$F0
+00818  F471  85 09              STA $09
+00819  F473  8D 06 D4           STA $D406
+00820  F476  8D 0D D4           STA $D40D
+00821  F479  A2 00              LDX #$00
+00822  F47B  8E 14 D4           STX $D414
+00823  F47E  A6 0C              LDX $0C
+00824  F480  E0 03              CPX #$03
+00825  F482  D0 D4              BNE XXF458
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0016
+
+LINE# LOC   CODE        LINE
+
+
+00826  F484  8D 14 D4           STA $D414
+00827  F487  A9 00              LDA #$00
+00828  F489  8D 13 D4           STA $D413
+00829  F48C  F0 CA              BEQ XXF458
+00830  F48E  C9 06       XXF48E CMP #$06
+00831  F490  D0 06              BNE XXF498
+00832  F492  C6 23              DEC $23
+00833  F494  10 02              BPL XXF498
+00834  F496  E6 23              INC $23
+00835  F498  C9 03       XXF498 CMP #$03
+00836  F49A  D0 06              BNE XXF4A2
+00837  F49C  E6 23              INC $23
+00838  F49E  10 02              BPL XXF4A2
+00839  F4A0  C6 23              DEC $23
+00840  F4A2  C9 0C       XXF4A2 CMP #$0C
+00841  F4A4  D0 37              BNE XXF4DD
+00842  F4A6  A5 06              LDA $06
+00843  F4A8  C9 41              CMP #$41        ;'A'
+00844  F4AA  D0 26              BNE XXF4D2
+00845  F4AC  A6 07              LDX $07
+00846  F4AE  E0 02              CPX #$02
+00847  F4B0  D0 0F              BNE XXF4C1
+00848  F4B2  A2 08              LDX #$08
+00849  F4B4  86 07              STX $07
+00850  F4B6  8E 03 D4           STX $D403
+00851  F4B9  8E 0A D4           STX $D40A
+00852  F4BC  8E 11 D4           STX $D411
+00853  F4BF  D0 11              BNE XXF4D2
+00854  F4C1  A2 02       XXF4C1 LDX #$02
+00855  F4C3  86 07              STX $07
+00856  F4C5  8E 03 D4           STX $D403
+00857  F4C8  8E 0A D4           STX $D40A
+00858  F4CB  8E 11 D4           STX $D411
+00859  F4CE  A2 29              LDX #$29        ;')'
+00860  F4D0  D0 05              BNE XXF4D7
+00861  F4D2  20 2D F6    XXF4D2 JSR XXF62D
+00862  F4D5  85 06              STA $06
+00863  F4D7  8E D6 04    XXF4D7 STX $04D6
+00864  F4DA  4C E2 F2           JMP XXF2E2
+00865  F4DD              ;********************************
+00866  F4DD  C9 17       XXF4DD CMP #$17
+00867  F4DF  D0 09              BNE XXF4EA
+00868  F4E1  A5 2D              LDA $2D
+00869  F4E3  F0 02              BEQ XXF4E7
+00870  F4E5  C6 2D              DEC $2D
+00871  F4E7  4C E2 F2    XXF4E7 JMP XXF2E2
+00872  F4EA              ;********************************
+00873  F4EA  C9 14       XXF4EA CMP #$14
+00874  F4EC  D0 0B              BNE XXF4F9
+00875  F4EE  A5 2D              LDA $2D
+00876  F4F0  C9 40              CMP #$40        ;'@'
+00877  F4F2  F0 02              BEQ XXF4F6
+00878  F4F4  E6 2D              INC $2D
+00879  F4F6  4C E2 F2    XXF4F6 JMP XXF2E2
+00880  F4F9              ;********************************
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0017
+
+LINE# LOC   CODE        LINE
+
+
+00881  F4F9  4C E2 F2    XXF4F9 JMP XXF2E2
+00882  F4FC              ;********************************
+00883  F4FC              ;********************************
+00884  F4FC  3E          XXF4FC .BYTE $3E
+00885  F4FD  3F                 .BYTE $3F
+00886  F4FE              ;********************************
+00887  F4FE              ;********************************
+00888  F4FE  31 39              .BYTE '1982 COMMODORE ELECTRONICS LTD.'
+00889  F51D  00                 .BYTE $00
+00890  F51E  20 20       XXF51E .BYTE '     KEYBOARD:             VOICES: 
+     '
+00891  F546  20 20              .BYTE '                                   
+     '
+00892  F56E  20 20              .BYTE '       EFFECT:                     
+     '
+00893  F596  20 20              .BYTE '                                   
+     '
+00894  F5BE  20 20              .BYTE '     WAVEFORM:             OCTAVE: 
+     '
+00895  F5E6  00                 .BYTE $00
+00896  F5E7  44 45              .BYTE 'DECAY  '
+00897  F5EE  00                 .BYTE $00
+00898  F5EF  53 55              .BYTE 'SUSTAIN'
+00899  F5F6  00                 .BYTE $00
+00900  F5F7  48 4F              .BYTE 'HOLD   '
+00901  F5FE  00                 .BYTE $00
+00902  F5FF  4E 4F              .BYTE 'NONE   '
+00903  F606  00                 .BYTE $00
+00904  F607  47 4C              .BYTE 'GLIDE  '
+00905  F60E  00                 .BYTE $00
+00906  F60F  56 49              .BYTE 'VIBRATO'
+00907  F616  00                 .BYTE $00
+00908  F617  53 50              .BYTE 'SPECIAL'
+00909  F61E  00                 .BYTE $00
+00910  F61F              ;********************************
+00911  F61F              ;********************************
+00912  F61F  E7          XXF61F .BYTE $E7
+00913  F620  F5          XXF620 .BYTE $F5
+00914  F621  EF                 .BYTE $EF
+00915  F622  F5                 .BYTE $F5
+00916  F623  F7                 .BYTE $F7
+00917  F624  F5                 .BYTE $F5
+00918  F625  FF                 .BYTE $FF
+00919  F626  F5                 .BYTE $F5
+00920  F627  07                 .BYTE $07
+00921  F628  F6                 .BYTE $F6
+00922  F629  0F                 .BYTE $0F
+00923  F62A  F6                 .BYTE $F6
+00924  F62B  17                 .BYTE $17
+00925  F62C  F6                 .BYTE $F6
+00926  F62D  29          XXF62D .BYTE $29
+00927  F62E  FE                 .BYTE $FE
+00928  F62F  0A                 .BYTE $0A
+00929  F630  10                 .BYTE $10
+00930  F631  02                 .BYTE $02
+00931  F632              ;********************************
+00932  F632  A9 10              LDA #$10
+00933  F634  09 01              ORA #$01
+00934  F636  A2 23              LDX #$23        ;'#'
+00935  F638  C9 21              CMP #$21        ;'!'
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0018
+
+LINE# LOC   CODE        LINE
+
+
+00936  F63A  D0 02              BNE XXF63E
+00937  F63C  A2 24              LDX #$24        ;'$'
+00938  F63E  C9 41       XXF63E CMP #$41        ;'A'
+00939  F640  D0 02              BNE XXF644
+00940  F642  A2 28              LDX #$28        ;'('
+00941  F644  60          XXF644 RTS 
+00942  F645              ;********************************
+00943  F645  A5 0A       XXF645 LDA $0A
+00944  F647  09 30              ORA #$30        ;'0'
+00945  F649  8D EA 04           STA $04EA
+00946  F64C  60                 RTS 
+00947  F64D              ;********************************
+00948  F64D  A2 28       XXF64D LDX #$28        ;'('
+00949  F64F  86 0F              STX $0F
+00950  F651  A2 04              LDX #$04
+00951  F653  86 10              STX $10
+00952  F655  A0 0E              LDY #$0E
+00953  F657  0A          XXF657 ASL A
+00954  F658  AA                 TAX 
+00955  F659  BD 1F F6           LDA XXF61F,X
+00956  F65C  85 0D              STA $0D
+00957  F65E  BD 20 F6           LDA XXF620,X
+00958  F661  85 0E              STA $0E
+00959  F663  A2 00              LDX #$00
+00960  F665  A1 0D       XXF665 LDA ($0D,X)
+00961  F667  F0 0A              BEQ XXF673
+00962  F669  29 3F              AND #$3F        ;'?'
+00963  F66B  91 0F              STA ($0F),Y
+00964  F66D  20 1B F8           JSR XXF81B
+00965  F670  C8                 INY 
+00966  F671  D0 F2              BNE XXF665
+00967  F673  60          XXF673 RTS 
+00968  F674              ;********************************
+00969  F674  18          XXF674 CLC 
+00970  F675  69 03              ADC #$03
+00971  F677  A0 0E              LDY #$0E
+00972  F679  A2 78              LDX #$78
+00973  F67B  86 0F              STX $0F
+00974  F67D  A2 04              LDX #$04
+00975  F67F  86 10              STX $10
+00976  F681  4C 57 F6           JMP XXF657
+00977  F684              ;********************************
+00978  F684              ;********************************
+00979  F684  1B          XXF684 .BYTE $1B
+00980  F685  FB                 .BYTE $FB
+00981  F686  00                 .BYTE $00
+00982  F687  00                 .BYTE $00
+00983  F688  00                 .BYTE $00
+00984  F689  08                 .BYTE $08
+00985  F68A  00                 .BYTE $00
+00986  F68B  1C                 .BYTE $1C
+00987  F68C  01                 .BYTE $01
+00988  F68D  01                 .BYTE $01
+00989  F68E  00                 .BYTE $00
+00990  F68F  00                 .BYTE $00
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0019
+
+LINE# LOC   CODE        LINE
+
+
+00991  F690  00                 .BYTE $00
+00992  F691  00                 .BYTE $00
+00993  F692  00                 .BYTE $00
+00994  F693  03                 .BYTE $03
+00995  F694  01                 .BYTE $01
+00996  F695  00          XXF695 .BYTE $00
+00997  F696  00                 .BYTE $00
+00998  F697  00                 .BYTE $00
+00999  F698  08                 .BYTE $08
+01000  F699  20                 .BYTE $20
+01001  F69A  0A                 .BYTE $0A
+01002  F69B  00                 .BYTE $00
+01003  F69C  00                 .BYTE $00
+01004  F69D  00                 .BYTE $00
+01005  F69E  00                 .BYTE $00
+01006  F69F  08                 .BYTE $08
+01007  F6A0  10                 .BYTE $10
+01008  F6A1  0A                 .BYTE $0A
+01009  F6A2  00                 .BYTE $00
+01010  F6A3  00                 .BYTE $00
+01011  F6A4  00                 .BYTE $00
+01012  F6A5  00                 .BYTE $00
+01013  F6A6  08                 .BYTE $08
+01014  F6A7  00                 .BYTE $00
+01015  F6A8  06                 .BYTE $06
+01016  F6A9  00                 .BYTE $00
+01017  F6AA  00                 .BYTE $00
+01018  F6AB  DC                 .BYTE $DC
+01019  F6AC  04                 .BYTE $04
+01020  F6AD  1F                 .BYTE $1F
+01021  F6AE  FD          XXF6AE .BYTE $FD
+01022  F6AF  03          XXF6AF .BYTE $03
+01023  F6B0  25                 .BYTE $25
+01024  F6B1  04                 .BYTE $04
+01025  F6B2  4D                 .BYTE $4D
+01026  F6B3  04                 .BYTE $04
+01027  F6B4  75                 .BYTE $75
+01028  F6B5  04                 .BYTE $04
+01029  F6B6  9D                 .BYTE $9D
+01030  F6B7  04                 .BYTE $04
+01031  F6B8  C5                 .BYTE $C5
+01032  F6B9  04                 .BYTE $04
+01033  F6BA  ED                 .BYTE $ED
+01034  F6BB  04                 .BYTE $04
+01035  F6BC  15                 .BYTE $15
+01036  F6BD  05                 .BYTE $05
+01037  F6BE  3D                 .BYTE $3D
+01038  F6BF  05                 .BYTE $05
+01039  F6C0  65                 .BYTE $65
+01040  F6C1  05                 .BYTE $05
+01041  F6C2  8D                 .BYTE $8D
+01042  F6C3  05                 .BYTE $05
+01043  F6C4  B5                 .BYTE $B5
+01044  F6C5  05                 .BYTE $05
+01045  F6C6  DD                 .BYTE $DD
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0020
+
+LINE# LOC   CODE        LINE
+
+
+01046  F6C7  05                 .BYTE $05
+01047  F6C8  05                 .BYTE $05
+01048  F6C9  06                 .BYTE $06
+01049  F6CA  2D                 .BYTE $2D
+01050  F6CB  06                 .BYTE $06
+01051  F6CC  55                 .BYTE $55
+01052  F6CD  06                 .BYTE $06
+01053  F6CE  7D                 .BYTE $7D
+01054  F6CF  06                 .BYTE $06
+01055  F6D0  A5                 .BYTE $A5
+01056  F6D1  06                 .BYTE $06
+01057  F6D2  CD                 .BYTE $CD
+01058  F6D3  06                 .BYTE $06
+01059  F6D4  F5                 .BYTE $F5
+01060  F6D5  06                 .BYTE $06
+01061  F6D6  1D                 .BYTE $1D
+01062  F6D7  07                 .BYTE $07
+01063  F6D8  45                 .BYTE $45
+01064  F6D9  07                 .BYTE $07
+01065  F6DA  6D                 .BYTE $6D
+01066  F6DB  07                 .BYTE $07
+01067  F6DC  95                 .BYTE $95
+01068  F6DD  07                 .BYTE $07
+01069  F6DE  BD                 .BYTE $BD
+01070  F6DF  07                 .BYTE $07
+01071  F6E0  00                 .BYTE $00
+01072  F6E1  FF                 .BYTE $FF
+01073  F6E2  27                 .BYTE $27
+01074  F6E3  1D                 .BYTE $1D
+01075  F6E4  FF                 .BYTE $FF
+01076  F6E5  1B                 .BYTE $1B
+01077  F6E6  25                 .BYTE $25
+01078  F6E7  25                 .BYTE $25
+01079  F6E8  FF                 .BYTE $FF
+01080  F6E9  27                 .BYTE $27
+01081  F6EA  1E                 .BYTE $1E
+01082  F6EB  25                 .BYTE $25
+01083  F6EC  25                 .BYTE $25
+01084  F6ED  FF                 .BYTE $FF
+01085  F6EE  1C                 .BYTE $1C
+01086  F6EF  25                 .BYTE $25
+01087  F6F0  25                 .BYTE $25
+01088  F6F1  FF                 .BYTE $FF
+01089  F6F2  3B                 .BYTE $3B
+01090  F6F3  1F                 .BYTE $1F
+01091  F6F4  25                 .BYTE $25
+01092  F6F5  25                 .BYTE $25
+01093  F6F6  FF                 .BYTE $FF
+01094  F6F7  1C                 .BYTE $1C
+01095  F6F8  25                 .BYTE $25
+01096  F6F9  26                 .BYTE $26
+01097  F6FA  25                 .BYTE $25
+01098  F6FB  FF                 .BYTE $FF
+01099  F6FC  3B                 .BYTE $3B
+01100  F6FD  1F                 .BYTE $1F
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0021
+
+LINE# LOC   CODE        LINE
+
+
+01101  F6FE  25                 .BYTE $25
+01102  F6FF  26                 .BYTE $26
+01103  F700  25                 .BYTE $25
+01104  F701  FF                 .BYTE $FF
+01105  F702  1C                 .BYTE $1C
+01106  F703  26                 .BYTE $26
+01107  F704  25                 .BYTE $25
+01108  F705  26                 .BYTE $26
+01109  F706  25                 .BYTE $25
+01110  F707  FF                 .BYTE $FF
+01111  F708  3B                 .BYTE $3B
+01112  F709  1F                 .BYTE $1F
+01113  F70A  26                 .BYTE $26
+01114  F70B  25                 .BYTE $25
+01115  F70C  26                 .BYTE $26
+01116  F70D  25                 .BYTE $25
+01117  F70E  FF                 .BYTE $FF
+01118  F70F  E0          XXF70F .BYTE $E0
+01119  F710  F6          XXF710 .BYTE $F6
+01120  F711  E2                 .BYTE $E2
+01121  F712  F6                 .BYTE $F6
+01122  F713  E5                 .BYTE $E5
+01123  F714  F6                 .BYTE $F6
+01124  F715  E9                 .BYTE $E9
+01125  F716  F6                 .BYTE $F6
+01126  F717  EE                 .BYTE $EE
+01127  F718  F6                 .BYTE $F6
+01128  F719  F2                 .BYTE $F2
+01129  F71A  F6                 .BYTE $F6
+01130  F71B  F7                 .BYTE $F7
+01131  F71C  F6                 .BYTE $F6
+01132  F71D  FC                 .BYTE $FC
+01133  F71E  F6                 .BYTE $F6
+01134  F71F  02                 .BYTE $02
+01135  F720  F7                 .BYTE $F7
+01136  F721  08                 .BYTE $08
+01137  F722  F7                 .BYTE $F7
+01138  F723  00          XXF723 .BYTE $00
+01139  F724  07                 .BYTE $07
+01140  F725  0E                 .BYTE $0E
+01141  F726  15                 .BYTE $15
+01142  F727  1C                 .BYTE $1C
+01143  F728  23                 .BYTE $23
+01144  F729  2A                 .BYTE $2A
+01145  F72A              ;********************************
+01146  F72A  31 38              AND ($38),Y
+01147  F72C  A6 2C       XXF72C LDX $2C
+01148  F72E  BD 23 F7           LDA XXF723,X
+01149  F731  18                 CLC 
+01150  F732  65 28              ADC $28
+01151  F734  85 28              STA $28
+01152  F736  A9 2C              LDA #$2C        ;','
+01153  F738  38                 SEC 
+01154  F739  E5 28              SBC $28
+01155  F73B  4A                 LSR A
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0022
+
+LINE# LOC   CODE        LINE
+
+
+01156  F73C  0A                 ASL A
+01157  F73D  AA                 TAX 
+01158  F73E  BD AE F6           LDA XXF6AE,X
+01159  F741  85 0D              STA $0D
+01160  F743  BD AF F6           LDA XXF6AF,X
+01161  F746  85 0E              STA $0E
+01162  F748  A9 3D              LDA #$3D        ;'='
+01163  F74A  24 2B              BIT $2B
+01164  F74C  30 08              BMI XXF756
+01165  F74E  A9 21              LDA #$21        ;'!'
+01166  F750  A6 2B              LDX $2B
+01167  F752  F0 02              BEQ XXF756
+01168  F754  A9 3C              LDA #$3C        ;'<'
+01169  F756  A0 00       XXF756 LDY #$00
+01170  F758  91 0D              STA ($0D),Y
+01171  F75A  A9 22              LDA #$22        ;'"'
+01172  F75C  24 29              BIT $29
+01173  F75E  10 04              BPL XXF764
+01174  F760  A0 02              LDY #$02
+01175  F762  91 0D              STA ($0D),Y
+01176  F764                                     ;LDA $2A
+01177  F764  A5 2A       XXF764 LDA $2A
+01178  F766  A2 00              LDX #$00
+01179  F768  C9 57              CMP #$57        ;'W'
+01180  F76A  F0 10              BEQ XXF77C
+01181  F76C  E8                 INX 
+01182  F76D  C9 48              CMP #$48        ;'H'
+01183  F76F  F0 0B              BEQ XXF77C
+01184  F771  E8                 INX 
+01185  F772  C9 51              CMP #$51        ;'Q'
+01186  F774  F0 06              BEQ XXF77C
+01187  F776  E8                 INX 
+01188  F777  C9 49              CMP #$49        ;'I'
+01189  F779  F0 01              BEQ XXF77C
+01190  F77B  E8                 INX 
+01191  F77C  8A          XXF77C TXA 
+01192  F77D  0A                 ASL A
+01193  F77E  0A                 ASL A
+01194  F77F  AA                 TAX 
+01195  F780  46 28              LSR $28
+01196  F782  B0 02              BCS XXF786
+01197  F784  E8                 INX 
+01198  F785  E8                 INX 
+01199  F786  BC 0F F7    XXF786 LDY XXF70F,X
+01200  F789  BD 10 F7           LDA XXF710,X
+01201  F78C  85 10              STA $10
+01202  F78E  84 0F              STY $0F
+01203  F790  A2 00              LDX #$00
+01204  F792  A1 0F       XXF792 LDA ($0F,X)
+01205  F794  10 01              BPL XXF797
+01206  F796  60                 RTS 
+01207  F797              ;********************************
+01208  F797  A0 02       XXF797 LDY #$02
+01209  F799  C9 26              CMP #$26        ;'&'
+01210  F79B  F0 01              BEQ XXF79E
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0023
+
+LINE# LOC   CODE        LINE
+
+
+01211  F79D  88                 DEY 
+01212  F79E  91 0D       XXF79E STA ($0D),Y
+01213  F7A0  E6 0F              INC $0F
+01214  F7A2  D0 02              BNE XXF7A6
+01215  F7A4  E6 10              INC $10
+01216  F7A6  C9 26       XXF7A6 CMP #$26        ;'&'
+01217  F7A8  F0 E8              BEQ XXF792
+01218  F7AA  38                 SEC 
+01219  F7AB  A5 0D              LDA $0D
+01220  F7AD  E9 28              SBC #$28        ;'('
+01221  F7AF  85 0D              STA $0D
+01222  F7B1  B0 DF              BCS XXF792
+01223  F7B3  C6 0E              DEC $0E
+01224  F7B5  90 DB              BCC XXF792
+01225  F7B7  85 30       XXF7B7 STA $30
+01226  F7B9  48                 PHA 
+01227  F7BA  8A                 TXA 
+01228  F7BB  48                 PHA 
+01229  F7BC  98                 TYA 
+01230  F7BD  48                 PHA 
+01231  F7BE  A5 30              LDA $30
+01232  F7C0  0A                 ASL A
+01233  F7C1  A8                 TAY 
+01234  F7C2  B9 22 F8           LDA XXF822,Y
+01235  F7C5  85 12              STA $12
+01236  F7C7  B9 23 F8           LDA XXF823,Y
+01237  F7CA  85 13              STA $13
+01238  F7CC  8A                 TXA 
+01239  F7CD  49 07              EOR #$07
+01240  F7CF  AA                 TAX 
+01241  F7D0  F0 0B              BEQ XXF7DD
+01242  F7D2  C0 16              CPY #$16
+01243  F7D4  F0 04              BEQ XXF7DA
+01244  F7D6  46 13       XXF7D6 LSR $13
+01245  F7D8  66 12              ROR $12
+01246  F7DA  CA          XXF7DA DEX 
+01247  F7DB  D0 F9              BNE XXF7D6
+01248  F7DD  A6 2D       XXF7DD LDX $2D
+01249  F7DF  F0 34              BEQ XXF815
+01250  F7E1  A5 12              LDA $12
+01251  F7E3  85 0D              STA $0D
+01252  F7E5  A5 13              LDA $13
+01253  F7E7  85 0E              STA $0E
+01254  F7E9  46 0E              LSR $0E
+01255  F7EB  66 0D              ROR $0D
+01256  F7ED  46 0E              LSR $0E
+01257  F7EF  66 0D              ROR $0D
+01258  F7F1  46 0E              LSR $0E
+01259  F7F3  66 0D              ROR $0D
+01260  F7F5  46 0E              LSR $0E
+01261  F7F7  66 0D              ROR $0D
+01262  F7F9  46 0E              LSR $0E
+01263  F7FB  66 0D              ROR $0D
+01264  F7FD  46 0E              LSR $0E
+01265  F7FF  66 0D              ROR $0D
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0024
+
+LINE# LOC   CODE        LINE
+
+
+01266  F801  46 0E              LSR $0E
+01267  F803  66 0D              ROR $0D
+01268  F805  18          XXF805 CLC 
+01269  F806  A5 0D              LDA $0D
+01270  F808  65 12              ADC $12
+01271  F80A  85 12              STA $12
+01272  F80C  A5 0E              LDA $0E
+01273  F80E  65 13              ADC $13
+01274  F810  85 13              STA $13
+01275  F812  CA                 DEX 
+01276  F813  D0 F0              BNE XXF805
+01277  F815  68          XXF815 PLA 
+01278  F816  A8                 TAY 
+01279  F817  68                 PLA 
+01280  F818  AA                 TAX 
+01281  F819  68                 PLA 
+01282  F81A  60                 RTS 
+01283  F81B              ;********************************
+01284  F81B  E6 0D       XXF81B INC $0D
+01285  F81D  D0 02              BNE XXF821
+01286  F81F  E6 0E              INC $0E
+01287  F821  60          XXF821 RTS 
+01288  F822              ;********************************
+01289  F822              ;********************************
+01290  F822  2B          XXF822 .BYTE $2B
+01291  F823  89          XXF823 .BYTE $89
+01292  F824  53                 .BYTE $53
+01293  F825  91                 .BYTE $91
+01294  F826  F7                 .BYTE $F7
+01295  F827  99                 .BYTE $99
+01296  F828  1F                 .BYTE $1F
+01297  F829  A3                 .BYTE $A3
+01298  F82A  D2                 .BYTE $D2
+01299  F82B  AC                 .BYTE $AC
+01300  F82C  19                 .BYTE $19
+01301  F82D  B7                 .BYTE $B7
+01302  F82E  FC                 .BYTE $FC
+01303  F82F  C1                 .BYTE $C1
+01304  F830  85                 .BYTE $85
+01305  F831  CD                 .BYTE $CD
+01306  F832  BD                 .BYTE $BD
+01307  F833  D9                 .BYTE $D9
+01308  F834  B0                 .BYTE $B0
+01309  F835  E6                 .BYTE $E6
+01310  F836  67                 .BYTE $67
+01311  F837  F4                 .BYTE $F4
+01312  F838              ;********************************
+01313  F838              ;       SEI 
+01314  F838              ;       STA ($48,X)
+01315  F838              ;********************************
+01316  F838  78                 .BYTE $78
+01317  F839  81                 .BYTE $81
+01318  F83A  48          XXF83A PHA
+01319  F83B              ;********************************
+01320  F83B  88                 DEY 
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0025
+
+LINE# LOC   CODE        LINE
+
+
+01321  F83C  84 33              STY $33
+01322  F83E  98                 TYA 
+01323  F83F  0A                 ASL A
+01324  F840  0A                 ASL A
+01325  F841  0A                 ASL A
+01326  F842  38                 SEC 
+01327  F843  E5 33              SBC $33
+01328  F845  A8                 TAY 
+01329  F846  84 35              STY $35
+01330  F848  A9 01              LDA #$01
+01331  F84A  85 2C              STA $2C
+01332  F84C  68                 PLA 
+01333  F84D  C9 0C              CMP #$0C
+01334  F84F  90 05              BCC XXF856
+01335  F851  E9 0C              SBC #$0C
+01336  F853  E6 2C              INC $2C
+01337  F855  E8                 INX 
+01338  F856  48          XXF856 PHA 
+01339  F857  86 34              STX $34
+01340  F859  0A                 ASL A
+01341  F85A  AA                 TAX 
+01342  F85B  BD EE F8           LDA XXF8EE,X
+01343  F85E  85 28              STA $28
+01344  F860  BD EF F8           LDA XXF8EF,X
+01345  F863  85 2B              STA $2B
+01346  F865  A6 34              LDX $34
+01347  F867  68                 PLA 
+01348  F868  20 B7 F7           JSR XXF7B7
+01349  F86B  A9 00              LDA #$00
+01350  F86D  99 04 D4           STA $D404,Y
+01351  F870  A6 05              LDX $05
+01352  F872  E0 03              CPX #$03
+01353  F874  D0 03              BNE XXF879
+01354  F876  8D 0B D4           STA $D40B
+01355  F879  A5 33       XXF879 LDA $33
+01356  F87B  0A                 ASL A
+01357  F87C  AA                 TAX 
+01358  F87D  A5 12              LDA $12
+01359  F87F  95 1B              STA $1B,X
+01360  F881  A5 13              LDA $13
+01361  F883  95 1C              STA $1C,X
+01362  F885  A5 05              LDA $05
+01363  F887  C9 01              CMP #$01
+01364  F889  D0 03              BNE XXF88E
+01365  F88B  4C 61 F9           JMP XXF961
+01366  F88E              ;********************************
+01367  F88E  A5 12       XXF88E LDA $12
+01368  F890  85 14              STA $14
+01369  F892  A4 35              LDY $35
+01370  F894  99 00 D4           STA $D400,Y
+01371  F897  A5 13              LDA $13
+01372  F899  85 15              STA $15
+01373  F89B  99 01 D4           STA $D401,Y
+01374  F89E  A5 06              LDA $06
+01375  F8A0  99 04 D4           STA $D404,Y
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0026
+
+LINE# LOC   CODE        LINE
+
+
+01376  F8A3  A5 05              LDA $05
+01377  F8A5  C9 03              CMP #$03
+01378  F8A7  D0 38              BNE XXF8E1
+01379  F8A9  A5 12              LDA $12
+01380  F8AB  85 0D              STA $0D
+01381  F8AD  A5 13              LDA $13
+01382  F8AF  85 0E              STA $0E
+01383  F8B1  46 0E              LSR $0E
+01384  F8B3  66 0D              ROR $0D
+01385  F8B5  46 0E              LSR $0E
+01386  F8B7  66 0D              ROR $0D
+01387  F8B9  46 0E              LSR $0E
+01388  F8BB  66 0D              ROR $0D
+01389  F8BD  46 0E              LSR $0E
+01390  F8BF  66 0D              ROR $0D
+01391  F8C1  46 0E              LSR $0E
+01392  F8C3  66 0D              ROR $0D
+01393  F8C5  46 0E              LSR $0E
+01394  F8C7  66 0D              ROR $0D
+01395  F8C9  46 0E              LSR $0E
+01396  F8CB  66 0D              ROR $0D
+01397  F8CD  18                 CLC 
+01398  F8CE  A5 0D              LDA $0D
+01399  F8D0  65 12              ADC $12
+01400  F8D2  8D 07 D4           STA $D407
+01401  F8D5  A5 0E              LDA $0E
+01402  F8D7  65 13              ADC $13
+01403  F8D9  8D 08 D4           STA $D408
+01404  F8DC  A5 06              LDA $06
+01405  F8DE  8D 0B D4           STA $D40B
+01406  F8E1  20 06 F9    XXF8E1 JSR XXF906
+01407  F8E4  20 06 F9           JSR XXF906
+01408  F8E7  20 06 F9           JSR XXF906
+01409  F8EA  20 2C F7           JSR XXF72C
+01410  F8ED  60                 RTS 
+01411  F8EE              ;********************************
+01412  F8EE              ;********************************
+01413  F8EE  01          XXF8EE .BYTE $01
+01414  F8EF  00          XXF8EF .BYTE $00
+01415  F8F0  01                 .BYTE $01
+01416  F8F1  01                 .BYTE $01
+01417  F8F2  02                 .BYTE $02
+01418  F8F3  00                 .BYTE $00
+01419  F8F4  02                 .BYTE $02
+01420  F8F5  01                 .BYTE $01
+01421  F8F6  03                 .BYTE $03
+01422  F8F7  00                 .BYTE $00
+01423  F8F8  04                 .BYTE $04
+01424  F8F9  00                 .BYTE $00
+01425  F8FA  04                 .BYTE $04
+01426  F8FB  01                 .BYTE $01
+01427  F8FC  05                 .BYTE $05
+01428  F8FD  00                 .BYTE $00
+01429  F8FE  05                 .BYTE $05
+01430  F8FF  01                 .BYTE $01
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0027
+
+LINE# LOC   CODE        LINE
+
+
+01431  F900  06                 .BYTE $06
+01432  F901  00                 .BYTE $00
+01433  F902  06                 .BYTE $06
+01434  F903  01                 .BYTE $01
+01435  F904  07                 .BYTE $07
+01436  F905  00                 .BYTE $00
+01437  F906              ;********************************
+01438  F906  A2 00       XXF906 LDX #$00
+01439  F908  BD A9 06    XXF908 LDA $06A9,X
+01440  F90B  9D A8 06           STA $06A8,X
+01441  F90E  BD 81 06           LDA $0681,X
+01442  F911  9D 80 06           STA $0680,X
+01443  F914  BD 59 06           LDA $0659,X
+01444  F917  9D 58 06           STA $0658,X
+01445  F91A  BD 31 06           LDA $0631,X
+01446  F91D  9D 30 06           STA $0630,X
+01447  F920  BD 09 06           LDA $0609,X
+01448  F923  9D 08 06           STA $0608,X
+01449  F926  BD E1 05           LDA $05E1,X
+01450  F929  9D E0 05           STA $05E0,X
+01451  F92C  BD B9 05           LDA $05B9,X
+01452  F92F  9D B8 05           STA $05B8,X
+01453  F932  BD 91 05           LDA $0591,X
+01454  F935  9D 90 05           STA $0590,X
+01455  F938  BD 69 05           LDA $0569,X
+01456  F93B  9D 68 05           STA $0568,X
+01457  F93E  BD 41 05           LDA $0541,X
+01458  F941  9D 40 05           STA $0540,X
+01459  F944  BD 19 05           LDA $0519,X
+01460  F947  9D 18 05           STA $0518,X
+01461  F94A  E8                 INX 
+01462  F94B  E0 27              CPX #$27        ;'''
+01463  F94D  D0 B9              BNE XXF908
+01464  F94F  A9 21              LDA #$21        ;'!'
+01465  F951  9D 58 06           STA $0658,X
+01466  F954  9D 30 06           STA $0630,X
+01467  F957  9D 08 06           STA $0608,X
+01468  F95A  9D E0 05           STA $05E0,X
+01469  F95D  9D B8 05           STA $05B8,X
+01470  F960  60                 RTS 
+01471  F961              ;********************************
+01472  F961  A5 13       XXF961 LDA $13
+01473  F963  C5 15              CMP $15
+01474  F965  90 0F              BCC XXF976
+01475  F967  F0 02              BEQ XXF96B
+01476  F969  B0 33              BCS XXF99E
+01477  F96B  A5 12       XXF96B LDA $12
+01478  F96D  C5 14              CMP $14
+01479  F96F  90 05              BCC XXF976
+01480  F971  D0 2B              BNE XXF99E
+01481  F973  4C 8E F8           JMP XXF88E
+01482  F976              ;********************************
+01483  F976  38          XXF976 SEC 
+01484  F977  A5 14              LDA $14
+01485  F979  E5 12              SBC $12
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0028
+
+LINE# LOC   CODE        LINE
+
+
+01486  F97B  85 16              STA $16
+01487  F97D  A5 15              LDA $15
+01488  F97F  E5 13              SBC $13
+01489  F981  85 17              STA $17
+01490  F983  20 D8 F9           JSR XXF9D8
+01491  F986  20 C6 F9    XXF986 JSR XXF9C6
+01492  F989  38                 SEC 
+01493  F98A  A5 14              LDA $14
+01494  F98C  E5 16              SBC $16
+01495  F98E  85 14              STA $14
+01496  F990  A5 15              LDA $15
+01497  F992  E5 17              SBC $17
+01498  F994  85 15              STA $15
+01499  F996  20 E6 F9           JSR XXF9E6
+01500  F999  D0 EB              BNE XXF986
+01501  F99B  4C 8E F8           JMP XXF88E
+01502  F99E              ;********************************
+01503  F99E  38          XXF99E SEC 
+01504  F99F  A5 12              LDA $12
+01505  F9A1  E5 14              SBC $14
+01506  F9A3  85 16              STA $16
+01507  F9A5  A5 13              LDA $13
+01508  F9A7  E5 15              SBC $15
+01509  F9A9  85 17              STA $17
+01510  F9AB  20 D8 F9           JSR XXF9D8
+01511  F9AE  20 C6 F9    XXF9AE JSR XXF9C6
+01512  F9B1  18                 CLC 
+01513  F9B2  A5 14              LDA $14
+01514  F9B4  65 16              ADC $16
+01515  F9B6  85 14              STA $14
+01516  F9B8  A5 15              LDA $15
+01517  F9BA  65 17              ADC $17
+01518  F9BC  85 15              STA $15
+01519  F9BE  20 E6 F9           JSR XXF9E6
+01520  F9C1  D0 EB              BNE XXF9AE
+01521  F9C3  4C 8E F8           JMP XXF88E
+01522  F9C6              ;********************************
+01523  F9C6  A4 35       XXF9C6 LDY $35
+01524  F9C8  A5 14              LDA $14
+01525  F9CA  99 00 D4           STA $D400,Y
+01526  F9CD  A5 15              LDA $15
+01527  F9CF  99 01 D4           STA $D401,Y
+01528  F9D2  A5 06              LDA $06
+01529  F9D4  99 04 D4           STA $D404,Y
+01530  F9D7  60                 RTS 
+01531  F9D8              ;********************************
+01532  F9D8  A2 06       XXF9D8 LDX #$06
+01533  F9DA  46 17       XXF9DA LSR $17
+01534  F9DC  66 16              ROR $16
+01535  F9DE  CA                 DEX 
+01536  F9DF  D0 F9              BNE XXF9DA
+01537  F9E1  A9 40              LDA #$40        ;'@'
+01538  F9E3  85 18              STA $18
+01539  F9E5  60                 RTS 
+01540  F9E6              ;********************************
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0029
+
+LINE# LOC   CODE        LINE
+
+
+01541  F9E6  A2 01       XXF9E6 LDX #$01
+01542  F9E8  A0 00              LDY #$00
+01543  F9EA  88          XXF9EA DEY 
+01544  F9EB  D0 FD              BNE XXF9EA
+01545  F9ED  CA                 DEX 
+01546  F9EE  D0 FA              BNE XXF9EA
+01547  F9F0  C6 18              DEC $18
+01548  F9F2  60                 RTS 
+01549  F9F3              ;********************************
+01550  F9F3              ;********************************
+01551  F9F3  0F                 .BYTE $0F
+01552  F9F4  0F                 .BYTE $0F
+01553  F9F5  5A                 .BYTE $5A
+01554  F9F6  0F                 .BYTE $0F
+01555  F9F7  FF                 .BYTE $FF
+01556  F9F8  0F                 .BYTE $0F
+01557  F9F9  0F                 .BYTE $0F
+01558  F9FA  0F                 .BYTE $0F
+01559  F9FB  00                 .BYTE $00
+01560  F9FC  0F                 .BYTE $0F
+01561  F9FD  00                 .BYTE $00
+01562  F9FE  0F                 .BYTE $0F
+01563  F9FF  00                 .BYTE $00
+01564  FA00  FF                 .BYTE $FF
+01565  FA01  0F                 .BYTE $0F
+01566  FA02  5A                 .BYTE $5A
+01567  FA03  00                 .BYTE $00
+01568  FA04  5A                 .BYTE $5A
+01569  FA05  0F                 .BYTE $0F
+01570  FA06  5A                 .BYTE $5A
+01571  FA07  0F                 .BYTE $0F
+01572  FA08  5A                 .BYTE $5A
+01573  FA09  FF                 .BYTE $FF
+01574  FA0A  0F                 .BYTE $0F
+01575  FA0B  00                 .BYTE $00
+01576  FA0C  5A                 .BYTE $5A
+01577  FA0D  0F                 .BYTE $0F
+01578  FA0E  FF                 .BYTE $FF
+01579  FA0F  0F                 .BYTE $0F
+01580  FA10  00                 .BYTE $00
+01581  FA11  5A                 .BYTE $5A
+01582  FA12  5A                 .BYTE $5A
+01583  FA13  00                 .BYTE $00
+01584  FA14  FF                 .BYTE $FF
+01585  FA15  0F                 .BYTE $0F
+01586  FA16  00                 .BYTE $00
+01587  FA17  5A                 .BYTE $5A
+01588  FA18  5A                 .BYTE $5A
+01589  FA19  FF                 .BYTE $FF
+01590  FA1A  0F                 .BYTE $0F
+01591  FA1B  00                 .BYTE $00
+01592  FA1C  5A                 .BYTE $5A
+01593  FA1D  0F                 .BYTE $0F
+01594  FA1E  00                 .BYTE $00
+01595  FA1F  0F                 .BYTE $0F
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0030
+
+LINE# LOC   CODE        LINE
+
+
+01596  FA20  5A                 .BYTE $5A
+01597  FA21  00                 .BYTE $00
+01598  FA22  FF                 .BYTE $FF
+01599  FA23  F3          XXFA23 .BYTE $F3
+01600  FA24  F9          XXFA24 .BYTE $F9
+01601  FA25  F8                 .BYTE $F8
+01602  FA26  F9                 .BYTE $F9
+01603  FA27  01                 .BYTE $01
+01604  FA28  FA                 .BYTE $FA
+01605  FA29  0A                 .BYTE $0A
+01606  FA2A  FA                 .BYTE $FA
+01607  FA2B  0F                 .BYTE $0F
+01608  FA2C  FA                 .BYTE $FA
+01609  FA2D  15                 .BYTE $15
+01610  FA2E  FA                 .BYTE $FA
+01611  FA2F  1A                 .BYTE $1A
+01612  FA30  FA                 .BYTE $FA
+01613  FA31  00                 .BYTE $00
+01614  FA32  00                 .BYTE $00
+01615  FA33              ;********************************
+01616  FA33              ;********************************
+01617  FA33              ;.END
+01618  FA33              ;*=$FA33
+01619  FA33              ;********************************
+01620  FA33  08          XXFA33 PHP 
+01621  FA34  48                 PHA 
+01622  FA35  8A                 TXA 
+01623  FA36  48                 PHA 
+01624  FA37  98                 TYA 
+01625  FA38  48                 PHA 
+01626  FA39  20 7C FA           JSR XXFA7C
+01627  FA3C  20 0B FB           JSR XXFB0B
+01628  FA3F  A5 21              LDA $21
+01629  FA41  F0 2C              BEQ XXFA6F
+01630  FA43  C6 24              DEC $24
+01631  FA45  30 03              BMI XXFA4A
+01632  FA47  4C 6F FA           JMP XXFA6F
+01633  FA4A              ;********************************
+01634  FA4A  A5 23       XXFA4A LDA $23
+01635  FA4C  85 24              STA $24
+01636  FA4E  A9 00              LDA #$00
+01637  FA50  8D 12 D4           STA $D412
+01638  FA53  A4 25       XXFA53 LDY $25
+01639  FA55  B1 26              LDA ($26),Y
+01640  FA57  C9 FF              CMP #$FF
+01641  FA59  D0 06              BNE XXFA61
+01642  FA5B  A9 00              LDA #$00
+01643  FA5D  85 25              STA $25
+01644  FA5F  F0 F2              BEQ XXFA53
+01645  FA61  E6 25       XXFA61 INC $25
+01646  FA63  8D 0F D4           STA $D40F
+01647  FA66  C9 00              CMP #$00
+01648  FA68  F0 05              BEQ XXFA6F
+01649  FA6A  A9 81              LDA #$81
+01650  FA6C  8D 12 D4           STA $D412
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0031
+
+LINE# LOC   CODE        LINE
+
+
+01651  FA6F  AD 19 D0    XXFA6F LDA $D019
+01652  FA72  8D 19 D0           STA $D019
+01653  FA75  68                 PLA 
+01654  FA76  A8                 TAY 
+01655  FA77  68                 PLA 
+01656  FA78  AA                 TAX 
+01657  FA79  68                 PLA 
+01658  FA7A  28                 PLP 
+01659  FA7B  40                 RTI 
+01660  FA7C              ;********************************
+01661  FA7C  A9 FF       XXFA7C LDA #$FF
+01662  FA7E  85 02              STA $02
+01663  FA80  A9 00              LDA #$00
+01664  FA82  8D 00 DC           STA $DC00
+01665  FA85  85 11              STA $11
+01666  FA87  AD 01 DC           LDA $DC01
+01667  FA8A  C9 FF              CMP #$FF
+01668  FA8C  F0 2A              BEQ XXFAB8
+01669  FA8E  A9 FE              LDA #$FE
+01670  FA90  48                 PHA 
+01671  FA91  8D 00 DC           STA $DC00
+01672  FA94  AD 01 DC    XXFA94 LDA $DC01
+01673  FA97  CD 01 DC           CMP $DC01
+01674  FA9A  D0 F8              BNE XXFA94
+01675  FA9C  C9 FF              CMP #$FF
+01676  FA9E  F0 1E              BEQ XXFABE
+01677  FAA0  A0 00              LDY #$00
+01678  FAA2  4A          XXFAA2 LSR A
+01679  FAA3  90 07              BCC XXFAAC
+01680  FAA5  C8                 INY 
+01681  FAA6  C0 08              CPY #$08
+01682  FAA8  D0 F8              BNE XXFAA2
+01683  FAAA  F0 12              BEQ XXFABE
+01684  FAAC  84 44       XXFAAC STY $44
+01685  FAAE  A5 11              LDA $11
+01686  FAB0  0A                 ASL A
+01687  FAB1  0A                 ASL A
+01688  FAB2  0A                 ASL A
+01689  FAB3  05 44              ORA $44
+01690  FAB5  85 02              STA $02
+01691  FAB7  68                 PLA 
+01692  FAB8  A9 7F       XXFAB8 LDA #$7F
+01693  FABA  8D 00 DC           STA $DC00
+01694  FABD  60                 RTS 
+01695  FABE              ;********************************
+01696  FABE              ;********************************
+01697  FABE  E6          XXFABE .BYTE $E6
+01698  FABF  11                 .BYTE $11
+01699  FAC0  68                 .BYTE $68
+01700  FAC1  38                 .BYTE $38
+01701  FAC2  2A                 .BYTE $2A
+01702  FAC3  90                 .BYTE $90
+01703  FAC4  F3                 .BYTE $F3
+01704  FAC5  48                 .BYTE $48
+01705  FAC6  8D                 .BYTE $8D
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0032
+
+LINE# LOC   CODE        LINE
+
+
+01706  FAC7  00                 .BYTE $00
+01707  FAC8  DC                 .BYTE $DC
+01708  FAC9  B0                 .BYTE $B0
+01709  FACA  C9                 .BYTE $C9
+01710  FACB  FF          XXFACB .BYTE $FF
+01711  FACC  FF                 .BYTE $FF
+01712  FACD  FF                 .BYTE $FF
+01713  FACE  FF                 .BYTE $FF
+01714  FACF  FF                 .BYTE $FF
+01715  FAD0  FF                 .BYTE $FF
+01716  FAD1  FF                 .BYTE $FF
+01717  FAD2  FF                 .BYTE $FF
+01718  FAD3  03                 .BYTE $03
+01719  FAD4  02                 .BYTE $02
+01720  FAD5  FF                 .BYTE $FF
+01721  FAD6  FF                 .BYTE $FF
+01722  FAD7  FF                 .BYTE $FF
+01723  FAD8  FF                 .BYTE $FF
+01724  FAD9  04                 .BYTE $04
+01725  FADA  FF                 .BYTE $FF
+01726  FADB  06                 .BYTE $06
+01727  FADC  05                 .BYTE $05
+01728  FADD  FF                 .BYTE $FF
+01729  FADE  08                 .BYTE $08
+01730  FADF  FF                 .BYTE $FF
+01731  FAE0  FF                 .BYTE $FF
+01732  FAE1  07                 .BYTE $07
+01733  FAE2  FF                 .BYTE $FF
+01734  FAE3  0A                 .BYTE $0A
+01735  FAE4  09                 .BYTE $09
+01736  FAE5  FF                 .BYTE $FF
+01737  FAE6  FF                 .BYTE $FF
+01738  FAE7  FF                 .BYTE $FF
+01739  FAE8  FF                 .BYTE $FF
+01740  FAE9  0B                 .BYTE $0B
+01741  FAEA  FF                 .BYTE $FF
+01742  FAEB  0D                 .BYTE $0D
+01743  FAEC  0C                 .BYTE $0C
+01744  FAED  FF                 .BYTE $FF
+01745  FAEE  0F                 .BYTE $0F
+01746  FAEF  FF                 .BYTE $FF
+01747  FAF0  FF                 .BYTE $FF
+01748  FAF1  0E                 .BYTE $0E
+01749  FAF2  FF                 .BYTE $FF
+01750  FAF3  FF                 .BYTE $FF
+01751  FAF4  10                 .BYTE $10
+01752  FAF5  FF                 .BYTE $FF
+01753  FAF6  12                 .BYTE $12
+01754  FAF7  FF                 .BYTE $FF
+01755  FAF8  FF                 .BYTE $FF
+01756  FAF9  11                 .BYTE $11
+01757  FAFA  FF                 .BYTE $FF
+01758  FAFB  14                 .BYTE $14
+01759  FAFC  13                 .BYTE $13
+01760  FAFD  FF                 .BYTE $FF
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0033
+
+LINE# LOC   CODE        LINE
+
+
+01761  FAFE  FF                 .BYTE $FF
+01762  FAFF  FF                 .BYTE $FF
+01763  FB00  FF                 .BYTE $FF
+01764  FB01  15                 .BYTE $15
+01765  FB02  FF                 .BYTE $FF
+01766  FB03  FF                 .BYTE $FF
+01767  FB04  FF                 .BYTE $FF
+01768  FB05  FF                 .BYTE $FF
+01769  FB06  01                 .BYTE $01
+01770  FB07  FF                 .BYTE $FF
+01771  FB08  FF                 .BYTE $FF
+01772  FB09  00                 .BYTE $00
+01773  FB0A  FF                 .BYTE $FF
+01774  FB0B              ;********************************
+01775  FB0B  A5 05       XXFB0B LDA $05
+01776  FB0D  C9 02              CMP #$02
+01777  FB0F  F0 01              BEQ XXFB12
+01778  FB11  60                 RTS 
+01779  FB12              ;********************************
+01780  FB12  A5 19       XXFB12 LDA $19
+01781  FB14  0A                 ASL A
+01782  FB15  85 46              STA $46
+01783  FB17  A9 00              LDA #$00
+01784  FB19  85 43              STA $43
+01785  FB1B  A5 46              LDA $46
+01786  FB1D  85 42              STA $42
+01787  FB1F  A6 0A              LDX $0A
+01788  FB21  18          XXFB21 CLC 
+01789  FB22  A5 42              LDA $42
+01790  FB24  65 46              ADC $46
+01791  FB26  85 42              STA $42
+01792  FB28  90 02              BCC XXFB2C
+01793  FB2A  E6 43              INC $43
+01794  FB2C  CA          XXFB2C DEX 
+01795  FB2D  D0 F2              BNE XXFB21
+01796  FB2F  A0 00              LDY #$00
+01797  FB31  A2 00              LDX #$00
+01798  FB33  A5 0C              LDA $0C
+01799  FB35  85 45              STA $45
+01800  FB37  18          XXFB37 CLC 
+01801  FB38  B5 1B              LDA $1B,X
+01802  FB3A  65 42              ADC $42
+01803  FB3C  99 00 D4           STA $D400,Y
+01804  FB3F  B5 1C              LDA $1C,X
+01805  FB41  65 43              ADC $43
+01806  FB43  99 01 D4           STA $D401,Y
+01807  FB46  E8                 INX 
+01808  FB47  E8                 INX 
+01809  FB48  98                 TYA 
+01810  FB49  18                 CLC 
+01811  FB4A  69 07              ADC #$07
+01812  FB4C  A8                 TAY 
+01813  FB4D  C6 45              DEC $45
+01814  FB4F  D0 E6              BNE XXFB37
+01815  FB51  A5 1A              LDA $1A
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0034
+
+LINE# LOC   CODE        LINE
+
+
+01816  FB53  D0 15              BNE XXFB6A
+01817  FB55  C6 19              DEC $19
+01818  FB57  C6 19              DEC $19
+01819  FB59  C6 19              DEC $19
+01820  FB5B  C6 19              DEC $19
+01821  FB5D  C6 19              DEC $19
+01822  FB5F  C6 19              DEC $19
+01823  FB61  30 01              BMI XXFB64
+01824  FB63  60                 RTS 
+01825  FB64              ;********************************
+01826  FB64  A9 00       XXFB64 LDA #$00
+01827  FB66  85 19              STA $19
+01828  FB68  F0 13              BEQ XXFB7D
+01829  FB6A  E6 19       XXFB6A INC $19
+01830  FB6C  E6 19              INC $19
+01831  FB6E  E6 19              INC $19
+01832  FB70  E6 19              INC $19
+01833  FB72  E6 19              INC $19
+01834  FB74  E6 19              INC $19
+01835  FB76  A5 19              LDA $19
+01836  FB78  C9 18              CMP #$18
+01837  FB7A  B0 01              BCS XXFB7D
+01838  FB7C  60                 RTS 
+01839  FB7D              ;********************************
+01840  FB7D  A5 1A       XXFB7D LDA $1A
+01841  FB7F  49 01              EOR #$01
+01842  FB81  85 1A              STA $1A
+01843  FB83  60                 RTS 
+01844  FB84              ;********************************
+01845  FB84  48          XXFB84 PHA 
+01846  FB85  A5 02              LDA $02
+01847  FB87  C9 01              CMP #$01
+01848  FB89  D0 03              BNE XXFB8E
+01849  FB8B  4C 00 F2           JMP XXF200
+01850  FB8E              ;********************************
+01851  FB8E              ;********************************
+01852  FB8E  68          XXFB8E .BYTE $68
+01853  FB8F  40                 .BYTE $40
+01854  FB90  A9                 .BYTE $A9
+01855  FB91  3B                 .BYTE $3B
+01856  FB92  6E                 .BYTE $6E
+01857  FB93  1E                 .BYTE $1E
+01858  FB94              ;********************************
+01859  FB94              ;********************************
+01860  FB94  2E 42              .BYTE '.BYT $03,$03,$03,$03'
+01861  FBA8  00                 .BYTE $00
+01862  FBA9  C2                 .BYTE $C2
+01863  FBAA  3B                 .BYTE ';'
+01864  FBAB  78                 .BYTE $78
+01865  FBAC  1E                 .BYTE $1E
+01866  FBAD  2E 42              .BYTE '.BYT $3F,$67,$E7,$FF'
+01867  FBC1  00                 .BYTE $00
+01868  FBC2  C8                 .BYTE $C8
+01869  FBC3  3B                 .BYTE ';'
+01870  FBC4  82                 .BYTE $82
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0035
+
+LINE# LOC   CODE        LINE
+
+
+01871  FBC5  1E                 .BYTE $1E
+01872  FBC6  3B                 .BYTE ';'
+01873  FBC7  00                 .BYTE $00
+01874  FBC8  E8                 .BYTE $E8
+01875  FBC9  3B                 .BYTE ';'
+01876  FBCA  8C                 .BYTE $8C
+01877  FBCB  1E                 .BYTE $1E
+01878  FBCC  3B 51              .BYTE ';QUART NOTE ON LEDGER (TOP)'
+01879  FBE7  00                 .BYTE $00
+01880  FBE8  EE                 .BYTE $EE
+01881  FBE9  3B                 .BYTE ';'
+01882  FBEA  96                 .BYTE $96
+01883  FBEB  1E                 .BYTE $1E
+01884  FBEC  3B                 .BYTE ';'
+01885  FBED  00                 .BYTE $00
+01886  FBEE  07                 .BYTE $07
+01887  FBEF  3C                 .BYTE '<'
+01888  FBF0  A0                 .BYTE $A0
+01889  FBF1  1E                 .BYTE $1E
+01890  FBF2  2E 42              .BYTE '.BYT $03,$03,$03,$03'
+01891  FC06  00                 .BYTE $00
+01892  FC07  20 3C              .BYTE ' <'
+01893  FC09  AA                 .BYTE $AA
+01894  FC0A  1E                 .BYTE $1E
+01895  FC0B  2E 42              .BYTE '.BYT $3F,$7F,$FF,$FF'
+01896  FC1F  00                 .BYTE $00
+01897  FC20  26 3C              .BYTE '&<'
+01898  FC22  B4                 .BYTE $B4
+01899  FC23  1E                 .BYTE $1E
+01900  FC24  3B                 .BYTE ';'
+01901  FC25  00                 .BYTE $00
+01902  FC26  49 3C              .BYTE 'I<'
+01903  FC28  BE                 .BYTE $BE
+01904  FC29  1E                 .BYTE $1E
+01905  FC2A  2A 20              .BYTE '* =BASE+264 ;REPLACE !"#$%&''()'
+01906  FC48  00                 .BYTE $00
+01907  FC49  4F 3C              .BYTE 'O<'
+01908  FC4B  C8                 .BYTE $C8
+01909  FC4C  1E                 .BYTE $1E
+01910  FC4D  3B                 .BYTE ';'
+01911  FC4E  00                 .BYTE $00
+01912  FC4F  60                 .BYTE $60
+01913  FC50  3C                 .BYTE '<'
+01914  FC51  D2                 .BYTE $D2
+01915  FC52  1E                 .BYTE $1E
+01916  FC53  3B 4C              .BYTE ';LEDGER LINE'
+01917  FC5F  00                 .BYTE $00
+01918  FC60  66                 .BYTE $66
+01919  FC61  3C                 .BYTE '<'
+01920  FC62  DC                 .BYTE $DC
+01921  FC63  1E                 .BYTE $1E
+01922  FC64  3B                 .BYTE ';'
+01923  FC65  00                 .BYTE $00
+01924  FC66  7F                 .BYTE $7F
+01925  FC67  3C                 .BYTE '<'
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0036
+
+LINE# LOC   CODE        LINE
+
+
+01926  FC68  E6                 .BYTE $E6
+01927  FC69  1E                 .BYTE $1E
+01928  FC6A  2E 42              .BYTE '.BYT $00,$00,$00,$00'
+01929  FC7E  00                 .BYTE $00
+01930  FC7F  98                 .BYTE $98
+01931  FC80  3C                 .BYTE '<'
+01932  FC81  F0                 .BYTE $F0
+01933  FC82  1E                 .BYTE $1E
+01934  FC83  2E 42              .BYTE '.BYT $00,$00,$FF,$FF'
+01935  FC97  00                 .BYTE $00
+01936  FC98  9E                 .BYTE $9E
+01937  FC99  3C                 .BYTE '<'
+01938  FC9A  FA                 .BYTE $FA
+01939  FC9B  1E                 .BYTE $1E
+01940  FC9C  3B                 .BYTE ';'
+01941  FC9D  00                 .BYTE $00
+01942  FC9E  B4                 .BYTE $B4
+01943  FC9F  3C                 .BYTE '<'
+01944  FCA0  04                 .BYTE $04
+01945  FCA1  1F                 .BYTE $1F
+01946  FCA2  3B 44              .BYTE ';DOT ABOVE LEDGER'
+01947  FCB3  00                 .BYTE $00
+01948  FCB4  BA                 .BYTE $BA
+01949  FCB5  3C                 .BYTE '<'
+01950  FCB6  0E                 .BYTE $0E
+01951  FCB7  1F                 .BYTE $1F
+01952  FCB8  3B                 .BYTE ';'
+01953  FCB9  00                 .BYTE $00
+01954  FCBA  D3                 .BYTE $D3
+01955  FCBB  3C                 .BYTE '<'
+01956  FCBC  18                 .BYTE $18
+01957  FCBD  1F                 .BYTE $1F
+01958  FCBE  2E 42              .BYTE '.BYT $00,$00,$00,$60'
+01959  FCD2  00                 .BYTE $00
+01960  FCD3  EC                 .BYTE $EC
+01961  FCD4  3C 22              .BYTE '<"'
+01962  FCD6  1F                 .BYTE $1F
+01963  FCD7  2E 42              .BYTE '.BYT $60,$00,$FF,$FF'
+01964  FCEB  00                 .BYTE $00
+01965  FCEC  F2                 .BYTE $F2
+01966  FCED  3C 2C              .BYTE '<,'
+01967  FCEF  1F                 .BYTE $1F
+01968  FCF0  3B                 .BYTE ';'
+01969  FCF1  00                 .BYTE $00
+01970  FCF2  0A                 .BYTE $0A
+01971  FCF3  3D 36              .BYTE '=6'
+01972  FCF5  1F                 .BYTE $1F
+01973  FCF6  20 2E              .BYTE ' .BYT %00000000 ;35'
+01974  FD09  00                 .BYTE $00
+01975  FD0A  1E                 .BYTE $1E
+01976  FD0B  3D 40              .BYTE '=@'
+01977  FD0D  1F                 .BYTE $1F
+01978  FD0E  20 2E              .BYTE ' .BYT %00000000'
+01979  FD1D  00                 .BYTE $00
+01980  FD1E  32 3D 4A           .BYTE '2=J'
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0037
+
+LINE# LOC   CODE        LINE
+
+
+01981  FD21  1F                 .BYTE $1F
+01982  FD22  20 2E              .BYTE ' .BYT %00011000'
+01983  FD31  00                 .BYTE $00
+01984  FD32  46 3D 54           .BYTE 'F=T'
+01985  FD35  1F                 .BYTE $1F
+01986  FD36  20 2E              .BYTE ' .BYT %00111100'
+01987  FD45  00                 .BYTE $00
+01988  FD46  5A 3D 5E           .BYTE 'Z=^'
+01989  FD49  1F                 .BYTE $1F
+01990  FD4A  20 2E              .BYTE ' .BYT %01100110'
+01991  FD59  00                 .BYTE $00
+01992  FD5A  6E                 .BYTE $6E
+01993  FD5B  3D                 .BYTE '='
+01994  FD5C  68                 .BYTE $68
+01995  FD5D  1F                 .BYTE $1F
+01996  FD5E  20 2E              .BYTE ' .BYT %11000011'
+01997  FD6D  00                 .BYTE $00
+01998  FD6E  82                 .BYTE $82
+01999  FD6F  3D                 .BYTE '='
+02000  FD70  72                 .BYTE $72
+02001  FD71  1F                 .BYTE $1F
+02002  FD72  20 2E              .BYTE ' .BYT %00000000'
+02003  FD81  00                 .BYTE $00
+02004  FD82  96                 .BYTE $96
+02005  FD83  3D                 .BYTE '='
+02006  FD84  7C                 .BYTE $7C
+02007  FD85  1F                 .BYTE $1F
+02008  FD86  20 2E              .BYTE ' .BYT %00000000'
+02009  FD95  00                 .BYTE $00
+02010  FD96  9C                 .BYTE $9C
+02011  FD97  3D                 .BYTE '='
+02012  FD98  86                 .BYTE $86
+02013  FD99  1F                 .BYTE $1F
+02014  FD9A  3B                 .BYTE ';'
+02015  FD9B  00                 .BYTE $00
+02016  FD9C  B4                 .BYTE $B4
+02017  FD9D  3D                 .BYTE '='
+02018  FD9E  90                 .BYTE $90
+02019  FD9F  1F                 .BYTE $1F
+02020  FDA0  20 2E              .BYTE ' .BYT %00000000 ;36'
+02021  FDB3  00                 .BYTE $00
+02022  FDB4  C8                 .BYTE $C8
+02023  FDB5  3D                 .BYTE '='
+02024  FDB6  9A                 .BYTE $9A
+02025  FDB7  1F                 .BYTE $1F
+02026  FDB8  20 2E              .BYTE ' .BYT %01100000'
+02027  FDC7  00                 .BYTE $00
+02028  FDC8  DC                 .BYTE $DC
+02029  FDC9  3D                 .BYTE '='
+02030  FDCA  A4                 .BYTE $A4
+02031  FDCB  1F                 .BYTE $1F
+02032  FDCC  20 2E              .BYTE ' .BYT %01110000'
+02033  FDDB  00                 .BYTE $00
+02034  FDDC  F0                 .BYTE $F0
+02035  FDDD  3D                 .BYTE '='
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0038
+
+LINE# LOC   CODE        LINE
+
+
+02036  FDDE  AE                 .BYTE $AE
+02037  FDDF  1F                 .BYTE $1F
+02038  FDE0  20 2E              .BYTE ' .BYT %01111000'
+02039  FDEF  00                 .BYTE $00
+02040  FDF0  04                 .BYTE $04
+02041  FDF1  3E                 .BYTE '>'
+02042  FDF2  B8                 .BYTE $B8
+02043  FDF3  1F                 .BYTE $1F
+02044  FDF4  20 2E              .BYTE ' .BYT %01101100'
+02045  FE03  00                 .BYTE $00
+02046  FE04  18                 .BYTE $18
+02047  FE05  3E                 .BYTE '>'
+02048  FE06  C2                 .BYTE $C2
+02049  FE07  1F                 .BYTE $1F
+02050  FE08  20 2E              .BYTE ' .BYT %01100110'
+02051  FE17  00                 .BYTE $00
+02052  FE18  2C 3E              .BYTE ',>'
+02053  FE1A  CC                 .BYTE $CC
+02054  FE1B  1F                 .BYTE $1F
+02055  FE1C  20 2E              .BYTE ' .BYT %11100011'
+02056  FE2B  00                 .BYTE $00
+02057  FE2C  40 3E              .BYTE '@>'
+02058  FE2E  D6                 .BYTE $D6
+02059  FE2F  1F                 .BYTE $1F
+02060  FE30  20 2E              .BYTE ' .BYT %00000000'
+02061  FE3F  00                 .BYTE $00
+02062  FE40  46 3E              .BYTE 'F>'
+02063  FE42  E0                 .BYTE $E0
+02064  FE43  1F                 .BYTE $1F
+02065  FE44  3B                 .BYTE ';'
+02066  FE45  00                 .BYTE $00
+02067  FE46  56 3E              .BYTE 'V>'
+02068  FE48  EA                 .BYTE $EA
+02069  FE49  1F                 .BYTE $1F
+02070  FE4A  3B 53              .BYTE ';STAFF LINE'
+02071  FE55  00                 .BYTE $00
+02072  FE56  5C 3E              .BYTE '\>'
+02073  FE58  F4                 .BYTE $F4
+02074  FE59  1F                 .BYTE $1F
+02075  FE5A  3B                 .BYTE ';'
+02076  FE5B  00                 .BYTE $00
+02077  FE5C  75                 .BYTE $75
+02078  FE5D  3E                 .BYTE '>'
+02079  FE5E  FE                 .BYTE $FE
+02080  FE5F  1F                 .BYTE $1F
+02081  FE60  2E 42              .BYTE '.BYT $03,$03,$03,$03'
+02082  FE74  00                 .BYTE $00
+02083  FE75  8E                 .BYTE $8E
+02084  FE76  3E                 .BYTE '>'
+02085  FE77  08                 .BYTE $08
+02086  FE78  20 2E              .BYTE ' .BYT $03,$03,$FF,$FF'
+02087  FE8D  00                 .BYTE $00
+02088  FE8E  94                 .BYTE $94
+02089  FE8F  3E                 .BYTE '>'
+02090  FE90  12                 .BYTE $12
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0039
+
+LINE# LOC   CODE        LINE
+
+
+02091  FE91  20 3B              .BYTE '         ;'
+02092  FE93  00                 .BYTE $00
+02093  FE94  A3                 .BYTE $A3
+02094  FE95  3E                 .BYTE '>'
+02095  FE96  1C                 .BYTE $1C
+02096  FE97  20 3B              .BYTE '         ;SEMAPHORE'
+02097  FEA2  00                 .BYTE $00
+02098  FEA3  A9                 .BYTE $A9
+02099  FEA4  3E 26              .BYTE '>&       ;'
+02100  FEA8  00                 .BYTE $00
+02101  FEA9  C2                 .BYTE $C2
+02102  FEAA  3E 30              .BYTE '>0 .BYT $C0,$60,$30,$18'
+02103  FEC1  00                 .BYTE $00
+02104  FEC2  DB                 .BYTE $DB
+02105  FEC3  3E 3A              .BYTE '>: .BYT $0C,$00,$FF,$FF'
+02106  FEDA  00                 .BYTE $00
+02107  FEDB  E1                 .BYTE $E1
+02108  FEDC  3E 44              .BYTE '>D       ;'
+02109  FEE0  00                 .BYTE $00
+02110  FEE1  FA                 .BYTE $FA
+02111  FEE2  3E 4E              .BYTE '>N       ;WHOLE/HALF (BOTTOM)'
+02112  FEF9  00                 .BYTE $00
+02113  FEFA  00                 .BYTE $00
+02114  FEFB  3F 58              .BYTE '?X       ;'
+02115  FEFF  00                 .BYTE $00
+02116  FF00  19                 .BYTE $19
+02117  FF01  3F                 .BYTE '?'
+02118  FF02  62                 .BYTE $62
+02119  FF03  20 2E              .BYTE ' .BYT $66,$3C,$00,$00'
+02120  FF18  00                 .BYTE $00
+02121  FF19  32 3F              .BYTE '2?'
+02122  FF1B  6C                 .BYTE $6C
+02123  FF1C  20 2E              .BYTE ' .BYT $00,$00,$FF,$FF'
+02124  FF31  00                 .BYTE $00
+02125  FF32  38 3F              .BYTE '8?'
+02126  FF34  76                 .BYTE $76
+02127  FF35  20 3B              .BYTE '         ;'
+02128  FF37  00                 .BYTE $00
+02129  FF38  50 3F              .BYTE 'P?'
+02130  FF3A  80                 .BYTE $80
+02131  FF3B  20 20              .BYTE '  .BYT %00000000 ;40'
+02132  FF4F  00                 .BYTE $00
+02133  FF50  64                 .BYTE $64
+02134  FF51  3F                 .BYTE '?'
+02135  FF52  8A                 .BYTE $8A
+02136  FF53  20 20              .BYTE '  .BYT %01111110'
+02137  FF63  00                 .BYTE $00
+02138  FF64  78                 .BYTE $78
+02139  FF65  3F                 .BYTE '?'
+02140  FF66  94                 .BYTE $94
+02141  FF67  20 20              .BYTE '  .BYT %01100110'
+02142  FF77  00                 .BYTE $00
+02143  FF78  8C                 .BYTE $8C
+02144  FF79  3F                 .BYTE '?'
+02145  FF7A  9E                 .BYTE $9E
+
+
+
+
+
+
+MUSICM.ASM......PAGE 0040
+
+LINE# LOC   CODE        LINE
+
+
+02146  FF7B  20 20              .BYTE '  .BYT %01100110'
+02147  FF8B  00                 .BYTE $00
+02148  FF8C  A0                 .BYTE $A0
+02149  FF8D  3F          VECTOR .BYTE '?'
+02150  FF8E  A8                 .BYTE $A8
+02151  FF8F  20 20              .BYTE '  .BYT %01100110'
+02152  FF9F  00          SCNKEY .BYTE $00
+02153  FFA0  B4                 .BYTE $B4
+02154  FFA1  3F                 .BYTE '?'
+02155  FFA2  B2          SETTMO .BYTE $B2
+02156  FFA3  20 20              .BYTE '  .BYT %11100111'
+02157  FFB3  00                 .BYTE $00
+02158  FFB4  C8          TALK   .BYTE $C8
+02159  FFB5  3F                 .BYTE '?'
+02160  FFB6  BC                 .BYTE $BC
+02161  FFB7  20 20       READST .BYTE '  .BYT %00000000'
+02162  FFC7  00                 .BYTE $00
+02163  FFC8  DC                 .BYTE $DC
+02164  FFC9  3F          CHKOUT .BYTE '?'
+02165  FFCA  C6                 .BYTE $C6
+02166  FFCB  20 20              .BYTE '  .BYT %00000000'
+02167  FFDB  00          SETTIM .BYTE $00
+02168  FFDC  E2                 .BYTE $E2
+02169  FFDD  3F                 .BYTE '?'
+02170  FFDE  D0          RDTIM  .BYTE $D0
+02171  FFDF  20 3B              .BYTE '         ;'
+02172  FFE1  00          STOP   .BYTE $00
+02173  FFE2  FA                 .BYTE $FA
+02174  FFE3  3F                 .BYTE '?'
+02175  FFE4  DA          GETIN  .BYTE $DA
+02176  FFE5  20 20              .BYTE '  .BYT %00000000 ;41'
+02177  FFF9  00                 .BYTE $00
+02178  FFFA              ;********************************
+02179  FFFA              ;********************************
+02180  FFFA  84 FB       NMIVEC .WORD $FB84
+02181  FFFC  00 F2       RESVEC .WORD $F200
+02182  FFFE  33 FA       IRQVEC .WORD $FA33
+02183  0000              ;********************************
+02184  0000              ;********************************
+02185  0000              .END
+
+
+ERRORS = 00000
+
+
+SYMBOL TABLE
+
+SYMBOL VALUE
+ CHKOUT   FFC9    GETIN    FFE4    IRQVEC   FFFE    NMIVEC   FFFA
+ RDTIM    FFDE    READST   FFB7    RESVEC   FFFC    SCNKEY   FF9F
+ SETTIM   FFDB    SETTMO   FFA2    STOP     FFE1    TALK     FFB4
+ VECTOR   FF8D    XXF200   F200    XXF218   F218    XXF22B   F22B
+ XXF29A   F29A    XXF2A7   F2A7    XXF2A9   F2A9    XXF2B6   F2B6
+ XXF2D0   F2D0    XXF2E2   F2E2    XXF2F5   F2F5    XXF2FB   F2FB
+
+
+
+
+
+
+
+
+SYMBOL TABLE
+
+SYMBOL VALUE
+ XXF31C   F31C    XXF322   F322    XXF33D   F33D    XXF351   F351
+ XXF357   F357    XXF366   F366    XXF378   F378    XXF386   F386
+ XXF389   F389    XXF38C   F38C    XXF3AD   F3AD    XXF3B1   F3B1
+ XXF3CB   F3CB    XXF3DD   F3DD    XXF3E9   F3E9    XXF404   F404
+ XXF414   F414    XXF417   F417    XXF42D   F42D    XXF458   F458
+ XXF460   F460    XXF48E   F48E    XXF498   F498    XXF4A2   F4A2
+ XXF4C1   F4C1    XXF4D2   F4D2    XXF4D7   F4D7    XXF4DD   F4DD
+ XXF4E7   F4E7    XXF4EA   F4EA    XXF4F6   F4F6    XXF4F9   F4F9
+ XXF4FC   F4FC    XXF51E   F51E    XXF61F   F61F    XXF620   F620
+ XXF62D   F62D    XXF63E   F63E    XXF644   F644    XXF645   F645
+ XXF64D   F64D    XXF657   F657    XXF665   F665    XXF673   F673
+ XXF674   F674    XXF684   F684    XXF695   F695    XXF6AE   F6AE
+ XXF6AF   F6AF    XXF70F   F70F    XXF710   F710    XXF723   F723
+ XXF72C   F72C    XXF756   F756    XXF764   F764    XXF77C   F77C
+ XXF786   F786    XXF792   F792    XXF797   F797    XXF79E   F79E
+ XXF7A6   F7A6    XXF7B7   F7B7    XXF7D6   F7D6    XXF7DA   F7DA
+ XXF7DD   F7DD    XXF805   F805    XXF815   F815    XXF81B   F81B
+ XXF821   F821    XXF822   F822    XXF823   F823    XXF83A   F83A
+ XXF856   F856    XXF879   F879    XXF88E   F88E    XXF8E1   F8E1
+ XXF8EE   F8EE    XXF8EF   F8EF    XXF906   F906    XXF908   F908
+ XXF961   F961    XXF96B   F96B    XXF976   F976    XXF986   F986
+ XXF99E   F99E    XXF9AE   F9AE    XXF9C6   F9C6    XXF9D8   F9D8
+ XXF9DA   F9DA    XXF9E6   F9E6    XXF9EA   F9EA    XXFA23   FA23
+ XXFA24   FA24    XXFA33   FA33    XXFA4A   FA4A    XXFA53   FA53
+ XXFA61   FA61    XXFA6F   FA6F    XXFA7C   FA7C    XXFA94   FA94
+ XXFAA2   FAA2    XXFAAC   FAAC    XXFAB8   FAB8    XXFABE   FABE
+ XXFACB   FACB    XXFB0B   FB0B    XXFB12   FB12    XXFB21   FB21
+ XXFB2C   FB2C    XXFB37   FB37    XXFB64   FB64    XXFB6A   FB6A
+ XXFB7D   FB7D    XXFB84   FB84    XXFB8E   FB8E    ZZF336   F336
+
+
+END OF ASSEMBLY
+
